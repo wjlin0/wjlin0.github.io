@@ -279,7 +279,9 @@ git push
 `update.bat`
 
 ```bat
-cd /d %~dp0 && attrib -h ./_book/.git && move ./_book/.git ./ && cd docs  && book sm && cd ../ &&  && gitbook build && move .git ./_book/ && attrib +h ./_book/.git && cd ./_book && git pull && git add . && git commit -m "%date:~0,4%-%date:~5,2%-%date:~8,2% %time:~0,2%: %time:~3,2%" && git push
+@echo on
+C:\Users\TZ\.gitbook\versions\3.2.3\node_modules\.bin\npm.cmd config set registry=http://registry.npmjs.org && cd /d %~dp0 && attrib -h ./_book/.git && move ./_book/.git ./ && cd docs  && book sm && cd ../ && gitbook install && gitbook build && move .git ./_book/ && attrib +h ./_book/.git && cd ./_book && git pull && git add . && git commit -m "%date:~0,4%-%date:~5,2%-%date:~8,2% %time:~0,2%: %time:~3,2%" && git push
+pause
 ```
 
 
