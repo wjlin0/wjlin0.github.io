@@ -18,9 +18,13 @@
 
 ### 安装工具
 
-安装docker：`curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun`
+安装docker：
 
-安装docker-compose：`curl -L https://get.daocloud.io/docker/compose/releases/download/v2.4.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose`
+`curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun`
+
+安装docker-compose：
+
+`curl -L https://get.daocloud.io/docker/compose/releases/download/v2.4.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose`
 
 docker开机自启动：
 
@@ -176,7 +180,9 @@ server
 
 ### 制作docker-compose 启动文件
 
-> docker-compose.yml 我这里启动了4个，如果你的vps内存空闲可以多启动即可，防止挂掉
+> docker-compose.yml 我这里启动了4个，如果你的vps内存空闲可以多启动即可，防止挂掉。
+>
+> 1001、1002、1003、1004 就是你设置的端口，可以按照你的习惯来
 
 ```yaml
 version: "3"
