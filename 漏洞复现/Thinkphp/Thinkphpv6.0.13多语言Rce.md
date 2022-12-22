@@ -100,21 +100,21 @@ http://127.0.0.1/index.php?lang=../../../../../public/index
 
 每个 middleware 的 `handle()` 函数都会被调用，这里断在 `LoadLangPack.php` 的 `handle()` ，直接在最开头调用 `$langset = $this->detect($request);` ：
 
-![image-20221221114801906](Thinkphpv6.0.13%E5%A4%9A%E8%AF%AD%E8%A8%80Rce.assets/image-20221221114801906.png)
+![image-20221221114801906](image/Thinkphpv6.0.13%E5%A4%9A%E8%AF%AD%E8%A8%80Rce.assets/image-20221221114801906.png)
 
 跟进`$this->detect($request)`，	发现是对langSet取值，
 
-![image-20221221115109654](Thinkphpv6.0.13%E5%A4%9A%E8%AF%AD%E8%A8%80Rce.assets/image-20221221115109654.png)
+![image-20221221115109654](image/Thinkphpv6.0.13%E5%A4%9A%E8%AF%AD%E8%A8%80Rce.assets/image-20221221115109654.png)
 
 91行，这里做了一个判断，我们可以不难发现这个`$this->config['allow_lang_list']` 默认是为空的，可以不用管，返回值就为这里的`$range`
 
-![image-20221221115217996](Thinkphpv6.0.13%E5%A4%9A%E8%AF%AD%E8%A8%80Rce.assets/image-20221221115217996.png)
+![image-20221221115217996](image/Thinkphpv6.0.13%E5%A4%9A%E8%AF%AD%E8%A8%80Rce.assets/image-20221221115217996.png)
 
 ![image-20221221115337072](Thinkphpv6.0.13%E5%A4%9A%E8%AF%AD%E8%A8%80Rce.assets/image-20221221115337072.png)
 
 回到handle()，发现会只要不是与`$this->config['default_lang']` 默认触发会调用`$this->lang->switchLangSet($langset);` ，跟进调试
 
-![image-20221221115558778](Thinkphpv6.0.13%E5%A4%9A%E8%AF%AD%E8%A8%80Rce.assets/image-20221221115558778.png)
+![image-20221221115558778](image/Thinkphpv6.0.13%E5%A4%9A%E8%AF%AD%E8%A8%80Rce.assets/image-20221221115558778.png)
 
 在 135 行，`$this->load([ $this->app->getThinkPath() . 'lang' . DIRECTORY_SEPARATOR . $langset . '.php',])`，在这里就实现了文件包含
 
@@ -126,13 +126,13 @@ $this->load([
 
 在`$this->load([ $this->app->getThinkPath() . 'lang' . DIRECTORY_SEPARATOR . $langset . '.php',])`中，默认会走到`$this->parse($name)`
 
-![image-20221221120750404](Thinkphpv6.0.13%E5%A4%9A%E8%AF%AD%E8%A8%80Rce.assets/image-20221221120750404.png)
+![image-20221221120750404](image/Thinkphpv6.0.13%E5%A4%9A%E8%AF%AD%E8%A8%80Rce.assets/image-20221221120750404.png)
 
 如果是php文件直接就include的了
 
-![image-20221221120935057](Thinkphpv6.0.13%E5%A4%9A%E8%AF%AD%E8%A8%80Rce.assets/image-20221221120935057.png)
+![image-20221221120935057](image/Thinkphpv6.0.13%E5%A4%9A%E8%AF%AD%E8%A8%80Rce.assets/image-20221221120935057.png)
 
-![image-20221221121001328](Thinkphpv6.0.13%E5%A4%9A%E8%AF%AD%E8%A8%80Rce.assets/image-20221221121001328.png)
+![image-20221221121001328](image/Thinkphpv6.0.13%E5%A4%9A%E8%AF%AD%E8%A8%80Rce.assets/image-20221221121001328.png)
 
 
 
