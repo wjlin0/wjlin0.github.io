@@ -33,10 +33,6 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
-                
-            
-                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
                 
             
@@ -46,6 +42,10 @@
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -81,8 +81,6 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
-    
-    <link rel="next" href="../更新记录.html" />
     
     
 
@@ -279,7 +277,39 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../更新记录.html">
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    漏洞复现
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../漏洞复现/Thinkphpv6.0.13多语言Rce.html">
+            
+                <a href="../漏洞复现/Thinkphpv6.0.13多语言Rce.html">
+            
+                    
+                    Thinkphpv6.0.13多语言Rce
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../更新记录.html">
             
                 <a href="../更新记录.html">
             
@@ -344,14 +374,14 @@
 <h1 id="&#x5B89;&#x88C5;gitbook&#x6240;&#x9700;&#x5DE5;&#x5177;"><a name="&#x5B89;&#x88C5;gitbook&#x6240;&#x9700;&#x5DE5;&#x5177;" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x88C5;gitbook&#x6240;&#x9700;&#x5DE5;&#x5177;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x5B89;&#x88C5;Gitbook&#x6240;&#x9700;&#x5DE5;&#x5177;</h1>
 <h2 id="&#x5B89;&#x88C5;gitbook-cli"><a name="&#x5B89;&#x88C5;gitbook-cli" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x88C5;gitbook-cli"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x5B89;&#x88C5;gitbook-cli</h2>
 <p>&#x7528;&#x4E8E;gitbook &#x547D;&#x4EE4;&#x884C;&#x7684;&#x5B89;&#x88C5;</p>
-<pre class="language-"><code class="lang-powershell">npm install gitbook-<span class="token function">cli</span> <span class="token operator">-</span>g
-gitbook <span class="token operator">--</span>version
+<pre><code class="lang-powershell">npm install gitbook-cli -g
+gitbook --version
 </code></pre>
 <p><img src="image/gitbook%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/image-20221129215233580.png" alt="image-20221129215233580"></p>
 <h2 id="&#x5B89;&#x88C5;gitbook-summary"><a name="&#x5B89;&#x88C5;gitbook-summary" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x88C5;gitbook-summary"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x5B89;&#x88C5;gitbook summary</h2>
 <p>&#x7528;&#x4E8E;&#x81EA;&#x52A8;&#x751F;&#x6210;Summary.md&#xFF0C;&#x8BE5;&#x6587;&#x4EF6;&#x4E3A;&#x76EE;&#x5F55;&#x6587;&#x4EF6;</p>
-<pre class="language-"><code class="lang-bash"><span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> gitbook-summary
-book <span class="token parameter variable">--version</span>
+<pre><code class="lang-bash">npm install -g gitbook-summary
+book --version
 </code></pre>
 <p><img src="image/gitbook%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/image-20221129220021247.png" alt="image-20221129220021247"></p>
 <h1 id="&#x521B;&#x5EFA;&#x9879;&#x76EE;"><a name="&#x521B;&#x5EFA;&#x9879;&#x76EE;" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;&#x9879;&#x76EE;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x521B;&#x5EFA;&#x9879;&#x76EE;</h1>
@@ -359,119 +389,119 @@ book <span class="token parameter variable">--version</span>
 <blockquote>
 <p>&#x7528;&#x6765;&#x5BFC;&#x5165;&#x63D2;&#x4EF6; &#x6216;&#x6307;&#x5B9A;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#xFF0C;&#x81F3;&#x4E8E;&#x6BCF;&#x4E2A;&#x63D2;&#x4EF6;&#x7684;&#x7528;&#x6CD5;&#x53EF;&#x767E;&#x5EA6;&#x67E5;&#x8BE2;&#x6216;&#x5728;&#x8FD9;&#x4E2A;<a href="https://www.cnblogs.com/mingyue5826/p/10307051.html#217-donate--%E6%89%93%E8%B5%8F%E6%8F%92%E4%BB%B6" target="_blank">&#x6587;&#x7AE0;</a>&#x4E2D;&#x67E5;&#x770B;&#x3002;</p>
 </blockquote>
-<pre class="language-"><code class="lang-json"><span class="token punctuation">{</span>
-    <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Wjlin0 Gitbook&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;author&quot;</span><span class="token operator">:</span><span class="token string">&quot;Wjlin0&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;description&quot;</span><span class="token operator">:</span><span class="token string">&quot;&#x8BB0;&#x5F55;&#x5B66;&#x4E60;&#x7B14;&#x8BB0;&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;language&quot;</span><span class="token operator">:</span><span class="token string">&quot;zh-hans&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;root&quot;</span><span class="token operator">:</span><span class="token string">&quot;./docs&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;links&quot;</span> <span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">&quot;sidebar&quot;</span> <span class="token operator">:</span> <span class="token punctuation">{</span>
-          <span class="token property">&quot;&#x535A;&#x5BA2;&#x5730;&#x5740;&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;https://wjlin0.com&quot;</span>
-      <span class="token punctuation">}</span>
-   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Wjlin0 Gitbook&quot;</span>,
+    <span class="hljs-string">&quot;author&quot;</span>:<span class="hljs-string">&quot;Wjlin0&quot;</span>,
+    <span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;&#x8BB0;&#x5F55;&#x5B66;&#x4E60;&#x7B14;&#x8BB0;&quot;</span>,
+    <span class="hljs-string">&quot;language&quot;</span>:<span class="hljs-string">&quot;zh-hans&quot;</span>,
+    <span class="hljs-string">&quot;root&quot;</span>:<span class="hljs-string">&quot;./docs&quot;</span>,
+    <span class="hljs-string">&quot;links&quot;</span> : {
+      <span class="hljs-string">&quot;sidebar&quot;</span> : {
+          <span class="hljs-string">&quot;&#x535A;&#x5BA2;&#x5730;&#x5740;&quot;</span> : <span class="hljs-string">&quot;https://wjlin0.com&quot;</span>
+      }
+   },
 
-    <span class="token property">&quot;plugins&quot;</span> <span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token string">&quot;back-to-top-button&quot;</span><span class="token punctuation">,</span>
-      <span class="token string">&quot;expandable-chapters&quot;</span><span class="token punctuation">,</span>
-      <span class="token string">&quot;github-buttons&quot;</span><span class="token punctuation">,</span>
-      <span class="token string">&quot;copy-code-button&quot;</span><span class="token punctuation">,</span>
-      <span class="token string">&quot;page-footer-ex&quot;</span><span class="token punctuation">,</span>
-      <span class="token string">&quot;anchor-navigation-ex&quot;</span><span class="token punctuation">,</span>
-      <span class="token string">&quot;prism&quot;</span><span class="token punctuation">,</span> 
-      <span class="token string">&quot;-highlight&quot;</span><span class="token punctuation">,</span>
-      <span class="token string">&quot;-lunr&quot;</span><span class="token punctuation">,</span> 
-      <span class="token string">&quot;-search&quot;</span><span class="token punctuation">,</span> 
-      <span class="token string">&quot;hide-element&quot;</span><span class="token punctuation">,</span>
-      <span class="token string">&quot;search-pro&quot;</span><span class="token punctuation">,</span>
-      <span class="token string">&quot;donate&quot;</span><span class="token punctuation">,</span>
-      <span class="token string">&quot;splitter&quot;</span><span class="token punctuation">,</span>
-      <span class="token string">&quot;github&quot;</span><span class="token punctuation">,</span>
-      <span class="token string">&quot;-sharing&quot;</span><span class="token punctuation">,</span>
-      <span class="token string">&quot;sharing-plus&quot;</span>
-    <span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;pluginsConfig&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">&quot;github&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-        <span class="token property">&quot;url&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://github.com/wjlin0&quot;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;hide-element&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">&quot;elements&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;.gitbook-link&quot;</span><span class="token punctuation">]</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-      <span class="token property">&quot;github-buttons&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-          <span class="token property">&quot;buttons&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
-          <span class="token property">&quot;user&quot;</span><span class="token operator">:</span> <span class="token string">&quot;wangzhebufangqi&quot;</span><span class="token punctuation">,</span>
-          <span class="token property">&quot;repo&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ActionTest&quot;</span><span class="token punctuation">,</span>
-          <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;star&quot;</span><span class="token punctuation">,</span>
-          <span class="token property">&quot;size&quot;</span><span class="token operator">:</span> <span class="token string">&quot;small&quot;</span>
-        <span class="token punctuation">}</span><span class="token punctuation">]</span>
-      <span class="token punctuation">}</span><span class="token punctuation">,</span>  
-      <span class="token property">&quot;page-footer-ex&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-              <span class="token property">&quot;copyright&quot;</span><span class="token operator">:</span> <span class="token string">&quot;By [Wjlin0](https://wjlin0.com/)&#xFF0C;&#x4F7F;&#x7528;[&#x77E5;&#x8BC6;&#x5171;&#x4EAB; &#x7F72;&#x540D;-&#x76F8;&#x540C;&#x65B9;&#x5F0F;&#x5171;&#x4EAB; 4.0&#x534F;&#x8BAE;](https://creativecommons.org/licenses/by-sa/4.0/)&#x53D1;&#x5E03;&quot;</span><span class="token punctuation">,</span>
-              <span class="token property">&quot;markdown&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-              <span class="token property">&quot;update_label&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&#x66F4;&#x65B0;&#x65F6;&#x95F4;&#xFF1A;&quot;</span><span class="token punctuation">,</span>
-              <span class="token property">&quot;update_format&quot;</span><span class="token operator">:</span> <span class="token string">&quot;YYYY-MM-DD HH:mm:ss&quot;</span>
-      <span class="token punctuation">}</span><span class="token punctuation">,</span>  
-      <span class="token property">&quot;prism&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-        <span class="token property">&quot;css&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;prismjs/themes/prism-solarizedlight.css&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;lang&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token property">&quot;flow&quot;</span><span class="token operator">:</span> <span class="token string">&quot;typescript&quot;</span><span class="token punctuation">}</span>
-      <span class="token punctuation">}</span><span class="token punctuation">,</span>  
-      <span class="token property">&quot;donate&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-        <span class="token property">&quot;wechat&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;alipay&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;button&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&#x8D4F;&quot;</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;alipayText&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&#x652F;&#x4ED8;&#x5B9D;&#x6350;&#x8D60;&quot;</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;wechatText&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&#x5FAE;&#x4FE1;&#x6350;&#x8D60;&quot;</span>
-      <span class="token punctuation">}</span><span class="token punctuation">,</span>
-      <span class="token property">&quot;sharing&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-        <span class="token property">&quot;douban&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;facebook&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;google&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;hatenaBookmark&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;instapaper&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;line&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;linkedin&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;messenger&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;pocket&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;qq&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;qzone&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;stumbleupon&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;twitter&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;viber&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;vk&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;weibo&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;whatsapp&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;all&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-            <span class="token string">&quot;douban&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;facebook&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;google&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;hatenaBookmark&quot;</span><span class="token punctuation">,</span> 
-            <span class="token string">&quot;instapaper&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;linkedin&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;twitter&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;weibo&quot;</span><span class="token punctuation">,</span> 
-            <span class="token string">&quot;messenger&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;qq&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;qzone&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;viber&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;vk&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;weibo&quot;</span><span class="token punctuation">,</span>
-            <span class="token string">&quot;pocket&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;stumbleupon&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;whatsapp&quot;</span>
-        <span class="token punctuation">]</span>
-    <span class="token punctuation">}</span>
+    <span class="hljs-string">&quot;plugins&quot;</span> : [
+      <span class="hljs-string">&quot;back-to-top-button&quot;</span>,
+      <span class="hljs-string">&quot;expandable-chapters&quot;</span>,
+      <span class="hljs-string">&quot;github-buttons&quot;</span>,
+      <span class="hljs-string">&quot;copy-code-button&quot;</span>,
+      <span class="hljs-string">&quot;page-footer-ex&quot;</span>,
+      <span class="hljs-string">&quot;anchor-navigation-ex&quot;</span>,
+      <span class="hljs-string">&quot;prism&quot;</span>, 
+      <span class="hljs-string">&quot;-highlight&quot;</span>,
+      <span class="hljs-string">&quot;-lunr&quot;</span>, 
+      <span class="hljs-string">&quot;-search&quot;</span>, 
+      <span class="hljs-string">&quot;hide-element&quot;</span>,
+      <span class="hljs-string">&quot;search-pro&quot;</span>,
+      <span class="hljs-string">&quot;donate&quot;</span>,
+      <span class="hljs-string">&quot;splitter&quot;</span>,
+      <span class="hljs-string">&quot;github&quot;</span>,
+      <span class="hljs-string">&quot;-sharing&quot;</span>,
+      <span class="hljs-string">&quot;sharing-plus&quot;</span>
+    ],
+    <span class="hljs-string">&quot;pluginsConfig&quot;</span>: {
+      <span class="hljs-string">&quot;github&quot;</span>: {
+        <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;https://github.com/wjlin0&quot;</span>
+    },
+    <span class="hljs-string">&quot;hide-element&quot;</span>: {
+      <span class="hljs-string">&quot;elements&quot;</span>: [<span class="hljs-string">&quot;.gitbook-link&quot;</span>]
+  },
+      <span class="hljs-string">&quot;github-buttons&quot;</span>: {
+          <span class="hljs-string">&quot;buttons&quot;</span>: [{
+          <span class="hljs-string">&quot;user&quot;</span>: <span class="hljs-string">&quot;wangzhebufangqi&quot;</span>,
+          <span class="hljs-string">&quot;repo&quot;</span>: <span class="hljs-string">&quot;ActionTest&quot;</span>,
+          <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;star&quot;</span>,
+          <span class="hljs-string">&quot;size&quot;</span>: <span class="hljs-string">&quot;small&quot;</span>
+        }]
+      },  
+      <span class="hljs-string">&quot;page-footer-ex&quot;</span>: {
+              <span class="hljs-string">&quot;copyright&quot;</span>: <span class="hljs-string">&quot;By [Wjlin0](https://wjlin0.com/)&#xFF0C;&#x4F7F;&#x7528;[&#x77E5;&#x8BC6;&#x5171;&#x4EAB; &#x7F72;&#x540D;-&#x76F8;&#x540C;&#x65B9;&#x5F0F;&#x5171;&#x4EAB; 4.0&#x534F;&#x8BAE;](https://creativecommons.org/licenses/by-sa/4.0/)&#x53D1;&#x5E03;&quot;</span>,
+              <span class="hljs-string">&quot;markdown&quot;</span>: <span class="hljs-literal">true</span>,
+              <span class="hljs-string">&quot;update_label&quot;</span>: <span class="hljs-string">&quot;&#x66F4;&#x65B0;&#x65F6;&#x95F4;&#xFF1A;&quot;</span>,
+              <span class="hljs-string">&quot;update_format&quot;</span>: <span class="hljs-string">&quot;YYYY-MM-DD HH:mm:ss&quot;</span>
+      },  
+      <span class="hljs-string">&quot;prism&quot;</span>: {
+        <span class="hljs-string">&quot;css&quot;</span>: [<span class="hljs-string">&quot;prismjs/themes/prism-solarizedlight.css&quot;</span>],
+        <span class="hljs-string">&quot;lang&quot;</span>: {<span class="hljs-string">&quot;flow&quot;</span>: <span class="hljs-string">&quot;typescript&quot;</span>}
+      },  
+      <span class="hljs-string">&quot;donate&quot;</span>: {
+        <span class="hljs-string">&quot;wechat&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+        <span class="hljs-string">&quot;alipay&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+        <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+        <span class="hljs-string">&quot;button&quot;</span>: <span class="hljs-string">&quot;&#x8D4F;&quot;</span>,
+        <span class="hljs-string">&quot;alipayText&quot;</span>: <span class="hljs-string">&quot;&#x652F;&#x4ED8;&#x5B9D;&#x6350;&#x8D60;&quot;</span>,
+        <span class="hljs-string">&quot;wechatText&quot;</span>: <span class="hljs-string">&quot;&#x5FAE;&#x4FE1;&#x6350;&#x8D60;&quot;</span>
+      },
+      <span class="hljs-string">&quot;sharing&quot;</span>: {
+        <span class="hljs-string">&quot;douban&quot;</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">&quot;facebook&quot;</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">&quot;google&quot;</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;hatenaBookmark&quot;</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">&quot;instapaper&quot;</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">&quot;line&quot;</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;linkedin&quot;</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;messenger&quot;</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">&quot;pocket&quot;</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">&quot;qq&quot;</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">&quot;qzone&quot;</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;stumbleupon&quot;</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">&quot;twitter&quot;</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">&quot;viber&quot;</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">&quot;vk&quot;</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">&quot;weibo&quot;</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;whatsapp&quot;</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">&quot;all&quot;</span>: [
+            <span class="hljs-string">&quot;douban&quot;</span>, <span class="hljs-string">&quot;facebook&quot;</span>, <span class="hljs-string">&quot;google&quot;</span>, <span class="hljs-string">&quot;hatenaBookmark&quot;</span>, 
+            <span class="hljs-string">&quot;instapaper&quot;</span>, <span class="hljs-string">&quot;linkedin&quot;</span>,<span class="hljs-string">&quot;twitter&quot;</span>, <span class="hljs-string">&quot;weibo&quot;</span>, 
+            <span class="hljs-string">&quot;messenger&quot;</span>,<span class="hljs-string">&quot;qq&quot;</span>, <span class="hljs-string">&quot;qzone&quot;</span>,<span class="hljs-string">&quot;viber&quot;</span>,<span class="hljs-string">&quot;vk&quot;</span>,<span class="hljs-string">&quot;weibo&quot;</span>,
+            <span class="hljs-string">&quot;pocket&quot;</span>, <span class="hljs-string">&quot;stumbleupon&quot;</span>,<span class="hljs-string">&quot;whatsapp&quot;</span>
+        ]
+    }
 
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
+    }
+  }
 </code></pre>
 <h2 id="&#x521B;&#x5EFA;&#x6839;&#x76EE;&#x5F55;&#xFF0C;&#x5BFC;&#x5165;&#x7B14;&#x8BB0;"><a name="&#x521B;&#x5EFA;&#x6839;&#x76EE;&#x5F55;&#xFF0C;&#x5BFC;&#x5165;&#x7B14;&#x8BB0;" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;&#x6839;&#x76EE;&#x5F55;&#xFF0C;&#x5BFC;&#x5165;&#x7B14;&#x8BB0;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2. &#x521B;&#x5EFA;&#x6839;&#x76EE;&#x5F55;&#xFF0C;&#x5BFC;&#x5165;&#x7B14;&#x8BB0;</h2>
 <blockquote>
 <p>&#x5BFC;&#x5165;&#x81EA;&#x5DF1;&#x7684;&#x7B14;&#x8BB0;</p>
 </blockquote>
-<pre class="language-"><code>mkdir docs
+<pre><code>mkdir docs
 notepad.exe .\docs\README.md //&#x56FE;&#x7247;&#x4E2D;&#x6253;&#x9519;&#x4E86;
 </code></pre><p><img src="image/gitbook%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/image-20221129220950545.png" alt="image-20221129220950545"></p>
 <h2 id="&#x751F;&#x6210;summarymd&#x6587;&#x4EF6;"><a name="&#x751F;&#x6210;summarymd&#x6587;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x751F;&#x6210;summarymd&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>2.3. &#x751F;&#x6210;SUMMARY.MD&#x6587;&#x4EF6;</h2>
-<pre class="language-"><code class="lang-powershell">cd docs
+<pre><code class="lang-powershell">cd docs
 book sm
 </code></pre>
 <p><img src="image/gitbook%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/image-20221129221123486.png" alt="image-20221129221123486"></p>
 <h2 id="&#x6784;&#x5EFA;&#x9879;&#x76EE;&#x9759;&#x6001;&#x6587;&#x4EF6;"><a name="&#x6784;&#x5EFA;&#x9879;&#x76EE;&#x9759;&#x6001;&#x6587;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x6784;&#x5EFA;&#x9879;&#x76EE;&#x9759;&#x6001;&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>2.4. &#x6784;&#x5EFA;&#x9879;&#x76EE;&#x9759;&#x6001;&#x6587;&#x4EF6;</h2>
-<pre class="language-"><code>cd ../
+<pre><code>cd ../
 gitbook install
 gitbook build
 </code></pre><p>&#x6784;&#x5EFA;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#xFF0C;&#x4F1A;&#x751F;&#x6210;&#x51E0;&#x4E2A;&#x76EE;&#x5F55;&#xFF0C;_book &#x4E3A;&#x751F;&#x6210;&#x7684;&#x9759;&#x6001;&#x8D44;&#x6E90; node_modules &#x4E3A; node js&#x7684; &#x6A21;&#x5757;&#x6587;&#x4EF6;</p>
 <p><img src="image/gitbook%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/image-20221129221603529.png" alt="image-20221129221603529"></p>
 <h2 id="&#x6D4B;&#x8BD5;&#x672C;&#x5730;&#x73AF;&#x5883;"><a name="&#x6D4B;&#x8BD5;&#x672C;&#x5730;&#x73AF;&#x5883;" class="anchor-navigation-ex-anchor" href="#&#x6D4B;&#x8BD5;&#x672C;&#x5730;&#x73AF;&#x5883;"><i class="fa fa-link" aria-hidden="true"></i></a>2.5. &#x6D4B;&#x8BD5;&#x672C;&#x5730;&#x73AF;&#x5883;</h2>
-<pre class="language-"><code>gitbook serve
+<pre><code>gitbook serve
 </code></pre><p><img src="image/gitbook%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/image-20221129223221641.png" alt="image-20221129223221641"></p>
 <p><img src="image/gitbook%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/image-20221129223249357.png" alt="image-20221129223249357"></p>
 <h1 id="&#x6784;&#x5EFA;github-page"><a name="&#x6784;&#x5EFA;github-page" class="anchor-navigation-ex-anchor" href="#&#x6784;&#x5EFA;github-page"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x6784;&#x5EFA;github Page</h1>
@@ -482,7 +512,7 @@ gitbook build
 <p>&#x6784;&#x5EFA;&#x5982;&#x56FE;&#x6240;&#x793A;&#x4ED3;&#x5E93;&#xFF0C;&#x4ED3;&#x5E93;&#x547D;&#x540D;&#x683C;&#x5F0F;&#x4E3A;<code>xxx.github.io</code> &#x8FD9;&#x4E2A;xxx&#x4E3A;&#x4F60;&#x7684;&#x8D26;&#x6237;&#x540D;&#x79F0;&#x5C31;&#x662F;&#x9014;&#x4E2D;&#x5DE6;&#x8FB9;&#x90A3;&#x4E2A;wjlin0(&#x8981;&#x4F9D;&#x636E;&#x4F60;&#x7684;&#x540D;&#x5B57;&#x6765;&#x54C8;)&#xFF0C;&#x6211;&#x8FD9;&#x91CC;&#x6784;&#x5EFA;&#x8FC7;&#x4E86;&#x6240;&#x4EE5; &#x7206;&#x7EA2;&#x4E86;&#x3002;</p>
 <p><img src="image/gitbook%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/image-20221129224035267.png" alt="image-20221129224035267"></p>
 <h2 id="&#x4E0A;&#x4F20;&#x9759;&#x6001;&#x6587;&#x4EF6;"><a name="&#x4E0A;&#x4F20;&#x9759;&#x6001;&#x6587;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x4E0A;&#x4F20;&#x9759;&#x6001;&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>3.2. &#x4E0A;&#x4F20;&#x9759;&#x6001;&#x6587;&#x4EF6;</h2>
-<pre class="language-"><code>cd .\_book\
+<pre><code>cd .\_book\
 git init
 git add *
 git commit -m &quot;New commit&quot;
@@ -515,27 +545,27 @@ git push origin main
 <h1 id="&#x66F4;&#x65B0;&#x6587;&#x4EF6;"><a name="&#x66F4;&#x65B0;&#x6587;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x66F4;&#x65B0;&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x66F4;&#x65B0;&#x6587;&#x4EF6;</h1>
 <h2 id="&#x5BFC;&#x51FA;-git"><a name="&#x5BFC;&#x51FA;-git" class="anchor-navigation-ex-anchor" href="#&#x5BFC;&#x51FA;-git"><i class="fa fa-link" aria-hidden="true"></i></a>4.1. &#x5BFC;&#x51FA; git</h2>
 <p>&#x66F4;&#x65B0;&#x4E4B;&#x524D;&#x5C06;&#x4E4B;&#x524D; .git &#x5BFC;&#x5165;&#x51FA;&#x6765;</p>
-<pre class="language-"><code>mv ./_book/.git ./
+<pre><code>mv ./_book/.git ./
 </code></pre><h2 id="&#x66F4;&#x65B0;&#x76EE;&#x5F55;"><a name="&#x66F4;&#x65B0;&#x76EE;&#x5F55;" class="anchor-navigation-ex-anchor" href="#&#x66F4;&#x65B0;&#x76EE;&#x5F55;"><i class="fa fa-link" aria-hidden="true"></i></a>4.2. &#x66F4;&#x65B0;&#x76EE;&#x5F55;</h2>
-<pre class="language-"><code>cd docs &amp;&amp; book sm &amp;&amp; cd ../
+<pre><code>cd docs &amp;&amp; book sm &amp;&amp; cd ../
 </code></pre><h2 id="&#x6784;&#x5EFA;&#x9759;&#x6001;&#x6587;&#x4EF6;"><a name="&#x6784;&#x5EFA;&#x9759;&#x6001;&#x6587;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x6784;&#x5EFA;&#x9759;&#x6001;&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>4.3. &#x6784;&#x5EFA;&#x9759;&#x6001;&#x6587;&#x4EF6;</h2>
-<pre class="language-"><code>gitbook install # &#x82E5;&#x4FEE;&#x6539;&#x4E86;book.json&#xFF0C;&#x5219;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x4E0B;&#x8F7D;
+<pre><code>gitbook install # &#x82E5;&#x4FEE;&#x6539;&#x4E86;book.json&#xFF0C;&#x5219;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x4E0B;&#x8F7D;
 gitbook build
 mv  .git ./_book/
 </code></pre><h2 id="&#x63D0;&#x4EA4;&#x66F4;&#x65B0;&#x540E;&#x7684;&#x4EE3;&#x7801;"><a name="&#x63D0;&#x4EA4;&#x66F4;&#x65B0;&#x540E;&#x7684;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x63D0;&#x4EA4;&#x66F4;&#x65B0;&#x540E;&#x7684;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>4.4. &#x63D0;&#x4EA4;&#x66F4;&#x65B0;&#x540E;&#x7684;&#x4EE3;&#x7801;</h2>
-<pre class="language-"><code class="lang-powershell"><span class="token comment">### powershell&#x7684;&#x7528;&#x6CD5;</span>
-cd <span class="token punctuation">.</span><span class="token operator">/</span>_book
-git pull
-git add <span class="token punctuation">.</span>
-<span class="token variable">$A</span> = <span class="token function">Get-Date</span><span class="token punctuation">;</span>git commit <span class="token operator">-</span>m <span class="token string">&quot;<span class="token variable">$A</span>&quot;</span><span class="token punctuation">;</span>
-git push
-</code></pre>
-<p>&#x6216;&#x8005; &#x4F60;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;</p>
-<pre class="language-"><code class="lang-cmd">### cmd&#x7684;&#x7528;&#x6CD5;
+<pre><code class="lang-powershell"><span class="hljs-comment">### powershell&#x7684;&#x7528;&#x6CD5;</span>
 cd ./_book
 git pull
 git add .
-git commit -m &quot;%date:~0,4%-%date:~5,2%-%date:~8,2% %time:~0,2%: %time:~3,2%&quot;
+<span class="hljs-variable">$A</span> = <span class="hljs-built_in">Get-Date</span>;git commit -m <span class="hljs-string">&quot;<span class="hljs-variable">$A</span>&quot;</span>;
+git push
+</code></pre>
+<p>&#x6216;&#x8005; &#x4F60;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;</p>
+<pre><code class="lang-cmd">### <span class="hljs-built_in">cmd</span>&#x7684;&#x7528;&#x6CD5;
+<span class="hljs-built_in">cd</span> ./_book
+git pull
+git add .
+git commit -m &quot;<span class="hljs-variable">%date:~0,4%</span>-<span class="hljs-variable">%date:~5,2%</span>-<span class="hljs-variable">%date:~8,2%</span> <span class="hljs-variable">%time:~0,2%</span>: <span class="hljs-variable">%time:~3,2%</span>&quot;
 git push
 </code></pre>
 <footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> By <a href="https://wjlin0.com/" target="_blank">Wjlin0</a>&#xFF0C;&#x4F7F;&#x7528;<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB; &#x7F72;&#x540D;-&#x76F8;&#x540C;&#x65B9;&#x5F0F;&#x5171;&#x4EAB; 4.0&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x66F4;&#x65B0;&#x65F6;&#x95F4;&#xFF1A; 2022-12-06 14:36:56 </span> </footer>
@@ -566,10 +596,6 @@ git push
             
                 
                 
-                <a href="../更新记录.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 更新记录">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
             
         
     </div>
@@ -577,7 +603,7 @@ git push
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"gitbook搭建过程","level":"1.3.1","depth":2,"next":{"title":"更新记录","level":"1.4","depth":1,"path":"更新记录.md","ref":"更新记录.md","articles":[]},"previous":{"title":"未分类的","level":"1.3","depth":1,"ref":"","articles":[{"title":"gitbook搭建过程","level":"1.3.1","depth":2,"path":"未分类的/gitbook搭建过程.md","ref":"未分类的/gitbook搭建过程.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","expandable-chapters","github-buttons","copy-code-button","page-footer-ex","anchor-navigation-ex","prism","-highlight","-lunr","-search","hide-element","search-pro","donate","splitter","github","-sharing","sharing-plus","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"],"lang":{"flow":"typescript"}},"github":{"url":"https://github.com/wjlin0"},"livereload":{},"page-footer-ex":{"copyright":"By [Wjlin0](https://wjlin0.com/)，使用[知识共享 署名-相同方式共享 4.0协议](https://creativecommons.org/licenses/by-sa/4.0/)发布","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"更新时间："},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝捐赠","button":"赏","title":"","wechat":"","wechatText":"微信捐赠"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"back-to-top-button":{},"github-buttons":{"buttons":[{"user":"wangzhebufangqi","repo":"ActionTest","type":"star","size":"small"}]},"copy-code-button":{},"sharing":{"qq":false,"all":["douban","facebook","google","hatenaBookmark","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","vk","weibo","pocket","stumbleupon","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":true,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"Wjlin0","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Wjlin0 Gitbook","language":"zh-hans","links":{"sidebar":{"博客地址":"https://wjlin0.com"}},"gitbook":"*","description":"记录学习笔记"},"file":{"path":"未分类的/gitbook搭建过程.md","mtime":"2022-12-06T06:36:56.942Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-12-06T07:12:24.798Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"gitbook搭建过程","level":"1.3.1","depth":2,"next":{"title":"漏洞复现","level":"1.4","depth":1,"ref":"","articles":[{"title":"Thinkphpv6.0.13多语言Rce","level":"1.4.1","depth":2,"path":"漏洞复现/Thinkphpv6.0.13多语言Rce.md","ref":"漏洞复现/Thinkphpv6.0.13多语言Rce.md","articles":[]}]},"previous":{"title":"未分类的","level":"1.3","depth":1,"ref":"","articles":[{"title":"gitbook搭建过程","level":"1.3.1","depth":2,"path":"未分类的/gitbook搭建过程.md","ref":"未分类的/gitbook搭建过程.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","expandable-chapters","github-buttons","copy-code-button","page-footer-ex","anchor-navigation-ex","-lunr","-search","hide-element","search-pro","donate","splitter","github","-sharing","sharing-plus"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"],"lang":{"flow":"typescript"}},"github":{"url":"https://github.com/wjlin0"},"page-footer-ex":{"copyright":"By [Wjlin0](https://wjlin0.com/)，使用[知识共享 署名-相同方式共享 4.0协议](https://creativecommons.org/licenses/by-sa/4.0/)发布","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"更新时间："},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝捐赠","button":"赏","title":"","wechat":"","wechatText":"微信捐赠"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"back-to-top-button":{},"github-buttons":{"buttons":[{"user":"wangzhebufangqi","repo":"ActionTest","type":"star","size":"small"}]},"copy-code-button":{},"sharing":{"qq":false,"all":["douban","facebook","google","hatenaBookmark","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","vk","weibo","pocket","stumbleupon","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":true,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"Wjlin0","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Wjlin0 Gitbook","language":"zh-hans","links":{"sidebar":{"博客地址":"https://wjlin0.com"}},"gitbook":"*","description":"记录学习笔记"},"file":{"path":"未分类的/gitbook搭建过程.md","mtime":"2022-12-06T06:36:56.942Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-12-22T10:15:59.214Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -628,10 +654,6 @@ git push
     
         
         <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

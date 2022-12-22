@@ -33,10 +33,6 @@
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
-                
-            
-                
                 <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
                 
             
@@ -46,6 +42,10 @@
             
                 
                 <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -277,7 +277,39 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../../../更新记录.html">
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    漏洞复现
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../../漏洞复现/Thinkphpv6.0.13多语言Rce.html">
+            
+                <a href="../../../漏洞复现/Thinkphpv6.0.13多语言Rce.html">
+            
+                    
+                    Thinkphpv6.0.13多语言Rce
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../../更新记录.html">
             
                 <a href="../../../更新记录.html">
             
@@ -373,40 +405,40 @@
 <p>&#x57FA;&#x672C;&#x4E0A;&#xFF0C;ObjectOutputStream&#x5C06;Java&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x4E3A;&#x76F8;&#x5E94;&#x7684;&#x6D41;&#x3002; &#x8FD9;&#x79F0;&#x4E3A;&#x5E8F;&#x5217;&#x5316;&#x3002; &#x8FD9;&#x4E9B;&#x8F6C;&#x6362;&#x540E;&#x7684;&#x6D41;&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x5728;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7F51;&#x7EDC;&#x4F20;&#x8F93;&#x3002;</p>
 <p>&#x73B0;&#x5728;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x8BFB;&#x53D6;&#x8FD9;&#x4E9B;&#x5BF9;&#x8C61;&#xFF0C;&#x5219;&#x5C06;&#x4F7F;&#x7528;ObjectInputStream&#xFF0C;&#x5B83;&#x5C06;&#x628A;&#x6D41;&#x8F6C;&#x6362;&#x56DE;&#x76F8;&#x5E94;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x8FD9;&#x79F0;&#x4E3A;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x3002;</p>
 </blockquote>
-<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Ser</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span><span class="token punctuation">,</span> <span class="token class-name">ClassNotFoundException</span> <span class="token punctuation">{</span>
-        <span class="token class-name">String</span> hello_ser <span class="token operator">=</span> <span class="token string">&quot;hello ser&quot;</span><span class="token punctuation">;</span>
-        <span class="token function">ser</span><span class="token punctuation">(</span>hello_ser<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">unser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Ser</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException, ClassNotFoundException </span>{
+        String hello_ser = <span class="hljs-string">&quot;hello ser&quot;</span>;
+        ser(hello_ser);
+        unser();
+    }
 
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">ser</span><span class="token punctuation">(</span><span class="token class-name">Object</span> o<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;&#x5E8F;&#x5217;&#x5316;&#x5F00;&#x59CB;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">FileOutputStream</span> fileOutputStream <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span><span class="token string">&quot;ser.bin&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">ObjectOutputStream</span> objectOutputStream <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectOutputStream</span><span class="token punctuation">(</span>fileOutputStream<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        objectOutputStream<span class="token punctuation">.</span><span class="token function">writeObject</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        objectOutputStream<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;&#x5E8F;&#x5217;&#x5316;&#x7ED3;&#x675F;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">ser</span><span class="hljs-params">(Object o)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        System.out.println(<span class="hljs-string">&quot;&#x5E8F;&#x5217;&#x5316;&#x5F00;&#x59CB;&quot;</span>);
+        FileOutputStream fileOutputStream = <span class="hljs-keyword">new</span> FileOutputStream(<span class="hljs-string">&quot;ser.bin&quot;</span>);
+        ObjectOutputStream objectOutputStream = <span class="hljs-keyword">new</span> ObjectOutputStream(fileOutputStream);
+        objectOutputStream.writeObject(o);
+        objectOutputStream.close();
+        System.out.println(<span class="hljs-string">&quot;&#x5E8F;&#x5217;&#x5316;&#x7ED3;&#x675F;&quot;</span>);
+    }
 
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">unser</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span><span class="token punctuation">,</span> <span class="token class-name">ClassNotFoundException</span> <span class="token punctuation">{</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x5F00;&#x59CB;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">FileInputStream</span> fileInputStream <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span><span class="token string">&quot;ser.bin&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">ObjectInputStream</span> objectInputStream <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectInputStream</span><span class="token punctuation">(</span>fileInputStream<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">String</span> o <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">)</span> objectInputStream<span class="token punctuation">.</span><span class="token function">readObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x7ED3;&#x675F;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">unser</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException, ClassNotFoundException </span>{
+        System.out.println(<span class="hljs-string">&quot;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x5F00;&#x59CB;&quot;</span>);
+        FileInputStream fileInputStream = <span class="hljs-keyword">new</span> FileInputStream(<span class="hljs-string">&quot;ser.bin&quot;</span>);
+        ObjectInputStream objectInputStream = <span class="hljs-keyword">new</span> ObjectInputStream(fileInputStream);
+        String o = (String) objectInputStream.readObject();
+        System.out.println(o);
+        System.out.println(<span class="hljs-string">&quot;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x7ED3;&#x675F;&quot;</span>);
+    }
 
-<span class="token punctuation">}</span>
+}
 
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+--------------------------------------
 &#x5E8F;&#x5217;&#x5316;&#x5F00;&#x59CB;
 &#x5E8F;&#x5217;&#x5316;&#x7ED3;&#x675F;
 &#x53CD;&#x5E8F;&#x5217;&#x5316;&#x5F00;&#x59CB;
 hello ser
 &#x53CD;&#x5E8F;&#x5217;&#x5316;&#x7ED3;&#x675F;
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+--------------------------------------
 </code></pre>
 <h2 id="&#x5E8F;&#x5217;&#x5316;&#x7279;&#x5F81;"><a name="&#x5E8F;&#x5217;&#x5316;&#x7279;&#x5F81;" class="anchor-navigation-ex-anchor" href="#&#x5E8F;&#x5217;&#x5316;&#x7279;&#x5F81;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. &#x5E8F;&#x5217;&#x5316;&#x7279;&#x5F81;</h2>
 <p><img src="image/JAVA%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/202211302250742.png-1" alt="image-20221130224748718"></p>
@@ -414,7 +446,7 @@ hello ser
 <p><strong>AC ED</strong>&#xFF1A;<code>STREAM_MAGIC</code>&#xFF0C;&#x58F0;&#x660E;&#x4F7F;&#x7528;&#x4E86;&#x5E8F;&#x5217;&#x5316;&#x534F;&#x8BAE;&#xFF0C;<strong>&#x4ECE;&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x5224;&#x65AD;&#x4FDD;&#x5B58;&#x7684;&#x5185;&#x5BB9;&#x662F;&#x5426;&#x4E3A;&#x5E8F;&#x5217;&#x5316;&#x6570;&#x636E;&#x3002;</strong> &#xFF08;&#x8FD9;&#x662F;&#x5728;&#x9ED1;&#x76D2;&#x6316;&#x6398;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x6F0F;&#x6D1E;&#x5F88;&#x91CD;&#x8981;&#x7684;&#x4E00;&#x4E2A;&#x70B9;&#xFF09;</p>
 <p><strong>00 05</strong>&#xFF1A;<code>STREAM_VERSION</code>&#xFF0C;&#x5E8F;&#x5217;&#x5316;&#x534F;&#x8BAE;&#x7248;&#x672C;&#x3002;</p>
 <h2 id="&#x6076;&#x610F;&#x653B;&#x51FB;"><a name="&#x6076;&#x610F;&#x653B;&#x51FB;" class="anchor-navigation-ex-anchor" href="#&#x6076;&#x610F;&#x653B;&#x51FB;"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. &#x6076;&#x610F;&#x653B;&#x51FB;</h2>
-<pre class="language-"><code>public class Person implements Serializable {
+<pre><code>public class Person implements Serializable {
     public String name;
     public int age;
 
@@ -507,7 +539,7 @@ public class Ser {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"JAVA反序列化漏洞","level":"1.2.1.1.1","depth":4,"next":{"title":"PHP","level":"1.2.2","depth":2,"ref":"","articles":[{"title":"PHP代码审计基础知识","level":"1.2.2.1","depth":3,"path":"代码审计/PHP/PHP代码审计基础知识.md","ref":"代码审计/PHP/PHP代码审计基础知识.md","articles":[]}]},"previous":{"title":"基础审计","level":"1.2.1.1","depth":3,"ref":"","articles":[{"title":"JAVA反序列化漏洞","level":"1.2.1.1.1","depth":4,"path":"代码审计/Java/基础审计/JAVA反序列化漏洞.md","ref":"代码审计/Java/基础审计/JAVA反序列化漏洞.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","expandable-chapters","github-buttons","copy-code-button","page-footer-ex","anchor-navigation-ex","prism","-highlight","-lunr","-search","hide-element","search-pro","donate","splitter","github","-sharing","sharing-plus","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"],"lang":{"flow":"typescript"}},"github":{"url":"https://github.com/wjlin0"},"livereload":{},"page-footer-ex":{"copyright":"By [Wjlin0](https://wjlin0.com/)，使用[知识共享 署名-相同方式共享 4.0协议](https://creativecommons.org/licenses/by-sa/4.0/)发布","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"更新时间："},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝捐赠","button":"赏","title":"","wechat":"","wechatText":"微信捐赠"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"back-to-top-button":{},"github-buttons":{"buttons":[{"user":"wangzhebufangqi","repo":"ActionTest","type":"star","size":"small"}]},"copy-code-button":{},"sharing":{"qq":false,"all":["douban","facebook","google","hatenaBookmark","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","vk","weibo","pocket","stumbleupon","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":true,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"Wjlin0","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Wjlin0 Gitbook","language":"zh-hans","links":{"sidebar":{"博客地址":"https://wjlin0.com"}},"gitbook":"*","description":"记录学习笔记"},"file":{"path":"代码审计/Java/基础审计/JAVA反序列化漏洞.md","mtime":"2022-11-30T16:42:24.859Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-12-06T07:12:24.798Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"JAVA反序列化漏洞","level":"1.2.1.1.1","depth":4,"next":{"title":"PHP","level":"1.2.2","depth":2,"ref":"","articles":[{"title":"PHP代码审计基础知识","level":"1.2.2.1","depth":3,"path":"代码审计/PHP/PHP代码审计基础知识.md","ref":"代码审计/PHP/PHP代码审计基础知识.md","articles":[]}]},"previous":{"title":"基础审计","level":"1.2.1.1","depth":3,"ref":"","articles":[{"title":"JAVA反序列化漏洞","level":"1.2.1.1.1","depth":4,"path":"代码审计/Java/基础审计/JAVA反序列化漏洞.md","ref":"代码审计/Java/基础审计/JAVA反序列化漏洞.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","expandable-chapters","github-buttons","copy-code-button","page-footer-ex","anchor-navigation-ex","-lunr","-search","hide-element","search-pro","donate","splitter","github","-sharing","sharing-plus"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"],"lang":{"flow":"typescript"}},"github":{"url":"https://github.com/wjlin0"},"page-footer-ex":{"copyright":"By [Wjlin0](https://wjlin0.com/)，使用[知识共享 署名-相同方式共享 4.0协议](https://creativecommons.org/licenses/by-sa/4.0/)发布","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"更新时间："},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝捐赠","button":"赏","title":"","wechat":"","wechatText":"微信捐赠"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"back-to-top-button":{},"github-buttons":{"buttons":[{"user":"wangzhebufangqi","repo":"ActionTest","type":"star","size":"small"}]},"copy-code-button":{},"sharing":{"qq":false,"all":["douban","facebook","google","hatenaBookmark","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","vk","weibo","pocket","stumbleupon","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":true,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"Wjlin0","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Wjlin0 Gitbook","language":"zh-hans","links":{"sidebar":{"博客地址":"https://wjlin0.com"}},"gitbook":"*","description":"记录学习笔记"},"file":{"path":"代码审计/Java/基础审计/JAVA反序列化漏洞.md","mtime":"2022-11-30T16:42:24.859Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-12-22T10:15:59.214Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -558,10 +590,6 @@ public class Ser {
     
         
         <script src="../../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
