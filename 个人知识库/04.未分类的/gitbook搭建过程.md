@@ -1,7 +1,7 @@
 > 注意：用的命令行尽量用powershell 有些命令cmd 用不了
 >
 > 比如：mv等
-
+1
 ## 安装Gitbook所需工具
 
 ### 安装gitbook-cli
@@ -61,15 +61,22 @@ book --version
       "github",
       "-sharing",
       "sharing-plus",
-      "custom-favicon"
+      "custom-favicon",
+      "page-treeview"
     ],
     "pluginsConfig": {
       "github": {
         "url": "https://github.com/wjlin0"
     },
+    "page-treeview": {
+      "copyright": "Copyright &#169; wjlin0",
+      "minHeaderCount": "2",
+      "minHeaderDeep": "2"
+  },
     "favicon": "./favicon.ico",
     "hide-element": {
-      "elements": [".gitbook-link"]
+      "elements": [".gitbook-link",".treeview__copyright",".treeview__main-title"
+    ]
   },
       "github-buttons": {
           "buttons": [{
