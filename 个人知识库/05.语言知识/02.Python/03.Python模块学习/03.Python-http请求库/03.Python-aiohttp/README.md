@@ -1,4 +1,4 @@
-# 01.Python-aiohttp
+# Python-aiohttp
 
 > [!Tip]
 >

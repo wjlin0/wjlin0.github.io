@@ -1,4 +1,4 @@
-# 01.Python-Requests
+# Python-Requests
 
 > [!Tip]
 >
