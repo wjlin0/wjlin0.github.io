@@ -1,6 +1,6 @@
 
 
-# Python-GUI编程（PyQt）
+# Python-PyQt6
 
 > [!Tip]
 >
