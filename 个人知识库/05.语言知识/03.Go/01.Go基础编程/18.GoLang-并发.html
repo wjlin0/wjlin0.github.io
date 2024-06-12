@@ -1,0 +1,4146 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>18.GoLang-并发 · wjlin0 知识库</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="wjlin0">
+        
+        
+    
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search-pro-fixed/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-theme-d4t/style.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="19.GoLang-网络编程.html" />
+    
+    
+    <link rel="prev" href="17.GoLang-反射.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="header-inner">
+        <!-- LOGO -->
+        <a href="/"><div class="logo"></div></a>
+        <span class="title"></span>
+
+        <!-- Search -->
+        
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+
+        <!-- Nav -->
+        <ul class="header-nav">
+            <li>
+                <a href="https://github.com/wjlin0/pathScan" target="_blank">pathScan</a>
+            </li><li>
+                <a href="https://www.wjlin0.com" target="_blank">wjlin0's blog</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="book-summary">
+        <div class="sidebar-nav-space"></div>
+        
+        
+        <nav role="navigation">
+            
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../../">
+            
+                <a href="../../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    个人知识库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                    01.渗透测试
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../../../01.渗透测试/01.信息收集/">
+            
+                <a href="../../../01.渗透测试/01.信息收集/">
+            
+                    
+                    01.信息收集
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1" >
+            
+                <span>
+            
+                    
+                    01.资产收集
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1.1" data-path="../../../01.渗透测试/01.信息收集/01.资产收集/01.主域名收集/">
+            
+                <a href="../../../01.渗透测试/01.信息收集/01.资产收集/01.主域名收集/">
+            
+                    
+                    01.主域名收集
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1.1.1" data-path="../../../01.渗透测试/01.信息收集/01.资产收集/01.主域名收集/01.ICP备案查询.html">
+            
+                <a href="../../../01.渗透测试/01.信息收集/01.资产收集/01.主域名收集/01.ICP备案查询.html">
+            
+                    
+                    01.ICP备案查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.1.1.2" data-path="../../../01.渗透测试/01.信息收集/01.资产收集/01.主域名收集/02.证书查询.html">
+            
+                <a href="../../../01.渗透测试/01.信息收集/01.资产收集/01.主域名收集/02.证书查询.html">
+            
+                    
+                    02.证书查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.1.1.3" data-path="../../../01.渗透测试/01.信息收集/01.资产收集/01.主域名收集/03.WHOIS-IP反查查询.html">
+            
+                <a href="../../../01.渗透测试/01.信息收集/01.资产收集/01.主域名收集/03.WHOIS-IP反查查询.html">
+            
+                    
+                    03.WHOIS-IP反查查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.1.1.4" data-path="../../../01.渗透测试/01.信息收集/01.资产收集/01.主域名收集/04.google查询.html">
+            
+                <a href="../../../01.渗透测试/01.信息收集/01.资产收集/01.主域名收集/04.google查询.html">
+            
+                    
+                    04.google查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" >
+            
+                <span>
+            
+                    
+                    02.WEB漏洞
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.2.1" data-path="../../../01.渗透测试/02.WEB漏洞/01.SQL注入/">
+            
+                <a href="../../../01.渗透测试/02.WEB漏洞/01.SQL注入/">
+            
+                    
+                    01.SQL注入
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.2.1.1" data-path="../../../01.渗透测试/02.WEB漏洞/01.SQL注入/01.注入判断.html">
+            
+                <a href="../../../01.渗透测试/02.WEB漏洞/01.SQL注入/01.注入判断.html">
+            
+                    
+                    01.注入判断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.1.2" data-path="../../../01.渗透测试/02.WEB漏洞/01.SQL注入/02.数据库识别.html">
+            
+                <a href="../../../01.渗透测试/02.WEB漏洞/01.SQL注入/02.数据库识别.html">
+            
+                    
+                    02.数据库识别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.1.3" data-path="../../../01.渗透测试/02.WEB漏洞/01.SQL注入/03.Oracle.html">
+            
+                <a href="../../../01.渗透测试/02.WEB漏洞/01.SQL注入/03.Oracle.html">
+            
+                    
+                    03.Oracle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.1.4" data-path="../../../01.渗透测试/02.WEB漏洞/01.SQL注入/04.MySQL.html">
+            
+                <a href="../../../01.渗透测试/02.WEB漏洞/01.SQL注入/04.MySQL.html">
+            
+                    
+                    04.MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.1.5" data-path="../../../01.渗透测试/02.WEB漏洞/01.SQL注入/05.PostgreSQL.html">
+            
+                <a href="../../../01.渗透测试/02.WEB漏洞/01.SQL注入/05.PostgreSQL.html">
+            
+                    
+                    05.PostgreSQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.1.6" data-path="../../../01.渗透测试/02.WEB漏洞/01.SQL注入/06.SQLite.html">
+            
+                <a href="../../../01.渗透测试/02.WEB漏洞/01.SQL注入/06.SQLite.html">
+            
+                    
+                    06.SQLite
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.1.7" data-path="../../../01.渗透测试/02.WEB漏洞/01.SQL注入/07.MSSQL.html">
+            
+                <a href="../../../01.渗透测试/02.WEB漏洞/01.SQL注入/07.MSSQL.html">
+            
+                    
+                    07.MSSQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.1.8" data-path="../../../01.渗透测试/02.WEB漏洞/01.SQL注入/08.HQL.html">
+            
+                <a href="../../../01.渗透测试/02.WEB漏洞/01.SQL注入/08.HQL.html">
+            
+                    
+                    08.HQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.1.9" data-path="../../../01.渗透测试/02.WEB漏洞/01.SQL注入/09.DB2.html">
+            
+                <a href="../../../01.渗透测试/02.WEB漏洞/01.SQL注入/09.DB2.html">
+            
+                    
+                    09.DB2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.1.10" data-path="../../../01.渗透测试/02.WEB漏洞/01.SQL注入/10.Cassandra.html">
+            
+                <a href="../../../01.渗透测试/02.WEB漏洞/01.SQL注入/10.Cassandra.html">
+            
+                    
+                    10.Cassandra
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.1.11" data-path="../../../01.渗透测试/02.WEB漏洞/01.SQL注入/11.BigQuery.html">
+            
+                <a href="../../../01.渗透测试/02.WEB漏洞/01.SQL注入/11.BigQuery.html">
+            
+                    
+                    11.BigQuery
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.2" data-path="../../../01.渗透测试/02.WEB漏洞/02.XSS注入/">
+            
+                <a href="../../../01.渗透测试/02.WEB漏洞/02.XSS注入/">
+            
+                    
+                    02.XSS注入
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.2.2.1" data-path="../../../01.渗透测试/02.WEB漏洞/02.XSS注入/01.XSSInAngular.html">
+            
+                <a href="../../../01.渗透测试/02.WEB漏洞/02.XSS注入/01.XSSInAngular.html">
+            
+                    
+                    01.XSSInAngular
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.2.2" data-path="../../../01.渗透测试/02.WEB漏洞/02.XSS注入/02.XSSWithRelativePathOverwrite.html">
+            
+                <a href="../../../01.渗透测试/02.WEB漏洞/02.XSS注入/02.XSSWithRelativePathOverwrite.html">
+            
+                    
+                    02.XSSWithRelativePathOverwrite
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" >
+            
+                <span>
+            
+                    
+                    03.工具使用
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.3.1" data-path="../../../01.渗透测试/03.工具使用/01.PathScan.html">
+            
+                <a href="../../../01.渗透测试/03.工具使用/01.PathScan.html">
+            
+                    
+                    01.PathScan
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3.2" data-path="../../../01.渗透测试/03.工具使用/02.oss-put.html">
+            
+                <a href="../../../01.渗透测试/03.工具使用/02.oss-put.html">
+            
+                    
+                    02.oss-put
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" >
+            
+                <span>
+            
+                    
+                    04.内网渗透
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.4.1" data-path="../../../01.渗透测试/04.内网渗透/02.kubernetes/">
+            
+                <a href="../../../01.渗透测试/04.内网渗透/02.kubernetes/">
+            
+                    
+                    02.kubernetes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.4.1.1" data-path="../../../01.渗透测试/04.内网渗透/02.kubernetes/02.容器逃逸的手法/">
+            
+                <a href="../../../01.渗透测试/04.内网渗透/02.kubernetes/02.容器逃逸的手法/">
+            
+                    
+                    02.容器逃逸的手法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4.1.2" data-path="../../../01.渗透测试/04.内网渗透/02.kubernetes/03.k8s下的各种未授权/">
+            
+                <a href="../../../01.渗透测试/04.内网渗透/02.kubernetes/03.k8s下的各种未授权/">
+            
+                    
+                    03.k8s下的各种未授权
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.4.1.2.1" data-path="../../../01.渗透测试/04.内网渗透/02.kubernetes/03.k8s下的各种未授权/01.ApiServer.html">
+            
+                <a href="../../../01.渗透测试/04.内网渗透/02.kubernetes/03.k8s下的各种未授权/01.ApiServer.html">
+            
+                    
+                    01.ApiServer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4.1.2.2" data-path="../../../01.渗透测试/04.内网渗透/02.kubernetes/03.k8s下的各种未授权/02.Etcd.html">
+            
+                <a href="../../../01.渗透测试/04.内网渗透/02.kubernetes/03.k8s下的各种未授权/02.Etcd.html">
+            
+                    
+                    02.Etcd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4.1.2.3" data-path="../../../01.渗透测试/04.内网渗透/02.kubernetes/03.k8s下的各种未授权/03.Kubelet.html">
+            
+                <a href="../../../01.渗透测试/04.内网渗透/02.kubernetes/03.k8s下的各种未授权/03.Kubelet.html">
+            
+                    
+                    03.Kubelet
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4.2" data-path="../../../01.渗透测试/04.内网渗透/03.k3s安装/">
+            
+                <a href="../../../01.渗透测试/04.内网渗透/03.k3s安装/">
+            
+                    
+                    03.k3s安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4.3" data-path="../../../01.渗透测试/04.内网渗透/01.MSF提权.html">
+            
+                <a href="../../../01.渗透测试/04.内网渗透/01.MSF提权.html">
+            
+                    
+                    01.MSF提权
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" >
+            
+                <span>
+            
+                    
+                    05.渗透手法
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.5.1" data-path="../../../01.渗透测试/05.渗透手法/01.某大学渗透测试/">
+            
+                <a href="../../../01.渗透测试/05.渗透手法/01.某大学渗透测试/">
+            
+                    
+                    01.某大学渗透测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5.2" data-path="../../../01.渗透测试/05.渗透手法/02.SpringBoot渗透/">
+            
+                <a href="../../../01.渗透测试/05.渗透手法/02.SpringBoot渗透/">
+            
+                    
+                    02.SpringBoot渗透
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" >
+            
+                <span>
+            
+                    
+                    06.免杀
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.6.1" data-path="../../../01.渗透测试/06.免杀/01.fscan免杀/">
+            
+                <a href="../../../01.渗透测试/06.免杀/01.fscan免杀/">
+            
+                    
+                    01.fscan免杀
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                    02.漏洞复现
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" >
+            
+                <span>
+            
+                    
+                    01.Thinkphp
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1.1" data-path="../../../02.漏洞复现/01.Thinkphp/01.Thinkphp5.0.22远程代码执行.html">
+            
+                <a href="../../../02.漏洞复现/01.Thinkphp/01.Thinkphp5.0.22远程代码执行.html">
+            
+                    
+                    01.Thinkphp5.0.22远程代码执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.2" data-path="../../../02.漏洞复现/01.Thinkphp/02.Thinkphp6.0.12反序列化.html">
+            
+                <a href="../../../02.漏洞复现/01.Thinkphp/02.Thinkphp6.0.12反序列化.html">
+            
+                    
+                    02.Thinkphp6.0.12反序列化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.3" data-path="../../../02.漏洞复现/01.Thinkphp/03.Thinkphpv6.0.13多语言Rce.html">
+            
+                <a href="../../../02.漏洞复现/01.Thinkphp/03.Thinkphpv6.0.13多语言Rce.html">
+            
+                    
+                    03.Thinkphpv6.0.13多语言Rce
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.4" data-path="../../../02.漏洞复现/01.Thinkphp/04.CVE-2022-38352.html">
+            
+                <a href="../../../02.漏洞复现/01.Thinkphp/04.CVE-2022-38352.html">
+            
+                    
+                    04.CVE-2022-38352
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" >
+            
+                <span>
+            
+                    
+                    02.V2board
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.2.1" data-path="../../../02.漏洞复现/02.V2board/01.privilege-escalation-1.6.html">
+            
+                <a href="../../../02.漏洞复现/02.V2board/01.privilege-escalation-1.6.html">
+            
+                    
+                    01.privilege-escalation-1.6
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" >
+            
+                <span>
+            
+                    
+                    03.Trojanpanel
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.3.1" data-path="../../../02.漏洞复现/03.Trojanpanel/01.TrojanPanel未授权添加用户.html">
+            
+                <a href="../../../02.漏洞复现/03.Trojanpanel/01.TrojanPanel未授权添加用户.html">
+            
+                    
+                    01.TrojanPanel未授权添加用户
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" >
+            
+                <span>
+            
+                    
+                    04.cve
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.4.1" >
+            
+                <span>
+            
+                    
+                    2023
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.4.1.1" data-path="../../../02.漏洞复现/04.cve/2023/01.CVE-2023-33246.html">
+            
+                <a href="../../../02.漏洞复现/04.cve/2023/01.CVE-2023-33246.html">
+            
+                    
+                    01.CVE-2023-33246
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4.1.2" data-path="../../../02.漏洞复现/04.cve/2023/02.CVE-2023-33979.html">
+            
+                <a href="../../../02.漏洞复现/04.cve/2023/02.CVE-2023-33979.html">
+            
+                    
+                    02.CVE-2023-33979
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" >
+            
+                <span>
+            
+                    
+                    03.代码审计
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" >
+            
+                <span>
+            
+                    
+                    01.Java
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1.1" >
+            
+                <span>
+            
+                    
+                    01.基础审计
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1.1.1" data-path="../../../03.代码审计/01.Java/01.基础审计/01.JAVA反序列化漏洞.html">
+            
+                <a href="../../../03.代码审计/01.Java/01.基础审计/01.JAVA反序列化漏洞.html">
+            
+                    
+                    01.JAVA反序列化漏洞
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.2" >
+            
+                <span>
+            
+                    
+                    02.ysoserial利用链
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1.2.1" data-path="../../../03.代码审计/01.Java/02.ysoserial利用链/01.CC1-7/">
+            
+                <a href="../../../03.代码审计/01.Java/02.ysoserial利用链/01.CC1-7/">
+            
+                    
+                    01.CC1-7
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1.2.1.1" data-path="../../../03.代码审计/01.Java/02.ysoserial利用链/01.CC1-7/01.CC1.html">
+            
+                <a href="../../../03.代码审计/01.Java/02.ysoserial利用链/01.CC1-7/01.CC1.html">
+            
+                    
+                    01.CC1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.2.1.2" data-path="../../../03.代码审计/01.Java/02.ysoserial利用链/01.CC1-7/02.CC2.html">
+            
+                <a href="../../../03.代码审计/01.Java/02.ysoserial利用链/01.CC1-7/02.CC2.html">
+            
+                    
+                    02.CC2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.2.1.3" data-path="../../../03.代码审计/01.Java/02.ysoserial利用链/01.CC1-7/03.CC3.html">
+            
+                <a href="../../../03.代码审计/01.Java/02.ysoserial利用链/01.CC1-7/03.CC3.html">
+            
+                    
+                    03.CC3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.2.1.4" data-path="../../../03.代码审计/01.Java/02.ysoserial利用链/01.CC1-7/06.CC6.html">
+            
+                <a href="../../../03.代码审计/01.Java/02.ysoserial利用链/01.CC1-7/06.CC6.html">
+            
+                    
+                    06.CC6
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.2.2" data-path="../../../03.代码审计/01.Java/02.ysoserial利用链/02.URLDNS.html">
+            
+                <a href="../../../03.代码审计/01.Java/02.ysoserial利用链/02.URLDNS.html">
+            
+                    
+                    02.URLDNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" >
+            
+                <span>
+            
+                    
+                    02.PHP
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.2.1" data-path="../../../03.代码审计/02.PHP/01.PHP代码审计基础知识.html">
+            
+                <a href="../../../03.代码审计/02.PHP/01.PHP代码审计基础知识.html">
+            
+                    
+                    01.PHP代码审计基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    04.未分类的
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" >
+            
+                <span>
+            
+                    
+                    01.代理类
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1.1" data-path="../../../04.未分类的/01.代理类/01.基于vless的科学上网.html">
+            
+                <a href="../../../04.未分类的/01.代理类/01.基于vless的科学上网.html">
+            
+                    
+                    01.基于vless的科学上网
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.1.2" data-path="../../../04.未分类的/01.代理类/02.使用云函数做代理.html">
+            
+                <a href="../../../04.未分类的/01.代理类/02.使用云函数做代理.html">
+            
+                    
+                    02.使用云函数做代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.1.3" data-path="../../../04.未分类的/01.代理类/03.使用go制作简易代理类.html">
+            
+                <a href="../../../04.未分类的/01.代理类/03.使用go制作简易代理类.html">
+            
+                    
+                    03.使用go制作简易代理类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.1.4" data-path="../../../04.未分类的/01.代理类/04.基于vless的科学上网-自动化.html">
+            
+                <a href="../../../04.未分类的/01.代理类/04.基于vless的科学上网-自动化.html">
+            
+                    
+                    04.基于vless的科学上网-自动化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../../../04.未分类的/02.gitbook搭建过程.html">
+            
+                <a href="../../../04.未分类的/02.gitbook搭建过程.html">
+            
+                    
+                    02.gitbook搭建过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../../../04.未分类的/03.FoFa爬虫API进一步研究.html">
+            
+                <a href="../../../04.未分类的/03.FoFa爬虫API进一步研究.html">
+            
+                    
+                    03.FoFa爬虫API进一步研究
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    05.语言知识
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" >
+            
+                <span>
+            
+                    
+                    02.Python
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.1" data-path="../../02.Python/01.Python基础编程/">
+            
+                <a href="../../02.Python/01.Python基础编程/">
+            
+                    
+                    01.Python基础编程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.1.1" data-path="../../02.Python/01.Python基础编程/01.Python-介绍.html">
+            
+                <a href="../../02.Python/01.Python基础编程/01.Python-介绍.html">
+            
+                    
+                    01.Python-介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.2" data-path="../../02.Python/01.Python基础编程/02.Python-环境搭建.html">
+            
+                <a href="../../02.Python/01.Python基础编程/02.Python-环境搭建.html">
+            
+                    
+                    02.Python-环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.3" data-path="../../02.Python/01.Python基础编程/03.Python-中文编码.html">
+            
+                <a href="../../02.Python/01.Python基础编程/03.Python-中文编码.html">
+            
+                    
+                    03.Python-中文编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.4" data-path="../../02.Python/01.Python基础编程/04.Python-基础语法.html">
+            
+                <a href="../../02.Python/01.Python基础编程/04.Python-基础语法.html">
+            
+                    
+                    04.Python-基础语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.5" data-path="../../02.Python/01.Python基础编程/05.Python-变量类型.html">
+            
+                <a href="../../02.Python/01.Python基础编程/05.Python-变量类型.html">
+            
+                    
+                    05.Python-变量类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.6" data-path="../../02.Python/01.Python基础编程/06.Python-运算符.html">
+            
+                <a href="../../02.Python/01.Python基础编程/06.Python-运算符.html">
+            
+                    
+                    06.Python-运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.7" data-path="../../02.Python/01.Python基础编程/07.Python-条件语句.html">
+            
+                <a href="../../02.Python/01.Python基础编程/07.Python-条件语句.html">
+            
+                    
+                    07.Python-条件语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.8" data-path="../../02.Python/01.Python基础编程/08.Python-循环语句.html">
+            
+                <a href="../../02.Python/01.Python基础编程/08.Python-循环语句.html">
+            
+                    
+                    08.Python-循环语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.9" data-path="../../02.Python/01.Python基础编程/09.Python-While循环语句.html">
+            
+                <a href="../../02.Python/01.Python基础编程/09.Python-While循环语句.html">
+            
+                    
+                    09.Python-While循环语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.10" data-path="../../02.Python/01.Python基础编程/10.Python-For循环语句.html">
+            
+                <a href="../../02.Python/01.Python基础编程/10.Python-For循环语句.html">
+            
+                    
+                    10.Python-For循环语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.11" data-path="../../02.Python/01.Python基础编程/11.Python-循环嵌套.html">
+            
+                <a href="../../02.Python/01.Python基础编程/11.Python-循环嵌套.html">
+            
+                    
+                    11.Python-循环嵌套
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.12" data-path="../../02.Python/01.Python基础编程/12.Python-break语句.html">
+            
+                <a href="../../02.Python/01.Python基础编程/12.Python-break语句.html">
+            
+                    
+                    12.Python-break语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.13" data-path="../../02.Python/01.Python基础编程/13.Python-continue语句.html">
+            
+                <a href="../../02.Python/01.Python基础编程/13.Python-continue语句.html">
+            
+                    
+                    13.Python-continue语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.14" data-path="../../02.Python/01.Python基础编程/14.Python-pass语句.html">
+            
+                <a href="../../02.Python/01.Python基础编程/14.Python-pass语句.html">
+            
+                    
+                    14.Python-pass语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.15" data-path="../../02.Python/01.Python基础编程/15.Python-Number(数字">
+            
+                <span>
+            
+                    
+                    15.Python-Number(数字)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.16" data-path="../../02.Python/01.Python基础编程/16.Python-字符串.html">
+            
+                <a href="../../02.Python/01.Python基础编程/16.Python-字符串.html">
+            
+                    
+                    16.Python-字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.17" data-path="../../02.Python/01.Python基础编程/17.Python-列表(List">
+            
+                <span>
+            
+                    
+                    17.Python-列表(List)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.18" data-path="../../02.Python/01.Python基础编程/18.Python-元组.html">
+            
+                <a href="../../02.Python/01.Python基础编程/18.Python-元组.html">
+            
+                    
+                    18.Python-元组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.19" data-path="../../02.Python/01.Python基础编程/19.Python-字典(Dictonary">
+            
+                <span>
+            
+                    
+                    19.Python-字典(Dictonary)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.20" data-path="../../02.Python/01.Python基础编程/20.Python-日期和时间.html">
+            
+                <a href="../../02.Python/01.Python基础编程/20.Python-日期和时间.html">
+            
+                    
+                    20.Python-日期和时间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.21" data-path="../../02.Python/01.Python基础编程/21.Python-函数.html">
+            
+                <a href="../../02.Python/01.Python基础编程/21.Python-函数.html">
+            
+                    
+                    21.Python-函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.22" data-path="../../02.Python/01.Python基础编程/22.Python-模块.html">
+            
+                <a href="../../02.Python/01.Python基础编程/22.Python-模块.html">
+            
+                    
+                    22.Python-模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.23" data-path="../../02.Python/01.Python基础编程/23.Python-文件IO.html">
+            
+                <a href="../../02.Python/01.Python基础编程/23.Python-文件IO.html">
+            
+                    
+                    23.Python-文件IO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.24" data-path="../../02.Python/01.Python基础编程/24.Python-File方法.html">
+            
+                <a href="../../02.Python/01.Python基础编程/24.Python-File方法.html">
+            
+                    
+                    24.Python-File方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.25" data-path="../../02.Python/01.Python基础编程/25.Python-异常处理.html">
+            
+                <a href="../../02.Python/01.Python基础编程/25.Python-异常处理.html">
+            
+                    
+                    25.Python-异常处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.26" data-path="../../02.Python/01.Python基础编程/26.Python-OS-文件目录方法.html">
+            
+                <a href="../../02.Python/01.Python基础编程/26.Python-OS-文件目录方法.html">
+            
+                    
+                    26.Python-OS-文件目录方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.1.27" data-path="../../02.Python/01.Python基础编程/27.Python-内置函数.html">
+            
+                <a href="../../02.Python/01.Python基础编程/27.Python-内置函数.html">
+            
+                    
+                    27.Python-内置函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2" data-path="../../02.Python/02.Python高级编程/">
+            
+                <a href="../../02.Python/02.Python高级编程/">
+            
+                    
+                    02.Python高级编程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.2.1" data-path="../../02.Python/02.Python高级编程/01.Python-面向对象.html">
+            
+                <a href="../../02.Python/02.Python高级编程/01.Python-面向对象.html">
+            
+                    
+                    01.Python-面向对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2.2" data-path="../../02.Python/02.Python高级编程/02.Python-正则表达式.html">
+            
+                <a href="../../02.Python/02.Python高级编程/02.Python-正则表达式.html">
+            
+                    
+                    02.Python-正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2.3" data-path="../../02.Python/02.Python高级编程/03.Python-CGI编程.html">
+            
+                <a href="../../02.Python/02.Python高级编程/03.Python-CGI编程.html">
+            
+                    
+                    03.Python-CGI编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2.4" data-path="../../02.Python/02.Python高级编程/04.Python-MySQL.html">
+            
+                <a href="../../02.Python/02.Python高级编程/04.Python-MySQL.html">
+            
+                    
+                    04.Python-MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2.5" data-path="../../02.Python/02.Python高级编程/05.Python-网络编程.html">
+            
+                <a href="../../02.Python/02.Python高级编程/05.Python-网络编程.html">
+            
+                    
+                    05.Python-网络编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2.6" data-path="../../02.Python/02.Python高级编程/06.Python-SMTP.html">
+            
+                <a href="../../02.Python/02.Python高级编程/06.Python-SMTP.html">
+            
+                    
+                    06.Python-SMTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2.7" data-path="../../02.Python/02.Python高级编程/07.Python-多线程.html">
+            
+                <a href="../../02.Python/02.Python高级编程/07.Python-多线程.html">
+            
+                    
+                    07.Python-多线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2.8" data-path="../../02.Python/02.Python高级编程/08.Python-XML解析.html">
+            
+                <a href="../../02.Python/02.Python高级编程/08.Python-XML解析.html">
+            
+                    
+                    08.Python-XML解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2.9" data-path="../../02.Python/02.Python高级编程/09.Python-JSON解析.html">
+            
+                <a href="../../02.Python/02.Python高级编程/09.Python-JSON解析.html">
+            
+                    
+                    09.Python-JSON解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2.10" data-path="../../02.Python/02.Python高级编程/10.Python-GUI编程(PyQt">
+            
+                <span>
+            
+                    
+                    10.Python-GUI编程(PyQt)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2.11" data-path="../../02.Python/02.Python高级编程/11.Python-2.x-3.x版本区别.html">
+            
+                <a href="../../02.Python/02.Python高级编程/11.Python-2.x-3.x版本区别.html">
+            
+                    
+                    11.Python-2.x-3.x版本区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2.12" data-path="../../02.Python/02.Python高级编程/12.Python-IDE.html">
+            
+                <a href="../../02.Python/02.Python高级编程/12.Python-IDE.html">
+            
+                    
+                    12.Python-IDE
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3" >
+            
+                <span>
+            
+                    
+                    03.Python模块学习
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.3.1" >
+            
+                <span>
+            
+                    
+                    01.Python-GUI编程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1" data-path="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/">
+            
+                <a href="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/">
+            
+                    
+                    01.Python-PyQt6
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.1" data-path="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/01.开始.html">
+            
+                <a href="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/01.开始.html">
+            
+                    
+                    01.开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.2" data-path="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/02.PyQt-简介.html">
+            
+                <a href="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/02.PyQt-简介.html">
+            
+                    
+                    02.PyQt-简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.3" data-path="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/03.PyQt6-日期和时间.html">
+            
+                <a href="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/03.PyQt6-日期和时间.html">
+            
+                    
+                    03.PyQt6-日期和时间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.4" data-path="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/04.PyQt6-第一个程序.html">
+            
+                <a href="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/04.PyQt6-第一个程序.html">
+            
+                    
+                    04.PyQt6-第一个程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.5" data-path="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/05.PyQt6-菜单和工具栏.html">
+            
+                <a href="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/05.PyQt6-菜单和工具栏.html">
+            
+                    
+                    05.PyQt6-菜单和工具栏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.6" data-path="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/06.PyQt6-布局管理.html">
+            
+                <a href="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/06.PyQt6-布局管理.html">
+            
+                    
+                    06.PyQt6-布局管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.7" data-path="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/07.PyQt6-事件与信号.html">
+            
+                <a href="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/07.PyQt6-事件与信号.html">
+            
+                    
+                    07.PyQt6-事件与信号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.8" data-path="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/08.PyQt6-对话框.html">
+            
+                <a href="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/08.PyQt6-对话框.html">
+            
+                    
+                    08.PyQt6-对话框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.9" data-path="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/09.PyQt6-组件一.html">
+            
+                <a href="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/09.PyQt6-组件一.html">
+            
+                    
+                    09.PyQt6-组件一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.10" data-path="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/10.PyQt6-组件二.html">
+            
+                <a href="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/10.PyQt6-组件二.html">
+            
+                    
+                    10.PyQt6-组件二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.11" data-path="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/11.PyQt6-拖拽操作.html">
+            
+                <a href="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/11.PyQt6-拖拽操作.html">
+            
+                    
+                    11.PyQt6-拖拽操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.12" data-path="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/12.PyQt6-绘制.html">
+            
+                <a href="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/12.PyQt6-绘制.html">
+            
+                    
+                    12.PyQt6-绘制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.13" data-path="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/13..PyQt6-自定义部件.html">
+            
+                <a href="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/13..PyQt6-自定义部件.html">
+            
+                    
+                    13..PyQt6-自定义部件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.1.1.14" data-path="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/14.例子.html">
+            
+                <a href="../../02.Python/03.Python模块学习/01.Python-GUI编程/01.Python-PyQt6/14.例子.html">
+            
+                    
+                    14.例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.2" >
+            
+                <span>
+            
+                    
+                    02.Python-爬虫
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.3.2.1" data-path="../../02.Python/03.Python模块学习/02.Python-爬虫/01.Python-Beautiful-Soup4.html">
+            
+                <a href="../../02.Python/03.Python模块学习/02.Python-爬虫/01.Python-Beautiful-Soup4.html">
+            
+                    
+                    01.Python-Beautiful-Soup4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.2.2" data-path="../../02.Python/03.Python模块学习/02.Python-爬虫/02.Python-bs4-应用篇.html">
+            
+                <a href="../../02.Python/03.Python模块学习/02.Python-爬虫/02.Python-bs4-应用篇.html">
+            
+                    
+                    02.Python-bs4-应用篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.3" >
+            
+                <span>
+            
+                    
+                    03.Python-http请求库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.3.3.1" data-path="../../02.Python/03.Python模块学习/03.Python-http请求库/01.Python-Requests/">
+            
+                <a href="../../02.Python/03.Python模块学习/03.Python-http请求库/01.Python-Requests/">
+            
+                    
+                    01.Python-Requests
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.3.3.1.1" data-path="../../02.Python/03.Python模块学习/03.Python-http请求库/01.Python-Requests/01.Python-requests库-学习笔记.html">
+            
+                <a href="../../02.Python/03.Python模块学习/03.Python-http请求库/01.Python-Requests/01.Python-requests库-学习笔记.html">
+            
+                    
+                    01.Python-requests库-学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.3.2" data-path="../../02.Python/03.Python模块学习/03.Python-http请求库/02.Python-hack-requests/">
+            
+                <a href="../../02.Python/03.Python模块学习/03.Python-http请求库/02.Python-hack-requests/">
+            
+                    
+                    02.Python-hack-requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.3.3.3" data-path="../../02.Python/03.Python模块学习/03.Python-http请求库/03.Python-aiohttp/">
+            
+                <a href="../../02.Python/03.Python模块学习/03.Python-http请求库/03.Python-aiohttp/">
+            
+                    
+                    03.Python-aiohttp
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.3.3.3.1" data-path="../../02.Python/03.Python模块学习/03.Python-http请求库/03.Python-aiohttp/01.Python-aiohttp.html">
+            
+                <a href="../../02.Python/03.Python模块学习/03.Python-http请求库/03.Python-aiohttp/01.Python-aiohttp.html">
+            
+                    
+                    01.Python-aiohttp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" >
+            
+                <span>
+            
+                    
+                    03.Go
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    01.Go基础编程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.2.1.1" data-path="01.GoLang-开发环境配置.html">
+            
+                <a href="01.GoLang-开发环境配置.html">
+            
+                    
+                    01.GoLang-开发环境配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.2" data-path="02.GoLang-变量常量.html">
+            
+                <a href="02.GoLang-变量常量.html">
+            
+                    
+                    02.GoLang-变量常量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.3" data-path="03.GoLang-数据类型.html">
+            
+                <a href="03.GoLang-数据类型.html">
+            
+                    
+                    03.GoLang-数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.4" data-path="04.GoLang-运算符.html">
+            
+                <a href="04.GoLang-运算符.html">
+            
+                    
+                    04.GoLang-运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.5" data-path="05.GoLang-流程控制.html">
+            
+                <a href="05.GoLang-流程控制.html">
+            
+                    
+                    05.GoLang-流程控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.6" data-path="06.GoLang-数组.html">
+            
+                <a href="06.GoLang-数组.html">
+            
+                    
+                    06.GoLang-数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.7" data-path="07.GoLang-切片.html">
+            
+                <a href="07.GoLang-切片.html">
+            
+                    
+                    07.GoLang-切片
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.8" data-path="08.GoLang-指针.html">
+            
+                <a href="08.GoLang-指针.html">
+            
+                    
+                    08.GoLang-指针
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.9" data-path="09.GoLang-map.html">
+            
+                <a href="09.GoLang-map.html">
+            
+                    
+                    09.GoLang-map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.10" data-path="10.GoLang-函数.html">
+            
+                <a href="10.GoLang-函数.html">
+            
+                    
+                    10.GoLang-函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.11" data-path="11.GoLang-文件io.html">
+            
+                <a href="11.GoLang-文件io.html">
+            
+                    
+                    11.GoLang-文件io
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.12" data-path="12.Golang-操作MySQL.html">
+            
+                <a href="12.Golang-操作MySQL.html">
+            
+                    
+                    12.Golang-操作MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.13" data-path="13.GoLang-操作Redis.html">
+            
+                <a href="13.GoLang-操作Redis.html">
+            
+                    
+                    13.GoLang-操作Redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.14" data-path="14.GoLang-结构体.html">
+            
+                <a href="14.GoLang-结构体.html">
+            
+                    
+                    14.GoLang-结构体
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.15" data-path="15.GoLang-包.html">
+            
+                <a href="15.GoLang-包.html">
+            
+                    
+                    15.GoLang-包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.16" data-path="16.GoLang-接口.html">
+            
+                <a href="16.GoLang-接口.html">
+            
+                    
+                    16.GoLang-接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.17" data-path="17.GoLang-反射.html">
+            
+                <a href="17.GoLang-反射.html">
+            
+                    
+                    17.GoLang-反射
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.5.2.1.18" data-path="18.GoLang-并发.html">
+            
+                <a href="18.GoLang-并发.html">
+            
+                    
+                    18.GoLang-并发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.1.19" data-path="19.GoLang-网络编程.html">
+            
+                <a href="19.GoLang-网络编程.html">
+            
+                    
+                    19.GoLang-网络编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.2" >
+            
+                <span>
+            
+                    
+                    02.Go模块学习
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.2.2.1" data-path="../02.Go模块学习/01.GoLang-fmt.html">
+            
+                <a href="../02.Go模块学习/01.GoLang-fmt.html">
+            
+                    
+                    01.GoLang-fmt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.2.2" data-path="../02.Go模块学习/02.GoLand-net.http.html">
+            
+                <a href="../02.Go模块学习/02.GoLand-net.http.html">
+            
+                    
+                    02.GoLand-net.http
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.2.3" data-path="../02.Go模块学习/03.GoLang-goflags.html">
+            
+                <a href="../02.Go模块学习/03.GoLang-goflags.html">
+            
+                    
+                    03.GoLang-goflags
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.3" >
+            
+                <span>
+            
+                    
+                    03.Go代码案例
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.2.3.1" >
+            
+                <span>
+            
+                    
+                    01.GoLang-编写POC
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.2.3.1.1" data-path="../03.Go代码案例/01.GoLang-编写POC/01.GoLang-CVE-2022-26134.html">
+            
+                <a href="../03.Go代码案例/01.GoLang-编写POC/01.GoLang-CVE-2022-26134.html">
+            
+                    
+                    01.GoLang-CVE-2022-26134
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.3.1.2" data-path="../03.Go代码案例/01.GoLang-编写POC/02.GoLang-Docker-Daemon-Api-Rce.html">
+            
+                <a href="../03.Go代码案例/01.GoLang-编写POC/02.GoLang-Docker-Daemon-Api-Rce.html">
+            
+                    
+                    02.GoLang-Docker-Daemon-Api-Rce
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.3.2" data-path="../03.Go代码案例/02.GoLang-简易http代理.html">
+            
+                <a href="../03.Go代码案例/02.GoLang-简易http代理.html">
+            
+                    
+                    02.GoLang-简易http代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" >
+            
+                <span>
+            
+                    
+                    06.pathScan-doc
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="../../../06.pathScan-doc/01.下载安装.html">
+            
+                <a href="../../../06.pathScan-doc/01.下载安装.html">
+            
+                    
+                    01.下载安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" data-path="../../../06.pathScan-doc/02.初始化.html">
+            
+                <a href="../../../06.pathScan-doc/02.初始化.html">
+            
+                    
+                    02.初始化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.3" data-path="../../../06.pathScan-doc/03.命令参数.html">
+            
+                <a href="../../../06.pathScan-doc/03.命令参数.html">
+            
+                    
+                    03.命令参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.4" data-path="../../../06.pathScan-doc/04.扫描模式.html">
+            
+                <a href="../../../06.pathScan-doc/04.扫描模式.html">
+            
+                    
+                    04.扫描模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" >
+            
+                <span>
+            
+                    
+                    07.CTF
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.7.1" >
+            
+                <span>
+            
+                    
+                    01.Knownsec
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.7.1.1" data-path="../../../07.CTF/01.Knownsec/01.knownsec-ctf-09/">
+            
+                <a href="../../../07.CTF/01.Knownsec/01.knownsec-ctf-09/">
+            
+                    
+                    01.knownsec-ctf-09
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.2" >
+            
+                <span>
+            
+                    
+                    02.奇技淫巧
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.7.2.1" data-path="../../../07.CTF/02.奇技淫巧/01.PHP利用GNU%20C Iconv将文件读取变成RCE（CVE-2024-2961）.md">
+            
+                <span>
+            
+                    
+                    01.PHP利用GNU C Iconv将文件读取变成RCE（CVE-2024-2961）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.2.2" data-path="../../../07.CTF/02.奇技淫巧/02.利用shell脚本变量构造无字母数字命令.html">
+            
+                <a href="../../../07.CTF/02.奇技淫巧/02.利用shell脚本变量构造无字母数字命令.html">
+            
+                    
+                    02.利用shell脚本变量构造无字母数字命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.2.3" data-path="../../../07.CTF/02.奇技淫巧/03.FILTERS的任意格式输出.html">
+            
+                <a href="../../../07.CTF/02.奇技淫巧/03.FILTERS的任意格式输出.html">
+            
+                    
+                    03.FILTERS的任意格式输出
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../../友情链接.html">
+            
+                <a href="../../../../友情链接.html">
+            
+                    
+                    友情链接
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../../更新日志.html">
+            
+                <a href="../../../../更新日志.html">
+            
+                    
+                    更新日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+        </nav>
+        
+        
+    </div>
+
+    <!-- Content nav -->
+    <div class="book-anchor">
+        <div class="book-anchor-title">ON THIS PAGE</div>
+        <div class="book-anchor-body">
+
+        </div>
+    </div>
+
+    <div class="book-body">
+        
+        <div class="body-inner">
+            
+            
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../.." >18.GoLang-并发</a>
+    </h1>
+</div>
+
+
+
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                    <section class="normal markdown-section">
+                        
+                        <h1 id="go&#x8BED;&#x8A00;&#x57FA;&#x7840;&#x4E4B;&#x5E76;&#x53D1;">Go&#x8BED;&#x8A00;&#x57FA;&#x7840;&#x4E4B;&#x5E76;&#x53D1;</h1>
+<p>&#x5E76;&#x53D1;&#x7F16;&#x7A0B;&#x5728;&#x5F53;&#x524D;&#x8F6F;&#x4EF6;&#x9886;&#x57DF;&#x662F;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x968F;&#x7740;CPU&#x7B49;&#x786C;&#x4EF6;&#x7684;&#x53D1;&#x5C55;&#xFF0C;&#x6211;&#x4EEC;&#x65E0;&#x4E00;&#x4F8B;&#x5916;&#x7684;&#x60F3;&#x8BA9;&#x6211;&#x4EEC;&#x7684;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x7684;&#x5FEB;&#x4E00;&#x70B9;&#x3001;&#x518D;&#x5FEB;&#x4E00;&#x70B9;&#x3002;Go&#x8BED;&#x8A00;&#x5728;&#x8BED;&#x8A00;&#x5C42;&#x9762;&#x5929;&#x751F;&#x652F;&#x6301;&#x5E76;&#x53D1;&#xFF0C;&#x5145;&#x5206;&#x5229;&#x7528;&#x73B0;&#x4EE3;CPU&#x7684;&#x591A;&#x6838;&#x4F18;&#x52BF;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;Go&#x8BED;&#x8A00;&#x80FD;&#x591F;&#x5927;&#x8303;&#x56F4;&#x6D41;&#x884C;&#x7684;&#x4E00;&#x4E2A;&#x5F88;&#x91CD;&#x8981;&#x7684;&#x539F;&#x56E0;&#x3002;</p>
+<h2 id="&#x57FA;&#x672C;&#x6982;&#x5FF5;">&#x57FA;&#x672C;&#x6982;&#x5FF5;</h2>
+<p>&#x9996;&#x5148;&#x6211;&#x4EEC;&#x5148;&#x6765;&#x4E86;&#x89E3;&#x51E0;&#x4E2A;&#x4E0E;&#x5E76;&#x53D1;&#x7F16;&#x7A0B;&#x76F8;&#x5173;&#x7684;&#x57FA;&#x672C;&#x6982;&#x5FF5;&#x3002;</p>
+<h3 id="&#x4E32;&#x884C;&#x3001;&#x5E76;&#x53D1;&#x4E0E;&#x5E76;&#x884C;">&#x4E32;&#x884C;&#x3001;&#x5E76;&#x53D1;&#x4E0E;&#x5E76;&#x884C;</h3>
+<p>&#x4E32;&#x884C;&#xFF1A;&#x6211;&#x4EEC;&#x90FD;&#x662F;&#x5148;&#x8BFB;&#x5C0F;&#x5B66;&#xFF0C;&#x5C0F;&#x5B66;&#x6BD5;&#x4E1A;&#x540E;&#x518D;&#x8BFB;&#x521D;&#x4E2D;&#xFF0C;&#x8BFB;&#x5B8C;&#x521D;&#x4E2D;&#x518D;&#x8BFB;&#x9AD8;&#x4E2D;&#x3002;</p>
+<p>&#x5E76;&#x53D1;&#xFF1A;&#x540C;&#x4E00;&#x65F6;&#x95F4;&#x6BB5;&#x5185;&#x6267;&#x884C;&#x591A;&#x4E2A;&#x4EFB;&#x52A1;&#xFF08;&#x4F60;&#x5728;&#x7528;&#x5FAE;&#x4FE1;&#x548C;&#x4E24;&#x4E2A;&#x5973;&#x670B;&#x53CB;&#x804A;&#x5929;&#xFF09;&#x3002;</p>
+<p>&#x5E76;&#x884C;&#xFF1A;&#x540C;&#x4E00;&#x65F6;&#x523B;&#x6267;&#x884C;&#x591A;&#x4E2A;&#x4EFB;&#x52A1;&#xFF08;&#x4F60;&#x548C;&#x4F60;&#x670B;&#x53CB;&#x90FD;&#x5728;&#x7528;&#x5FAE;&#x4FE1;&#x548C;&#x5973;&#x670B;&#x53CB;&#x804A;&#x5929;&#xFF09;&#x3002;</p>
+<h3 id="&#x8FDB;&#x7A0B;&#x3001;&#x7EBF;&#x7A0B;&#x548C;&#x534F;&#x7A0B;">&#x8FDB;&#x7A0B;&#x3001;&#x7EBF;&#x7A0B;&#x548C;&#x534F;&#x7A0B;</h3>
+<p>&#x8FDB;&#x7A0B;&#xFF08;process&#xFF09;&#xFF1A;&#x7A0B;&#x5E8F;&#x5728;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x4E00;&#x6B21;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#xFF0C;&#x7CFB;&#x7EDF;&#x8FDB;&#x884C;&#x8D44;&#x6E90;&#x5206;&#x914D;&#x548C;&#x8C03;&#x5EA6;&#x7684;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x5355;&#x4F4D;&#x3002;</p>
+<p>&#x7EBF;&#x7A0B;&#xFF08;thread&#xFF09;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x57FA;&#x4E8E;&#x8FDB;&#x7A0B;&#x5F00;&#x542F;&#x7684;&#x8F7B;&#x91CF;&#x7EA7;&#x8FDB;&#x7A0B;&#xFF0C;&#x662F;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8C03;&#x5EA6;&#x6267;&#x884C;&#x7684;&#x6700;&#x5C0F;&#x5355;&#x4F4D;&#x3002;</p>
+<p>&#x534F;&#x7A0B;&#xFF08;coroutine&#xFF09;&#xFF1A;&#x975E;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x63D0;&#x4F9B;&#x800C;&#x662F;&#x7531;&#x7528;&#x6237;&#x81EA;&#x884C;&#x521B;&#x5EFA;&#x548C;&#x63A7;&#x5236;&#x7684;&#x7528;&#x6237;&#x6001;&#x2018;&#x7EBF;&#x7A0B;&#x2019;&#xFF0C;&#x6BD4;&#x7EBF;&#x7A0B;&#x66F4;&#x8F7B;&#x91CF;&#x7EA7;&#x3002;</p>
+<h3 id="&#x5E76;&#x53D1;&#x6A21;&#x578B;">&#x5E76;&#x53D1;&#x6A21;&#x578B;</h3>
+<p>&#x4E1A;&#x754C;&#x5C06;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x5E76;&#x53D1;&#x7F16;&#x7A0B;&#x603B;&#x7ED3;&#x5F52;&#x7EB3;&#x4E3A;&#x5404;&#x5F0F;&#x5404;&#x6837;&#x7684;&#x5E76;&#x53D1;&#x6A21;&#x578B;&#xFF0C;&#x5E38;&#x89C1;&#x7684;&#x5E76;&#x53D1;&#x6A21;&#x578B;&#x6709;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#xFF1A;</p>
+<ul>
+<li>&#x7EBF;&#x7A0B;&amp;&#x9501;&#x6A21;&#x578B;</li>
+<li>Actor&#x6A21;&#x578B;</li>
+<li>CSP&#x6A21;&#x578B;</li>
+<li>Fork&amp;Join&#x6A21;&#x578B;</li>
+</ul>
+<p>Go&#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x5E76;&#x53D1;&#x7A0B;&#x5E8F;&#x4E3B;&#x8981;&#x662F;&#x901A;&#x8FC7;&#x57FA;&#x4E8E;CSP&#xFF08;communicating sequential processes&#xFF09;&#x7684;goroutine&#x548C;channel&#x6765;&#x5B9E;&#x73B0;&#xFF0C;&#x5F53;&#x7136;&#x4E5F;&#x652F;&#x6301;&#x4F7F;&#x7528;&#x4F20;&#x7EDF;&#x7684;&#x591A;&#x7EBF;&#x7A0B;&#x5171;&#x4EAB;&#x5185;&#x5B58;&#x7684;&#x5E76;&#x53D1;&#x65B9;&#x5F0F;&#x3002;</p>
+<h2 id="goroutine">goroutine</h2>
+<p>Goroutine &#x662F; Go &#x8BED;&#x8A00;&#x652F;&#x6301;&#x5E76;&#x53D1;&#x7684;&#x6838;&#x5FC3;&#xFF0C;&#x5728;&#x4E00;&#x4E2A;Go&#x7A0B;&#x5E8F;&#x4E2D;&#x540C;&#x65F6;&#x521B;&#x5EFA;&#x6210;&#x767E;&#x4E0A;&#x5343;&#x4E2A;goroutine&#x662F;&#x975E;&#x5E38;&#x666E;&#x904D;&#x7684;&#xFF0C;&#x4E00;&#x4E2A;goroutine&#x4F1A;&#x4EE5;&#x4E00;&#x4E2A;&#x5F88;&#x5C0F;&#x7684;&#x6808;&#x5F00;&#x59CB;&#x5176;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;&#x4E00;&#x822C;&#x53EA;&#x9700;&#x8981;2KB&#x3002;&#x533A;&#x522B;&#x4E8E;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7EBF;&#x7A0B;&#x7531;&#x7CFB;&#x7EDF;&#x5185;&#x6838;&#x8FDB;&#x884C;&#x8C03;&#x5EA6;&#xFF0C; goroutine &#x662F;&#x7531;Go&#x8FD0;&#x884C;&#x65F6;&#xFF08;runtime&#xFF09;&#x8D1F;&#x8D23;&#x8C03;&#x5EA6;&#x3002;&#x4F8B;&#x5982;Go&#x8FD0;&#x884C;&#x65F6;&#x4F1A;&#x667A;&#x80FD;&#x5730;&#x5C06; m&#x4E2A;goroutine &#x5408;&#x7406;&#x5730;&#x5206;&#x914D;&#x7ED9;n&#x4E2A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7EBF;&#x7A0B;&#xFF0C;&#x5B9E;&#x73B0;&#x7C7B;&#x4F3C;m:n&#x7684;&#x8C03;&#x5EA6;&#x673A;&#x5236;&#xFF0C;&#x4E0D;&#x518D;&#x9700;&#x8981;Go&#x5F00;&#x53D1;&#x8005;&#x81EA;&#x884C;&#x5728;&#x4EE3;&#x7801;&#x5C42;&#x9762;&#x7EF4;&#x62A4;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x6C60;&#x3002;</p>
+<p>Goroutine &#x662F; Go &#x7A0B;&#x5E8F;&#x4E2D;&#x6700;&#x57FA;&#x672C;&#x7684;&#x5E76;&#x53D1;&#x6267;&#x884C;&#x5355;&#x5143;&#x3002;&#x6BCF;&#x4E00;&#x4E2A; Go &#x7A0B;&#x5E8F;&#x90FD;&#x81F3;&#x5C11;&#x5305;&#x542B;&#x4E00;&#x4E2A; goroutine&#x2014;&#x2014;main goroutine&#xFF0C;&#x5F53; Go &#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#x65F6;&#x5B83;&#x4F1A;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x3002;</p>
+<p>&#x5728;Go&#x8BED;&#x8A00;&#x7F16;&#x7A0B;&#x4E2D;&#x4F60;&#x4E0D;&#x9700;&#x8981;&#x53BB;&#x81EA;&#x5DF1;&#x5199;&#x8FDB;&#x7A0B;&#x3001;&#x7EBF;&#x7A0B;&#x3001;&#x534F;&#x7A0B;&#xFF0C;&#x4F60;&#x7684;&#x6280;&#x80FD;&#x5305;&#x91CC;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x6280;&#x80FD;&#x2014;&#x2014;goroutine&#xFF0C;&#x5F53;&#x4F60;&#x9700;&#x8981;&#x8BA9;&#x67D0;&#x4E2A;&#x4EFB;&#x52A1;&#x5E76;&#x53D1;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F60;&#x53EA;&#x9700;&#x8981;&#x628A;&#x8FD9;&#x4E2A;&#x4EFB;&#x52A1;&#x5305;&#x88C5;&#x6210;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5F00;&#x542F;&#x4E00;&#x4E2A; goroutine &#x53BB;&#x6267;&#x884C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;&#x5C31;&#x662F;&#x8FD9;&#x4E48;&#x7B80;&#x5355;&#x7C97;&#x66B4;&#x3002;</p>
+<h3 id="go&#x5173;&#x952E;&#x5B57;">go&#x5173;&#x952E;&#x5B57;</h3>
+<p>Go&#x8BED;&#x8A00;&#x4E2D;&#x4F7F;&#x7528; goroutine &#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5728;&#x51FD;&#x6570;&#x6216;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x524D;&#x52A0;&#x4E0A;<code>go</code>&#x5173;&#x952E;&#x5B57;&#x5C31;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; goroutine &#xFF0C;&#x4ECE;&#x800C;&#x8BA9;&#x8BE5;&#x51FD;&#x6570;&#x6216;&#x65B9;&#x6CD5;&#x5728;&#x65B0;&#x521B;&#x5EFA;&#x7684; goroutine &#x4E2D;&#x6267;&#x884C;&#x3002;</p>
+<pre><code class="lang-go">go f()  // &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684; goroutine &#x8FD0;&#x884C;&#x51FD;&#x6570;f
+</code></pre>
+<p>&#x533F;&#x540D;&#x51FD;&#x6570;&#x4E5F;&#x652F;&#x6301;&#x4F7F;&#x7528;<code>go</code>&#x5173;&#x952E;&#x5B57;&#x521B;&#x5EFA; goroutine &#x53BB;&#x6267;&#x884C;&#x3002;</p>
+<pre><code class="lang-go">go func(){
+  // ...
+}()
+</code></pre>
+<p>&#x4E00;&#x4E2A; goroutine &#x5FC5;&#x5B9A;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x51FD;&#x6570;/&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x591A;&#x4E2A; goroutine &#x53BB;&#x6267;&#x884C;&#x76F8;&#x540C;&#x7684;&#x51FD;&#x6570;/&#x65B9;&#x6CD5;&#x3002;</p>
+<h3 id="&#x542F;&#x52A8;&#x5355;&#x4E2A;goroutine">&#x542F;&#x52A8;&#x5355;&#x4E2A;goroutine</h3>
+<p>&#x542F;&#x52A8; goroutine &#x7684;&#x65B9;&#x5F0F;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5728;&#x8C03;&#x7528;&#x51FD;&#x6570;&#xFF08;&#x666E;&#x901A;&#x51FD;&#x6570;&#x548C;&#x533F;&#x540D;&#x51FD;&#x6570;&#xFF09;&#x524D;&#x52A0;&#x4E0A;&#x4E00;&#x4E2A;<code>go</code>&#x5173;&#x952E;&#x5B57;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x5148;&#x6765;&#x770B;&#x4E00;&#x4E2A;&#x5728; main &#x51FD;&#x6570;&#x4E2D;&#x6267;&#x884C;&#x666E;&#x901A;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x7684;&#x793A;&#x4F8B;&#x3002;</p>
+<pre><code class="lang-go">package main
+
+import (
+    &quot;fmt&quot;
+)
+
+func hello() {
+    fmt.Println(&quot;hello&quot;)
+}
+
+func main() {
+    hello()
+    fmt.Println(&quot;&#x4F60;&#x597D;&quot;)
+}
+</code></pre>
+<p>&#x5C06;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x7F16;&#x8BD1;&#x540E;&#x6267;&#x884C;&#xFF0C;&#x5F97;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-bash">hello
+&#x4F60;&#x597D;
+</code></pre>
+<p>&#x4EE3;&#x7801;&#x4E2D; hello &#x51FD;&#x6570;&#x548C;&#x5176;&#x540E;&#x9762;&#x7684;&#x6253;&#x5370;&#x8BED;&#x53E5;&#x662F;&#x4E32;&#x884C;&#x7684;&#x3002;</p>
+<p><a href="image/GoLang-%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%B9%B6%E5%8F%91.assets/goroutine01.png" data-lightbox="07b9bac6-fd49-4d68-8367-35ed1b9ba45a" data-title="main goroutine"><img src="image/GoLang-%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%B9%B6%E5%8F%91.assets/goroutine01.png" alt="main goroutine"></a></p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x5728;&#x8C03;&#x7528; hello &#x51FD;&#x6570;&#x524D;&#x9762;&#x52A0;&#x4E0A;&#x5173;&#x952E;&#x5B57;<code>go</code>&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x542F;&#x52A8;&#x4E00;&#x4E2A; goroutine &#x53BB;&#x6267;&#x884C; hello &#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x3002;</p>
+<pre><code class="lang-go">func main() {
+    go hello() // &#x542F;&#x52A8;&#x53E6;&#x5916;&#x4E00;&#x4E2A;goroutine&#x53BB;&#x6267;&#x884C;hello&#x51FD;&#x6570;
+    fmt.Println(&quot;main goroutine done!&quot;)
+}
+</code></pre>
+<p>&#x5C06;&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;&#x540E;&#x6267;&#x884C;&#xFF0C;&#x5F97;&#x5230;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#x3002;</p>
+<pre><code class="lang-bash">&#x4F60;&#x597D;
+</code></pre>
+<p>&#x8FD9;&#x4E00;&#x6B21;&#x7684;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x53EA;&#x5728;&#x7EC8;&#x7AEF;&#x6253;&#x5370;&#x4E86;&#x201D;&#x4F60;&#x597D;&#x201D;&#xFF0C;&#x5E76;&#x6CA1;&#x6709;&#x6253;&#x5370; <code>hello</code>&#x3002;&#x8FD9;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;</p>
+<p>&#x5176;&#x5B9E;&#x5728; Go &#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#x65F6;&#xFF0C;Go &#x7A0B;&#x5E8F;&#x5C31;&#x4F1A;&#x4E3A; main &#x51FD;&#x6570;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684; goroutine &#x3002;&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#x6211;&#x4EEC;&#x5728; main &#x51FD;&#x6570;&#x4E2D;&#x4F7F;&#x7528; go &#x5173;&#x952E;&#x5B57;&#x521B;&#x5EFA;&#x4E86;&#x53E6;&#x5916;&#x4E00;&#x4E2A; goroutine &#x53BB;&#x6267;&#x884C; hello &#x51FD;&#x6570;&#xFF0C;&#x800C;&#x6B64;&#x65F6; main goroutine &#x8FD8;&#x5728;&#x7EE7;&#x7EED;&#x5F80;&#x4E0B;&#x6267;&#x884C;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x7A0B;&#x5E8F;&#x4E2D;&#x6B64;&#x65F6;&#x5B58;&#x5728;&#x4E24;&#x4E2A;&#x5E76;&#x53D1;&#x6267;&#x884C;&#x7684; goroutine&#x3002;&#x5F53; main &#x51FD;&#x6570;&#x7ED3;&#x675F;&#x65F6;&#x6574;&#x4E2A;&#x7A0B;&#x5E8F;&#x4E5F;&#x5C31;&#x7ED3;&#x675F;&#x4E86;&#xFF0C;&#x540C;&#x65F6; main goroutine &#x4E5F;&#x7ED3;&#x675F;&#x4E86;&#xFF0C;&#x6240;&#x6709;&#x7531; main goroutine &#x521B;&#x5EFA;&#x7684; goroutine &#x4E5F;&#x4F1A;&#x4E00;&#x540C;&#x9000;&#x51FA;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x6211;&#x4EEC;&#x7684; main &#x51FD;&#x6570;&#x9000;&#x51FA;&#x592A;&#x5FEB;&#xFF0C;&#x53E6;&#x5916;&#x4E00;&#x4E2A; goroutine &#x4E2D;&#x7684;&#x51FD;&#x6570;&#x8FD8;&#x672A;&#x6267;&#x884C;&#x5B8C;&#x7A0B;&#x5E8F;&#x5C31;&#x9000;&#x51FA;&#x4E86;&#xFF0C;&#x5BFC;&#x81F4;&#x672A;&#x6253;&#x5370;&#x51FA;&#x201C;hello&#x201D;&#x3002;</p>
+<p><em>main goroutine &#x5C31;&#x50CF;&#x662F;&#x300A;&#x6743;&#x5229;&#x7684;&#x6E38;&#x620F;&#x300B;&#x4E2D;&#x7684;&#x591C;&#x738B;&#xFF0C;&#x5176;&#x4ED6;&#x7684; goroutine &#x90FD;&#x662F;&#x591C;&#x738B;&#x8F6C;&#x5316;&#x51FA;&#x7684;&#x5F02;&#x9B3C;&#xFF0C;&#x591C;&#x738B;&#x4E00;&#x6B7B;&#x5B83;&#x8F6C;&#x5316;&#x7684;&#x90A3;&#x4E9B;&#x5F02;&#x9B3C;&#x4E5F;&#x5C31;&#x5168;&#x90E8;GG&#x4E86;&#x3002;</em></p>
+<p>&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x8981;&#x60F3;&#x529E;&#x6CD5;&#x8BA9; main &#x51FD;&#x6570;&#x2018;&#x201C;&#x7B49;&#x4E00;&#x7B49;&#x201D;&#x5C06;&#x5728;&#x53E6;&#x4E00;&#x4E2A; goroutine &#x4E2D;&#x8FD0;&#x884C;&#x7684; hello &#x51FD;&#x6570;&#x3002;&#x5176;&#x4E2D;&#x6700;&#x7B80;&#x5355;&#x7C97;&#x66B4;&#x7684;&#x65B9;&#x5F0F;&#x5C31;&#x662F;&#x5728; main &#x51FD;&#x6570;&#x4E2D;&#x201C;time.Sleep&#x201D;&#x4E00;&#x79D2;&#x949F;&#x4E86;&#xFF08;&#x8FD9;&#x91CC;&#x7684;1&#x79D2;&#x949F;&#x53EA;&#x662F;&#x6211;&#x4EEC;&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x65B0;&#x7684; goroutine &#x80FD;&#x591F;&#x88AB;&#x6B63;&#x5E38;&#x521B;&#x5EFA;&#x548C;&#x6267;&#x884C;&#x800C;&#x8BBE;&#x7F6E;&#x7684;&#x4E00;&#x4E2A;&#x503C;&#xFF09;&#x3002;</p>
+<p>&#x6309;&#x5982;&#x4E0B;&#x65B9;&#x5F0F;&#x4FEE;&#x6539;&#x6211;&#x4EEC;&#x7684;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x3002;</p>
+<pre><code class="lang-go">package main
+
+import (
+    &quot;fmt&quot;
+    &quot;time&quot;
+)
+
+func hello() {
+    fmt.Println(&quot;hello&quot;)
+}
+
+func main() {
+    go hello()
+    fmt.Println(&quot;&#x4F60;&#x597D;&quot;)
+    time.Sleep(time.Second)
+}
+</code></pre>
+<p>&#x5C06;&#x6211;&#x4EEC;&#x7684;&#x7A0B;&#x5E8F;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;&#x540E;&#x518D;&#x6B21;&#x6267;&#x884C;&#xFF0C;&#x7A0B;&#x5E8F;&#x4F1A;&#x5728;&#x7EC8;&#x7AEF;&#x8F93;&#x51FA;&#x5982;&#x4E0B;&#x7ED3;&#x679C;&#xFF0C;&#x5E76;&#x4E14;&#x4F1A;&#x77ED;&#x6682;&#x505C;&#x987F;&#x4E00;&#x4F1A;&#x513F;&#x3002;</p>
+<pre><code class="lang-bash">&#x4F60;&#x597D;
+hello
+</code></pre>
+<p>&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x5148;&#x6253;&#x5370;<code>&#x4F60;&#x597D;</code>&#x5462;&#xFF1F;</p>
+<p>&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x521B;&#x5EFA; goroutine &#x6267;&#x884C;&#x51FD;&#x6570;&#x9700;&#x8981;&#x4E00;&#x5B9A;&#x7684;&#x5F00;&#x9500;&#xFF0C;&#x800C;&#x4E0E;&#x6B64;&#x540C;&#x65F6; main &#x51FD;&#x6570;&#x6240;&#x5728;&#x7684; goroutine &#x662F;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x7684;&#x3002;</p>
+<p><a href="image/GoLang-%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%B9%B6%E5%8F%91.assets/goroutine02.png" data-lightbox="038861b8-1bd1-4cf9-9f83-937a8b867bb8" data-title="main goroutine&#x548C;hello goorutine"><img src="image/GoLang-%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%B9%B6%E5%8F%91.assets/goroutine02.png" alt="main goroutine&#x548C;hello goorutine"></a></p>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x4E2D;&#x4F7F;&#x7528;<code>time.Sleep</code>&#x8BA9; main goroutine &#x7B49;&#x5F85; hello goroutine&#x6267;&#x884C;&#x7ED3;&#x675F;&#x662F;&#x4E0D;&#x4F18;&#x96C5;&#x7684;&#xFF0C;&#x5F53;&#x7136;&#x4E5F;&#x662F;&#x4E0D;&#x51C6;&#x786E;&#x7684;&#x3002;</p>
+<p>Go &#x8BED;&#x8A00;&#x4E2D;&#x901A;&#x8FC7;<code>sync</code>&#x5305;&#x4E3A;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;&#x5E76;&#x53D1;&#x539F;&#x8BED;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x5728;&#x540E;&#x9762;&#x7684;&#x5C0F;&#x8282;&#x5355;&#x72EC;&#x4ECB;&#x7ECD;<code>sync</code>&#x5305;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x3002;&#x5728;&#x8FD9;&#x4E00;&#x5C0F;&#x8282;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x5148;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B; sync &#x5305;&#x4E2D;&#x7684;<code>WaitGroup</code>&#x3002;&#x5F53;&#x4F60;&#x5E76;&#x4E0D;&#x5173;&#x5FC3;&#x5E76;&#x53D1;&#x64CD;&#x4F5C;&#x7684;&#x7ED3;&#x679C;&#x6216;&#x8005;&#x6709;&#x5176;&#x5B83;&#x65B9;&#x5F0F;&#x6536;&#x96C6;&#x5E76;&#x53D1;&#x64CD;&#x4F5C;&#x7684;&#x7ED3;&#x679C;&#x65F6;&#xFF0C;<code>WaitGroup</code>&#x662F;&#x5B9E;&#x73B0;&#x7B49;&#x5F85;&#x4E00;&#x7EC4;&#x5E76;&#x53D1;&#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#x7684;&#x597D;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x4E2D;&#x6211;&#x4EEC;&#x5728; main goroutine &#x4E2D;&#x4F7F;&#x7528;<code>sync.WaitGroup</code>&#x6765;&#x7B49;&#x5F85; hello goroutine &#x5B8C;&#x6210;&#x540E;&#x518D;&#x9000;&#x51FA;&#x3002;</p>
+<pre><code class="lang-go">package main
+
+import (
+    &quot;fmt&quot;
+    &quot;sync&quot;
+)
+
+// &#x58F0;&#x660E;&#x5168;&#x5C40;&#x7B49;&#x5F85;&#x7EC4;&#x53D8;&#x91CF;
+var wg sync.WaitGroup
+
+func hello() {
+    fmt.Println(&quot;hello&quot;)
+    wg.Done() // &#x544A;&#x77E5;&#x5F53;&#x524D;goroutine&#x5B8C;&#x6210;
+}
+
+func main() {
+    wg.Add(1) // &#x767B;&#x8BB0;1&#x4E2A;goroutine
+    go hello()
+    fmt.Println(&quot;&#x4F60;&#x597D;&quot;)
+    wg.Wait() // &#x963B;&#x585E;&#x7B49;&#x5F85;&#x767B;&#x8BB0;&#x7684;goroutine&#x5B8C;&#x6210;
+}
+</code></pre>
+<p>&#x5C06;&#x4EE3;&#x7801;&#x7F16;&#x8BD1;&#x540E;&#x518D;&#x6267;&#x884C;&#xFF0C;&#x5F97;&#x5230;&#x7684;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x548C;&#x4E4B;&#x524D;&#x4E00;&#x81F4;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E00;&#x6B21;&#x7A0B;&#x5E8F;&#x4E0D;&#x518D;&#x4F1A;&#x6709;&#x591A;&#x4F59;&#x7684;&#x505C;&#x987F;&#xFF0C;hello goroutine &#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x540E;&#x7A0B;&#x5E8F;&#x76F4;&#x63A5;&#x9000;&#x51FA;&#x3002;</p>
+<h3 id="&#x542F;&#x52A8;&#x591A;&#x4E2A;goroutine">&#x542F;&#x52A8;&#x591A;&#x4E2A;goroutine</h3>
+<p>&#x5728; Go &#x8BED;&#x8A00;&#x4E2D;&#x5B9E;&#x73B0;&#x5E76;&#x53D1;&#x5C31;&#x662F;&#x8FD9;&#x6837;&#x7B80;&#x5355;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x542F;&#x52A8;&#x591A;&#x4E2A; goroutine &#x3002;&#x8BA9;&#x6211;&#x4EEC;&#x518D;&#x6765;&#x770B;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x4EE3;&#x7801;&#x793A;&#x4F8B;&#x3002;&#x8FD9;&#x91CC;&#x540C;&#x6837;&#x4F7F;&#x7528;&#x4E86;<code>sync.WaitGroup</code>&#x6765;&#x5B9E;&#x73B0; goroutine &#x7684;&#x540C;&#x6B65;&#x3002;</p>
+<pre><code class="lang-go">package main
+
+import (
+    &quot;fmt&quot;
+    &quot;sync&quot;
+)
+
+var wg sync.WaitGroup
+
+func hello(i int) {
+    defer wg.Done() // goroutine&#x7ED3;&#x675F;&#x5C31;&#x767B;&#x8BB0;-1
+    fmt.Println(&quot;hello&quot;, i)
+}
+func main() {
+    for i := 0; i &lt; 10; i++ {
+        wg.Add(1) // &#x542F;&#x52A8;&#x4E00;&#x4E2A;goroutine&#x5C31;&#x767B;&#x8BB0;+1
+        go hello(i)
+    }
+    wg.Wait() // &#x7B49;&#x5F85;&#x6240;&#x6709;&#x767B;&#x8BB0;&#x7684;goroutine&#x90FD;&#x7ED3;&#x675F;
+}
+</code></pre>
+<p>&#x591A;&#x6B21;&#x6267;&#x884C;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4F1A;&#x53D1;&#x73B0;&#x6BCF;&#x6B21;&#x7EC8;&#x7AEF;&#x4E0A;&#x6253;&#x5370;&#x6570;&#x5B57;&#x7684;&#x987A;&#x5E8F;&#x90FD;&#x4E0D;&#x4E00;&#x81F4;&#x3002;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;10&#x4E2A; goroutine &#x662F;&#x5E76;&#x53D1;&#x6267;&#x884C;&#x7684;&#xFF0C;&#x800C; goroutine &#x7684;&#x8C03;&#x5EA6;&#x662F;&#x968F;&#x673A;&#x7684;&#x3002;</p>
+<h3 id="&#x52A8;&#x6001;&#x6808;">&#x52A8;&#x6001;&#x6808;</h3>
+<p>&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x7EBF;&#x7A0B;&#x4E00;&#x822C;&#x90FD;&#x6709;&#x56FA;&#x5B9A;&#x7684;&#x6808;&#x5185;&#x5B58;&#xFF08;&#x901A;&#x5E38;&#x4E3A;2MB&#xFF09;,&#x800C; Go &#x8BED;&#x8A00;&#x4E2D;&#x7684; goroutine &#x975E;&#x5E38;&#x8F7B;&#x91CF;&#x7EA7;&#xFF0C;&#x4E00;&#x4E2A; goroutine &#x7684;&#x521D;&#x59CB;&#x6808;&#x7A7A;&#x95F4;&#x5F88;&#x5C0F;&#xFF08;&#x4E00;&#x822C;&#x4E3A;2KB&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x5728; Go &#x8BED;&#x8A00;&#x4E2D;&#x4E00;&#x6B21;&#x521B;&#x5EFA;&#x6570;&#x4E07;&#x4E2A; goroutine &#x4E5F;&#x662F;&#x53EF;&#x80FD;&#x7684;&#x3002;&#x5E76;&#x4E14; goroutine &#x7684;&#x6808;&#x4E0D;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x9700;&#x8981;&#x52A8;&#x6001;&#x5730;&#x589E;&#x5927;&#x6216;&#x7F29;&#x5C0F;&#xFF0C; Go &#x7684; runtime &#x4F1A;&#x81EA;&#x52A8;&#x4E3A; goroutine &#x5206;&#x914D;&#x5408;&#x9002;&#x7684;&#x6808;&#x7A7A;&#x95F4;&#x3002;</p>
+<h3 id="goroutine&#x8C03;&#x5EA6;">goroutine&#x8C03;&#x5EA6;</h3>
+<p>&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5185;&#x6838;&#x5728;&#x8C03;&#x5EA6;&#x65F6;&#x4F1A;&#x6302;&#x8D77;&#x5F53;&#x524D;&#x6B63;&#x5728;&#x6267;&#x884C;&#x7684;&#x7EBF;&#x7A0B;&#x5E76;&#x5C06;&#x5BC4;&#x5B58;&#x5668;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x4FDD;&#x5B58;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x9009;&#x51FA;&#x63A5;&#x4E0B;&#x6765;&#x8981;&#x6267;&#x884C;&#x7684;&#x7EBF;&#x7A0B;&#x5E76;&#x4ECE;&#x5185;&#x5B58;&#x4E2D;&#x6062;&#x590D;&#x8BE5;&#x7EBF;&#x7A0B;&#x7684;&#x5BC4;&#x5B58;&#x5668;&#x4FE1;&#x606F;&#xFF0C;&#x7136;&#x540E;&#x6062;&#x590D;&#x6267;&#x884C;&#x8BE5;&#x7EBF;&#x7A0B;&#x7684;&#x73B0;&#x573A;&#x5E76;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x7EBF;&#x7A0B;&#x3002;&#x4ECE;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x5207;&#x6362;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x9700;&#x8981;&#x5B8C;&#x6574;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x5207;&#x6362;&#x3002;&#x56E0;&#x4E3A;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x591A;&#x6B21;&#x5185;&#x5B58;&#x8BBF;&#x95EE;&#xFF0C;&#x7D22;&#x5F15;&#x8FD9;&#x4E2A;&#x5207;&#x6362;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x64CD;&#x4F5C;&#x5F00;&#x9500;&#x8F83;&#x5927;&#xFF0C;&#x4F1A;&#x589E;&#x52A0;&#x8FD0;&#x884C;&#x7684;cpu&#x5468;&#x671F;&#x3002;</p>
+<p>&#x533A;&#x522B;&#x4E8E;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5185;&#x6838;&#x8C03;&#x5EA6;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7EBF;&#x7A0B;&#xFF0C;goroutine &#x7684;&#x8C03;&#x5EA6;&#x662F;Go&#x8BED;&#x8A00;&#x8FD0;&#x884C;&#x65F6;&#xFF08;runtime&#xFF09;&#x5C42;&#x9762;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x662F;&#x5B8C;&#x5168;&#x7531; Go &#x8BED;&#x8A00;&#x672C;&#x8EAB;&#x5B9E;&#x73B0;&#x7684;&#x4E00;&#x5957;&#x8C03;&#x5EA6;&#x7CFB;&#x7EDF;&#x2014;&#x2014;go scheduler&#x3002;&#x5B83;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x6309;&#x7167;&#x4E00;&#x5B9A;&#x7684;&#x89C4;&#x5219;&#x5C06;&#x6240;&#x6709;&#x7684; goroutine &#x8C03;&#x5EA6;&#x5230;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7EBF;&#x7A0B;&#x4E0A;&#x6267;&#x884C;&#x3002;</p>
+<p>&#x5728;&#x7ECF;&#x5386;&#x6570;&#x4E2A;&#x7248;&#x672C;&#x7684;&#x8FED;&#x4EE3;&#x4E4B;&#x540E;&#xFF0C;&#x76EE;&#x524D; Go &#x8BED;&#x8A00;&#x7684;&#x8C03;&#x5EA6;&#x5668;&#x91C7;&#x7528;&#x7684;&#x662F; <code>GPM</code> &#x8C03;&#x5EA6;&#x6A21;&#x578B;&#x3002;</p>
+<p><a href="image/GoLang-%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%B9%B6%E5%8F%91.assets/gpm.png" data-lightbox="2fc8a6ec-edbc-463d-88f2-81cbd55de601" data-title="gpm"><img src="image/GoLang-%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%B9%B6%E5%8F%91.assets/gpm.png" alt="gpm"></a></p>
+<p>&#x5176;&#x4E2D;&#xFF1A;</p>
+<ul>
+<li>G&#xFF1A;&#x8868;&#x793A; goroutine&#xFF0C;&#x6BCF;&#x6267;&#x884C;&#x4E00;&#x6B21;<code>go f()</code>&#x5C31;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; G&#xFF0C;&#x5305;&#x542B;&#x8981;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;&#x548C;&#x4E0A;&#x4E0B;&#x6587;&#x4FE1;&#x606F;&#x3002;</li>
+<li>&#x5168;&#x5C40;&#x961F;&#x5217;&#xFF08;Global Queue&#xFF09;&#xFF1A;&#x5B58;&#x653E;&#x7B49;&#x5F85;&#x8FD0;&#x884C;&#x7684; G&#x3002;</li>
+<li>P&#xFF1A;&#x8868;&#x793A; goroutine &#x6267;&#x884C;&#x6240;&#x9700;&#x7684;&#x8D44;&#x6E90;&#xFF0C;&#x6700;&#x591A;&#x6709; GOMAXPROCS &#x4E2A;&#x3002;</li>
+<li>P &#x7684;&#x672C;&#x5730;&#x961F;&#x5217;&#xFF1A;&#x540C;&#x5168;&#x5C40;&#x961F;&#x5217;&#x7C7B;&#x4F3C;&#xFF0C;&#x5B58;&#x653E;&#x7684;&#x4E5F;&#x662F;&#x7B49;&#x5F85;&#x8FD0;&#x884C;&#x7684;G&#xFF0C;&#x5B58;&#x7684;&#x6570;&#x91CF;&#x6709;&#x9650;&#xFF0C;&#x4E0D;&#x8D85;&#x8FC7;256&#x4E2A;&#x3002;&#x65B0;&#x5EFA; G &#x65F6;&#xFF0C;G &#x4F18;&#x5148;&#x52A0;&#x5165;&#x5230; P &#x7684;&#x672C;&#x5730;&#x961F;&#x5217;&#xFF0C;&#x5982;&#x679C;&#x672C;&#x5730;&#x961F;&#x5217;&#x6EE1;&#x4E86;&#x4F1A;&#x6279;&#x91CF;&#x79FB;&#x52A8;&#x90E8;&#x5206; G &#x5230;&#x5168;&#x5C40;&#x961F;&#x5217;&#x3002;</li>
+<li>M&#xFF1A;&#x7EBF;&#x7A0B;&#x60F3;&#x8FD0;&#x884C;&#x4EFB;&#x52A1;&#x5C31;&#x5F97;&#x83B7;&#x53D6; P&#xFF0C;&#x4ECE; P &#x7684;&#x672C;&#x5730;&#x961F;&#x5217;&#x83B7;&#x53D6; G&#xFF0C;&#x5F53; P &#x7684;&#x672C;&#x5730;&#x961F;&#x5217;&#x4E3A;&#x7A7A;&#x65F6;&#xFF0C;M &#x4E5F;&#x4F1A;&#x5C1D;&#x8BD5;&#x4ECE;&#x5168;&#x5C40;&#x961F;&#x5217;&#x6216;&#x5176;&#x4ED6; P &#x7684;&#x672C;&#x5730;&#x961F;&#x5217;&#x83B7;&#x53D6; G&#x3002;M &#x8FD0;&#x884C; G&#xFF0C;G &#x6267;&#x884C;&#x4E4B;&#x540E;&#xFF0C;M &#x4F1A;&#x4ECE; P &#x83B7;&#x53D6;&#x4E0B;&#x4E00;&#x4E2A; G&#xFF0C;&#x4E0D;&#x65AD;&#x91CD;&#x590D;&#x4E0B;&#x53BB;&#x3002;</li>
+<li>Goroutine &#x8C03;&#x5EA6;&#x5668;&#x548C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8C03;&#x5EA6;&#x5668;&#x662F;&#x901A;&#x8FC7; M &#x7ED3;&#x5408;&#x8D77;&#x6765;&#x7684;&#xFF0C;&#x6BCF;&#x4E2A; M &#x90FD;&#x4EE3;&#x8868;&#x4E86;1&#x4E2A;&#x5185;&#x6838;&#x7EBF;&#x7A0B;&#xFF0C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8C03;&#x5EA6;&#x5668;&#x8D1F;&#x8D23;&#x628A;&#x5185;&#x6838;&#x7EBF;&#x7A0B;&#x5206;&#x914D;&#x5230; CPU &#x7684;&#x6838;&#x4E0A;&#x6267;&#x884C;&#x3002;</li>
+</ul>
+<p>&#x5355;&#x4ECE;&#x7EBF;&#x7A0B;&#x8C03;&#x5EA6;&#x8BB2;&#xFF0C;Go&#x8BED;&#x8A00;&#x76F8;&#x6BD4;&#x8D77;&#x5176;&#x4ED6;&#x8BED;&#x8A00;&#x7684;&#x4F18;&#x52BF;&#x5728;&#x4E8E;OS&#x7EBF;&#x7A0B;&#x662F;&#x7531;OS&#x5185;&#x6838;&#x6765;&#x8C03;&#x5EA6;&#x7684;&#xFF0C; goroutine &#x5219;&#x662F;&#x7531;Go&#x8FD0;&#x884C;&#x65F6;&#xFF08;runtime&#xFF09;&#x81EA;&#x5DF1;&#x7684;&#x8C03;&#x5EA6;&#x5668;&#x8C03;&#x5EA6;&#x7684;&#xFF0C;&#x5B8C;&#x5168;&#x662F;&#x5728;&#x7528;&#x6237;&#x6001;&#x4E0B;&#x5B8C;&#x6210;&#x7684;&#xFF0C; &#x4E0D;&#x6D89;&#x53CA;&#x5185;&#x6838;&#x6001;&#x4E0E;&#x7528;&#x6237;&#x6001;&#x4E4B;&#x95F4;&#x7684;&#x9891;&#x7E41;&#x5207;&#x6362;&#xFF0C;&#x5305;&#x62EC;&#x5185;&#x5B58;&#x7684;&#x5206;&#x914D;&#x4E0E;&#x91CA;&#x653E;&#xFF0C;&#x90FD;&#x662F;&#x5728;&#x7528;&#x6237;&#x6001;&#x7EF4;&#x62A4;&#x7740;&#x4E00;&#x5757;&#x5927;&#x7684;&#x5185;&#x5B58;&#x6C60;&#xFF0C; &#x4E0D;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x7CFB;&#x7EDF;&#x7684;malloc&#x51FD;&#x6570;&#xFF08;&#x9664;&#x975E;&#x5185;&#x5B58;&#x6C60;&#x9700;&#x8981;&#x6539;&#x53D8;&#xFF09;&#xFF0C;&#x6210;&#x672C;&#x6BD4;&#x8C03;&#x5EA6;OS&#x7EBF;&#x7A0B;&#x4F4E;&#x5F88;&#x591A;&#x3002; &#x53E6;&#x4E00;&#x65B9;&#x9762;&#x5145;&#x5206;&#x5229;&#x7528;&#x4E86;&#x591A;&#x6838;&#x7684;&#x786C;&#x4EF6;&#x8D44;&#x6E90;&#xFF0C;&#x8FD1;&#x4F3C;&#x7684;&#x628A;&#x82E5;&#x5E72;goroutine&#x5747;&#x5206;&#x5728;&#x7269;&#x7406;&#x7EBF;&#x7A0B;&#x4E0A;&#xFF0C; &#x518D;&#x52A0;&#x4E0A;&#x672C;&#x8EAB; goroutine &#x7684;&#x8D85;&#x8F7B;&#x91CF;&#x7EA7;&#xFF0C;&#x4EE5;&#x4E0A;&#x79CD;&#x79CD;&#x7279;&#x6027;&#x4FDD;&#x8BC1;&#x4E86; goroutine &#x8C03;&#x5EA6;&#x65B9;&#x9762;&#x7684;&#x6027;&#x80FD;&#x3002;</p>
+<h3 id="gomaxprocs">GOMAXPROCS</h3>
+<p>Go&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x8C03;&#x5EA6;&#x5668;&#x4F7F;&#x7528;<code>GOMAXPROCS</code>&#x53C2;&#x6570;&#x6765;&#x786E;&#x5B9A;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x591A;&#x5C11;&#x4E2A; OS &#x7EBF;&#x7A0B;&#x6765;&#x540C;&#x65F6;&#x6267;&#x884C; Go &#x4EE3;&#x7801;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x662F;&#x673A;&#x5668;&#x4E0A;&#x7684; CPU &#x6838;&#x5FC3;&#x6570;&#x3002;&#x4F8B;&#x5982;&#x5728;&#x4E00;&#x4E2A; 8 &#x6838;&#x5FC3;&#x7684;&#x673A;&#x5668;&#x4E0A;&#xFF0C;GOMAXPROCS &#x9ED8;&#x8BA4;&#x4E3A; 8&#x3002;Go&#x8BED;&#x8A00;&#x4E2D;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>runtime.GOMAXPROCS</code>&#x51FD;&#x6570;&#x8BBE;&#x7F6E;&#x5F53;&#x524D;&#x7A0B;&#x5E8F;&#x5E76;&#x53D1;&#x65F6;&#x5360;&#x7528;&#x7684; CPU&#x903B;&#x8F91;&#x6838;&#x5FC3;&#x6570;&#x3002;&#xFF08;Go1.5&#x7248;&#x672C;&#x4E4B;&#x524D;&#xFF0C;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x5355;&#x6838;&#x5FC3;&#x6267;&#x884C;&#x3002;Go1.5 &#x7248;&#x672C;&#x4E4B;&#x540E;&#xFF0C;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x5168;&#x90E8;&#x7684;CPU &#x903B;&#x8F91;&#x6838;&#x5FC3;&#x6570;&#x3002;&#xFF09;</p>
+<h3 id="&#x7EC3;&#x4E60;&#x9898;">&#x7EC3;&#x4E60;&#x9898;</h3>
+<ol>
+<li>&#x8BF7;&#x5199;&#x51FA;&#x4E0B;&#x9762;&#x7A0B;&#x5E8F;&#x7684;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x3002;</li>
+</ol>
+<pre><code class="lang-go">   for i := 0; i &lt; 5; i++ {
+       go func() {
+           fmt.Println(i)
+       }()
+   }
+</code></pre>
+<h2 id="channel">channel</h2>
+<p>&#x5355;&#x7EAF;&#x5730;&#x5C06;&#x51FD;&#x6570;&#x5E76;&#x53D1;&#x6267;&#x884C;&#x662F;&#x6CA1;&#x6709;&#x610F;&#x4E49;&#x7684;&#x3002;&#x51FD;&#x6570;&#x4E0E;&#x51FD;&#x6570;&#x95F4;&#x9700;&#x8981;&#x4EA4;&#x6362;&#x6570;&#x636E;&#x624D;&#x80FD;&#x4F53;&#x73B0;&#x5E76;&#x53D1;&#x6267;&#x884C;&#x51FD;&#x6570;&#x7684;&#x610F;&#x4E49;&#x3002;</p>
+<p>&#x867D;&#x7136;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5171;&#x4EAB;&#x5185;&#x5B58;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x4EA4;&#x6362;&#xFF0C;&#x4F46;&#x662F;&#x5171;&#x4EAB;&#x5185;&#x5B58;&#x5728;&#x4E0D;&#x540C;&#x7684; goroutine &#x4E2D;&#x5BB9;&#x6613;&#x53D1;&#x751F;&#x7ADE;&#x6001;&#x95EE;&#x9898;&#x3002;&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x4EA4;&#x6362;&#x7684;&#x6B63;&#x786E;&#x6027;&#xFF0C;&#x5F88;&#x591A;&#x5E76;&#x53D1;&#x6A21;&#x578B;&#x4E2D;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x4E92;&#x65A5;&#x91CF;&#x5BF9;&#x5185;&#x5B58;&#x8FDB;&#x884C;&#x52A0;&#x9501;&#xFF0C;&#x8FD9;&#x79CD;&#x505A;&#x6CD5;&#x52BF;&#x5FC5;&#x9020;&#x6210;&#x6027;&#x80FD;&#x95EE;&#x9898;&#x3002;</p>
+<p>Go&#x8BED;&#x8A00;&#x91C7;&#x7528;&#x7684;&#x5E76;&#x53D1;&#x6A21;&#x578B;&#x662F;<code>CSP&#xFF08;Communicating Sequential Processes&#xFF09;</code>&#xFF0C;&#x63D0;&#x5021;<strong>&#x901A;&#x8FC7;&#x901A;&#x4FE1;&#x5171;&#x4EAB;&#x5185;&#x5B58;</strong>&#x800C;&#x4E0D;&#x662F;<strong>&#x901A;&#x8FC7;&#x5171;&#x4EAB;&#x5185;&#x5B58;&#x800C;&#x5B9E;&#x73B0;&#x901A;&#x4FE1;</strong>&#x3002;</p>
+<p>&#x5982;&#x679C;&#x8BF4; goroutine &#x662F;Go&#x7A0B;&#x5E8F;&#x5E76;&#x53D1;&#x7684;&#x6267;&#x884C;&#x4F53;&#xFF0C;<code>channel</code>&#x5C31;&#x662F;&#x5B83;&#x4EEC;&#x4E4B;&#x95F4;&#x7684;&#x8FDE;&#x63A5;&#x3002;<code>channel</code>&#x662F;&#x53EF;&#x4EE5;&#x8BA9;&#x4E00;&#x4E2A; goroutine &#x53D1;&#x9001;&#x7279;&#x5B9A;&#x503C;&#x5230;&#x53E6;&#x4E00;&#x4E2A; goroutine &#x7684;&#x901A;&#x4FE1;&#x673A;&#x5236;&#x3002;</p>
+<p>Go &#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x901A;&#x9053;&#xFF08;channel&#xFF09;&#x662F;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x901A;&#x9053;&#x50CF;&#x4E00;&#x4E2A;&#x4F20;&#x9001;&#x5E26;&#x6216;&#x8005;&#x961F;&#x5217;&#xFF0C;&#x603B;&#x662F;&#x9075;&#x5FAA;&#x5148;&#x5165;&#x5148;&#x51FA;&#xFF08;First In First Out&#xFF09;&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x4FDD;&#x8BC1;&#x6536;&#x53D1;&#x6570;&#x636E;&#x7684;&#x987A;&#x5E8F;&#x3002;&#x6BCF;&#x4E00;&#x4E2A;&#x901A;&#x9053;&#x90FD;&#x662F;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x7C7B;&#x578B;&#x7684;&#x5BFC;&#x7BA1;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x58F0;&#x660E;channel&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x4E3A;&#x5176;&#x6307;&#x5B9A;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#x3002;</p>
+<h3 id="channel&#x7C7B;&#x578B;">channel&#x7C7B;&#x578B;</h3>
+<p><code>channel</code>&#x662F; Go &#x8BED;&#x8A00;&#x4E2D;&#x4E00;&#x79CD;&#x7279;&#x6709;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x58F0;&#x660E;&#x901A;&#x9053;&#x7C7B;&#x578B;&#x53D8;&#x91CF;&#x7684;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-go">var &#x53D8;&#x91CF;&#x540D;&#x79F0; chan &#x5143;&#x7D20;&#x7C7B;&#x578B;
+</code></pre>
+<p>&#x5176;&#x4E2D;&#xFF1A;</p>
+<ul>
+<li>chan&#xFF1A;&#x662F;&#x5173;&#x952E;&#x5B57;</li>
+<li>&#x5143;&#x7D20;&#x7C7B;&#x578B;&#xFF1A;&#x662F;&#x6307;&#x901A;&#x9053;&#x4E2D;&#x4F20;&#x9012;&#x5143;&#x7D20;&#x7684;&#x7C7B;&#x578B;</li>
+</ul>
+<p>&#x4E3E;&#x51E0;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-go">var ch1 chan int   // &#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x4F20;&#x9012;&#x6574;&#x578B;&#x7684;&#x901A;&#x9053;
+var ch2 chan bool  // &#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x4F20;&#x9012;&#x5E03;&#x5C14;&#x578B;&#x7684;&#x901A;&#x9053;
+var ch3 chan []int // &#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x4F20;&#x9012;int&#x5207;&#x7247;&#x7684;&#x901A;&#x9053;
+</code></pre>
+<h3 id="channel&#x96F6;&#x503C;">channel&#x96F6;&#x503C;</h3>
+<p>&#x672A;&#x521D;&#x59CB;&#x5316;&#x7684;&#x901A;&#x9053;&#x7C7B;&#x578B;&#x53D8;&#x91CF;&#x5176;&#x9ED8;&#x8BA4;&#x96F6;&#x503C;&#x662F;<code>nil</code>&#x3002;</p>
+<pre><code class="lang-go">var ch chan int
+fmt.Println(ch) // &lt;nil&gt;
+</code></pre>
+<h3 id="&#x521D;&#x59CB;&#x5316;channel">&#x521D;&#x59CB;&#x5316;channel</h3>
+<p>&#x58F0;&#x660E;&#x7684;&#x901A;&#x9053;&#x7C7B;&#x578B;&#x53D8;&#x91CF;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5185;&#x7F6E;&#x7684;<code>make</code>&#x51FD;&#x6570;&#x521D;&#x59CB;&#x5316;&#x4E4B;&#x540E;&#x624D;&#x80FD;&#x4F7F;&#x7528;&#x3002;&#x5177;&#x4F53;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-go">make(chan &#x5143;&#x7D20;&#x7C7B;&#x578B;, [&#x7F13;&#x51B2;&#x5927;&#x5C0F;])
+</code></pre>
+<p>&#x5176;&#x4E2D;&#xFF1A;</p>
+<ul>
+<li>channel&#x7684;&#x7F13;&#x51B2;&#x5927;&#x5C0F;&#x662F;&#x53EF;&#x9009;&#x7684;&#x3002;</li>
+</ul>
+<p>&#x4E3E;&#x51E0;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-go">ch4 := make(chan int)
+ch5 := make(chan bool, 1)  // &#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x7F13;&#x51B2;&#x533A;&#x5927;&#x5C0F;&#x4E3A;1&#x7684;&#x901A;&#x9053;
+</code></pre>
+<h3 id="channel&#x64CD;&#x4F5C;">channel&#x64CD;&#x4F5C;</h3>
+<p>&#x901A;&#x9053;&#x5171;&#x6709;&#x53D1;&#x9001;&#xFF08;send&#xFF09;&#x3001;&#x63A5;&#x6536;(receive&#xFF09;&#x548C;&#x5173;&#x95ED;&#xFF08;close&#xFF09;&#x4E09;&#x79CD;&#x64CD;&#x4F5C;&#x3002;&#x800C;&#x53D1;&#x9001;&#x548C;&#x63A5;&#x6536;&#x64CD;&#x4F5C;&#x90FD;&#x4F7F;&#x7528;<code>&lt;-</code>&#x7B26;&#x53F7;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x5148;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x8BED;&#x53E5;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x901A;&#x9053;&#xFF1A;</p>
+<pre><code class="lang-go">ch := make(chan int)
+</code></pre>
+<h4 id="&#x53D1;&#x9001;">&#x53D1;&#x9001;</h4>
+<p>&#x5C06;&#x4E00;&#x4E2A;&#x503C;&#x53D1;&#x9001;&#x5230;&#x901A;&#x9053;&#x4E2D;&#x3002;</p>
+<pre><code class="lang-go">ch &lt;- 10 // &#x628A;10&#x53D1;&#x9001;&#x5230;ch&#x4E2D;
+</code></pre>
+<h4 id="&#x63A5;&#x6536;">&#x63A5;&#x6536;</h4>
+<p>&#x4ECE;&#x4E00;&#x4E2A;&#x901A;&#x9053;&#x4E2D;&#x63A5;&#x6536;&#x503C;&#x3002;</p>
+<pre><code class="lang-go">x := &lt;- ch // &#x4ECE;ch&#x4E2D;&#x63A5;&#x6536;&#x503C;&#x5E76;&#x8D4B;&#x503C;&#x7ED9;&#x53D8;&#x91CF;x
+&lt;-ch       // &#x4ECE;ch&#x4E2D;&#x63A5;&#x6536;&#x503C;&#xFF0C;&#x5FFD;&#x7565;&#x7ED3;&#x679C;
+</code></pre>
+<h4 id="&#x5173;&#x95ED;">&#x5173;&#x95ED;</h4>
+<p>&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x8C03;&#x7528;&#x5185;&#x7F6E;&#x7684;<code>close</code>&#x51FD;&#x6570;&#x6765;&#x5173;&#x95ED;&#x901A;&#x9053;&#x3002;</p>
+<pre><code class="lang-go">close(ch)
+</code></pre>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong>&#x4E00;&#x4E2A;&#x901A;&#x9053;&#x503C;&#x662F;&#x53EF;&#x4EE5;&#x88AB;&#x5783;&#x573E;&#x56DE;&#x6536;&#x6389;&#x7684;&#x3002;&#x901A;&#x9053;&#x901A;&#x5E38;&#x7531;&#x53D1;&#x9001;&#x65B9;&#x6267;&#x884C;&#x5173;&#x95ED;&#x64CD;&#x4F5C;&#xFF0C;&#x5E76;&#x4E14;&#x53EA;&#x6709;&#x5728;&#x63A5;&#x6536;&#x65B9;&#x660E;&#x786E;&#x7B49;&#x5F85;&#x901A;&#x9053;&#x5173;&#x95ED;&#x7684;&#x4FE1;&#x53F7;&#x65F6;&#x624D;&#x9700;&#x8981;&#x6267;&#x884C;&#x5173;&#x95ED;&#x64CD;&#x4F5C;&#x3002;&#x5B83;&#x548C;&#x5173;&#x95ED;&#x6587;&#x4EF6;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x901A;&#x5E38;&#x5728;&#x7ED3;&#x675F;&#x64CD;&#x4F5C;&#x4E4B;&#x540E;&#x5173;&#x95ED;&#x6587;&#x4EF6;&#x662F;&#x5FC5;&#x987B;&#x8981;&#x505A;&#x7684;&#xFF0C;&#x4F46;&#x5173;&#x95ED;&#x901A;&#x9053;&#x4E0D;&#x662F;&#x5FC5;&#x987B;&#x7684;&#x3002;</p>
+<p>&#x5173;&#x95ED;&#x540E;&#x7684;&#x901A;&#x9053;&#x6709;&#x4EE5;&#x4E0B;&#x7279;&#x70B9;&#xFF1A;</p>
+<ol>
+<li>&#x5BF9;&#x4E00;&#x4E2A;&#x5173;&#x95ED;&#x7684;&#x901A;&#x9053;&#x518D;&#x53D1;&#x9001;&#x503C;&#x5C31;&#x4F1A;&#x5BFC;&#x81F4; panic&#x3002;</li>
+<li>&#x5BF9;&#x4E00;&#x4E2A;&#x5173;&#x95ED;&#x7684;&#x901A;&#x9053;&#x8FDB;&#x884C;&#x63A5;&#x6536;&#x4F1A;&#x4E00;&#x76F4;&#x83B7;&#x53D6;&#x503C;&#x76F4;&#x5230;&#x901A;&#x9053;&#x4E3A;&#x7A7A;&#x3002;</li>
+<li>&#x5BF9;&#x4E00;&#x4E2A;&#x5173;&#x95ED;&#x7684;&#x5E76;&#x4E14;&#x6CA1;&#x6709;&#x503C;&#x7684;&#x901A;&#x9053;&#x6267;&#x884C;&#x63A5;&#x6536;&#x64CD;&#x4F5C;&#x4F1A;&#x5F97;&#x5230;&#x5BF9;&#x5E94;&#x7C7B;&#x578B;&#x7684;&#x96F6;&#x503C;&#x3002;</li>
+<li>&#x5173;&#x95ED;&#x4E00;&#x4E2A;&#x5DF2;&#x7ECF;&#x5173;&#x95ED;&#x7684;&#x901A;&#x9053;&#x4F1A;&#x5BFC;&#x81F4; panic&#x3002;</li>
+</ol>
+<h3 id="&#x65E0;&#x7F13;&#x51B2;&#x7684;&#x901A;&#x9053;">&#x65E0;&#x7F13;&#x51B2;&#x7684;&#x901A;&#x9053;</h3>
+<p>&#x65E0;&#x7F13;&#x51B2;&#x7684;&#x901A;&#x9053;&#x53C8;&#x79F0;&#x4E3A;&#x963B;&#x585E;&#x7684;&#x901A;&#x9053;&#x3002;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x3002;</p>
+<pre><code class="lang-go">func main() {
+    ch := make(chan int)
+    ch &lt;- 10
+    fmt.Println(&quot;&#x53D1;&#x9001;&#x6210;&#x529F;&quot;)
+}
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x80FD;&#x591F;&#x901A;&#x8FC7;&#x7F16;&#x8BD1;&#xFF0C;&#x4F46;&#x662F;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x51FA;&#x73B0;&#x4EE5;&#x4E0B;&#x9519;&#x8BEF;&#xFF1A;</p>
+<pre><code class="lang-bash">fatal error: all goroutines are asleep - deadlock!
+
+goroutine 1 [chan send]:
+main.main()
+        .../main.go:8 +0x54
+</code></pre>
+<p><code>deadlock</code>&#x8868;&#x793A;&#x6211;&#x4EEC;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684; goroutine &#x90FD;&#x88AB;&#x6302;&#x8D77;&#x5BFC;&#x81F4;&#x7A0B;&#x5E8F;&#x6B7B;&#x9501;&#x4E86;&#x3002;&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x51FA;&#x73B0;<code>deadlock</code>&#x9519;&#x8BEF;&#x5462;&#xFF1F;</p>
+<p>&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x4F7F;&#x7528;<code>ch := make(chan int)</code>&#x521B;&#x5EFA;&#x7684;&#x662F;&#x65E0;&#x7F13;&#x51B2;&#x7684;&#x901A;&#x9053;&#xFF0C;&#x65E0;&#x7F13;&#x51B2;&#x7684;&#x901A;&#x9053;&#x53EA;&#x6709;&#x5728;&#x6709;&#x63A5;&#x6536;&#x65B9;&#x80FD;&#x591F;&#x63A5;&#x6536;&#x503C;&#x7684;&#x65F6;&#x5019;&#x624D;&#x80FD;&#x53D1;&#x9001;&#x6210;&#x529F;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x4E00;&#x76F4;&#x5904;&#x4E8E;&#x7B49;&#x5F85;&#x53D1;&#x9001;&#x7684;&#x9636;&#x6BB5;&#x3002;&#x540C;&#x7406;&#xFF0C;&#x5982;&#x679C;&#x5BF9;&#x4E00;&#x4E2A;&#x65E0;&#x7F13;&#x51B2;&#x901A;&#x9053;&#x6267;&#x884C;&#x63A5;&#x6536;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x5411;&#x901A;&#x9053;&#x4E2D;&#x53D1;&#x9001;&#x503C;&#x7684;&#x64CD;&#x4F5C;&#x90A3;&#x4E48;&#x4E5F;&#x4F1A;&#x5BFC;&#x81F4;&#x63A5;&#x6536;&#x64CD;&#x4F5C;&#x963B;&#x585E;&#x3002;&#x5C31;&#x50CF;&#x7530;&#x5F84;&#x6BD4;&#x8D5B;&#x4E2D;&#x7684;4x100&#x63A5;&#x529B;&#x8D5B;&#xFF0C;&#x60F3;&#x8981;&#x5B8C;&#x6210;&#x4EA4;&#x68D2;&#x5FC5;&#x987B;&#x6709;&#x4E00;&#x4E2A;&#x80FD;&#x591F;&#x63A5;&#x68D2;&#x7684;&#x8FD0;&#x52A8;&#x5458;&#xFF0C;&#x5426;&#x5219;&#x53EA;&#x80FD;&#x7B49;&#x5F85;&#x3002;&#x7B80;&#x5355;&#x6765;&#x8BF4;&#x5C31;&#x662F;&#x65E0;&#x7F13;&#x51B2;&#x7684;&#x901A;&#x9053;&#x5FC5;&#x987B;&#x6709;&#x81F3;&#x5C11;&#x4E00;&#x4E2A;&#x63A5;&#x6536;&#x65B9;&#x624D;&#x80FD;&#x53D1;&#x9001;&#x6210;&#x529F;&#x3002;</p>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4F1A;&#x963B;&#x585E;&#x5728;<code>ch &lt;- 10</code>&#x8FD9;&#x4E00;&#x884C;&#x4EE3;&#x7801;&#x5F62;&#x6210;&#x6B7B;&#x9501;&#xFF0C;&#x90A3;&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x5462;&#xFF1F;</p>
+<p>&#x5176;&#x4E2D;&#x4E00;&#x79CD;&#x53EF;&#x884C;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; goroutine &#x53BB;&#x63A5;&#x6536;&#x503C;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-go">func recv(c chan int) {
+    ret := &lt;-c
+    fmt.Println(&quot;&#x63A5;&#x6536;&#x6210;&#x529F;&quot;, ret)
+}
+
+func main() {
+    ch := make(chan int)
+    go recv(ch) // &#x521B;&#x5EFA;&#x4E00;&#x4E2A; goroutine &#x4ECE;&#x901A;&#x9053;&#x63A5;&#x6536;&#x503C;
+    ch &lt;- 10
+    fmt.Println(&quot;&#x53D1;&#x9001;&#x6210;&#x529F;&quot;)
+}
+</code></pre>
+<p>&#x9996;&#x5148;&#x65E0;&#x7F13;&#x51B2;&#x901A;&#x9053;<code>ch</code>&#x4E0A;&#x7684;&#x53D1;&#x9001;&#x64CD;&#x4F5C;&#x4F1A;&#x963B;&#x585E;&#xFF0C;&#x76F4;&#x5230;&#x53E6;&#x4E00;&#x4E2A; goroutine &#x5728;&#x8BE5;&#x901A;&#x9053;&#x4E0A;&#x6267;&#x884C;&#x63A5;&#x6536;&#x64CD;&#x4F5C;&#xFF0C;&#x8FD9;&#x65F6;&#x6570;&#x5B57;10&#x624D;&#x80FD;&#x53D1;&#x9001;&#x6210;&#x529F;&#xFF0C;&#x4E24;&#x4E2A; goroutine &#x5C06;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x3002;&#x76F8;&#x53CD;&#xFF0C;&#x5982;&#x679C;&#x63A5;&#x6536;&#x64CD;&#x4F5C;&#x5148;&#x6267;&#x884C;&#xFF0C;&#x63A5;&#x6536;&#x65B9;&#x6240;&#x5728;&#x7684; goroutine &#x5C06;&#x963B;&#x585E;&#xFF0C;&#x76F4;&#x5230; main goroutine &#x4E2D;&#x5411;&#x8BE5;&#x901A;&#x9053;&#x53D1;&#x9001;&#x6570;&#x5B57;10&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x65E0;&#x7F13;&#x51B2;&#x901A;&#x9053;&#x8FDB;&#x884C;&#x901A;&#x4FE1;&#x5C06;&#x5BFC;&#x81F4;&#x53D1;&#x9001;&#x548C;&#x63A5;&#x6536;&#x7684; goroutine &#x540C;&#x6B65;&#x5316;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x65E0;&#x7F13;&#x51B2;&#x901A;&#x9053;&#x4E5F;&#x88AB;&#x79F0;&#x4E3A;<code>&#x540C;&#x6B65;&#x901A;&#x9053;</code>&#x3002;</p>
+<h3 id="&#x6709;&#x7F13;&#x51B2;&#x7684;&#x901A;&#x9053;">&#x6709;&#x7F13;&#x51B2;&#x7684;&#x901A;&#x9053;</h3>
+<p>&#x8FD8;&#x6709;&#x53E6;&#x5916;&#x4E00;&#x79CD;&#x89E3;&#x51B3;&#x4E0A;&#x9762;&#x6B7B;&#x9501;&#x95EE;&#x9898;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x90A3;&#x5C31;&#x662F;&#x4F7F;&#x7528;&#x6709;&#x7F13;&#x51B2;&#x533A;&#x7684;&#x901A;&#x9053;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x4F7F;&#x7528; make &#x51FD;&#x6570;&#x521D;&#x59CB;&#x5316;&#x901A;&#x9053;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4E3A;&#x5176;&#x6307;&#x5B9A;&#x901A;&#x9053;&#x7684;&#x5BB9;&#x91CF;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-go">func main() {
+    ch := make(chan int, 1) // &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5BB9;&#x91CF;&#x4E3A;1&#x7684;&#x6709;&#x7F13;&#x51B2;&#x533A;&#x901A;&#x9053;
+    ch &lt;- 10
+    fmt.Println(&quot;&#x53D1;&#x9001;&#x6210;&#x529F;&quot;)
+}
+</code></pre>
+<p>&#x53EA;&#x8981;&#x901A;&#x9053;&#x7684;&#x5BB9;&#x91CF;&#x5927;&#x4E8E;&#x96F6;&#xFF0C;&#x90A3;&#x4E48;&#x8BE5;&#x901A;&#x9053;&#x5C31;&#x5C5E;&#x4E8E;&#x6709;&#x7F13;&#x51B2;&#x7684;&#x901A;&#x9053;&#xFF0C;&#x901A;&#x9053;&#x7684;&#x5BB9;&#x91CF;&#x8868;&#x793A;&#x901A;&#x9053;&#x4E2D;&#x6700;&#x5927;&#x80FD;&#x5B58;&#x653E;&#x7684;&#x5143;&#x7D20;&#x6570;&#x91CF;&#x3002;&#x5F53;&#x901A;&#x9053;&#x5185;&#x5DF2;&#x6709;&#x5143;&#x7D20;&#x6570;&#x8FBE;&#x5230;&#x6700;&#x5927;&#x5BB9;&#x91CF;&#x540E;&#xFF0C;&#x518D;&#x5411;&#x901A;&#x9053;&#x6267;&#x884C;&#x53D1;&#x9001;&#x64CD;&#x4F5C;&#x5C31;&#x4F1A;&#x963B;&#x585E;&#xFF0C;&#x9664;&#x975E;&#x6709;&#x4ECE;&#x901A;&#x9053;&#x6267;&#x884C;&#x63A5;&#x6536;&#x64CD;&#x4F5C;&#x3002;&#x5C31;&#x50CF;&#x4F60;&#x5C0F;&#x533A;&#x7684;&#x5FEB;&#x9012;&#x67DC;&#x53EA;&#x6709;&#x90A3;&#x4E48;&#x4E2A;&#x591A;&#x683C;&#x5B50;&#xFF0C;&#x683C;&#x5B50;&#x6EE1;&#x4E86;&#x5C31;&#x88C5;&#x4E0D;&#x4E0B;&#x4E86;&#xFF0C;&#x5C31;&#x963B;&#x585E;&#x4E86;&#xFF0C;&#x7B49;&#x5230;&#x522B;&#x4EBA;&#x53D6;&#x8D70;&#x4E00;&#x4E2A;&#x5FEB;&#x9012;&#x5458;&#x5C31;&#x80FD;&#x5F80;&#x91CC;&#x9762;&#x653E;&#x4E00;&#x4E2A;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5185;&#x7F6E;&#x7684;<code>len</code>&#x51FD;&#x6570;&#x83B7;&#x53D6;&#x901A;&#x9053;&#x5185;&#x5143;&#x7D20;&#x7684;&#x6570;&#x91CF;&#xFF0C;&#x4F7F;&#x7528;<code>cap</code>&#x51FD;&#x6570;&#x83B7;&#x53D6;&#x901A;&#x9053;&#x7684;&#x5BB9;&#x91CF;&#xFF0C;&#x867D;&#x7136;&#x6211;&#x4EEC;&#x5F88;&#x5C11;&#x4F1A;&#x8FD9;&#x4E48;&#x505A;&#x3002;</p>
+<h3 id="&#x591A;&#x8FD4;&#x56DE;&#x503C;&#x6A21;&#x5F0F;">&#x591A;&#x8FD4;&#x56DE;&#x503C;&#x6A21;&#x5F0F;</h3>
+<p>&#x5F53;&#x5411;&#x901A;&#x9053;&#x4E2D;&#x53D1;&#x9001;&#x5B8C;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>close</code>&#x51FD;&#x6570;&#x6765;&#x5173;&#x95ED;&#x901A;&#x9053;&#x3002;&#x5F53;&#x4E00;&#x4E2A;&#x901A;&#x9053;&#x88AB;&#x5173;&#x95ED;&#x540E;&#xFF0C;&#x518D;&#x5F80;&#x8BE5;&#x901A;&#x9053;&#x53D1;&#x9001;&#x503C;&#x4F1A;&#x5F15;&#x53D1;<code>panic</code>&#xFF0C;&#x4ECE;&#x8BE5;&#x901A;&#x9053;&#x53D6;&#x503C;&#x7684;&#x64CD;&#x4F5C;&#x4F1A;&#x5148;&#x53D6;&#x5B8C;&#x901A;&#x9053;&#x4E2D;&#x7684;&#x503C;&#x3002;&#x901A;&#x9053;&#x5185;&#x7684;&#x503C;&#x88AB;&#x63A5;&#x6536;&#x5B8C;&#x540E;&#x518D;&#x5BF9;&#x901A;&#x9053;&#x6267;&#x884C;&#x63A5;&#x6536;&#x64CD;&#x4F5C;&#x5F97;&#x5230;&#x7684;&#x503C;&#x4F1A;&#x4E00;&#x76F4;&#x90FD;&#x662F;&#x5BF9;&#x5E94;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#x7684;&#x96F6;&#x503C;&#x3002;&#x90A3;&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x5224;&#x65AD;&#x4E00;&#x4E2A;&#x901A;&#x9053;&#x662F;&#x5426;&#x88AB;&#x5173;&#x95ED;&#x4E86;&#x5462;&#xFF1F;</p>
+<p>&#x5BF9;&#x4E00;&#x4E2A;&#x901A;&#x9053;&#x6267;&#x884C;&#x63A5;&#x6536;&#x64CD;&#x4F5C;&#x65F6;&#x652F;&#x6301;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x591A;&#x8FD4;&#x56DE;&#x503C;&#x6A21;&#x5F0F;&#x3002;</p>
+<pre><code class="lang-go">value, ok := &lt;- ch
+</code></pre>
+<p>&#x5176;&#x4E2D;&#xFF1A;</p>
+<ul>
+<li>value&#xFF1A;&#x4ECE;&#x901A;&#x9053;&#x4E2D;&#x53D6;&#x51FA;&#x7684;&#x503C;&#xFF0C;&#x5982;&#x679C;&#x901A;&#x9053;&#x88AB;&#x5173;&#x95ED;&#x5219;&#x8FD4;&#x56DE;&#x5BF9;&#x5E94;&#x7C7B;&#x578B;&#x7684;&#x96F6;&#x503C;&#x3002;</li>
+<li>ok&#xFF1A;&#x901A;&#x9053;ch&#x5173;&#x95ED;&#x65F6;&#x8FD4;&#x56DE; false&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE; true&#x3002;</li>
+</ul>
+<p>&#x4E0B;&#x9762;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x4E2D;&#x7684;<code>f2</code>&#x51FD;&#x6570;&#x4F1A;&#x5FAA;&#x73AF;&#x4ECE;&#x901A;&#x9053;<code>ch</code>&#x4E2D;&#x63A5;&#x6536;&#x6240;&#x6709;&#x503C;&#xFF0C;&#x76F4;&#x5230;&#x901A;&#x9053;&#x88AB;&#x5173;&#x95ED;&#x540E;&#x9000;&#x51FA;&#x3002;</p>
+<pre><code class="lang-go">func f2(ch chan int) {
+    for {
+        v, ok := &lt;-ch
+        if !ok {
+            fmt.Println(&quot;&#x901A;&#x9053;&#x5DF2;&#x5173;&#x95ED;&quot;)
+            break
+        }
+        fmt.Printf(&quot;v:%#v ok:%#v\n&quot;, v, ok)
+    }
+}
+
+func main() {
+    ch := make(chan int, 2)
+    ch &lt;- 1
+    ch &lt;- 2
+    close(ch)
+    f2(ch)
+}
+</code></pre>
+<h3 id="for-range&#x63A5;&#x6536;&#x503C;">for range&#x63A5;&#x6536;&#x503C;</h3>
+<p>&#x901A;&#x5E38;&#x6211;&#x4EEC;&#x4F1A;&#x9009;&#x62E9;&#x4F7F;&#x7528;<code>for range</code>&#x5FAA;&#x73AF;&#x4ECE;&#x901A;&#x9053;&#x4E2D;&#x63A5;&#x6536;&#x503C;&#xFF0C;&#x5F53;&#x901A;&#x9053;&#x88AB;&#x5173;&#x95ED;&#x540E;&#xFF0C;&#x4F1A;&#x5728;&#x901A;&#x9053;&#x5185;&#x7684;&#x6240;&#x6709;&#x503C;&#x88AB;&#x63A5;&#x6536;&#x5B8C;&#x6BD5;&#x540E;&#x4F1A;&#x81EA;&#x52A8;&#x9000;&#x51FA;&#x5FAA;&#x73AF;&#x3002;&#x4E0A;&#x9762;&#x90A3;&#x4E2A;&#x793A;&#x4F8B;&#x6211;&#x4EEC;&#x4F7F;&#x7528;<code>for range</code>&#x6539;&#x5199;&#x540E;&#x4F1A;&#x5F88;&#x7B80;&#x6D01;&#x3002;</p>
+<pre><code class="lang-go">func f3(ch chan int) {
+    for v := range ch {
+        fmt.Println(v)
+    }
+}
+</code></pre>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong>&#x76EE;&#x524D;Go&#x8BED;&#x8A00;&#x4E2D;&#x5E76;&#x6CA1;&#x6709;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x4E0D;&#x5BF9;&#x901A;&#x9053;&#x8FDB;&#x884C;&#x8BFB;&#x53D6;&#x64CD;&#x4F5C;&#x5C31;&#x80FD;&#x5224;&#x65AD;&#x901A;&#x9053;&#x662F;&#x5426;&#x88AB;&#x5173;&#x95ED;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x4E0D;&#x80FD;&#x7B80;&#x5355;&#x7684;&#x901A;&#x8FC7;<code>len(ch)</code>&#x64CD;&#x4F5C;&#x6765;&#x5224;&#x65AD;&#x901A;&#x9053;&#x662F;&#x5426;&#x88AB;&#x5173;&#x95ED;&#x3002;</p>
+<h3 id="&#x5355;&#x5411;&#x901A;&#x9053;">&#x5355;&#x5411;&#x901A;&#x9053;</h3>
+<p>&#x5728;&#x67D0;&#x4E9B;&#x573A;&#x666F;&#x4E0B;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x4F1A;&#x5C06;&#x901A;&#x9053;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x5728;&#x591A;&#x4E2A;&#x4EFB;&#x52A1;&#x51FD;&#x6570;&#x95F4;&#x8FDB;&#x884C;&#x4F20;&#x9012;&#xFF0C;&#x901A;&#x5E38;&#x6211;&#x4EEC;&#x4F1A;&#x9009;&#x62E9;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x4EFB;&#x52A1;&#x51FD;&#x6570;&#x4E2D;&#x5BF9;&#x901A;&#x9053;&#x7684;&#x4F7F;&#x7528;&#x8FDB;&#x884C;&#x9650;&#x5236;&#xFF0C;&#x6BD4;&#x5982;&#x9650;&#x5236;&#x901A;&#x9053;&#x5728;&#x67D0;&#x4E2A;&#x51FD;&#x6570;&#x4E2D;&#x53EA;&#x80FD;&#x6267;&#x884C;&#x53D1;&#x9001;&#x6216;&#x53EA;&#x80FD;&#x6267;&#x884C;&#x63A5;&#x6536;&#x64CD;&#x4F5C;&#x3002;&#x60F3;&#x8C61;&#x4E00;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x6709;<code>Producer</code>&#x548C;<code>Consumer</code>&#x4E24;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5176;&#x4E2D;<code>Producer</code>&#x51FD;&#x6570;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x901A;&#x9053;&#xFF0C;&#x5E76;&#x4E14;&#x4F1A;&#x6301;&#x7EED;&#x5C06;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;&#x53D1;&#x9001;&#x81F3;&#x8BE5;&#x901A;&#x9053;&#xFF0C;&#x5E76;&#x5728;&#x53D1;&#x9001;&#x5B8C;&#x6210;&#x540E;&#x5C06;&#x8BE5;&#x901A;&#x9053;&#x5173;&#x95ED;&#x3002;&#x800C;<code>Consumer</code>&#x51FD;&#x6570;&#x7684;&#x4EFB;&#x52A1;&#x662F;&#x4ECE;&#x901A;&#x9053;&#x4E2D;&#x63A5;&#x6536;&#x503C;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x51FD;&#x6570;&#x4E4B;&#x95F4;&#x901A;&#x8FC7;<code>Processer</code>&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x901A;&#x9053;&#x8FDB;&#x884C;&#x901A;&#x4FE1;&#x3002;&#x5B8C;&#x6574;&#x7684;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x3002;</p>
+<pre><code class="lang-go">package main
+
+import (
+    &quot;fmt&quot;
+)
+
+// Producer &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x901A;&#x9053;
+// &#x5E76;&#x6301;&#x7EED;&#x5C06;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;&#x53D1;&#x9001;&#x81F3;&#x8FD4;&#x56DE;&#x7684;&#x901A;&#x9053;&#x4E2D;
+// &#x6570;&#x636E;&#x53D1;&#x9001;&#x5B8C;&#x6210;&#x540E;&#x4F1A;&#x5C06;&#x8FD4;&#x56DE;&#x7684;&#x901A;&#x9053;&#x5173;&#x95ED;
+func Producer() chan int {
+    ch := make(chan int, 2)
+    // &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;goroutine&#x6267;&#x884C;&#x53D1;&#x9001;&#x6570;&#x636E;&#x7684;&#x4EFB;&#x52A1;
+    go func() {
+        for i := 0; i &lt; 10; i++ {
+            if i%2 == 1 {
+                ch &lt;- i
+            }
+        }
+        close(ch) // &#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x540E;&#x5173;&#x95ED;&#x901A;&#x9053;
+    }()
+
+    return ch
+}
+
+// Consumer &#x4ECE;&#x901A;&#x9053;&#x4E2D;&#x63A5;&#x6536;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;
+func Consumer(ch chan int) int {
+    sum := 0
+    for v := range ch {
+        sum += v
+    }
+    return sum
+}
+
+func main() {
+    ch := Producer()
+
+    res := Consumer(ch)
+    fmt.Println(res) // 25
+
+}
+</code></pre>
+<p>&#x4ECE;&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;<code>Consumer</code>&#x51FD;&#x6570;&#x4E2D;&#x53EA;&#x4F1A;&#x5BF9;&#x901A;&#x9053;&#x8FDB;&#x884C;&#x63A5;&#x6536;&#x64CD;&#x4F5C;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E0D;&#x4EE3;&#x8868;&#x4E0D;&#x53EF;&#x4EE5;&#x5728;<code>Consumer</code>&#x51FD;&#x6570;&#x4E2D;&#x5BF9;&#x901A;&#x9053;&#x8FDB;&#x884C;&#x53D1;&#x9001;&#x64CD;&#x4F5C;&#x3002;&#x4F5C;&#x4E3A;<code>Producer</code>&#x51FD;&#x6570;&#x7684;&#x63D0;&#x4F9B;&#x8005;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x8FD4;&#x56DE;&#x901A;&#x9053;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x80FD;&#x53EA;&#x5E0C;&#x671B;&#x8C03;&#x7528;&#x65B9;&#x62FF;&#x5230;&#x8FD4;&#x56DE;&#x7684;&#x901A;&#x9053;&#x540E;&#x53EA;&#x80FD;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x63A5;&#x6536;&#x64CD;&#x4F5C;&#x3002;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x529E;&#x6CD5;&#x963B;&#x6B62;&#x5728;<code>Consumer</code>&#x51FD;&#x6570;&#x4E2D;&#x5BF9;&#x901A;&#x9053;&#x8FDB;&#x884C;&#x53D1;&#x9001;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>Go&#x8BED;&#x8A00;&#x4E2D;&#x63D0;&#x4F9B;&#x4E86;<strong>&#x5355;&#x5411;&#x901A;&#x9053;</strong>&#x6765;&#x5904;&#x7406;&#x8FD9;&#x79CD;&#x9700;&#x8981;&#x9650;&#x5236;&#x901A;&#x9053;&#x53EA;&#x80FD;&#x8FDB;&#x884C;&#x67D0;&#x79CD;&#x64CD;&#x4F5C;&#x7684;&#x60C5;&#x51B5;&#x3002;</p>
+<pre><code class="lang-go">&lt;- chan int // &#x53EA;&#x63A5;&#x6536;&#x901A;&#x9053;&#xFF0C;&#x53EA;&#x80FD;&#x63A5;&#x6536;&#x4E0D;&#x80FD;&#x53D1;&#x9001;
+chan &lt;- int // &#x53EA;&#x53D1;&#x9001;&#x901A;&#x9053;&#xFF0C;&#x53EA;&#x80FD;&#x53D1;&#x9001;&#x4E0D;&#x80FD;&#x63A5;&#x6536;
+</code></pre>
+<p>&#x5176;&#x4E2D;&#xFF0C;&#x7BAD;&#x5934;<code>&lt;-</code>&#x548C;&#x5173;&#x952E;&#x5B57;<code>chan</code>&#x7684;&#x76F8;&#x5BF9;&#x4F4D;&#x7F6E;&#x8868;&#x660E;&#x4E86;&#x5F53;&#x524D;&#x901A;&#x9053;&#x5141;&#x8BB8;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x8FD9;&#x79CD;&#x9650;&#x5236;&#x5C06;&#x5728;&#x7F16;&#x8BD1;&#x9636;&#x6BB5;&#x8FDB;&#x884C;&#x68C0;&#x6D4B;&#x3002;&#x53E6;&#x5916;&#x5BF9;&#x4E00;&#x4E2A;&#x53EA;&#x63A5;&#x6536;&#x901A;&#x9053;&#x6267;&#x884C;close&#x4E5F;&#x662F;&#x4E0D;&#x5141;&#x8BB8;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x9ED8;&#x8BA4;&#x901A;&#x9053;&#x7684;&#x5173;&#x95ED;&#x64CD;&#x4F5C;&#x5E94;&#x8BE5;&#x7531;&#x53D1;&#x9001;&#x65B9;&#x6765;&#x5B8C;&#x6210;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x5355;&#x5411;&#x901A;&#x9053;&#x5C06;&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x5982;&#x4E0B;&#x6539;&#x9020;&#x3002;</p>
+<pre><code class="lang-go">// Producer2 &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x63A5;&#x6536;&#x901A;&#x9053;
+func Producer2() &lt;-chan int {
+    ch := make(chan int, 2)
+    // &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;goroutine&#x6267;&#x884C;&#x53D1;&#x9001;&#x6570;&#x636E;&#x7684;&#x4EFB;&#x52A1;
+    go func() {
+        for i := 0; i &lt; 10; i++ {
+            if i%2 == 1 {
+                ch &lt;- i
+            }
+        }
+        close(ch) // &#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x540E;&#x5173;&#x95ED;&#x901A;&#x9053;
+    }()
+
+    return ch
+}
+
+// Consumer2 &#x53C2;&#x6570;&#x4E3A;&#x63A5;&#x6536;&#x901A;&#x9053;
+func Consumer2(ch &lt;-chan int) int {
+    sum := 0
+    for v := range ch {
+        sum += v
+    }
+    return sum
+}
+
+func main() {
+    ch2 := Producer2()
+
+    res2 := Consumer2(ch2)
+    fmt.Println(res2) // 25
+}
+</code></pre>
+<p>&#x8FD9;&#x4E00;&#x6B21;&#xFF0C;<code>Producer</code>&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x53EA;&#x63A5;&#x6536;&#x901A;&#x9053;&#xFF0C;&#x8FD9;&#x5C31;&#x4ECE;&#x4EE3;&#x7801;&#x5C42;&#x9762;&#x9650;&#x5236;&#x4E86;&#x8BE5;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x901A;&#x9053;&#x53EA;&#x80FD;&#x8FDB;&#x884C;&#x63A5;&#x6536;&#x64CD;&#x4F5C;&#xFF0C;&#x4FDD;&#x8BC1;&#x4E86;&#x6570;&#x636E;&#x5B89;&#x5168;&#x3002;&#x5F88;&#x591A;&#x8BFB;&#x8005;&#x770B;&#x5230;&#x8FD9;&#x4E2A;&#x793A;&#x4F8B;&#x53EF;&#x80FD;&#x4F1A;&#x89C9;&#x7740;&#x8FD9;&#x6837;&#x7684;&#x9650;&#x5236;&#x662F;&#x591A;&#x4F59;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x8BD5;&#x60F3;&#x4E00;&#x4E0B;&#x5982;&#x679C;<code>Producer</code>&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x5728;&#x5176;&#x4ED6;&#x5730;&#x65B9;&#x88AB;&#x5176;&#x4ED6;&#x4EBA;&#x8C03;&#x7528;&#xFF0C;&#x4F60;&#x8BE5;&#x5982;&#x4F55;&#x9650;&#x5236;&#x4ED6;&#x4EBA;&#x4E0D;&#x5BF9;&#x8BE5;&#x901A;&#x9053;&#x6267;&#x884C;&#x53D1;&#x9001;&#x64CD;&#x4F5C;&#x5462;&#xFF1F;&#x5E76;&#x4E14;&#x8FD4;&#x56DE;&#x9650;&#x5236;&#x64CD;&#x4F5C;&#x7684;&#x5355;&#x5411;&#x901A;&#x9053;&#x4E5F;&#x4F1A;&#x8BA9;&#x4EE3;&#x7801;&#x8BED;&#x4E49;&#x66F4;&#x6E05;&#x6670;&#x3001;&#x66F4;&#x6613;&#x8BFB;&#x3002;</p>
+<p>&#x5728;&#x51FD;&#x6570;&#x4F20;&#x53C2;&#x53CA;&#x4EFB;&#x4F55;&#x8D4B;&#x503C;&#x64CD;&#x4F5C;&#x4E2D;&#x5168;&#x5411;&#x901A;&#x9053;&#xFF08;&#x6B63;&#x5E38;&#x901A;&#x9053;&#xFF09;&#x53EF;&#x4EE5;&#x8F6C;&#x6362;&#x4E3A;&#x5355;&#x5411;&#x901A;&#x9053;&#xFF0C;&#x4F46;&#x662F;&#x65E0;&#x6CD5;&#x53CD;&#x5411;&#x8F6C;&#x6362;&#x3002;</p>
+<pre><code class="lang-go">var ch3 = make(chan int, 1)
+ch3 &lt;- 10
+close(ch3)
+Consumer2(ch3) // &#x51FD;&#x6570;&#x4F20;&#x53C2;&#x65F6;&#x5C06;ch3&#x8F6C;&#x4E3A;&#x5355;&#x5411;&#x901A;&#x9053;
+
+var ch4 = make(chan int, 1)
+ch4 &lt;- 10
+var ch5 &lt;-chan int // &#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x53EA;&#x63A5;&#x6536;&#x901A;&#x9053;ch5
+ch5 = ch4          // &#x53D8;&#x91CF;&#x8D4B;&#x503C;&#x65F6;&#x5C06;ch4&#x8F6C;&#x4E3A;&#x5355;&#x5411;&#x901A;&#x9053;
+&lt;-ch5
+</code></pre>
+<h3 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h3>
+<p>&#x4E0B;&#x9762;&#x7684;&#x8868;&#x683C;&#x4E2D;&#x603B;&#x7ED3;&#x4E86;&#x5BF9;&#x4E0D;&#x540C;&#x72B6;&#x6001;&#x4E0B;&#x7684;&#x901A;&#x9053;&#x6267;&#x884C;&#x76F8;&#x5E94;&#x64CD;&#x4F5C;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<p><a href="image/GoLang-%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%B9%B6%E5%8F%91.assets/channel.png" data-lightbox="a200bc5c-9025-4cba-8abe-c2a4174eef8d" data-title="img"><img src="image/GoLang-%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%B9%B6%E5%8F%91.assets/channel.png" alt="img"></a></p>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong>&#x5BF9;&#x5DF2;&#x7ECF;&#x5173;&#x95ED;&#x7684;&#x901A;&#x9053;&#x518D;&#x6267;&#x884C; close &#x4E5F;&#x4F1A;&#x5F15;&#x53D1; panic&#x3002;</p>
+<h2 id="select&#x591A;&#x8DEF;&#x590D;&#x7528;">select&#x591A;&#x8DEF;&#x590D;&#x7528;</h2>
+<p>&#x5728;&#x67D0;&#x4E9B;&#x573A;&#x666F;&#x4E0B;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x540C;&#x65F6;&#x4ECE;&#x591A;&#x4E2A;&#x901A;&#x9053;&#x63A5;&#x6536;&#x6570;&#x636E;&#x3002;&#x901A;&#x9053;&#x5728;&#x63A5;&#x6536;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x88AB;&#x63A5;&#x6536;&#x90A3;&#x4E48;&#x5F53;&#x524D; goroutine &#x5C06;&#x4F1A;&#x53D1;&#x751F;&#x963B;&#x585E;&#x3002;&#x4F60;&#x4E5F;&#x8BB8;&#x4F1A;&#x5199;&#x51FA;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x5C1D;&#x8BD5;&#x4F7F;&#x7528;&#x904D;&#x5386;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5B9E;&#x73B0;&#x4ECE;&#x591A;&#x4E2A;&#x901A;&#x9053;&#x4E2D;&#x63A5;&#x6536;&#x503C;&#x3002;</p>
+<pre><code class="lang-go">for{
+    // &#x5C1D;&#x8BD5;&#x4ECE;ch1&#x63A5;&#x6536;&#x503C;
+    data, ok := &lt;-ch1
+    // &#x5C1D;&#x8BD5;&#x4ECE;ch2&#x63A5;&#x6536;&#x503C;
+    data, ok := &lt;-ch2
+    &#x2026;
+}
+</code></pre>
+<p>&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x867D;&#x7136;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x4ECE;&#x591A;&#x4E2A;&#x901A;&#x9053;&#x63A5;&#x6536;&#x503C;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x4F46;&#x662F;&#x7A0B;&#x5E8F;&#x7684;&#x8FD0;&#x884C;&#x6027;&#x80FD;&#x4F1A;&#x5DEE;&#x5F88;&#x591A;&#x3002;Go &#x8BED;&#x8A00;&#x5185;&#x7F6E;&#x4E86;<code>select</code>&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x4F7F;&#x7528;&#x5B83;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x54CD;&#x5E94;&#x591A;&#x4E2A;&#x901A;&#x9053;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>Select &#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x7C7B;&#x4F3C;&#x4E8E;&#x4E4B;&#x524D;&#x5B66;&#x5230;&#x7684; switch &#x8BED;&#x53E5;&#xFF0C;&#x5B83;&#x4E5F;&#x6709;&#x4E00;&#x7CFB;&#x5217; case &#x5206;&#x652F;&#x548C;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684;&#x5206;&#x652F;&#x3002;&#x6BCF;&#x4E2A; case &#x5206;&#x652F;&#x4F1A;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x901A;&#x9053;&#x7684;&#x901A;&#x4FE1;&#xFF08;&#x63A5;&#x6536;&#x6216;&#x53D1;&#x9001;&#xFF09;&#x8FC7;&#x7A0B;&#x3002;select &#x4F1A;&#x4E00;&#x76F4;&#x7B49;&#x5F85;&#xFF0C;&#x76F4;&#x5230;&#x5176;&#x4E2D;&#x7684;&#x67D0;&#x4E2A; case &#x7684;&#x901A;&#x4FE1;&#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#x65F6;&#xFF0C;&#x5C31;&#x4F1A;&#x6267;&#x884C;&#x8BE5; case &#x5206;&#x652F;&#x5BF9;&#x5E94;&#x7684;&#x8BED;&#x53E5;&#x3002;&#x5177;&#x4F53;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-go">select {
+case &lt;-ch1:
+    //...
+case data := &lt;-ch2:
+    //...
+case ch3 &lt;- 10:
+    //...
+default:
+    //&#x9ED8;&#x8BA4;&#x64CD;&#x4F5C;
+}
+</code></pre>
+<p>Select &#x8BED;&#x53E5;&#x5177;&#x6709;&#x4EE5;&#x4E0B;&#x7279;&#x70B9;&#x3002;</p>
+<ul>
+<li>&#x53EF;&#x5904;&#x7406;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A; channel &#x7684;&#x53D1;&#x9001;/&#x63A5;&#x6536;&#x64CD;&#x4F5C;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x591A;&#x4E2A; case &#x540C;&#x65F6;&#x6EE1;&#x8DB3;&#xFF0C;select &#x4F1A;<strong>&#x968F;&#x673A;</strong>&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#x3002;</li>
+<li>&#x5BF9;&#x4E8E;&#x6CA1;&#x6709; case &#x7684; select &#x4F1A;&#x4E00;&#x76F4;&#x963B;&#x585E;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x963B;&#x585E; main &#x51FD;&#x6570;&#xFF0C;&#x9632;&#x6B62;&#x9000;&#x51FA;&#x3002;</li>
+</ul>
+<p>&#x4E0B;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x80FD;&#x591F;&#x5728;&#x7EC8;&#x7AEF;&#x6253;&#x5370;&#x51FA;10&#x4EE5;&#x5185;&#x7684;&#x5947;&#x6570;&#xFF0C;&#x6211;&#x4EEC;&#x501F;&#x52A9;&#x8FD9;&#x4E2A;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x6765;&#x770B;&#x4E00;&#x4E0B; select &#x7684;&#x5177;&#x4F53;&#x4F7F;&#x7528;&#x3002;</p>
+<pre><code class="lang-go">package main
+
+import &quot;fmt&quot;
+
+func main() {
+    ch := make(chan int, 1)
+    for i := 1; i &lt;= 10; i++ {
+        select {
+        case x := &lt;-ch:
+            fmt.Println(x)
+        case ch &lt;- i:
+        }
+    }
+}
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x8F93;&#x51FA;&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#x3002;</p>
+<pre><code class="lang-bash">1
+3
+5
+7
+9
+</code></pre>
+<p>&#x793A;&#x4F8B;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x9996;&#x5148;&#x662F;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x7F13;&#x51B2;&#x533A;&#x5927;&#x5C0F;&#x4E3A;1&#x7684;&#x901A;&#x9053; ch&#xFF0C;&#x8FDB;&#x5165; for &#x5FAA;&#x73AF;&#x540E;&#xFF1A;</p>
+<ul>
+<li>&#x7B2C;&#x4E00;&#x6B21;&#x5FAA;&#x73AF;&#x65F6; i = 1&#xFF0C;select &#x8BED;&#x53E5;&#x4E2D;&#x5305;&#x542B;&#x4E24;&#x4E2A; case &#x5206;&#x652F;&#xFF0C;&#x6B64;&#x65F6;&#x7531;&#x4E8E;&#x901A;&#x9053;&#x4E2D;&#x6CA1;&#x6709;&#x503C;&#x53EF;&#x4EE5;&#x63A5;&#x6536;&#xFF0C;&#x6240;&#x4EE5;<code>x := &lt;-ch</code> &#x8FD9;&#x4E2A; case &#x5206;&#x652F;&#x4E0D;&#x6EE1;&#x8DB3;&#xFF0C;&#x800C;<code>ch &lt;- i</code>&#x8FD9;&#x4E2A;&#x5206;&#x652F;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#xFF0C;&#x4F1A;&#x628A;1&#x53D1;&#x9001;&#x5230;&#x901A;&#x9053;&#x4E2D;&#xFF0C;&#x7ED3;&#x675F;&#x672C;&#x6B21; for &#x5FAA;&#x73AF;&#xFF1B;</li>
+<li>&#x7B2C;&#x4E8C;&#x6B21; for &#x5FAA;&#x73AF;&#x65F6;&#xFF0C;i = 2&#xFF0C;&#x7531;&#x4E8E;&#x901A;&#x9053;&#x7F13;&#x51B2;&#x533A;&#x5DF2;&#x6EE1;&#xFF0C;&#x6240;&#x4EE5;<code>ch &lt;- i</code>&#x8FD9;&#x4E2A;&#x5206;&#x652F;&#x4E0D;&#x6EE1;&#x8DB3;&#xFF0C;&#x800C;<code>x := &lt;-ch</code>&#x8FD9;&#x4E2A;&#x5206;&#x652F;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#xFF0C;&#x4ECE;&#x901A;&#x9053;&#x63A5;&#x6536;&#x503C;1&#x5E76;&#x8D4B;&#x503C;&#x7ED9;&#x53D8;&#x91CF; x &#xFF0C;&#x6240;&#x4EE5;&#x4F1A;&#x5728;&#x7EC8;&#x7AEF;&#x6253;&#x5370;&#x51FA; 1&#xFF1B;</li>
+<li>&#x540E;&#x7EED;&#x7684; for &#x5FAA;&#x73AF;&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;&#x4F1A;&#x4F9D;&#x6B21;&#x6253;&#x5370;&#x51FA;3&#x3001;5&#x3001;7&#x3001;9&#x3002;</li>
+</ul>
+<h2 id="&#x901A;&#x9053;&#x8BEF;&#x7528;&#x793A;&#x4F8B;">&#x901A;&#x9053;&#x8BEF;&#x7528;&#x793A;&#x4F8B;</h2>
+<p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5C55;&#x793A;&#x4E24;&#x4E2A;&#x56E0;&#x8BEF;&#x7528;&#x901A;&#x9053;&#x5BFC;&#x81F4;&#x7A0B;&#x5E8F;&#x51FA;&#x73B0; bug &#x7684;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#xFF0C;&#x5E0C;&#x671B;&#x80FD;&#x591F;&#x52A0;&#x6DF1;&#x8BFB;&#x8005;&#x5BF9;&#x901A;&#x9053;&#x64CD;&#x4F5C;&#x7684;&#x5370;&#x8C61;&#x3002;</p>
+<h4 id="&#x793A;&#x4F8B;1">&#x793A;&#x4F8B;1</h4>
+<p>&#x5404;&#x4F4D;&#x8BFB;&#x8005;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x4EE5;&#x4E0B;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#xFF0C;&#x5C1D;&#x8BD5;&#x627E;&#x51FA;&#x5176;&#x4E2D;&#x5B58;&#x5728;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<pre><code class="lang-go">// demo1 &#x901A;&#x9053;&#x8BEF;&#x7528;&#x5BFC;&#x81F4;&#x7684;bug
+func demo1() {
+    wg := sync.WaitGroup{}
+
+    ch := make(chan int, 10)
+    for i := 0; i &lt; 10; i++ {
+        ch &lt;- i
+    }
+    close(ch)
+
+    wg.Add(3)
+    for j := 0; j &lt; 3; j++ {
+        go func() {
+            for {
+                task := &lt;-ch
+                // &#x8FD9;&#x91CC;&#x5047;&#x8BBE;&#x5BF9;&#x63A5;&#x6536;&#x7684;&#x6570;&#x636E;&#x6267;&#x884C;&#x67D0;&#x4E9B;&#x64CD;&#x4F5C;
+                fmt.Println(task)
+            }
+            wg.Done()
+        }()
+    }
+    wg.Wait()
+}
+</code></pre>
+<p>&#x5C06;&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#x7F16;&#x8BD1;&#x6267;&#x884C;&#x540E;&#xFF0C;&#x533F;&#x540D;&#x51FD;&#x6570;&#x6240;&#x5728;&#x7684; goroutine &#x5E76;&#x4E0D;&#x4F1A;&#x6309;&#x7167;&#x9884;&#x671F;&#x5728;&#x901A;&#x9053;&#x88AB;&#x5173;&#x95ED;&#x540E;&#x9000;&#x51FA;&#x3002;&#x56E0;&#x4E3A;<code>task := &lt;- ch</code>&#x7684;&#x63A5;&#x6536;&#x64CD;&#x4F5C;&#x5728;&#x901A;&#x9053;&#x88AB;&#x5173;&#x95ED;&#x540E;&#x4F1A;&#x4E00;&#x76F4;&#x63A5;&#x6536;&#x5230;&#x96F6;&#x503C;&#xFF0C;&#x800C;&#x4E0D;&#x4F1A;&#x9000;&#x51FA;&#x3002;&#x6B64;&#x5904;&#x7684;&#x63A5;&#x6536;&#x64CD;&#x4F5C;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;<code>task, ok := &lt;- ch</code>&#xFF0C;&#x901A;&#x8FC7;&#x5224;&#x65AD;&#x5E03;&#x5C14;&#x503C;<code>ok</code>&#x4E3A;&#x5047;&#x65F6;&#x9000;&#x51FA;&#xFF1B;&#x6216;&#x8005;&#x4F7F;&#x7528;select &#x6765;&#x5904;&#x7406;&#x901A;&#x9053;&#x3002;</p>
+<h4 id="&#x793A;&#x4F8B;2">&#x793A;&#x4F8B;2</h4>
+<p>&#x5404;&#x4F4D;&#x8BFB;&#x8005;&#x9605;&#x8BFB;&#x4E0B;&#x65B9;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#xFF0C;&#x5C1D;&#x8BD5;&#x627E;&#x51FA;&#x5176;&#x4E2D;&#x5B58;&#x5728;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<pre><code class="lang-go">// demo2 &#x901A;&#x9053;&#x8BEF;&#x7528;&#x5BFC;&#x81F4;&#x7684;bug
+func demo2() {
+    ch := make(chan string)
+    go func() {
+        // &#x8FD9;&#x91CC;&#x5047;&#x8BBE;&#x6267;&#x884C;&#x4E00;&#x4E9B;&#x8017;&#x65F6;&#x7684;&#x64CD;&#x4F5C;
+        time.Sleep(3 * time.Second)
+        ch &lt;- &quot;job result&quot;
+    }()
+
+    select {
+    case result := &lt;-ch:
+        fmt.Println(result)
+    case &lt;-time.After(time.Second): // &#x8F83;&#x5C0F;&#x7684;&#x8D85;&#x65F6;&#x65F6;&#x95F4;
+        return
+    }
+}
+</code></pre>
+<p>&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x53EF;&#x80FD;&#x5BFC;&#x81F4; goroutine &#x6CC4;&#x9732;&#xFF08;goroutine &#x5E76;&#x672A;&#x6309;&#x9884;&#x671F;&#x9000;&#x51FA;&#x5E76;&#x9500;&#x6BC1;&#xFF09;&#x3002;&#x7531;&#x4E8E; select &#x547D;&#x4E2D;&#x4E86;&#x8D85;&#x65F6;&#x903B;&#x8F91;&#xFF0C;&#x5BFC;&#x81F4;&#x901A;&#x9053;&#x6CA1;&#x6709;&#x6D88;&#x8D39;&#x8005;&#xFF08;&#x65E0;&#x63A5;&#x6536;&#x64CD;&#x4F5C;&#xFF09;&#xFF0C;&#x800C;&#x5176;&#x5B9A;&#x4E49;&#x7684;&#x901A;&#x9053;&#x4E3A;&#x65E0;&#x7F13;&#x51B2;&#x901A;&#x9053;&#xFF0C;&#x56E0;&#x6B64; goroutine &#x4E2D;&#x7684;<code>ch &lt;- &quot;job result&quot;</code>&#x64CD;&#x4F5C;&#x4F1A;&#x4E00;&#x76F4;&#x963B;&#x585E;&#xFF0C;&#x6700;&#x7EC8;&#x5BFC;&#x81F4; goroutine &#x6CC4;&#x9732;&#x3002;</p>
+<h2 id="&#x5E76;&#x53D1;&#x5B89;&#x5168;&#x548C;&#x9501;">&#x5E76;&#x53D1;&#x5B89;&#x5168;&#x548C;&#x9501;</h2>
+<p>&#x6709;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#x53EF;&#x80FD;&#x4F1A;&#x5B58;&#x5728;&#x591A;&#x4E2A; goroutine &#x540C;&#x65F6;&#x64CD;&#x4F5C;&#x4E00;&#x4E2A;&#x8D44;&#x6E90;&#xFF08;&#x4E34;&#x754C;&#x533A;&#xFF09;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x5C31;&#x4F1A;&#x53D1;&#x751F;<code>&#x7ADE;&#x6001;&#x95EE;&#x9898;</code>&#xFF08;&#x6570;&#x636E;&#x7ADE;&#x6001;&#xFF09;&#x3002;&#x8FD9;&#x5C31;&#x597D;&#x6BD4;&#x73B0;&#x5B9E;&#x751F;&#x6D3B;&#x4E2D;&#x5341;&#x5B57;&#x8DEF;&#x53E3;&#x88AB;&#x5404;&#x4E2A;&#x65B9;&#x5411;&#x7684;&#x6C7D;&#x8F66;&#x7ADE;&#x4E89;&#xFF0C;&#x8FD8;&#x6709;&#x706B;&#x8F66;&#x4E0A;&#x7684;&#x536B;&#x751F;&#x95F4;&#x88AB;&#x8F66;&#x53A2;&#x91CC;&#x7684;&#x4EBA;&#x7ADE;&#x4E89;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x6F14;&#x793A;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x7ADE;&#x4E89;&#x7684;&#x793A;&#x4F8B;&#x3002;</p>
+<pre><code class="lang-go">package main
+
+import (
+    &quot;fmt&quot;
+    &quot;sync&quot;
+)
+
+var (
+    x int64
+
+    wg sync.WaitGroup // &#x7B49;&#x5F85;&#x7EC4;
+)
+
+// add &#x5BF9;&#x5168;&#x5C40;&#x53D8;&#x91CF;x&#x6267;&#x884C;5000&#x6B21;&#x52A0;1&#x64CD;&#x4F5C;
+func add() {
+    for i := 0; i &lt; 5000; i++ {
+        x = x + 1
+    }
+    wg.Done()
+}
+
+func main() {
+    wg.Add(2)
+
+    go add()
+    go add()
+
+    wg.Wait()
+    fmt.Println(x)
+}
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x5C06;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x7F16;&#x8BD1;&#x540E;&#x6267;&#x884C;&#xFF0C;&#x4E0D;&#x51FA;&#x610F;&#x5916;&#x6BCF;&#x6B21;&#x6267;&#x884C;&#x90FD;&#x4F1A;&#x8F93;&#x51FA;&#x8BF8;&#x5982;9537&#x3001;5865&#x3001;6527&#x7B49;&#x4E0D;&#x540C;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x8FD9;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;</p>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x7247;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5F00;&#x542F;&#x4E86;&#x4E24;&#x4E2A; goroutine &#x5206;&#x522B;&#x6267;&#x884C; add &#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A; goroutine &#x5728;&#x8BBF;&#x95EE;&#x548C;&#x4FEE;&#x6539;&#x5168;&#x5C40;&#x7684;<code>x</code>&#x53D8;&#x91CF;&#x65F6;&#x5C31;&#x4F1A;&#x5B58;&#x5728;&#x6570;&#x636E;&#x7ADE;&#x4E89;&#xFF0C;&#x67D0;&#x4E2A; goroutine &#x4E2D;&#x5BF9;&#x5168;&#x5C40;&#x53D8;&#x91CF;<code>x</code>&#x7684;&#x4FEE;&#x6539;&#x53EF;&#x80FD;&#x4F1A;&#x8986;&#x76D6;&#x6389;&#x53E6;&#x4E00;&#x4E2A; goroutine &#x4E2D;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x6240;&#x4EE5;&#x5BFC;&#x81F4;&#x6700;&#x540E;&#x7684;&#x7ED3;&#x679C;&#x4E0E;&#x9884;&#x671F;&#x4E0D;&#x7B26;&#x3002;</p>
+<h3 id="&#x4E92;&#x65A5;&#x9501;">&#x4E92;&#x65A5;&#x9501;</h3>
+<p>&#x4E92;&#x65A5;&#x9501;&#x662F;&#x4E00;&#x79CD;&#x5E38;&#x7528;&#x7684;&#x63A7;&#x5236;&#x5171;&#x4EAB;&#x8D44;&#x6E90;&#x8BBF;&#x95EE;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5B83;&#x80FD;&#x591F;&#x4FDD;&#x8BC1;&#x540C;&#x4E00;&#x65F6;&#x95F4;&#x53EA;&#x6709;&#x4E00;&#x4E2A; goroutine &#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5171;&#x4EAB;&#x8D44;&#x6E90;&#x3002;Go &#x8BED;&#x8A00;&#x4E2D;&#x4F7F;&#x7528;<code>sync</code>&#x5305;&#x4E2D;&#x63D0;&#x4F9B;&#x7684;<code>Mutex</code>&#x7C7B;&#x578B;&#x6765;&#x5B9E;&#x73B0;&#x4E92;&#x65A5;&#x9501;&#x3002;</p>
+<p><code>sync.Mutex</code>&#x63D0;&#x4F9B;&#x4E86;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x4F9B;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x65B9;&#x6CD5;&#x540D;</th>
+<th style="text-align:center">&#x529F;&#x80FD;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">func (m *Mutex) Lock()</td>
+<td style="text-align:center">&#x83B7;&#x53D6;&#x4E92;&#x65A5;&#x9501;</td>
+</tr>
+<tr>
+<td style="text-align:center">func (m *Mutex) Unlock()</td>
+<td style="text-align:center">&#x91CA;&#x653E;&#x4E92;&#x65A5;&#x9501;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x6211;&#x4EEC;&#x5728;&#x4E0B;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x4E2D;&#x4F7F;&#x7528;&#x4E92;&#x65A5;&#x9501;&#x9650;&#x5236;&#x6BCF;&#x6B21;&#x53EA;&#x6709;&#x4E00;&#x4E2A; goroutine &#x624D;&#x80FD;&#x4FEE;&#x6539;&#x5168;&#x5C40;&#x53D8;&#x91CF;<code>x</code>&#xFF0C;&#x4ECE;&#x800C;&#x4FEE;&#x590D;&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<pre><code class="lang-go">package main
+
+import (
+    &quot;fmt&quot;
+    &quot;sync&quot;
+)
+
+// sync.Mutex
+
+var (
+    x int64
+
+    wg sync.WaitGroup // &#x7B49;&#x5F85;&#x7EC4;
+
+    m sync.Mutex // &#x4E92;&#x65A5;&#x9501;
+)
+
+// add &#x5BF9;&#x5168;&#x5C40;&#x53D8;&#x91CF;x&#x6267;&#x884C;5000&#x6B21;&#x52A0;1&#x64CD;&#x4F5C;
+func add() {
+    for i := 0; i &lt; 5000; i++ {
+        m.Lock() // &#x4FEE;&#x6539;x&#x524D;&#x52A0;&#x9501;
+        x = x + 1
+        m.Unlock() // &#x6539;&#x5B8C;&#x89E3;&#x9501;
+    }
+    wg.Done()
+}
+
+func main() {
+    wg.Add(2)
+
+    go add()
+    go add()
+
+    wg.Wait()
+    fmt.Println(x)
+}
+</code></pre>
+<p>&#x5C06;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x7F16;&#x8BD1;&#x540E;&#x591A;&#x6B21;&#x6267;&#x884C;&#xFF0C;&#x6BCF;&#x4E00;&#x6B21;&#x90FD;&#x4F1A;&#x5F97;&#x5230;&#x9884;&#x671F;&#x4E2D;&#x7684;&#x7ED3;&#x679C;&#x2014;&#x2014;10000&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x4E92;&#x65A5;&#x9501;&#x80FD;&#x591F;&#x4FDD;&#x8BC1;&#x540C;&#x4E00;&#x65F6;&#x95F4;&#x6709;&#x4E14;&#x53EA;&#x6709;&#x4E00;&#x4E2A; goroutine &#x8FDB;&#x5165;&#x4E34;&#x754C;&#x533A;&#xFF0C;&#x5176;&#x4ED6;&#x7684; goroutine &#x5219;&#x5728;&#x7B49;&#x5F85;&#x9501;&#xFF1B;&#x5F53;&#x4E92;&#x65A5;&#x9501;&#x91CA;&#x653E;&#x540E;&#xFF0C;&#x7B49;&#x5F85;&#x7684; goroutine &#x624D;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x9501;&#x8FDB;&#x5165;&#x4E34;&#x754C;&#x533A;&#xFF0C;&#x591A;&#x4E2A; goroutine &#x540C;&#x65F6;&#x7B49;&#x5F85;&#x4E00;&#x4E2A;&#x9501;&#x65F6;&#xFF0C;&#x5524;&#x9192;&#x7684;&#x7B56;&#x7565;&#x662F;&#x968F;&#x673A;&#x7684;&#x3002;</p>
+<h3 id="&#x8BFB;&#x5199;&#x4E92;&#x65A5;&#x9501;">&#x8BFB;&#x5199;&#x4E92;&#x65A5;&#x9501;</h3>
+<p>&#x4E92;&#x65A5;&#x9501;&#x662F;&#x5B8C;&#x5168;&#x4E92;&#x65A5;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5B9E;&#x9645;&#x4E0A;&#x6709;&#x5F88;&#x591A;&#x573A;&#x666F;&#x662F;&#x8BFB;&#x591A;&#x5199;&#x5C11;&#x7684;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x5E76;&#x53D1;&#x7684;&#x53BB;&#x8BFB;&#x53D6;&#x4E00;&#x4E2A;&#x8D44;&#x6E90;&#x800C;&#x4E0D;&#x6D89;&#x53CA;&#x8D44;&#x6E90;&#x4FEE;&#x6539;&#x7684;&#x65F6;&#x5019;&#x662F;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x52A0;&#x4E92;&#x65A5;&#x9501;&#x7684;&#xFF0C;&#x8FD9;&#x79CD;&#x573A;&#x666F;&#x4E0B;&#x4F7F;&#x7528;&#x8BFB;&#x5199;&#x9501;&#x662F;&#x66F4;&#x597D;&#x7684;&#x4E00;&#x79CD;&#x9009;&#x62E9;&#x3002;&#x8BFB;&#x5199;&#x9501;&#x5728; Go &#x8BED;&#x8A00;&#x4E2D;&#x4F7F;&#x7528;<code>sync</code>&#x5305;&#x4E2D;&#x7684;<code>RWMutex</code>&#x7C7B;&#x578B;&#x3002;</p>
+<p><code>sync.RWMutex</code>&#x63D0;&#x4F9B;&#x4E86;&#x4EE5;&#x4E0B;5&#x4E2A;&#x65B9;&#x6CD5;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x65B9;&#x6CD5;&#x540D;</th>
+<th style="text-align:center">&#x529F;&#x80FD;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">func (rw *RWMutex) Lock()</td>
+<td style="text-align:center">&#x83B7;&#x53D6;&#x5199;&#x9501;</td>
+</tr>
+<tr>
+<td style="text-align:center">func (rw *RWMutex) Unlock()</td>
+<td style="text-align:center">&#x91CA;&#x653E;&#x5199;&#x9501;</td>
+</tr>
+<tr>
+<td style="text-align:center">func (rw *RWMutex) RLock()</td>
+<td style="text-align:center">&#x83B7;&#x53D6;&#x8BFB;&#x9501;</td>
+</tr>
+<tr>
+<td style="text-align:center">func (rw *RWMutex) RUnlock()</td>
+<td style="text-align:center">&#x91CA;&#x653E;&#x8BFB;&#x9501;</td>
+</tr>
+<tr>
+<td style="text-align:center">func (rw *RWMutex) RLocker() Locker</td>
+<td style="text-align:center">&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;Locker&#x63A5;&#x53E3;&#x7684;&#x8BFB;&#x5199;&#x9501;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8BFB;&#x5199;&#x9501;&#x5206;&#x4E3A;&#x4E24;&#x79CD;&#xFF1A;&#x8BFB;&#x9501;&#x548C;&#x5199;&#x9501;&#x3002;&#x5F53;&#x4E00;&#x4E2A; goroutine &#x83B7;&#x53D6;&#x5230;&#x8BFB;&#x9501;&#x4E4B;&#x540E;&#xFF0C;&#x5176;&#x4ED6;&#x7684; goroutine &#x5982;&#x679C;&#x662F;&#x83B7;&#x53D6;&#x8BFB;&#x9501;&#x4F1A;&#x7EE7;&#x7EED;&#x83B7;&#x5F97;&#x9501;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x83B7;&#x53D6;&#x5199;&#x9501;&#x5C31;&#x4F1A;&#x7B49;&#x5F85;&#xFF1B;&#x800C;&#x5F53;&#x4E00;&#x4E2A; goroutine &#x83B7;&#x53D6;&#x5199;&#x9501;&#x4E4B;&#x540E;&#xFF0C;&#x5176;&#x4ED6;&#x7684; goroutine &#x65E0;&#x8BBA;&#x662F;&#x83B7;&#x53D6;&#x8BFB;&#x9501;&#x8FD8;&#x662F;&#x5199;&#x9501;&#x90FD;&#x4F1A;&#x7B49;&#x5F85;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4EE3;&#x7801;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x8BFB;&#x591A;&#x5199;&#x5C11;&#x7684;&#x573A;&#x666F;&#xFF0C;&#x7136;&#x540E;&#x5206;&#x522B;&#x4F7F;&#x7528;&#x4E92;&#x65A5;&#x9501;&#x548C;&#x8BFB;&#x5199;&#x9501;&#x67E5;&#x770B;&#x5B83;&#x4EEC;&#x7684;&#x6027;&#x80FD;&#x5DEE;&#x5F02;&#x3002;</p>
+<pre><code class="lang-go">var (
+    x       int64
+    wg      sync.WaitGroup
+    mutex   sync.Mutex
+    rwMutex sync.RWMutex
+)
+
+// writeWithLock &#x4F7F;&#x7528;&#x4E92;&#x65A5;&#x9501;&#x7684;&#x5199;&#x64CD;&#x4F5C;
+func writeWithLock() {
+    mutex.Lock() // &#x52A0;&#x4E92;&#x65A5;&#x9501;
+    x = x + 1
+    time.Sleep(10 * time.Millisecond) // &#x5047;&#x8BBE;&#x8BFB;&#x64CD;&#x4F5C;&#x8017;&#x65F6;10&#x6BEB;&#x79D2;
+    mutex.Unlock()                    // &#x89E3;&#x4E92;&#x65A5;&#x9501;
+    wg.Done()
+}
+
+// readWithLock &#x4F7F;&#x7528;&#x4E92;&#x65A5;&#x9501;&#x7684;&#x8BFB;&#x64CD;&#x4F5C;
+func readWithLock() {
+    mutex.Lock()                 // &#x52A0;&#x4E92;&#x65A5;&#x9501;
+    time.Sleep(time.Millisecond) // &#x5047;&#x8BBE;&#x8BFB;&#x64CD;&#x4F5C;&#x8017;&#x65F6;1&#x6BEB;&#x79D2;
+    mutex.Unlock()               // &#x91CA;&#x653E;&#x4E92;&#x65A5;&#x9501;
+    wg.Done()
+}
+
+// writeWithLock &#x4F7F;&#x7528;&#x8BFB;&#x5199;&#x4E92;&#x65A5;&#x9501;&#x7684;&#x5199;&#x64CD;&#x4F5C;
+func writeWithRWLock() {
+    rwMutex.Lock() // &#x52A0;&#x5199;&#x9501;
+    x = x + 1
+    time.Sleep(10 * time.Millisecond) // &#x5047;&#x8BBE;&#x8BFB;&#x64CD;&#x4F5C;&#x8017;&#x65F6;10&#x6BEB;&#x79D2;
+    rwMutex.Unlock()                  // &#x91CA;&#x653E;&#x5199;&#x9501;
+    wg.Done()
+}
+
+// readWithRWLock &#x4F7F;&#x7528;&#x8BFB;&#x5199;&#x4E92;&#x65A5;&#x9501;&#x7684;&#x8BFB;&#x64CD;&#x4F5C;
+func readWithRWLock() {
+    rwMutex.RLock()              // &#x52A0;&#x8BFB;&#x9501;
+    time.Sleep(time.Millisecond) // &#x5047;&#x8BBE;&#x8BFB;&#x64CD;&#x4F5C;&#x8017;&#x65F6;1&#x6BEB;&#x79D2;
+    rwMutex.RUnlock()            // &#x91CA;&#x653E;&#x8BFB;&#x9501;
+    wg.Done()
+}
+
+func do(wf, rf func(), wc, rc int) {
+    start := time.Now()
+    // wc&#x4E2A;&#x5E76;&#x53D1;&#x5199;&#x64CD;&#x4F5C;
+    for i := 0; i &lt; wc; i++ {
+        wg.Add(1)
+        go wf()
+    }
+
+    //  rc&#x4E2A;&#x5E76;&#x53D1;&#x8BFB;&#x64CD;&#x4F5C;
+    for i := 0; i &lt; rc; i++ {
+        wg.Add(1)
+        go rf()
+    }
+
+    wg.Wait()
+    cost := time.Since(start)
+    fmt.Printf(&quot;x:%v cost:%v\n&quot;, x, cost)
+
+}
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x5047;&#x8BBE;&#x6BCF;&#x4E00;&#x6B21;&#x8BFB;&#x64CD;&#x4F5C;&#x90FD;&#x4F1A;&#x8017;&#x65F6;1ms&#xFF0C;&#x800C;&#x6BCF;&#x4E00;&#x6B21;&#x5199;&#x64CD;&#x4F5C;&#x4F1A;&#x8017;&#x65F6;10ms&#xFF0C;&#x6211;&#x4EEC;&#x5206;&#x522B;&#x6D4B;&#x8BD5;&#x4F7F;&#x7528;&#x4E92;&#x65A5;&#x9501;&#x548C;&#x8BFB;&#x5199;&#x4E92;&#x65A5;&#x9501;&#x6267;&#x884C;10&#x6B21;&#x5E76;&#x53D1;&#x5199;&#x548C;1000&#x6B21;&#x5E76;&#x53D1;&#x8BFB;&#x7684;&#x8017;&#x65F6;&#x6570;&#x636E;&#x3002;</p>
+<pre><code class="lang-go">// &#x4F7F;&#x7528;&#x4E92;&#x65A5;&#x9501;&#xFF0C;10&#x5E76;&#x53D1;&#x5199;&#xFF0C;1000&#x5E76;&#x53D1;&#x8BFB;
+do(writeWithLock, readWithLock, 10, 1000) // x:10 cost:1.466500951s
+
+// &#x4F7F;&#x7528;&#x8BFB;&#x5199;&#x4E92;&#x65A5;&#x9501;&#xFF0C;10&#x5E76;&#x53D1;&#x5199;&#xFF0C;1000&#x5E76;&#x53D1;&#x8BFB;
+do(writeWithRWLock, readWithRWLock, 10, 1000) // x:10 cost:117.207592ms
+</code></pre>
+<p>&#x4ECE;&#x6700;&#x7EC8;&#x7684;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x4F7F;&#x7528;&#x8BFB;&#x5199;&#x4E92;&#x65A5;&#x9501;&#x5728;&#x8BFB;&#x591A;&#x5199;&#x5C11;&#x7684;&#x573A;&#x666F;&#x4E0B;&#x80FD;&#x591F;&#x6781;&#x5927;&#x5730;&#x63D0;&#x9AD8;&#x7A0B;&#x5E8F;&#x7684;&#x6027;&#x80FD;&#x3002;&#x4E0D;&#x8FC7;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x8BFB;&#x64CD;&#x4F5C;&#x548C;&#x5199;&#x64CD;&#x4F5C;&#x6570;&#x91CF;&#x7EA7;&#x5DEE;&#x522B;&#x4E0D;&#x5927;&#xFF0C;&#x90A3;&#x4E48;&#x8BFB;&#x5199;&#x4E92;&#x65A5;&#x9501;&#x7684;&#x4F18;&#x52BF;&#x5C31;&#x53D1;&#x6325;&#x4E0D;&#x51FA;&#x6765;&#x3002;</p>
+<h3 id="syncwaitgroup">sync.WaitGroup</h3>
+<p>&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x751F;&#x786C;&#x7684;&#x4F7F;&#x7528;<code>time.Sleep</code>&#x80AF;&#x5B9A;&#x662F;&#x4E0D;&#x5408;&#x9002;&#x7684;&#xFF0C;Go&#x8BED;&#x8A00;&#x4E2D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>sync.WaitGroup</code>&#x6765;&#x5B9E;&#x73B0;&#x5E76;&#x53D1;&#x4EFB;&#x52A1;&#x7684;&#x540C;&#x6B65;&#x3002; <code>sync.WaitGroup</code>&#x6709;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x65B9;&#x6CD5;&#x540D;</th>
+<th style="text-align:center">&#x529F;&#x80FD;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">func (wg * WaitGroup) Add(delta int)</td>
+<td style="text-align:center">&#x8BA1;&#x6570;&#x5668;+delta</td>
+</tr>
+<tr>
+<td style="text-align:center">(wg *WaitGroup) Done()</td>
+<td style="text-align:center">&#x8BA1;&#x6570;&#x5668;-1</td>
+</tr>
+<tr>
+<td style="text-align:center">(wg *WaitGroup) Wait()</td>
+<td style="text-align:center">&#x963B;&#x585E;&#x76F4;&#x5230;&#x8BA1;&#x6570;&#x5668;&#x53D8;&#x4E3A;0</td>
+</tr>
+</tbody>
+</table>
+<p><code>sync.WaitGroup</code>&#x5185;&#x90E8;&#x7EF4;&#x62A4;&#x7740;&#x4E00;&#x4E2A;&#x8BA1;&#x6570;&#x5668;&#xFF0C;&#x8BA1;&#x6570;&#x5668;&#x7684;&#x503C;&#x53EF;&#x4EE5;&#x589E;&#x52A0;&#x548C;&#x51CF;&#x5C11;&#x3002;&#x4F8B;&#x5982;&#x5F53;&#x6211;&#x4EEC;&#x542F;&#x52A8;&#x4E86; N &#x4E2A;&#x5E76;&#x53D1;&#x4EFB;&#x52A1;&#x65F6;&#xFF0C;&#x5C31;&#x5C06;&#x8BA1;&#x6570;&#x5668;&#x503C;&#x589E;&#x52A0;N&#x3002;&#x6BCF;&#x4E2A;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x65F6;&#x901A;&#x8FC7;&#x8C03;&#x7528; Done &#x65B9;&#x6CD5;&#x5C06;&#x8BA1;&#x6570;&#x5668;&#x51CF;1&#x3002;&#x901A;&#x8FC7;&#x8C03;&#x7528; Wait &#x6765;&#x7B49;&#x5F85;&#x5E76;&#x53D1;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x5B8C;&#xFF0C;&#x5F53;&#x8BA1;&#x6570;&#x5668;&#x503C;&#x4E3A; 0 &#x65F6;&#xFF0C;&#x8868;&#x793A;&#x6240;&#x6709;&#x5E76;&#x53D1;&#x4EFB;&#x52A1;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x5229;&#x7528;<code>sync.WaitGroup</code>&#x5C06;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4F18;&#x5316;&#x4E00;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-go">var wg sync.WaitGroup
+
+func hello() {
+    defer wg.Done()
+    fmt.Println(&quot;Hello Goroutine!&quot;)
+}
+func main() {
+    wg.Add(1)
+    go hello() // &#x542F;&#x52A8;&#x53E6;&#x5916;&#x4E00;&#x4E2A;goroutine&#x53BB;&#x6267;&#x884C;hello&#x51FD;&#x6570;
+    fmt.Println(&quot;main goroutine done!&quot;)
+    wg.Wait()
+}
+</code></pre>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;<code>sync.WaitGroup</code>&#x662F;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x8FDB;&#x884C;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x7684;&#x65F6;&#x5019;&#x8981;&#x4F20;&#x9012;&#x6307;&#x9488;&#x3002;</p>
+<h3 id="synconce">sync.Once</h3>
+<p>&#x5728;&#x67D0;&#x4E9B;&#x573A;&#x666F;&#x4E0B;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x786E;&#x4FDD;&#x67D0;&#x4E9B;&#x64CD;&#x4F5C;&#x5373;&#x4F7F;&#x5728;&#x9AD8;&#x5E76;&#x53D1;&#x7684;&#x573A;&#x666F;&#x4E0B;&#x4E5F;&#x53EA;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#x4E00;&#x6B21;&#xFF0C;&#x4F8B;&#x5982;&#x53EA;&#x52A0;&#x8F7D;&#x4E00;&#x6B21;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7B49;&#x3002;</p>
+<p>Go&#x8BED;&#x8A00;&#x4E2D;&#x7684;<code>sync</code>&#x5305;&#x4E2D;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x9488;&#x5BF9;&#x53EA;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x573A;&#x666F;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x2014;&#x2014;<code>sync.Once</code>&#xFF0C;<code>sync.Once</code>&#x53EA;&#x6709;&#x4E00;&#x4E2A;<code>Do</code>&#x65B9;&#x6CD5;&#xFF0C;&#x5176;&#x7B7E;&#x540D;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-go">func (o *Once) Do(f func())
+</code></pre>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong>&#x5982;&#x679C;&#x8981;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;<code>f</code>&#x9700;&#x8981;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x5C31;&#x9700;&#x8981;&#x642D;&#x914D;&#x95ED;&#x5305;&#x6765;&#x4F7F;&#x7528;&#x3002;</p>
+<h4 id="&#x52A0;&#x8F7D;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x793A;&#x4F8B;">&#x52A0;&#x8F7D;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x793A;&#x4F8B;</h4>
+<p>&#x5EF6;&#x8FDF;&#x4E00;&#x4E2A;&#x5F00;&#x9500;&#x5F88;&#x5927;&#x7684;&#x521D;&#x59CB;&#x5316;&#x64CD;&#x4F5C;&#x5230;&#x771F;&#x6B63;&#x7528;&#x5230;&#x5B83;&#x7684;&#x65F6;&#x5019;&#x518D;&#x6267;&#x884C;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x597D;&#x7684;&#x5B9E;&#x8DF5;&#x3002;&#x56E0;&#x4E3A;&#x9884;&#x5148;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#xFF08;&#x6BD4;&#x5982;&#x5728;init&#x51FD;&#x6570;&#x4E2D;&#x5B8C;&#x6210;&#x521D;&#x59CB;&#x5316;&#xFF09;&#x4F1A;&#x589E;&#x52A0;&#x7A0B;&#x5E8F;&#x7684;&#x542F;&#x52A8;&#x8017;&#x65F6;&#xFF0C;&#x800C;&#x4E14;&#x6709;&#x53EF;&#x80FD;&#x5B9E;&#x9645;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x6CA1;&#x6709;&#x7528;&#x4E0A;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x521D;&#x59CB;&#x5316;&#x64CD;&#x4F5C;&#x5C31;&#x4E0D;&#x662F;&#x5FC5;&#x987B;&#x8981;&#x505A;&#x7684;&#x3002;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-go">var icons map[string]image.Image
+
+func loadIcons() {
+    icons = map[string]image.Image{
+        &quot;left&quot;:  loadIcon(&quot;left.png&quot;),
+        &quot;up&quot;:    loadIcon(&quot;up.png&quot;),
+        &quot;right&quot;: loadIcon(&quot;right.png&quot;),
+        &quot;down&quot;:  loadIcon(&quot;down.png&quot;),
+    }
+}
+
+// Icon &#x88AB;&#x591A;&#x4E2A;goroutine&#x8C03;&#x7528;&#x65F6;&#x4E0D;&#x662F;&#x5E76;&#x53D1;&#x5B89;&#x5168;&#x7684;
+func Icon(name string) image.Image {
+    if icons == nil {
+        loadIcons()
+    }
+    return icons[name]
+}
+</code></pre>
+<p>&#x591A;&#x4E2A; goroutine &#x5E76;&#x53D1;&#x8C03;&#x7528;Icon&#x51FD;&#x6570;&#x65F6;&#x4E0D;&#x662F;&#x5E76;&#x53D1;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x73B0;&#x4EE3;&#x7684;&#x7F16;&#x8BD1;&#x5668;&#x548C;CPU&#x53EF;&#x80FD;&#x4F1A;&#x5728;&#x4FDD;&#x8BC1;&#x6BCF;&#x4E2A; goroutine &#x90FD;&#x6EE1;&#x8DB3;&#x4E32;&#x884C;&#x4E00;&#x81F4;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x81EA;&#x7531;&#x5730;&#x91CD;&#x6392;&#x8BBF;&#x95EE;&#x5185;&#x5B58;&#x7684;&#x987A;&#x5E8F;&#x3002;loadIcons&#x51FD;&#x6570;&#x53EF;&#x80FD;&#x4F1A;&#x88AB;&#x91CD;&#x6392;&#x4E3A;&#x4EE5;&#x4E0B;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-go">func loadIcons() {
+    icons = make(map[string]image.Image)
+    icons[&quot;left&quot;] = loadIcon(&quot;left.png&quot;)
+    icons[&quot;up&quot;] = loadIcon(&quot;up.png&quot;)
+    icons[&quot;right&quot;] = loadIcon(&quot;right.png&quot;)
+    icons[&quot;down&quot;] = loadIcon(&quot;down.png&quot;)
+}
+</code></pre>
+<p>&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x5373;&#x4F7F;&#x5224;&#x65AD;&#x4E86;<code>icons</code>&#x4E0D;&#x662F;nil&#x4E5F;&#x4E0D;&#x610F;&#x5473;&#x7740;&#x53D8;&#x91CF;&#x521D;&#x59CB;&#x5316;&#x5B8C;&#x6210;&#x4E86;&#x3002;&#x8003;&#x8651;&#x5230;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x6211;&#x4EEC;&#x80FD;&#x60F3;&#x5230;&#x7684;&#x529E;&#x6CD5;&#x5C31;&#x662F;&#x6DFB;&#x52A0;&#x4E92;&#x65A5;&#x9501;&#xFF0C;&#x4FDD;&#x8BC1;&#x521D;&#x59CB;&#x5316;<code>icons</code>&#x7684;&#x65F6;&#x5019;&#x4E0D;&#x4F1A;&#x88AB;&#x5176;&#x4ED6;&#x7684; goroutine &#x64CD;&#x4F5C;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x6837;&#x505A;&#x53C8;&#x4F1A;&#x5F15;&#x53D1;&#x6027;&#x80FD;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x4F7F;&#x7528;<code>sync.Once</code>&#x6539;&#x9020;&#x7684;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-go">var icons map[string]image.Image
+
+var loadIconsOnce sync.Once
+
+func loadIcons() {
+    icons = map[string]image.Image{
+        &quot;left&quot;:  loadIcon(&quot;left.png&quot;),
+        &quot;up&quot;:    loadIcon(&quot;up.png&quot;),
+        &quot;right&quot;: loadIcon(&quot;right.png&quot;),
+        &quot;down&quot;:  loadIcon(&quot;down.png&quot;),
+    }
+}
+
+// Icon &#x662F;&#x5E76;&#x53D1;&#x5B89;&#x5168;&#x7684;
+func Icon(name string) image.Image {
+    loadIconsOnce.Do(loadIcons)
+    return icons[name]
+}
+</code></pre>
+<h4 id="&#x5E76;&#x53D1;&#x5B89;&#x5168;&#x7684;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;">&#x5E76;&#x53D1;&#x5B89;&#x5168;&#x7684;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;</h4>
+<p>&#x4E0B;&#x9762;&#x662F;&#x501F;&#x52A9;<code>sync.Once</code>&#x5B9E;&#x73B0;&#x7684;&#x5E76;&#x53D1;&#x5B89;&#x5168;&#x7684;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-go">package singleton
+
+import (
+    &quot;sync&quot;
+)
+
+type singleton struct {}
+
+var instance *singleton
+var once sync.Once
+
+func GetInstance() *singleton {
+    once.Do(func() {
+        instance = &amp;singleton{}
+    })
+    return instance
+}
+</code></pre>
+<p><code>sync.Once</code>&#x5176;&#x5B9E;&#x5185;&#x90E8;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x4E92;&#x65A5;&#x9501;&#x548C;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x4E92;&#x65A5;&#x9501;&#x4FDD;&#x8BC1;&#x5E03;&#x5C14;&#x503C;&#x548C;&#x6570;&#x636E;&#x7684;&#x5B89;&#x5168;&#xFF0C;&#x800C;&#x5E03;&#x5C14;&#x503C;&#x7528;&#x6765;&#x8BB0;&#x5F55;&#x521D;&#x59CB;&#x5316;&#x662F;&#x5426;&#x5B8C;&#x6210;&#x3002;&#x8FD9;&#x6837;&#x8BBE;&#x8BA1;&#x5C31;&#x80FD;&#x4FDD;&#x8BC1;&#x521D;&#x59CB;&#x5316;&#x64CD;&#x4F5C;&#x7684;&#x65F6;&#x5019;&#x662F;&#x5E76;&#x53D1;&#x5B89;&#x5168;&#x7684;&#x5E76;&#x4E14;&#x521D;&#x59CB;&#x5316;&#x64CD;&#x4F5C;&#x4E5F;&#x4E0D;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#x591A;&#x6B21;&#x3002;</p>
+<h3 id="syncmap">sync.Map</h3>
+<p>Go &#x8BED;&#x8A00;&#x4E2D;&#x5185;&#x7F6E;&#x7684; map &#x4E0D;&#x662F;&#x5E76;&#x53D1;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x8BF7;&#x770B;&#x4E0B;&#x9762;&#x8FD9;&#x6BB5;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x3002;</p>
+<pre><code class="lang-go">package main
+
+import (
+    &quot;fmt&quot;
+    &quot;strconv&quot;
+    &quot;sync&quot;
+)
+
+var m = make(map[string]int)
+
+func get(key string) int {
+    return m[key]
+}
+
+func set(key string, value int) {
+    m[key] = value
+}
+
+func main() {
+    wg := sync.WaitGroup{}
+    for i := 0; i &lt; 10; i++ {
+        wg.Add(1)
+        go func(n int) {
+            key := strconv.Itoa(n)
+            set(key, n)
+            fmt.Printf(&quot;k=:%v,v:=%v\n&quot;, key, get(key))
+            wg.Done()
+        }(i)
+    }
+    wg.Wait()
+}
+</code></pre>
+<p>&#x5C06;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x7F16;&#x8BD1;&#x540E;&#x6267;&#x884C;&#xFF0C;&#x4F1A;&#x62A5;&#x51FA;<code>fatal error: concurrent map writes</code>&#x9519;&#x8BEF;&#x3002;&#x6211;&#x4EEC;&#x4E0D;&#x80FD;&#x5728;&#x591A;&#x4E2A; goroutine &#x4E2D;&#x5E76;&#x53D1;&#x5BF9;&#x5185;&#x7F6E;&#x7684; map &#x8FDB;&#x884C;&#x8BFB;&#x5199;&#x64CD;&#x4F5C;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x5B58;&#x5728;&#x6570;&#x636E;&#x7ADE;&#x4E89;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x50CF;&#x8FD9;&#x79CD;&#x573A;&#x666F;&#x4E0B;&#x5C31;&#x9700;&#x8981;&#x4E3A; map &#x52A0;&#x9501;&#x6765;&#x4FDD;&#x8BC1;&#x5E76;&#x53D1;&#x7684;&#x5B89;&#x5168;&#x6027;&#x4E86;&#xFF0C;Go&#x8BED;&#x8A00;&#x7684;<code>sync</code>&#x5305;&#x4E2D;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x5F00;&#x7BB1;&#x5373;&#x7528;&#x7684;&#x5E76;&#x53D1;&#x5B89;&#x5168;&#x7248; map&#x2014;&#x2014;<code>sync.Map</code>&#x3002;&#x5F00;&#x7BB1;&#x5373;&#x7528;&#x8868;&#x793A;&#x5176;&#x4E0D;&#x7528;&#x50CF;&#x5185;&#x7F6E;&#x7684; map &#x4E00;&#x6837;&#x4F7F;&#x7528; make &#x51FD;&#x6570;&#x521D;&#x59CB;&#x5316;&#x5C31;&#x80FD;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x3002;&#x540C;&#x65F6;<code>sync.Map</code>&#x5185;&#x7F6E;&#x4E86;&#x8BF8;&#x5982;<code>Store</code>&#x3001;<code>Load</code>&#x3001;<code>LoadOrStore</code>&#x3001;<code>Delete</code>&#x3001;<code>Range</code>&#x7B49;&#x64CD;&#x4F5C;&#x65B9;&#x6CD5;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x65B9;&#x6CD5;&#x540D;</th>
+<th style="text-align:center">&#x529F;&#x80FD;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">func (m *Map) Store(key, value interface{})</td>
+<td style="text-align:center">&#x5B58;&#x50A8;key-value&#x6570;&#x636E;</td>
+</tr>
+<tr>
+<td style="text-align:center">func (m *Map) Load(key interface{}) (value interface{}, ok bool)</td>
+<td style="text-align:center">&#x67E5;&#x8BE2;key&#x5BF9;&#x5E94;&#x7684;value</td>
+</tr>
+<tr>
+<td style="text-align:center">func (m *Map) LoadOrStore(key, value interface{}) (actual interface{}, loaded bool)</td>
+<td style="text-align:center">&#x67E5;&#x8BE2;&#x6216;&#x5B58;&#x50A8;key&#x5BF9;&#x5E94;&#x7684;value</td>
+</tr>
+<tr>
+<td style="text-align:center">func (m *Map) LoadAndDelete(key interface{}) (value interface{}, loaded bool)</td>
+<td style="text-align:center">&#x67E5;&#x8BE2;&#x5E76;&#x5220;&#x9664;key</td>
+</tr>
+<tr>
+<td style="text-align:center">func (m *Map) Delete(key interface{})</td>
+<td style="text-align:center">&#x5220;&#x9664;key</td>
+</tr>
+<tr>
+<td style="text-align:center">func (m *Map) Range(f func(key, value interface{}) bool)</td>
+<td style="text-align:center">&#x5BF9;map&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;key-value&#x4F9D;&#x6B21;&#x8C03;&#x7528;f</td>
+</tr>
+</tbody>
+</table>
+<p>&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x793A;&#x4F8B;&#x6F14;&#x793A;&#x4E86;&#x5E76;&#x53D1;&#x8BFB;&#x5199;<code>sync.Map</code>&#x3002;</p>
+<pre><code class="lang-go">package main
+
+import (
+    &quot;fmt&quot;
+    &quot;strconv&quot;
+    &quot;sync&quot;
+)
+
+// &#x5E76;&#x53D1;&#x5B89;&#x5168;&#x7684;map
+var m = sync.Map{}
+
+func main() {
+    wg := sync.WaitGroup{}
+    // &#x5BF9;m&#x6267;&#x884C;20&#x4E2A;&#x5E76;&#x53D1;&#x7684;&#x8BFB;&#x5199;&#x64CD;&#x4F5C;
+    for i := 0; i &lt; 20; i++ {
+        wg.Add(1)
+        go func(n int) {
+            key := strconv.Itoa(n)
+            m.Store(key, n)         // &#x5B58;&#x50A8;key-value
+            value, _ := m.Load(key) // &#x6839;&#x636E;key&#x53D6;&#x503C;
+            fmt.Printf(&quot;k=:%v,v:=%v\n&quot;, key, value)
+            wg.Done()
+        }(i)
+    }
+    wg.Wait()
+}
+</code></pre>
+<h2 id="&#x539F;&#x5B50;&#x64CD;&#x4F5C;">&#x539F;&#x5B50;&#x64CD;&#x4F5C;</h2>
+<p>&#x9488;&#x5BF9;&#x6574;&#x6570;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF08;int32&#x3001;uint32&#x3001;int64&#x3001;uint64&#xFF09;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x539F;&#x5B50;&#x64CD;&#x4F5C;&#x6765;&#x4FDD;&#x8BC1;&#x5E76;&#x53D1;&#x5B89;&#x5168;&#xFF0C;&#x901A;&#x5E38;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x539F;&#x5B50;&#x64CD;&#x4F5C;&#x6BD4;&#x4F7F;&#x7528;&#x9501;&#x64CD;&#x4F5C;&#x6548;&#x7387;&#x66F4;&#x9AD8;&#x3002;Go&#x8BED;&#x8A00;&#x4E2D;&#x539F;&#x5B50;&#x64CD;&#x4F5C;&#x7531;&#x5185;&#x7F6E;&#x7684;&#x6807;&#x51C6;&#x5E93;<code>sync/atomic</code>&#x63D0;&#x4F9B;&#x3002;</p>
+<h3 id="atomic&#x5305;">atomic&#x5305;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x65B9;&#x6CD5;</th>
+<th style="text-align:center">&#x89E3;&#x91CA;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">func LoadInt32(addr <em>int32) (val int32) func LoadInt64(addr </em>int64) (val int64) func LoadUint32(addr <em>uint32) (val uint32) func LoadUint64(addr </em>uint64) (val uint64) func LoadUintptr(addr <em>uintptr) (val uintptr) func LoadPointer(addr </em>unsafe.Pointer) (val unsafe.Pointer)</td>
+<td style="text-align:center">&#x8BFB;&#x53D6;&#x64CD;&#x4F5C;</td>
+</tr>
+<tr>
+<td style="text-align:center">func StoreInt32(addr <em>int32, val int32) func StoreInt64(addr </em>int64, val int64) func StoreUint32(addr <em>uint32, val uint32) func StoreUint64(addr </em>uint64, val uint64) func StoreUintptr(addr <em>uintptr, val uintptr) func StorePointer(addr </em>unsafe.Pointer, val unsafe.Pointer)</td>
+<td style="text-align:center">&#x5199;&#x5165;&#x64CD;&#x4F5C;</td>
+</tr>
+<tr>
+<td style="text-align:center">func AddInt32(addr <em>int32, delta int32) (new int32) func AddInt64(addr </em>int64, delta int64) (new int64) func AddUint32(addr <em>uint32, delta uint32) (new uint32) func AddUint64(addr </em>uint64, delta uint64) (new uint64) func AddUintptr(addr *uintptr, delta uintptr) (new uintptr)</td>
+<td style="text-align:center">&#x4FEE;&#x6539;&#x64CD;&#x4F5C;</td>
+</tr>
+<tr>
+<td style="text-align:center">func SwapInt32(addr <em>int32, new int32) (old int32) func SwapInt64(addr </em>int64, new int64) (old int64) func SwapUint32(addr <em>uint32, new uint32) (old uint32) func SwapUint64(addr </em>uint64, new uint64) (old uint64) func SwapUintptr(addr <em>uintptr, new uintptr) (old uintptr) func SwapPointer(addr </em>unsafe.Pointer, new unsafe.Pointer) (old unsafe.Pointer)</td>
+<td style="text-align:center">&#x4EA4;&#x6362;&#x64CD;&#x4F5C;</td>
+</tr>
+<tr>
+<td style="text-align:center">func CompareAndSwapInt32(addr <em>int32, old, new int32) (swapped bool) func CompareAndSwapInt64(addr </em>int64, old, new int64) (swapped bool) func CompareAndSwapUint32(addr <em>uint32, old, new uint32) (swapped bool) func CompareAndSwapUint64(addr </em>uint64, old, new uint64) (swapped bool) func CompareAndSwapUintptr(addr <em>uintptr, old, new uintptr) (swapped bool) func CompareAndSwapPointer(addr </em>unsafe.Pointer, old, new unsafe.Pointer) (swapped bool)</td>
+<td style="text-align:center">&#x6BD4;&#x8F83;&#x5E76;&#x4EA4;&#x6362;&#x64CD;&#x4F5C;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x793A;&#x4F8B;">&#x793A;&#x4F8B;</h3>
+<p>&#x6211;&#x4EEC;&#x586B;&#x5199;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#x6765;&#x6BD4;&#x8F83;&#x4E0B;&#x4E92;&#x65A5;&#x9501;&#x548C;&#x539F;&#x5B50;&#x64CD;&#x4F5C;&#x7684;&#x6027;&#x80FD;&#x3002;</p>
+<pre><code class="lang-go">package main
+
+import (
+    &quot;fmt&quot;
+    &quot;sync&quot;
+    &quot;sync/atomic&quot;
+    &quot;time&quot;
+)
+
+type Counter interface {
+    Inc()
+    Load() int64
+}
+
+// &#x666E;&#x901A;&#x7248;
+type CommonCounter struct {
+    counter int64
+}
+
+func (c CommonCounter) Inc() {
+    c.counter++
+}
+
+func (c CommonCounter) Load() int64 {
+    return c.counter
+}
+
+// &#x4E92;&#x65A5;&#x9501;&#x7248;
+type MutexCounter struct {
+    counter int64
+    lock    sync.Mutex
+}
+
+func (m *MutexCounter) Inc() {
+    m.lock.Lock()
+    defer m.lock.Unlock()
+    m.counter++
+}
+
+func (m *MutexCounter) Load() int64 {
+    m.lock.Lock()
+    defer m.lock.Unlock()
+    return m.counter
+}
+
+// &#x539F;&#x5B50;&#x64CD;&#x4F5C;&#x7248;
+type AtomicCounter struct {
+    counter int64
+}
+
+func (a *AtomicCounter) Inc() {
+    atomic.AddInt64(&amp;a.counter, 1)
+}
+
+func (a *AtomicCounter) Load() int64 {
+    return atomic.LoadInt64(&amp;a.counter)
+}
+
+func test(c Counter) {
+    var wg sync.WaitGroup
+    start := time.Now()
+    for i := 0; i &lt; 1000; i++ {
+        wg.Add(1)
+        go func() {
+            c.Inc()
+            wg.Done()
+        }()
+    }
+    wg.Wait()
+    end := time.Now()
+    fmt.Println(c.Load(), end.Sub(start))
+}
+
+func main() {
+    c1 := CommonCounter{} // &#x975E;&#x5E76;&#x53D1;&#x5B89;&#x5168;
+    test(c1)
+    c2 := MutexCounter{} // &#x4F7F;&#x7528;&#x4E92;&#x65A5;&#x9501;&#x5B9E;&#x73B0;&#x5E76;&#x53D1;&#x5B89;&#x5168;
+    test(&amp;c2)
+    c3 := AtomicCounter{} // &#x5E76;&#x53D1;&#x5B89;&#x5168;&#x4E14;&#x6BD4;&#x4E92;&#x65A5;&#x9501;&#x6548;&#x7387;&#x66F4;&#x9AD8;
+    test(&amp;c3)
+}
+</code></pre>
+<p><code>atomic</code>&#x5305;&#x63D0;&#x4F9B;&#x4E86;&#x5E95;&#x5C42;&#x7684;&#x539F;&#x5B50;&#x7EA7;&#x5185;&#x5B58;&#x64CD;&#x4F5C;&#xFF0C;&#x5BF9;&#x4E8E;&#x540C;&#x6B65;&#x7B97;&#x6CD5;&#x7684;&#x5B9E;&#x73B0;&#x5F88;&#x6709;&#x7528;&#x3002;&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x5FC5;&#x987B;&#x8C28;&#x614E;&#x5730;&#x4FDD;&#x8BC1;&#x6B63;&#x786E;&#x4F7F;&#x7528;&#x3002;&#x9664;&#x4E86;&#x67D0;&#x4E9B;&#x7279;&#x6B8A;&#x7684;&#x5E95;&#x5C42;&#x5E94;&#x7528;&#xFF0C;&#x4F7F;&#x7528;&#x901A;&#x9053;&#x6216;&#x8005; sync &#x5305;&#x7684;&#x51FD;&#x6570;/&#x7C7B;&#x578B;&#x5B9E;&#x73B0;&#x540C;&#x6B65;&#x66F4;&#x597D;&#x3002;</p>
+
+                        
+                    </section>
+                    
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+
+        
+        
+        <a href="17.GoLang-反射.html" class="navigation navigation-prev " aria-label="Previous page: 17.GoLang-反射">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        
+        
+        <a href="19.GoLang-网络编程.html" class="navigation navigation-next " aria-label="Next page: 19.GoLang-网络编程">
+            <i class="fa fa-angle-right"></i>
+        </a>
+        
+        
+        
+    </div>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"18.GoLang-并发","level":"1.2.5.2.1.18","depth":5,"next":{"title":"19.GoLang-网络编程","level":"1.2.5.2.1.19","depth":5,"path":"个人知识库/05.语言知识/03.Go/01.Go基础编程/19.GoLang-网络编程.md","ref":"个人知识库/05.语言知识/03.Go/01.Go基础编程/19.GoLang-网络编程.md","articles":[]},"previous":{"title":"17.GoLang-反射","level":"1.2.5.2.1.17","depth":5,"path":"个人知识库/05.语言知识/03.Go/01.Go基础编程/17.GoLang-反射.md","ref":"个人知识库/05.语言知识/03.Go/01.Go基础编程/17.GoLang-反射.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","code","theme-d4t@latest","-lunr","-search","-sharing","search-pro-fixed","-highlight","lightbox","donate","github","flexible-alerts","prism-themes","back-to-top-button","auto-scroll-table","hide-element","chapter-fold","donate","expandable-chapters"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-d4t":{},"tbfed-pagefooter":{"copyright":"Copyright &copy wjlin0 2023","modify_label":"该文章修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"],"lang":{"flow":"typescript"},"ignore":["mermaid","eval-js","ascii","result","manifest","payload","google","tree","java_out","log4j2","jsp","ps1","cmd","class","Exception","stack","c#","xml-dtd","C++","twig","jinja2","exception","tpl","shell","python3","bat","curl"]},"github":{"url":"https://github.com/wjlin0"},"d4t":{"search-placeholder":"请输入关键字搜索","logo":"/images/logo.svg","favicon":"/images/favicon.ico"},"splitter":{},"auto-scroll-table":{},"code":{"copyButtons":true},"search-pro-fixed":{},"donate":{"alipay":"/images/wechat-pay.jpg","alipayText":"点点广告🙏","button":"支持作者","title":"","wechat":"/images/wechat-pay.jpg","wechatText":"关闭Adblock"},"hide-element":{"elements":[".gitbook-link",".title",".treeview__copyright",".treeview__main-title"]},"fontsettings":{"theme":"white","family":"sans","size":2},"lightbox":{"jquery":true,"sameUuid":false},"back-to-top-button":{},"prism-themes":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"},"comment":{"label":"Comment","icon":"fa fa-comments","className":"info"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"wjlin0","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"d4t":{"nav":[{"url":"https://github.com/wjlin0/pathScan","target":"_blank","name":"pathScan"},{"url":"https://www.wjlin0.com","target":"_blank","name":"wjlin0's blog"}]}},"title":"wjlin0 知识库","gitbook":"*","description":"不知古道的风，可他吹往的是故里","theme-default":{"showLevel":true}},"file":{"path":"个人知识库/05.语言知识/03.Go/01.Go基础编程/18.GoLang-并发.md","mtime":"2024-01-11T16:02:01.352Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-06-12T07:27:25.146Z"},"basePath":"../../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search-pro-fixed/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search-pro-fixed/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-theme-d4t/script.js"></script>
+        
+    
+
+    </body>
+</html>
+
