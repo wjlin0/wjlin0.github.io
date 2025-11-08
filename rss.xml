@@ -1,0 +1,138 @@
+
+<rss version="2.0">
+<channel>
+<title>wjlin0</title>
+<link>https://www.wjlin0.com</link>
+<description>网络安全</description>
+
+<item>
+<title>
+<![CDATA[ 更新日志 ]]>
+</title>
+<link> https://blog.wjlin0.com/更新日志 </link>
+<description>
+<![CDATA[ 更新日志 ]]>
+</description>
+<guid> /更新日志 </guid>
+<pubDate> Sat, 08 Nov 2025 15:45:30 GMT </pubDate>
+</item>
+
+
+<item>
+<title>
+<![CDATA[ 契约锁电子签章系统RCE ]]>
+</title>
+<link> https://blog.wjlin0.com/个人知识库/漏洞合集/契约锁电子签章系统/契约锁电子签章系统RCE </link>
+<description>
+<![CDATA[ 契约锁电子签章系统RCE ]]>
+</description>
+<guid> /个人知识库/漏洞合集/契约锁电子签章系统/契约锁电子签章系统RCE </guid>
+<pubDate> Sat, 08 Nov 2025 15:45:30 GMT </pubDate>
+</item>
+
+
+<item>
+<title>
+<![CDATA[ 最新BurpSuite2010专业版（更新）下载WindowsLinuxMac.最新版无需 Java 环境 ]]>
+</title>
+<link> https://blog.wjlin0.com/个人知识库/公众号文章/最新BurpSuite2010专业版（更新）下载WindowsLinuxMac.最新版无需 Java 环境 </link>
+<description>
+<![CDATA[ 最新BurpSuite2010专业版（更新）下载WindowsLinuxMac.最新版无需 Java 环境 ]]>
+</description>
+<guid> /个人知识库/公众号文章/最新BurpSuite2010专业版（更新）下载WindowsLinuxMac.最新版无需 Java 环境 </guid>
+<pubDate> Sat, 08 Nov 2025 15:45:30 GMT </pubDate>
+</item>
+
+
+<item>
+<title>
+<![CDATA[ Perplexity Pro免费获取一年订阅 ]]>
+</title>
+<link> https://blog.wjlin0.com/个人知识库/公众号文章/Perplexity Pro免费获取一年订阅 </link>
+<description>
+<![CDATA[ Perplexity Pro免费获取一年订阅 ]]>
+</description>
+<guid> /个人知识库/公众号文章/Perplexity Pro免费获取一年订阅 </guid>
+<pubDate> Sat, 08 Nov 2025 15:45:30 GMT </pubDate>
+</item>
+
+
+<item>
+<title>
+<![CDATA[ Supershell二开修改 ]]>
+</title>
+<link> https://blog.wjlin0.com/个人知识库/公众号文章/Supershell二开修改 </link>
+<description>
+<![CDATA[ Supershell二开修改 ]]>
+</description>
+<guid> /个人知识库/公众号文章/Supershell二开修改 </guid>
+<pubDate> Sat, 08 Nov 2025 15:45:30 GMT </pubDate>
+</item>
+
+
+<item>
+<title>
+<![CDATA[ IDA Pro 9.0 中文稳定版，一键安装&插件全攻略 ]]>
+</title>
+<link> https://blog.wjlin0.com/个人知识库/公众号文章/IDA Pro 9.0 中文稳定版，一键安装&插件全攻略 </link>
+<description>
+<![CDATA[ IDA Pro 9.0 中文稳定版，一键安装&插件全攻略 ]]>
+</description>
+<guid> /个人知识库/公众号文章/IDA Pro 9.0 中文稳定版，一键安装&插件全攻略 </guid>
+<pubDate> Sat, 08 Nov 2025 15:45:30 GMT </pubDate>
+</item>
+
+
+<item>
+<title>
+<![CDATA[ Kafka Connect任意文件读取漏洞（CVE-2025-27817） ]]>
+</title>
+<link> https://blog.wjlin0.com/个人知识库/漏洞合集/中间件/Apache/Kafka Connect任意文件读取漏洞（CVE-2025-27817） </link>
+<description>
+<![CDATA[ Kafka Connect任意文件读取漏洞（CVE-2025-27817） ]]>
+</description>
+<guid> /个人知识库/漏洞合集/中间件/Apache/Kafka Connect任意文件读取漏洞（CVE-2025-27817） </guid>
+<pubDate> Sat, 08 Nov 2025 15:45:30 GMT </pubDate>
+</item>
+
+
+<item>
+<title>
+<![CDATA[ 海康综合安防管理平台远程命令执行漏洞（CNVD-2024-18673）复现 ]]>
+</title>
+<link> https://blog.wjlin0.com/个人知识库/漏洞合集/海康威视/海康综合安防管理平台远程命令执行漏洞（CNVD-2024-18673）复现 </link>
+<description>
+<![CDATA[ 海康综合安防管理平台远程命令执行漏洞（CNVD-2024-18673）复现 ]]>
+</description>
+<guid> /个人知识库/漏洞合集/海康威视/海康综合安防管理平台远程命令执行漏洞（CNVD-2024-18673）复现 </guid>
+<pubDate> Sat, 08 Nov 2025 15:45:30 GMT </pubDate>
+</item>
+
+
+<item>
+<title>
+<![CDATA[ 海康威视IP摄像机NVR设备固件远程代码执行漏洞(CVE-2021-36260) ]]>
+</title>
+<link> https://blog.wjlin0.com/个人知识库/漏洞合集/海康威视/海康威视IP摄像机NVR设备固件远程代码执行漏洞(CVE-2021-36260) </link>
+<description>
+<![CDATA[ 海康威视IP摄像机NVR设备固件远程代码执行漏洞(CVE-2021-36260) ]]>
+</description>
+<guid> /个人知识库/漏洞合集/海康威视/海康威视IP摄像机NVR设备固件远程代码执行漏洞(CVE-2021-36260) </guid>
+<pubDate> Sat, 08 Nov 2025 15:45:30 GMT </pubDate>
+</item>
+
+
+<item>
+<title>
+<![CDATA[ 05.基于机器学习的ICP备案查询验证码识别技术研究 ]]>
+</title>
+<link> https://blog.wjlin0.com/个人知识库/工具分享/基于机器学习的ICP备案查询验证码识别技术研究/ </link>
+<description>
+<![CDATA[ 05.基于机器学习的ICP备案查询验证码识别技术研究 ]]>
+</description>
+<guid> /个人知识库/工具分享/基于机器学习的ICP备案查询验证码识别技术研究/ </guid>
+<pubDate> Sat, 08 Nov 2025 15:45:30 GMT </pubDate>
+</item>
+
+</channel>
+</rss>
