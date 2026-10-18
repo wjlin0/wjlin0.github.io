@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-个人知识库/逆向破解/TscanPlus授权逻辑分析与二进制补丁破解" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.1">
+<title data-rh="true">TscanPlus 授权逻辑分析与二进制补丁破解 | wjlin0</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://blog.wjlin0.com/en/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://blog.wjlin0.com/en/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://blog.wjlin0.com/en/docs/个人知识库/逆向破解/TscanPlus授权逻辑分析与二进制补丁破解"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" property="og:locale:alternate" content="zh"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="TscanPlus 授权逻辑分析与二进制补丁破解 | wjlin0"><meta data-rh="true" name="description" content="|作者|修订时间|"><meta data-rh="true" property="og:description" content="|作者|修订时间|"><link data-rh="true" rel="icon" href="/en/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://blog.wjlin0.com/en/docs/个人知识库/逆向破解/TscanPlus授权逻辑分析与二进制补丁破解"><link data-rh="true" rel="alternate" href="https://blog.wjlin0.com/docs/个人知识库/逆向破解/TscanPlus授权逻辑分析与二进制补丁破解" hreflang="zh"><link data-rh="true" rel="alternate" href="https://blog.wjlin0.com/en/docs/个人知识库/逆向破解/TscanPlus授权逻辑分析与二进制补丁破解" hreflang="en"><link data-rh="true" rel="alternate" href="https://blog.wjlin0.com/docs/个人知识库/逆向破解/TscanPlus授权逻辑分析与二进制补丁破解" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TscanPlus 授权逻辑分析与二进制补丁破解","item":"https://blog.wjlin0.com/en/docs/个人知识库/逆向破解/TscanPlus授权逻辑分析与二进制补丁破解"}]}</script><link rel="stylesheet" href="/en/assets/css/styles.b3fb48aa.css">
+<script src="/en/assets/js/runtime~main.6d20f195.js" defer="defer"></script>
+<script src="/en/assets/js/main.bd2a4550.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/en/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/en/"><div class="navbar__logo"><img src="/en/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/en/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">知识库</b></a><a href="https://www.wjlin0.com" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">博客<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><a href="https://icp.wjlin0.com" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">ICP备案查询<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/wjlin0/wjlin0.github.io" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/en/docs/intro"><span title="intro" class="linkLabel_WmDU">intro</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/en/docs/个人知识库/渗透测试/信息收集/"><span title="个人知识库" class="categoryLinkLabel_W154">个人知识库</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/en/docs/个人知识库/渗透测试/信息收集/"><span title="渗透测试" class="categoryLinkLabel_W154">渗透测试</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/en/docs/个人知识库/漏洞复现/Thinkphp/Thinkphp5.0.22远程代码执行"><span title="漏洞复现" class="categoryLinkLabel_W154">漏洞复现</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/en/docs/个人知识库/代码审计/Java/基础审计/JAVA反序列化漏洞"><span title="代码审计" class="categoryLinkLabel_W154">代码审计</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/en/docs/个人知识库/疑难杂症/k3s/Traefik资源跨命名空间调用/"><span title="疑难杂症" class="categoryLinkLabel_W154">疑难杂症</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/en/docs/个人知识库/语言知识/"><span title="语言知识" class="categoryLinkLabel_W154">语言知识</span></a><button aria-label="Expand sidebar category &#x27;语言知识&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/en/docs/个人知识库/pathScan-doc/下载安装"><span title="pathScan-doc" class="categoryLinkLabel_W154">pathScan-doc</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/en/docs/个人知识库/CTF/Knownsec/knownsec-ctf-09/"><span title="CTF" class="categoryLinkLabel_W154">CTF</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/en/docs/个人知识库/工具分享/RAGFlow安装/"><span title="工具分享" class="categoryLinkLabel_W154">工具分享</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/en/docs/个人知识库/漏洞合集/中间件/Apache/Kafka Connect任意文件读取漏洞（CVE-2025-27817）"><span title="漏洞合集" class="categoryLinkLabel_W154">漏洞合集</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/en/docs/个人知识库/AI/"><span title="AI" class="categoryLinkLabel_W154">AI</span></a><button aria-label="Expand sidebar category &#x27;AI&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/en/docs/个人知识库/公众号文章/Perplexity Pro免费获取一年订阅"><span title="公众号文章" class="categoryLinkLabel_W154">公众号文章</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/en/docs/个人知识库/逆向破解/TscanPlus授权逻辑分析与二进制补丁破解"><span title="逆向破解" class="categoryLinkLabel_W154">逆向破解</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/en/docs/个人知识库/逆向破解/TscanPlus授权逻辑分析与二进制补丁破解"><span title="TscanPlus 授权逻辑分析与二进制补丁破解" class="linkLabel_WmDU">TscanPlus 授权逻辑分析与二进制补丁破解</span></a></li></ul></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/en/docs/更新日志"><span title="更新日志" class="linkLabel_WmDU">更新日志</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/en/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">个人知识库</span></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">逆向破解</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">TscanPlus 授权逻辑分析与二进制补丁破解</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>TscanPlus 授权逻辑分析与二进制补丁破解</h1></header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:left">作者</th><th style="text-align:left">修订时间</th></tr></thead><tbody><tr><td style="text-align:left"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/wjlin0-%E4%B8%AA%E4%BA%BA%E7%9F%A5%E8%AF%86%E5%BA%93-green" alt="wjlin0" class="img_ev3q"></td><td style="text-align:left">2026-10-18 19:35:21</td></tr></tbody></table>
+<blockquote>
+<p>由于传播、利用本文所提供的信息而造成的任何直接或者间接的后果及损失，均由使用者本人负责，公众号及作者不为此承担任何责任，一旦造成后果请自行承担！如有侵权烦请告知，我们会立即删除并致歉。谢谢！</p>
+</blockquote>
+<p><strong>结论先说</strong>：这是<strong>绕过 + 显示层改写</strong>，不是 keygen 破解。授权记录走 ECDSA（二进制里只有公钥），激活码无法离线伪造；记录还绑硬件，跨机器不可复用。下面所有&quot;破解&quot;指的是：让校验分支恒不触发，让界面显示 <code>认证Vip版</code> 和一个假日期。</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="0-样本">0. 样本<a href="#0-样本" class="hash-link" aria-label="Direct link to 0. 样本" title="Direct link to 0. 样本" translate="no">​</a></h2>
+<p>四份样本，同一套 garble 名字（<code>B0Uu8RPrb2</code>、<code>O7rc6qW0L</code>、<code>Tmfc2rYXRKJT</code>、<code>CSfeFGrv</code>、<code>RVNs3NL5L</code>、<code>XrgIp0N_yO</code>、<code>UNXx_ve6</code>、<code>Ju1zV6nVMwrMz0</code>、<code>PKVcmcz2RL7Dh</code>），但<strong>地址每份都不同</strong> —— 用第 9 节的表逐份对照，别把 A 的地址用在 B 上。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:left">编号</th><th style="text-align:left">样本</th><th style="text-align:left">格式</th><th style="text-align:left">版本</th><th style="text-align:left">分支补丁</th><th style="text-align:left">显示串（2099）</th><th style="text-align:left">实测</th></tr></thead><tbody><tr><td style="text-align:left">A</td><td style="text-align:left"><code>/tmp/ctf/tscan_plus</code></td><td style="text-align:left">Mach-O arm64</td><td style="text-align:left">3.5.3</td><td style="text-align:left">✓</td><td style="text-align:left">✗（运行时解码）</td><td style="text-align:left">✓</td></tr><tr><td style="text-align:left">B</td><td style="text-align:left"><code>TscanPlus_Mac_Amd64.dmg</code> 内 <code>Contents/MacOS/TscanPlus</code></td><td style="text-align:left">Mach-O x86_64</td><td style="text-align:left">3.5.4</td><td style="text-align:left">✓</td><td style="text-align:left">✗（<code>未认证</code> 无代码引用）</td><td style="text-align:left">✓（Rosetta）</td></tr><tr><td style="text-align:left">C</td><td style="text-align:left"><code>~/Downloads/TscanPlus_Win_Amd64.exe</code></td><td style="text-align:left">PE x86-64（UPX）</td><td style="text-align:left">3.5.3</td><td style="text-align:left">✓</td><td style="text-align:left">✓</td><td style="text-align:left">✓（Windows 实测）</td></tr><tr><td style="text-align:left">D</td><td style="text-align:left"><code>~/Downloads/TscanPlus_Win_Arm64.zip</code> 内 exe</td><td style="text-align:left">PE <strong>x86-64</strong>（UPX，文件名误标 arm64）</td><td style="text-align:left">3.5.4</td><td style="text-align:left">✓</td><td style="text-align:left">✓</td><td style="text-align:left">✓（Windows 实测）</td></tr></tbody></table>
+<p>产物与脚本：<code>/tmp/ctf_crack/</code>（A）、<code>/tmp/ctf_crack_win/</code>（C）、<code>/tmp/ctf_work/patch_*.py</code>；打包在 <code>~/Downloads/Tscan_Plus_3.5.4.patched_all.zip</code>。</p>
+<p>项目为 TideSec TscanPlus（Wails GUI），授权逻辑在 <code>TscanGui/conf</code> + <code>TscanGui/internal/cli</code>。</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="1-授权架构ida-定位样本-a">1. 授权架构（IDA 定位，样本 A）<a href="#1-授权架构ida-定位样本-a" class="hash-link" aria-label="Direct link to 1. 授权架构（IDA 定位，样本 A）" title="Direct link to 1. 授权架构（IDA 定位，样本 A）" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>作用</th><th>函数</th><th>地址</th></tr></thead><tbody><tr><td>CLI 授权闸门（真正校验入口）</td><td><code>TscanGui_internal_cli.runLicenseCheck</code></td><td><code>0x102a89330</code></td></tr><tr><td>Key 解析 / 字段校验</td><td><code>conf.B0Uu8RPrb2</code></td><td><code>0x10047ad30</code></td></tr><tr><td>Key 格式校验</td><td><code>conf.Tmfc2rYXRKJT</code></td><td><code>0x100476d10</code></td></tr><tr><td>签名校验 <code>B7CIv4PLX(&quot;phase3&quot;, f1) == f4</code></td><td><code>conf.O7rc6qW0L</code></td><td><code>0x10047a2c0</code></td></tr><tr><td>时间字段校验 <code>f3 &lt; 1797379200</code></td><td><code>conf.PKVcmcz2RL7Dh</code></td><td><code>0x10047fc10</code></td></tr><tr><td>murmur3-32(seed 0) + nibble 折叠</td><td><code>conf.B7CIv4PLX</code> / <code>conf.XSMB4O0fIIE2W</code></td><td><code>0x100476a70</code> / <code>0x100470c90</code></td></tr><tr><td>硬件指纹（sysctl CPU 品牌 + 物理网卡 MAC）</td><td><code>conf.SOPBYsgV</code> / <code>conf.Z5NrYd0V4gEq</code></td><td><code>0x1004809c0</code> / <code>0x100480a70</code></td></tr><tr><td>嵌入常量自一致性校验</td><td><code>conf.CSfeFGrv</code> / <code>conf.RVNs3NL5L</code></td><td><code>0x1004ab7f0</code> / <code>0x1004ad068</code></td></tr><tr><td>过期判断（永不过期补丁点）</td><td><code>conf.Qwprp5uSfv32rKY</code></td><td><code>0x100439230</code></td></tr><tr><td>结果标志</td><td><code>conf.XrgIp0N_yO</code></td><td><code>0x100451b70</code></td></tr><tr><td>显示字符串来源（运行时解码，不可静态改）</td><td><code>conf.UNXx_ve6</code></td><td><code>0x10047f900</code></td></tr></tbody></table>
+<p>Key 格式 <code>f1.f2.f3.f4.f5</code>，正则 <code>^\d+\.\d+\.\d+(\.\d+)?$</code>：</p>
+<ul>
+<li><code>f2 ≤ 30000</code></li>
+<li><code>f3 &lt; 1797379200</code> = <code>0x6b21d480</code> → <strong>2026-12-16</strong>（我早先记成 2027-02-15，是错的，这里已改）</li>
+<li><code>f5 ∈ 0..5</code>（能力位）</li>
+<li><code>f4 = fold(first8digits(murmur3_32_seed0(&quot;phase3&quot;+f1))) ^ 6</code></li>
+</ul>
+<p>核心字节变换（反汇编验证）：<code>out[i] = ROR(in[i] ^ (19*i + seed), seed % 8) ^ (seed + i)</code>，<code>Yal9faJZY[i] = i*19</code>，
+<code>seed(k) = DL1UvTAsmAyf4zI[k] ^ 158</code>（g0=0x7a, g1=0x3b, g2=0x2e, g3=0x5d）；C 系列 getter 用固定种子 156/143/125/126。</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="2-方法-b分支补丁样本-a已验证可用">2. 方法 B：分支补丁（样本 A，已验证可用）<a href="#2-方法-b分支补丁样本-a已验证可用" class="hash-link" aria-label="Direct link to 2. 方法 B：分支补丁（样本 A，已验证可用）" title="Direct link to 2. 方法 B：分支补丁（样本 A，已验证可用）" translate="no">​</a></h2>
+<p>arm64 无条件跳转：<code>word = 0x14000000 | ((target - addr) / 4 &amp; 0x3FFFFFF)</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>地址</th><th>原指令</th><th>改为</th><th>效果</th><th>写入 word</th></tr></thead><tbody><tr><td><code>0x102a89394</code></td><td><code>CBZ → 0x102a893cc</code></td><td><code>B</code></td><td>跳过&quot;无效的Key&quot;错误分支</td><td><code>0x1400000e</code></td></tr><tr><td><code>0x102a893d4</code></td><td><code>CBZ → 0x102a893d8</code></td><td><code>B</code></td><td>强制走 VIP 分支</td><td><code>0x14000001</code></td></tr><tr><td><code>0x102a893e0</code></td><td><code>TBZ → 0x102a893f4</code></td><td><code>B</code></td><td><code>XrgIp0N_yO</code> 结果被忽略</td><td><code>0x14000001</code></td></tr><tr><td><code>0x1004aba58</code></td><td><code>CBZ → 0x1004abaf8</code></td><td><code>B</code></td><td><code>CSfeFGrv</code> 折叠校验跳过</td><td><code>0x14000028</code></td></tr><tr><td><code>0x1004ad198</code></td><td><code>CBZ → 0x1004ad238</code></td><td><code>B</code></td><td><code>RVNs3NL5L</code> IV 折叠校验跳过</td><td><code>0x14000028</code></td></tr><tr><td><code>0x10043932c</code></td><td><code>TBNZ → 0x100439370</code></td><td><code>B</code></td><td>永不过期</td><td><code>0x14000011</code></td></tr></tbody></table>
+<p>补丁脚本（<code>__text</code> 段：文件偏移 = vaddr − 0x100000000）：</p>
+<div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">import</span><span class="token plain"> struct</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">f </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token builtin">open</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&#x27;/tmp/ctf/tscan_plus&#x27;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token string" style="color:#e3116c">&#x27;r+b&#x27;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"> base </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">0x100000000</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">def</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">patch</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">addr</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> target</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    imm </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">target </span><span class="token operator" style="color:#393A34">-</span><span class="token plain"> addr</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">//</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">4</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    f</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">seek</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">addr </span><span class="token operator" style="color:#393A34">-</span><span class="token plain"> base</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"> f</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">write</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">struct</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">pack</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&#x27;&lt;I&#x27;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">0x14000000</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">|</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">imm </span><span class="token operator" style="color:#393A34">&amp;</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">0x3FFFFFF</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">for</span><span class="token plain"> addr</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> target </span><span class="token keyword" style="color:#00009f">in</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">0x102a89394</span><span class="token punctuation" style="color:#393A34">,</span><span class="token number" style="color:#36acaa">0x102a893cc</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">,</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">0x102a893d4</span><span class="token punctuation" style="color:#393A34">,</span><span class="token number" style="color:#36acaa">0x102a893d8</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">,</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">0x102a893e0</span><span class="token punctuation" style="color:#393A34">,</span><span class="token number" style="color:#36acaa">0x102a893e4</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                     </span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">0x1004aba58</span><span class="token punctuation" style="color:#393A34">,</span><span class="token number" style="color:#36acaa">0x1004abaf8</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">,</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">0x1004ad198</span><span class="token punctuation" style="color:#393A34">,</span><span class="token number" style="color:#36acaa">0x1004ad238</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">,</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">0x10043932c</span><span class="token punctuation" style="color:#393A34">,</span><span class="token number" style="color:#36acaa">0x100439370</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    patch</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">addr</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> target</span><span class="token punctuation" style="color:#393A34">)</span><br></span></code></pre></div></div>
+<p><strong>必须重新签名</strong>（Mach-O 代码签名覆盖 <code>__text</code>，改字节后不重签名会直接闪退）：</p>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">codesign --remove-signature tscan_plus.cracked</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">codesign -s - --force tscan_plus.cracked</span><br></span></code></pre></div></div>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="3-keygenmurmur3-32-seed-0--nibble-折叠">3. Keygen（murmur3-32 seed 0 + nibble 折叠）<a href="#3-keygenmurmur3-32-seed-0--nibble-折叠" class="hash-link" aria-label="Direct link to 3. Keygen（murmur3-32 seed 0 + nibble 折叠）" title="Direct link to 3. Keygen（murmur3-32 seed 0 + nibble 折叠）" translate="no">​</a></h2>
+<p>公式在样本 C 的反汇编里被直接确认过（见 8.4），所以这条是准的 —— 但公式对的 key 仍然不能认证，因为后面还有硬件校验和记录校验。</p>
+<div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">def</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">murmur3_32</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">data</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> seed</span><span class="token operator" style="color:#393A34">=</span><span class="token number" style="color:#36acaa">0</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    h </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> seed</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"> c1</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> c2 </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">0xcc9e2d51</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">0x1b873593</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token keyword" style="color:#00009f">for</span><span class="token plain"> i </span><span class="token keyword" style="color:#00009f">in</span><span class="token plain"> </span><span class="token builtin">range</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">0</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token builtin">len</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">data</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">4</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        k </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token builtin">int</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">from_bytes</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">data</span><span class="token punctuation" style="color:#393A34">[</span><span class="token plain">i</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain">i</span><span class="token operator" style="color:#393A34">+</span><span class="token number" style="color:#36acaa">4</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;little&#x27;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        k </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">k</span><span class="token operator" style="color:#393A34">*</span><span class="token plain">c2 </span><span class="token operator" style="color:#393A34">&amp;</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">0xFFFFFFFF</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"> k </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">k</span><span class="token operator" style="color:#393A34">&lt;&lt;</span><span class="token number" style="color:#36acaa">15</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">|</span><span class="token plain"> k</span><span class="token operator" style="color:#393A34">&gt;&gt;</span><span class="token number" style="color:#36acaa">17</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">&amp;</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">0xFFFFFFFF</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"> k </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">k</span><span class="token operator" style="color:#393A34">*</span><span class="token plain">c1</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">&amp;</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">0xFFFFFFFF</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        h </span><span class="token operator" style="color:#393A34">^</span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> k</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"> h </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">h</span><span class="token operator" style="color:#393A34">&lt;&lt;</span><span class="token number" style="color:#36acaa">13</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">|</span><span class="token plain"> h</span><span class="token operator" style="color:#393A34">&gt;&gt;</span><span class="token number" style="color:#36acaa">19</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">&amp;</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">0xFFFFFFFF</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"> h </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">h</span><span class="token operator" style="color:#393A34">*</span><span class="token number" style="color:#36acaa">5</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">+</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">0xe6546b64</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">&amp;</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">0xFFFFFFFF</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    h </span><span class="token operator" style="color:#393A34">^</span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token builtin">len</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">data</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    h </span><span class="token operator" style="color:#393A34">^</span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> h</span><span class="token operator" style="color:#393A34">&gt;&gt;</span><span class="token number" style="color:#36acaa">16</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"> h </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">h</span><span class="token operator" style="color:#393A34">*</span><span class="token number" style="color:#36acaa">0x85ebca6b</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">&amp;</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">0xFFFFFFFF</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    h </span><span class="token operator" style="color:#393A34">^</span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> h</span><span class="token operator" style="color:#393A34">&gt;&gt;</span><span class="token number" style="color:#36acaa">13</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"> h </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">h</span><span class="token operator" style="color:#393A34">*</span><span class="token number" style="color:#36acaa">0xc2b2ae35</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">&amp;</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">0xFFFFFFFF</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    h </span><span class="token operator" style="color:#393A34">^</span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> h</span><span class="token operator" style="color:#393A34">&gt;&gt;</span><span class="token number" style="color:#36acaa">16</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token keyword" style="color:#00009f">return</span><span class="token plain"> h</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">def</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">fold</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">s</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain">                                   </span><span class="token comment" style="color:#999988;font-style:italic"># murmur3 十进制结果前 8 位按 base-16 解释</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token keyword" style="color:#00009f">return</span><span class="token plain"> </span><span class="token builtin">int</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">s</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">:</span><span class="token number" style="color:#36acaa">8</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">16</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">def</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">sig</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">f1</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> prefix</span><span class="token operator" style="color:#393A34">=</span><span class="token string" style="color:#e3116c">&quot;phase3&quot;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token keyword" style="color:#00009f">return</span><span class="token plain"> fold</span><span class="token punctuation" style="color:#393A34">(</span><span class="token builtin">str</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">murmur3_32</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">prefix </span><span class="token operator" style="color:#393A34">+</span><span class="token plain"> </span><span class="token builtin">str</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">f1</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">encode</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">^</span><span class="token plain"> </span><span class="token builtin">len</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">prefix</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">f1 </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">12345</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">print</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string-interpolation string" style="color:#e3116c">f&quot;</span><span class="token string-interpolation interpolation punctuation" style="color:#393A34">{</span><span class="token string-interpolation interpolation">f1</span><span class="token string-interpolation interpolation punctuation" style="color:#393A34">}</span><span class="token string-interpolation string" style="color:#e3116c">.12345.12345.</span><span class="token string-interpolation interpolation punctuation" style="color:#393A34">{</span><span class="token string-interpolation interpolation">sig</span><span class="token string-interpolation interpolation punctuation" style="color:#393A34">(</span><span class="token string-interpolation interpolation">f1</span><span class="token string-interpolation interpolation punctuation" style="color:#393A34">)</span><span class="token string-interpolation interpolation punctuation" style="color:#393A34">}</span><span class="token string-interpolation string" style="color:#e3116c">.1&quot;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain">          </span><span class="token comment" style="color:#999988;font-style:italic"># -&gt; 12345.12345.12345.658924676.1</span><br></span></code></pre></div></div>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="4-运行验证样本-a">4. 运行验证（样本 A）<a href="#4-运行验证样本-a" class="hash-link" aria-label="Direct link to 4. 运行验证（样本 A）" title="Direct link to 4. 运行验证（样本 A）" translate="no">​</a></h2>
+<p>原始二进制：</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">$ ./tscan_plus -license 12345.12345.12345.658924676.1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[ERROR] 认证失败: 无效的Key          (exit 1)</span><br></span></code></pre></div></div>
+<p>破解后（方法 B + 重签名）：</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">$ ./tscan_plus.cracked -license 12345.12345.12345.658924676.1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Version: 3.5.3  Expired: 2027.06.01  认证Vip版</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[INFO] 认证成功，版本类型: 认证Vip版</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[INFO] Vip状态: 2027.06.01            (exit 0)</span><br></span></code></pre></div></div>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="5-把-vip状态-认证到-2099-年--样本-a-上未闭合原因记录">5. &quot;把 Vip状态 认证到 2099 年&quot; —— 样本 A 上未闭合，原因记录<a href="#5-把-vip状态-认证到-2099-年--样本-a-上未闭合原因记录" class="hash-link" aria-label="Direct link to 5. &quot;把 Vip状态 认证到 2099 年&quot; —— 样本 A 上未闭合，原因记录" title="Direct link to 5. &quot;把 Vip状态 认证到 2099 年&quot; —— 样本 A 上未闭合，原因记录" translate="no">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="51-为什么不能直接改字符串">5.1 为什么不能直接改字符串<a href="#51-为什么不能直接改字符串" class="hash-link" aria-label="Direct link to 5.1 为什么不能直接改字符串" title="Direct link to 5.1 为什么不能直接改字符串" translate="no">​</a></h3>
+<ul>
+<li>全文件在纯文本、XOR、ADD，以及 <code>sub_102B68A44</code> 的<strong>字节形态</strong>和 <strong>int32-rune 形态</strong>（反推 256 个种子）下都搜不到 <code>2027.06.01</code>；</li>
+<li><code>Vip状态</code> 走 <code>conf.UNXx_ve6</code> → <code>*(string*)(ZptlguuF3yD5 + 24)</code>，<code>ZptlguuF3yD5</code> 是 <code>conf.Init</code> 运行时构造的<strong>堆对象</strong>；</li>
+<li>该字符串由 <code>conf.LdJuJbd0Sx07</code> 把 4 段 garble 片段解码后 <code>concatstring4</code> 拼出；<code>conf.init</code> 里另一条 <code>UoEhcDLClOvs3(base64 @0x102DF13F1, 24)</code> 走 <strong>AES-CBC，key = IV = <code>TIDETideTidEtide</code></strong>（key = <code>GWKfJgPdH0RoV8iN</code> 的四段 <code>^0xD8</code>），当前 blob <code>XDO+lmEHawuskT+iyi2twg==</code> 解出 <code>2028.01.01</code>；把 <code>2099.12.31</code> 重新 PKCS7+CBC 加密得 <code>xvUwHiQzJwM6INqkKCYNbw==</code>（正好 24 字符，可原地覆盖）—— 但这条写的是 <code>qword_10974DC20</code> 那个变量，<strong>不是</strong> <code>Vip状态</code> 用的那个，所以显示不变。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="52-试过的直路runtimeprintstring与失败原因">5.2 试过的&quot;直路&quot;（<code>runtime.printstring</code>）与失败原因<a href="#52-试过的直路runtimeprintstring与失败原因" class="hash-link" aria-label="Direct link to 52-试过的直路runtimeprintstring与失败原因" title="Direct link to 52-试过的直路runtimeprintstring与失败原因" translate="no">​</a></h3>
+<p>在 <code>runLicenseCheck</code> 的 9 个指令槽 <code>0x102a89420..0x102a89440</code> 改成：</p>
+<div class="language-asm codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-asm codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">movabs x0, &lt;rodata 空闲槽 0x102F00700&gt;   ; &#x27;Vip状态: 2099.12.31\n&#x27;（22B，位于 __rodata 未被引用的 61B 空隙 0x102F006F6）</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">mov    x1, #22</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">bl     runtime.printstring</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">nop; nop; nop; nop</span><br></span></code></pre></div></div>
+<p>编码已逐条用 capstone 反汇编校验（<code>ADRP</code>: <code>immlo</code> 在 bit 29–30、<code>immhi</code> 在 bit 5–23、Rd 在 bit 4–0；<code>BL</code>: <code>0x94000000 | (imm &amp; 0x3FFFFFF)</code>，imm 必须按 <code>bl</code> 自身地址计算；<code>MOVZ/MOVK</code> 基值 <code>0xD2800000</code> / <code>0xF2800000 + hw&lt;&lt;21</code>）。</p>
+<p>实测：</p>
+<ol>
+<li>用 IDA 名字里的 <code>runtime.printstring</code>（<code>0x1000492c0</code>）→ <code>fatal error: unexpected signal during runtime execution</code>；</li>
+<li>用运行期回溯里真正的 <code>runtime.printstring</code>（<code>0x10076d2c0</code>）→ <code>SIGSEGV code=0x2 addr=0x102f00700</code>。</li>
+</ol>
+<p>原因：<code>0x10076d2c0</code> 会执行 <code>str x1, [x0, #0x18]</code>（把类型指针写进 <code>x0</code>）—— 它把第一个参数当作<strong>可写的 <code>*String</code> 头</strong>，而 <code>__rodata</code> / <code>__DATA_CONST</code> 运行时只读 ⇒ 任何指向 rodata 的字符串都会崩。<code>__bss</code>（<code>0x109744DE0</code> 起）可写但文件里 <code>offset 0</code>、没有静态内容可预填 ⇒ 静态补丁给不出可写的 <code>String</code> 头。要成立必须让头落在运行时堆上（复刻 <code>concatstrings</code> 的 alloc），纯静态补丁做不到。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="53-样本-a-上若仍要-2099只有两条路">5.3 样本 A 上若仍要 2099，只有两条路<a href="#53-样本-a-上若仍要-2099只有两条路" class="hash-link" aria-label="Direct link to 5.3 样本 A 上若仍要 2099，只有两条路" title="Direct link to 5.3 样本 A 上若仍要 2099，只有两条路" translate="no">​</a></h3>
+<ol>
+<li><strong>数据层</strong>：完整复刻 <code>TH_VJih0zt</code> 的逐段种子/长度逻辑（种子表与长度来自运行时 relocation，需要动态确认），把 <code>LdJuJbd0Sx07</code> 的 4 段重新编码成 <code>2099</code>/<code>.12</code>/<code>.</code>/<code>31</code>，原地覆盖 → <code>Expired</code> 和 <code>Vip状态</code> 会同时变。</li>
+<li><strong>动态确认</strong>：<code>lldb</code> 断在 <code>runtime.printstring</code> / <code>runtime.convTstring</code>，把运行时真正使用的 <code>ZptlguuF3yD5+24</code> 打出来，再反推 4 段编码。</li>
+</ol>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="6-复现清单">6. 复现清单<a href="#6-复现清单" class="hash-link" aria-label="Direct link to 6. 复现清单" title="Direct link to 6. 复现清单" translate="no">​</a></h2>
+<ol>
+<li><code>cp /tmp/ctf/tscan_plus /tmp/ctf_crack/tscan_plus.cracked</code></li>
+<li>按第 2 节写 6 个 <code>B</code> 指令（用 capstone 逐条校验 imm）</li>
+<li><code>codesign --remove-signature</code> + <code>codesign -s - --force</code></li>
+<li><code>keygen.py</code> 造 key，运行 <code>-license</code> 验证</li>
+</ol>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="7-工具与目录约定为什么脚本和数据分开放">7. 工具与目录约定（为什么脚本和数据分开放）<a href="#7-工具与目录约定为什么脚本和数据分开放" class="hash-link" aria-label="Direct link to 7. 工具与目录约定（为什么脚本和数据分开放）" title="Direct link to 7. 工具与目录约定（为什么脚本和数据分开放）" translate="no">​</a></h2>
+<p>规则是：<strong>下载/解包的不可信数据各自独占一个空目录，自己写的脚本放在另一个目录</strong>（解释器会从脚本所在目录和当前目录加载代码，一个 planted <code>json.py</code> 会在 <code>import json</code> 时执行）。所以样本在 <code>/tmp/ctf/</code>、产物在 <code>/tmp/ctf_crack/</code>、脚本在 <code>/tmp/ctf_work/</code>，读数据的 Python 一律 <code>python3 -I</code>。</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="8-windows-版样本-c-ida-里看不到函数字符串的原因与破解">8. Windows 版（样本 C）—— IDA 里看不到函数/字符串的原因与破解<a href="#8-windows-版样本-c-ida-里看不到函数字符串的原因与破解" class="hash-link" aria-label="Direct link to 8. Windows 版（样本 C）—— IDA 里看不到函数/字符串的原因与破解" title="Direct link to 8. Windows 版（样本 C）—— IDA 里看不到函数/字符串的原因与破解" translate="no">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="81-为什么-ida-的-idb-是空的">8.1 为什么 IDA 的 IDB 是空的<a href="#81-为什么-ida-的-idb-是空的" class="hash-link" aria-label="Direct link to 8.1 为什么 IDA 的 IDB 是空的" title="Direct link to 8.1 为什么 IDA 的 IDB 是空的" translate="no">​</a></h3>
+<p><code>~/Downloads/TscanPlus_Win_Amd64/TscanPlus_Win_Amd64.exe</code> 是 <strong>UPX 加壳</strong>的 Go PE（段名 <code>UPX0</code>/<code>UPX1</code>，<code>UPX0</code> rawsize=0）。所以 IDA 里只有 <code>start</code>、<code>list_strings_filter</code> 全空 —— pclntab 和代码都还在压缩流里。</p>
+<p>解包（标准 UPX，可直接 <code>upx -d</code>）：</p>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">upx -d exe.orig -o exe.unpacked        # 42,532,152 -&gt; 135,535,928，win64/pe</span><br></span></code></pre></div></div>
+<p>解包后：Go <strong>1.25.10</strong> / amd64，同样是 garble 混淆（<code>bogus error 2</code>、<code>BogusInterface</code>、<code>selfcheck: hash mismatch</code>、<code>bogus_hardware</code>、<code>bogus_data</code> 是它的自一致性校验与诱饵分支）。
+<code>go tool nm</code> 对这个文件报 <code>no symbols</code>（Go 1.25 的 pclntab 布局 + PE 无 COFF 符号表，objfile 读不到），所以函数名只能靠 <strong><code>.pdata</code>（PE exception table）</strong> 拿边界：每条 12 字节 <code>{BeginRVA, EndRVA, UnwindRVA}</code>，30678 个函数，边界完整可用；再配 capstone 反汇编。</p>
+<p>段表（解包后）：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>段</th><th>vaddr(RVA)</th><th>vsize</th><th>raw</th><th>rawsize</th></tr></thead><tbody><tr><td><code>.text</code></td><td>0x1000</td><td>0x27504a0</td><td>0x400</td><td>0x2750600</td></tr><tr><td><code>.rdata</code></td><td>0x2d2f000</td><td>0x52082d0</td><td>0x2d2ce00</td><td>0x5208400</td></tr><tr><td><code>.pdata</code></td><td>0x7f39000</td><td>0xe6088</td><td>0x7f35400</td><td>0xe6200</td></tr><tr><td><code>.bss</code></td><td>0x8027000</td><td>0xa5c20</td><td>—</td><td>—</td></tr></tbody></table>
+<p>imagebase <code>0x140000000</code>，<code>file offset = vaddr - 0x140000000 - 0xC00</code>（<code>.text</code>）。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="82-x64-版方法-b长度不变改完直接能跑不需要重签名">8.2 x64 版方法 B（长度不变，改完直接能跑，不需要重签名）<a href="#82-x64-版方法-b长度不变改完直接能跑不需要重签名" class="hash-link" aria-label="Direct link to 8.2 x64 版方法 B（长度不变，改完直接能跑，不需要重签名）" title="Direct link to 8.2 x64 版方法 B（长度不变，改完直接能跑，不需要重签名）" translate="no">​</a></h3>
+<p>arm64 上是 <code>B</code>；x64 上等价做法是 <code>jcc rel8</code> → <code>jmp rel8</code>（<code>0x74→0xEB</code>，<code>0x75→0xEB</code>），或者把 <code>jcc</code> 直接改成等长 <code>nop</code>（<code>0x90</code>）。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>地址</th><th>原指令（字节）</th><th>改成</th><th>作用</th></tr></thead><tbody><tr><td><code>0x1404cc900</code></td><td><code>cmp rsp,[r14+0x10]; jbe; push rbp; mov rbp,rsp</code></td><td><code>xor eax,eax; xor ebx,ebx; ret; nop×4</code></td><td><code>conf.B0Uu8RPrb2</code> 恒返回 nil error（key 校验整体放行）</td></tr><tr><td><code>0x142515e15</code></td><td><code>75 20</code> <code>jne 0x142515e37</code></td><td><code>eb 20</code></td><td><code>cli.runLicenseCheck</code> 跳过&quot;请输入 Key / 用法&quot;分支</td></tr><tr><td><code>0x142515e48</code></td><td><code>74 31</code> <code>je 0x142515e7b</code></td><td><code>eb 31</code></td><td>强制走成功分支</td></tr><tr><td><code>0x142515e83</code></td><td><code>74 1d</code> <code>je 0x142515ea2</code></td><td><code>90 90</code></td><td>不再选 <code>社区Free版</code></td></tr><tr><td><code>0x142515e91</code></td><td><code>74 0f</code> <code>je 0x142515ea2</code></td><td><code>90 90</code></td><td>恒选 <code>认证Vip版</code></td></tr><tr><td><code>0x140499800</code></td><td><code>49 3b 66 10 0f 86</code></td><td><code>b8 01 00 00 00 c3</code>（<code>mov eax,1; ret</code>）</td><td>授权标志 getter 恒为 true（前端/功能门控共用）</td></tr><tr><td><code>0x1404cbbf7</code></td><td><code>8b 8c 24 ac 00 00 00</code></td><td><code>89 c1</code> + nop×5</td><td><code>mov ecx,[rsp+0xac]</code>→<code>mov ecx,eax</code>：签名比较强制相等</td></tr><tr><td><code>0x1404caeb9</code></td><td><code>8b 8c 24 84 00 00 00</code></td><td><code>89 c1</code> + nop×5</td><td>同上（另一处 phase3 签名比较）</td></tr><tr><td><code>0x1404cbc0a</code> / <code>0x1404caeca</code></td><td><code>0f 84 …</code></td><td><code>90</code>×6</td><td><code>field==0 → error</code> 分支跳过</td></tr></tbody></table>
+<p>补丁脚本：<code>/tmp/ctf_work/patch_win_final.py</code>（逐条校验原始字节再写）。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="83-在-windows-机器上的实测ssh-admin1921681120">8.3 在 Windows 机器上的实测（<code>ssh admin@192.168.1.120</code>）<a href="#83-在-windows-机器上的实测ssh-admin1921681120" class="hash-link" aria-label="Direct link to 83-在-windows-机器上的实测ssh-admin1921681120" title="Direct link to 83-在-windows-机器上的实测ssh-admin1921681120" translate="no">​</a></h3>
+<p>这个 exe 是 <code>Subsystem = 2</code>（GUI），从 SSH/cmd 跑时它的日志走 Wails 前端，stdout 只有横幅。为了能看到输出，我把同一补丁集的副本把 <code>Subsystem</code> 改成 3（CUI）再跑 —— 行为一致，只是输出可见。</p>
+<p>基线（未改，伪造 key）：</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">$ base_console.exe -license 111.222.333.444.1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Version: 3.5.3  社区Free版          (RC=0)</span><br></span></code></pre></div></div>
+<p>破解后（同一 key）：</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">$ cracked_console_e.exe -license 111.222.333.444.1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Version: 3.5.3  Expired: 未认证  认证Vip版      (RC=0)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$ cracked_console_e.exe -license 999.111.222.333.2</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Version: 3.5.3  Expired: 未认证  认证Vip版      (RC=0)</span><br></span></code></pre></div></div>
+<p>即：任意伪造 key 不再被拒绝，版本类型显示 <code>认证Vip版</code>，进程正常退出、不崩。</p>
+<p>中途的一个实证细节：只把 <code>B0Uu8RPrb2</code> 里的 <code>jne error</code> 改 <code>nop</code>（不处理记录）会崩：</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">panic: runtime error: invalid memory address or nil pointer dereference</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">TscanGui/conf.Ju1zV6nVMwrMz0(0x0)     conf/license.go:468</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">TscanGui/conf.B0Uu8RPrb2({...})       conf/license.go:1037</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">TscanGui/internal/cli.runLicenseCheck({..., 0x11})   cli/license.go:20</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">TscanGui/internal/cli.Dispatch(...)    cli/dispatch.go:32</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">main.main()                            main.go:35</span><br></span></code></pre></div></div>
+<p>这条栈正好确认了函数映射：<code>0x1404cc900 = conf.B0Uu8RPrb2</code>、<code>0x1404c8300 = conf.Ju1zV6nVMwrMz0</code>、<code>0x142515de0 = cli.runLicenseCheck</code>、<code>0x1425149a0 = cli.Dispatch</code> —— 和 arm64 IDB 里的名字是同一套 garble 名（<code>O7rc6qW0L</code>、<code>Tmfc2rYXRKJT</code> 也在文件里出现）✓。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="84-回答web-里输入伪造-key-提示无效-key">8.4 回答&quot;web 里输入伪造 key 提示无效 key&quot;<a href="#84-回答web-里输入伪造-key-提示无效-key" class="hash-link" aria-label="Direct link to 8.4 回答&quot;web 里输入伪造 key 提示无效 key&quot;" title="Direct link to 8.4 回答&quot;web 里输入伪造 key 提示无效 key&quot;" translate="no">​</a></h3>
+<ol>
+<li><strong>手敲的 key 本来就该失败</strong>：<code>f4</code> 必须等于 <code>fold(first8(murmur3_32_seed0(&quot;phase3&quot;+f1))) ^ 6</code>。这条在 Windows 版反汇编里被直接确认了 —— <code>0x1404c7220</code> 的尾巴是 <code>mov rax,[rsp+0x60]</code>（= 前缀长度 6）<code>xor eax, edx</code>（edx = 前 8 个字符按 nibble 折叠）✓，和 <code>keygen.py</code> 的公式一致。<code>f2 ≤ 30000</code>（<code>cmp …, 30000</code> 在 <code>0x1404cda62</code>、<code>0x1404d2c88</code>）、<code>f3 &lt; 1797379200</code>、<code>f5 ∈ 0..5</code>、正则 <code>^\d+\.\d+\.\d+(\.\d+)?$</code>。用 <code>keygen.py</code> 出来的 key，不要自己编数字。</li>
+<li><strong>web 路径和 CLI 路径不同</strong>：前端 JS 调的是 <code>GetAppLic</code> / <code>CheckAppLic</code>（文件里能看到这段 JS 桥接桩），Go 侧第一步是<strong>读取已存 license 记录</strong>（<code>License.lic</code> + sqlite），记录不存在就直接返回错误 —— 这就是&quot;无效 key&quot;。所以只改 <code>runLicenseCheck</code> 的分支不够，要改的是共用的 <code>conf.B0Uu8RPrb2</code> / 标志 getter（8.2 里那两条已经把这条路打通：校验恒返回 nil、flag 恒 true）。</li>
+<li>文件里搜不到&quot;无效的Key&quot;字样 ✓（两个版本都是运行时解码），这本身就是&quot;提示来自另一条解码路径&quot;的证据。</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="85-2099-在-windows-版上是可以做到的已实测">8.5 2099 在 Windows 版上是<strong>可以做到的</strong>（已实测）<a href="#85-2099-在-windows-版上是可以做到的已实测" class="hash-link" aria-label="Direct link to 85-2099-在-windows-版上是可以做到的已实测" title="Direct link to 85-2099-在-windows-版上是可以做到的已实测" translate="no">​</a></h3>
+<p>第 5 节里&quot;改不了 2099&quot;的结论只对 arm64 那份成立（字符串在只读 <code>__rodata</code>、且 <code>__bss</code> 没有文件内容可预填）。Windows 版不同：</p>
+<ul>
+<li>
+<p>它的字符串是 <code>movabs r64, imm64</code> 里塞<strong>两个 rune</strong>（例：<code>0x6548000065e0</code> = <code>无</code>,<code>效</code> ✓），运行时走 <code>utf8.EncodeRune</code>（<code>0x140076a40</code>）拼串 —— 立即数在 <code>.text</code> 里，可改 ✓；</p>
+</li>
+<li>
+<p>显示用的 <code>(ptr,len)</code> 是 <code>conf</code> 初始化里写进堆对象的：</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">0x1404f1bfb  48 c7 40 20 09 00 00 00   mov qword [rax+0x20], 9      ; len(&#x27;未认证&#x27;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">0x1404f1c03  48 8d 0d 3f be 07 03      lea rcx, [rip+0x307be3f]     ; -&gt; .rdata 0x14356da49 = &#x27;未认证&#x27;</span><br></span></code></pre></div></div>
+<p>长度和指针都是可改的立即数 ✓，而 <code>.rdata</code> 里有 19524 段未被任何 <code>lea</code> 引用的空闲区 ✓（取 <code>file 0x2ee7448</code>，24 字节）。</p>
+</li>
+</ul>
+<p>所以把这条 <code>(ptr,len)</code> 重定向到写好的 <code>2099.12.31</code>：</p>
+<div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">SLOT </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">0x2ee7448</span><span class="token plain">                      </span><span class="token comment" style="color:#999988;font-style:italic"># .rdata 内未被引用的空闲区（vaddr 0x142ee9648）</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">d</span><span class="token punctuation" style="color:#393A34">[</span><span class="token plain">SLOT</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain">SLOT</span><span class="token operator" style="color:#393A34">+</span><span class="token number" style="color:#36acaa">10</span><span class="token punctuation" style="color:#393A34">]</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">b&#x27;2099.12.31&#x27;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">d</span><span class="token punctuation" style="color:#393A34">[</span><span class="token plain">vaddr2file</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">0x1404f1bfb</span><span class="token punctuation" style="color:#393A34">)</span><span class="token operator" style="color:#393A34">+</span><span class="token number" style="color:#36acaa">4</span><span class="token punctuation" style="color:#393A34">]</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">10</span><span class="token plain">    </span><span class="token comment" style="color:#999988;font-style:italic"># len 9 -&gt; 10（等长）</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">d</span><span class="token punctuation" style="color:#393A34">[</span><span class="token plain">vaddr2file</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">0x1404f1c03</span><span class="token punctuation" style="color:#393A34">)</span><span class="token operator" style="color:#393A34">+</span><span class="token number" style="color:#36acaa">3</span><span class="token punctuation" style="color:#393A34">:</span><span class="token operator" style="color:#393A34">+</span><span class="token number" style="color:#36acaa">7</span><span class="token punctuation" style="color:#393A34">]</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> struct</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">pack</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&#x27;&lt;i&#x27;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">0x142ee9648</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">-</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">0x1404f1c03</span><span class="token operator" style="color:#393A34">+</span><span class="token number" style="color:#36acaa">7</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">)</span><br></span></code></pre></div></div>
+<p>在你机器上跑（同一个文件把 <code>Subsystem</code> 改成 3 以便看到输出，其余字节完全一致）：</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">$ cracked_console.exe -license 999.111.222.333.2</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Version: 3.5.3  Expired: 2099.12.31  认证Vip版      RC=0</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$ cracked_console_2099.exe -license 111.222.333.444.1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Version: 3.5.3  Expired: 2099.12.31  认证Vip版      RC=0</span><br></span></code></pre></div></div>
+<p>对照未改：<code>Version: 3.5.3  社区Free版</code> ✓。</p>
+<p>最终产物：<code>/tmp/ctf_crack_win/TscanPlus_Win_Amd64.cracked.exe</code>（分支补丁 + 字符串重定向，<code>Subsystem</code> 保持 2），<code>cracked_console.exe</code> 是同一份改 Subsystem 用于看输出，脚本 <code>/tmp/ctf_work/patch_win_final.py</code>。</p>
+<p>顺带说明为什么 IDA 帮不上：MCP 连接的 IDB 是<strong>加壳</strong>那份，<code>list_functions</code> 只有 <code>start</code>、<code>list_strings_filter</code> 全空 —— 这是 UPX 的结果，不是文件没有符号。解包后 <code>go tool nm</code> 也报 <code>no symbols</code>（Go 1.25 的 pclntab 布局 + PE 无 COFF 符号表），所以函数边界用 <code>.pdata</code>（30678 条 RUNTIME_FUNCTION）拿，反汇编用 capstone。如果你把 <code>/tmp/ctf_crack_win/exe.unpacked</code> 单独开一个 IDA 实例，上面这些地址会直接显示成函数，名称能靠 <code>cli.Dispatch</code> 那条 panic 栈对齐（<code>conf.B0Uu8RPrb2</code>、<code>conf.Ju1zV6nVMwrMz0</code>、<code>cli.runLicenseCheck</code> ✓）。</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="9-跨构建补丁点对照">9. 跨构建补丁点对照<a href="#9-跨构建补丁点对照" class="hash-link" aria-label="Direct link to 9. 跨构建补丁点对照" title="Direct link to 9. 跨构建补丁点对照" translate="no">​</a></h2>
+<p>同一逻辑、四份地址。要点是<strong>函数角色不变、地址随构建漂移</strong>，所以拿到新样本要先用 <code>.pdata</code>（或 <code>__text</code> 反汇编）重新定位这四类点：① <code>runLicenseCheck</code> 的四个分支、② key 校验入口、③ 授权标志 getter、④ 签名比较 + <code>field==0 → error</code>。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>角色</th><th>A arm64 3.5.3</th><th>B x86_64 Mach-O 3.5.4</th><th>C Windows PE 3.5.3</th><th>D Windows PE（&quot;Arm64&quot;，实际 x86-64）3.5.4</th></tr></thead><tbody><tr><td><code>runLicenseCheck</code> 入口</td><td><code>0x102a89330</code></td><td><code>0x10326b580</code></td><td><code>0x142515de0</code></td><td><code>0x142557760</code></td></tr><tr><td>跳过 usage/exit</td><td><code>0x102a89394</code> <code>CBZ→B</code></td><td><code>0x10326b5b5</code> <code>75 20→eb 20</code></td><td><code>0x142515e15</code> <code>75 20→eb 20</code></td><td><code>0x142557795</code> <code>75 20→eb 20</code></td></tr><tr><td>强制成功分支</td><td><code>0x102a893d4</code> <code>CBZ→B</code></td><td><code>0x10326b5e8</code> <code>74 31→eb 31</code></td><td><code>0x142515e48</code> <code>74 31→eb 31</code></td><td><code>0x1425577c8</code> <code>74 31→eb 31</code></td></tr><tr><td>不选 <code>社区Free版</code></td><td><code>0x102a893e0</code> <code>TBZ→B</code></td><td><code>0x10326b623</code> <code>74 1d→90 90</code></td><td><code>0x142515e83</code> <code>74 1d→90 90</code></td><td><code>0x142557803</code> <code>74 1d→90 90</code></td></tr><tr><td>恒选 <code>认证Vip版</code></td><td>—</td><td><code>0x10326b631</code> <code>74 0f→90 90</code></td><td><code>0x142515e91</code> <code>74 0f→90 90</code></td><td><code>0x142557811</code> <code>74 0f→90 90</code></td></tr><tr><td>key 校验入口（恒 nil）</td><td><code>0x10047c380</code></td><td><code>0x10050e580</code></td><td><code>0x1404cc900</code></td><td><code>0x1404ceda0</code></td></tr><tr><td>授权标志 getter（恒 true）</td><td><code>0x100452d90</code></td><td><code>0x1004daec0</code></td><td><code>0x140499800</code></td><td><code>0x14049b840</code></td></tr><tr><td>签名比较强制相等</td><td><code>0x1004aba58</code>/<code>0x1004ad198</code></td><td><code>0x10050cb59</code>/<code>0x10050d877</code></td><td><code>0x1404cbbf7</code>/<code>0x1404caeb9</code></td><td>同 C 的角色（B/D 表内已含）</td></tr><tr><td>显示串 <code>(ptr,len)</code></td><td>✗ 运行时解码</td><td>✗ <code>未认证</code> 无代码引用</td><td><code>0x1404f1bfb</code>(len) / <code>0x1404f1c03</code>(lea)</td><td><code>0x1404f439b</code>(len) / <code>0x1404f43a3</code>(lea)</td></tr><tr><td>空闲槽（写 <code>2099.12.31</code>）</td><td>—</td><td>—</td><td>file <code>0x2ee7448</code> (vaddr <code>0x142ee9648</code>)</td><td>file <code>0x2d72640</code> (vaddr <code>0x142d74040</code>)</td></tr></tbody></table>
+<p>样本 D 的脚本：<code>/tmp/ctf_work/patch_win_x64b.py</code>（跑完复现 C 那份已验证文件的 md5 <code>893e84d6f2bc144a6243649eb1ac5b35</code> ✓，说明这套模式在两个 Windows 构建上可平移）。样本 B 的脚本：<code>/tmp/ctf_work/patch_amd64.py</code>，输出 md5 <code>46dbdf1bc3efd516d0b5005734f8f1ba</code>。</p>
+<p>样本 B 实测（重签名后运行）：</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">$ ./TscanPlus.amd64.cracked.app/Contents/MacOS/TscanPlus -license 555.666.777.888.3</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Version: 3.5.4  Expired: 2027.06.01  认证Vip版</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[+][+ ] 认证成功，版本类型: 认证Vip版</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[+][+ ] Vip状态: 2027.06.01</span><br></span></code></pre></div></div>
+<p>样本 D 实测：</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">$ new_console.exe -license 321.321.321.321.1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Version: 3.5.4  Expired: 2099.12.31  认证Vip版      RC=0</span><br></span></code></pre></div></div>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="10-踩坑记录这些坑我都实际踩过">10. 踩坑记录（这些坑我都实际踩过）<a href="#10-踩坑记录这些坑我都实际踩过" class="hash-link" aria-label="Direct link to 10. 踩坑记录（这些坑我都实际踩过）" title="Direct link to 10. 踩坑记录（这些坑我都实际踩过）" translate="no">​</a></h2>
+<ul>
+<li><strong>Mach-O 改 <code>__text</code> 必须重签名</strong>，PE 不需要（PE 无 ad-hoc 签名覆盖代码段）。</li>
+<li><strong>otool <code>-l</code> 的 <code>offset</code> 是十进制</strong>，不是十六进制 —— 我按 hex 解析过一次，段表映射全错。Mach-O header 的 <code>ncmds</code> 在偏移 16（我一开始读的是 32）。</li>
+<li><strong>ADRP 位域</strong>：<code>(w&gt;&gt;26)&amp;0x3F == 0b100001</code>，不是 <code>(w&gt;&gt;24)&amp;0x1F</code>；写错 → 扫描 0 命中。arm64 的 <code>B</code> 编码器不能用在 x86-64 Mach-O 上。</li>
+<li><strong>capstone 取 <code>lea reg,[rip+disp]</code> 的目标</strong>：操作数索引是 <code>operands[1]</code>，类型 3（MEM），不是 2；用 <code>i.insn_name</code>/<code>i.op_str</code>，没有 <code>i.op</code> 属性。</li>
+<li><strong>只 nop <code>jne error</code> 分支会崩</strong>（nil 记录指针被解引用）—— 正确做法是让校验函数<strong>直接返回 nil</strong>，不走进后续 deref。</li>
+<li><strong>Windows 二进制是 GUI subsystem</strong>，SSH 里看不到输出；要验证就复制一份把 <code>Subsystem</code> 改成 3（只改 OptionalHeader，其余字节一致）。</li>
+<li><strong>UPX 加壳时 IDA 是空的</strong>：先 <code>upx -d</code>；Go 1.25 的 PE 没有 COFF 符号表，<code>go tool nm</code> 报 <code>no symbols</code>，用 <code>.pdata</code> 拿函数边界。</li>
+<li><strong>garble 字符串有两种存储形态</strong>：① <code>.rdata</code>/<code>__TEXT.__rodata</code> 里连续拼接（无 NUL 分隔，长度只能靠配对的 <code>mov reg, imm</code>）；② <code>movabs r64, imm64</code> 装两个 int32 rune，运行时 <code>utf8.EncodeRune</code> 解码。形态 ② 的立即数可改。</li>
+<li><strong>程序每次运行都会重写 <code>License.lic</code> 尾部</strong>（<code>~/.config/TscanPlus/config/License.lic</code>，608 hex 字符 = 304 字节）—— 动手前留备份。</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="11-边界哪些事做不到">11. 边界（哪些事做不到）<a href="#11-边界哪些事做不到" class="hash-link" aria-label="Direct link to 11. 边界（哪些事做不到）" title="Direct link to 11. 边界（哪些事做不到）" translate="no">​</a></h2>
+<ol>
+<li><strong>激活码不能离线伪造</strong>。校验函数 <code>0x1404d9c40</code> 走 ECDSA：要求 65 字节未压缩公钥（<code>公钥长度错误：应为65字节</code>），并有 <code>公钥数据格式错误</code>、<code>公钥数据长度不足</code>、<code>解密公钥失败: %v</code>、<code>ECDSA公钥未初始化，请先运行 obfuscate_license.py 脚本</code> —— 二进制里只有公钥，没有私钥。记录字段：<code>sign</code>、<code>version</code>、<code>app_ver</code>、<code>poc_kind</code>、<code>svip</code>。</li>
+<li><strong>一个 key 不能多机器用</strong>。硬件绑定是实测结论：同一条记录在 Mac 上接受，在 Windows 上 <code>license硬件校验失败</code>；Windows 读注册表 <code>SOFTWARE\Microsoft\Cryptography</code>（<code>MachineGuid</code>，<code>0x140f90d00</code>，另有 <code>HostID incorrect: %q</code>）和 <code>wmic.exe</code>。</li>
+<li><strong>过期后能否下载 PoC</strong>：更新走服务端 —— <code>gettoken.json?app_key=%s</code>、<code>CheckTpUpdate Error: %v</code>、<code>服务端未返回下载凭证</code>、<code>pocs.zip</code>、<code>下载%s失败: %w</code> / <code>HTTP %d (%s)</code>。需要服务端下发的下载凭证，不是本地能造的。顺带一条纠错：PoC 更新路径的字符串里<strong>没有</strong> <code>文件不存在</code>，那条报错来自 MCP/workspace 的文件工具，不是这个程序。</li>
+<li><strong>2099 是显示层</strong>，不是把授权真买到 2099：<code>Expired:</code> 那行是 <code>(ptr,len)</code> 重定向的结果；<code>f3 &lt; 1797379200</code>（2026-12-16）这条硬限制仍在代码里，过期判断函数 <code>0x1404996e0</code> 里的 <code>add rsi, 0x15180</code>（86400 s = 1 天宽限）也只是宽限。</li>
+<li>所以这套东西的准确定性是：<strong>补丁绕过 + 显示改写</strong>。想要&quot;ECDSA 校验恒为真&quot;的补丁（把 verify 函数改成直接返回 true）也是可以的，但那同样是绕过，不是伪造 —— 而且它改不了硬件绑定那一层。</li>
+</ol></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/个人知识库/12.逆向破解/01.TscanPlus授权逻辑分析与二进制补丁破解.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/en/docs/个人知识库/公众号文章/【白嫖】免费领取一年 美国、加拿大、英国等云主机"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">【白嫖】免费领取 Atlantic 一年 | 美国| 加拿大|英国|VPS云主机</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/en/docs/更新日志"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">更新日志</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#0-样本" class="table-of-contents__link toc-highlight">0. 样本</a></li><li><a href="#1-授权架构ida-定位样本-a" class="table-of-contents__link toc-highlight">1. 授权架构（IDA 定位，样本 A）</a></li><li><a href="#2-方法-b分支补丁样本-a已验证可用" class="table-of-contents__link toc-highlight">2. 方法 B：分支补丁（样本 A，已验证可用）</a></li><li><a href="#3-keygenmurmur3-32-seed-0--nibble-折叠" class="table-of-contents__link toc-highlight">3. Keygen（murmur3-32 seed 0 + nibble 折叠）</a></li><li><a href="#4-运行验证样本-a" class="table-of-contents__link toc-highlight">4. 运行验证（样本 A）</a></li><li><a href="#5-把-vip状态-认证到-2099-年--样本-a-上未闭合原因记录" class="table-of-contents__link toc-highlight">5. &quot;把 Vip状态 认证到 2099 年&quot; —— 样本 A 上未闭合，原因记录</a><ul><li><a href="#51-为什么不能直接改字符串" class="table-of-contents__link toc-highlight">5.1 为什么不能直接改字符串</a></li><li><a href="#52-试过的直路runtimeprintstring与失败原因" class="table-of-contents__link toc-highlight">5.2 试过的&quot;直路&quot;（<code>runtime.printstring</code>）与失败原因</a></li><li><a href="#53-样本-a-上若仍要-2099只有两条路" class="table-of-contents__link toc-highlight">5.3 样本 A 上若仍要 2099，只有两条路</a></li></ul></li><li><a href="#6-复现清单" class="table-of-contents__link toc-highlight">6. 复现清单</a></li><li><a href="#7-工具与目录约定为什么脚本和数据分开放" class="table-of-contents__link toc-highlight">7. 工具与目录约定（为什么脚本和数据分开放）</a></li><li><a href="#8-windows-版样本-c-ida-里看不到函数字符串的原因与破解" class="table-of-contents__link toc-highlight">8. Windows 版（样本 C）—— IDA 里看不到函数/字符串的原因与破解</a><ul><li><a href="#81-为什么-ida-的-idb-是空的" class="table-of-contents__link toc-highlight">8.1 为什么 IDA 的 IDB 是空的</a></li><li><a href="#82-x64-版方法-b长度不变改完直接能跑不需要重签名" class="table-of-contents__link toc-highlight">8.2 x64 版方法 B（长度不变，改完直接能跑，不需要重签名）</a></li><li><a href="#83-在-windows-机器上的实测ssh-admin1921681120" class="table-of-contents__link toc-highlight">8.3 在 Windows 机器上的实测（<code>ssh admin@192.168.1.120</code>）</a></li><li><a href="#84-回答web-里输入伪造-key-提示无效-key" class="table-of-contents__link toc-highlight">8.4 回答&quot;web 里输入伪造 key 提示无效 key&quot;</a></li><li><a href="#85-2099-在-windows-版上是可以做到的已实测" class="table-of-contents__link toc-highlight">8.5 2099 在 Windows 版上是<strong>可以做到的</strong>（已实测）</a></li></ul></li><li><a href="#9-跨构建补丁点对照" class="table-of-contents__link toc-highlight">9. 跨构建补丁点对照</a></li><li><a href="#10-踩坑记录这些坑我都实际踩过" class="table-of-contents__link toc-highlight">10. 踩坑记录（这些坑我都实际踩过）</a></li><li><a href="#11-边界哪些事做不到" class="table-of-contents__link toc-highlight">11. 边界（哪些事做不到）</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">内容导航</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="margin-right:6px;vertical-align:text-bottom"><rect x="3" y="4" width="14" height="16" rx="2" fill="currentColor"></rect><rect x="5" y="6" width="10" height="1.5" fill="white" opacity="0.9"></rect><rect x="5" y="9" width="10" height="1.5" fill="white" opacity="0.9"></rect></svg>个人知识库</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/更新日志"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="margin-right:6px;vertical-align:text-bottom"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2"></circle><polyline points="12,7 12,12 16,14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></polyline></svg>日志更新</a></li><li class="footer__item"><a class="footer__link-item" href="https://www.wjlin0.com/links"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="margin-right:6px;vertical-align:text-bottom"><polyline points="8,5 16,12 8,19" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></polyline></svg>友链</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">实用工具</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="margin-right:6px;vertical-align:text-bottom"><polyline points="8,5 16,12 8,19" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></polyline></svg>微信公众号写文章助手</a></li><li class="footer__item"><a class="footer__link-item" href="https://gtfobins.github.io/" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="margin-right:6px;vertical-align:text-bottom"><polyline points="8,5 16,12 8,19" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></polyline></svg>GTFOBins</a></li><li class="footer__item"><a class="footer__link-item" href="https://revshells.com" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="margin-right:6px;vertical-align:text-bottom"><polyline points="8,5 16,12 8,19" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></polyline></svg>红队工具</a></li><li class="footer__item"><a class="footer__link-item" href="https://regex-vis.com/" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="margin-right:6px;vertical-align:text-bottom"><polyline points="8,5 16,12 8,19" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></polyline></svg>正则可视化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">关注我</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="https://github.com/wjlin0" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="margin-right:6px;vertical-align:text-bottom"><polyline points="7,8 4,12 7,16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></polyline><polyline points="17,8 20,12 17,16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></polyline><line x1="10" y1="18" x2="14" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>GitHub</a></li><li class="footer__item"><a class="footer__link-item" href="mailto:admin@wjlin0.com" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="margin-right:6px;vertical-align:text-bottom"><rect x="3" y="6" width="18" height="12" rx="2" ry="2" stroke="currentColor" stroke-width="2" fill="none"></rect><polyline points="4,7 12,13 20,7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></polyline></svg>联系我</a></li><li class="footer__item"><a class="footer__link-item" href="https://www.wjlin0.com/links#add"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="margin-right:6px;vertical-align:text-bottom"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2" fill="none"></circle><line x1="12" y1="8" x2="12" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line><line x1="8" y1="12" x2="16" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line></svg>添加友链</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 wjlin0 知识库</div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-个人知识库/AI/PyTorch/README" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.1">
+<title data-rh="true">PyTorch | wjlin0</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://blog.wjlin0.com/en/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://blog.wjlin0.com/en/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://blog.wjlin0.com/en/docs/个人知识库/AI/PyTorch/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" property="og:locale:alternate" content="zh"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="PyTorch | wjlin0"><meta data-rh="true" name="description" content="|作者|修订时间|"><meta data-rh="true" property="og:description" content="|作者|修订时间|"><link data-rh="true" rel="icon" href="/en/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://blog.wjlin0.com/en/docs/个人知识库/AI/PyTorch/"><link data-rh="true" rel="alternate" href="https://blog.wjlin0.com/docs/个人知识库/AI/PyTorch/" hreflang="zh"><link data-rh="true" rel="alternate" href="https://blog.wjlin0.com/en/docs/个人知识库/AI/PyTorch/" hreflang="en"><link data-rh="true" rel="alternate" href="https://blog.wjlin0.com/docs/个人知识库/AI/PyTorch/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AI","item":"https://blog.wjlin0.com/en/docs/个人知识库/AI/"},{"@type":"ListItem","position":2,"name":"PyTorch","item":"https://blog.wjlin0.com/en/docs/个人知识库/AI/PyTorch/"}]}</script><link rel="stylesheet" href="/en/assets/css/styles.b3fb48aa.css">
+<script src="/en/assets/js/runtime~main.6d20f195.js" defer="defer"></script>
+<script src="/en/assets/js/main.bd2a4550.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/en/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/en/"><div class="navbar__logo"><img src="/en/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/en/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">知识库</b></a><a href="https://www.wjlin0.com" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">博客<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><a href="https://icp.wjlin0.com" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">ICP备案查询<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/wjlin0/wjlin0.github.io" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/en/docs/intro"><span title="intro" class="linkLabel_WmDU">intro</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/en/docs/个人知识库/渗透测试/信息收集/"><span title="个人知识库" class="categoryLinkLabel_W154">个人知识库</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/en/docs/个人知识库/渗透测试/信息收集/"><span title="渗透测试" class="categoryLinkLabel_W154">渗透测试</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/en/docs/个人知识库/漏洞复现/Thinkphp/Thinkphp5.0.22远程代码执行"><span title="漏洞复现" class="categoryLinkLabel_W154">漏洞复现</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/en/docs/个人知识库/代码审计/Java/基础审计/JAVA反序列化漏洞"><span title="代码审计" class="categoryLinkLabel_W154">代码审计</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/en/docs/个人知识库/疑难杂症/k3s/Traefik资源跨命名空间调用/"><span title="疑难杂症" class="categoryLinkLabel_W154">疑难杂症</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/en/docs/个人知识库/语言知识/"><span title="语言知识" class="categoryLinkLabel_W154">语言知识</span></a><button aria-label="Expand sidebar category &#x27;语言知识&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/en/docs/个人知识库/pathScan-doc/下载安装"><span title="pathScan-doc" class="categoryLinkLabel_W154">pathScan-doc</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/en/docs/个人知识库/CTF/Knownsec/knownsec-ctf-09/"><span title="CTF" class="categoryLinkLabel_W154">CTF</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/en/docs/个人知识库/工具分享/RAGFlow安装/"><span title="工具分享" class="categoryLinkLabel_W154">工具分享</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/en/docs/个人知识库/漏洞合集/中间件/Apache/Kafka Connect任意文件读取漏洞（CVE-2025-27817）"><span title="漏洞合集" class="categoryLinkLabel_W154">漏洞合集</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" tabindex="0" href="/en/docs/个人知识库/AI/"><span title="AI" class="categoryLinkLabel_W154">AI</span></a><button aria-label="Collapse sidebar category &#x27;AI&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item"><div class="menu__list-item-collapsible menu__list-item-collapsible--active"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" aria-current="page" tabindex="0" href="/en/docs/个人知识库/AI/PyTorch/"><span title="PyTorch" class="categoryLinkLabel_W154">PyTorch</span></a><button aria-label="Collapse sidebar category &#x27;PyTorch&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-4 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/en/docs/个人知识库/AI/PyTorch/第零章/"><span title="第零章" class="categoryLinkLabel_W154">第零章</span></a><button aria-label="Expand sidebar category &#x27;第零章&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-4 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/en/docs/个人知识库/AI/PyTorch/第一章/"><span title="第一章" class="categoryLinkLabel_W154">第一章</span></a><button aria-label="Expand sidebar category &#x27;第一章&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-4 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/en/docs/个人知识库/AI/PyTorch/第二章/"><span title="第二章" class="categoryLinkLabel_W154">第二章</span></a><button aria-label="Expand sidebar category &#x27;第二章&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-4 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/en/docs/个人知识库/AI/PyTorch/第三章/"><span title="第三章" class="categoryLinkLabel_W154">第三章</span></a><button aria-label="Expand sidebar category &#x27;第三章&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-4 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/en/docs/个人知识库/AI/PyTorch/第四章/"><span title="第四章" class="categoryLinkLabel_W154">第四章</span></a><button aria-label="Expand sidebar category &#x27;第四章&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-4 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/en/docs/个人知识库/AI/PyTorch/第五章/"><span title="第五章" class="categoryLinkLabel_W154">第五章</span></a><button aria-label="Expand sidebar category &#x27;第五章&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-4 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/en/docs/个人知识库/AI/PyTorch/第六章/"><span title="第六章" class="categoryLinkLabel_W154">第六章</span></a><button aria-label="Expand sidebar category &#x27;第六章&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-4 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/en/docs/个人知识库/AI/PyTorch/第七章/"><span title="第七章" class="categoryLinkLabel_W154">第七章</span></a><button aria-label="Expand sidebar category &#x27;第七章&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-4 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/en/docs/个人知识库/AI/PyTorch/第八章/"><span title="第八章" class="categoryLinkLabel_W154">第八章</span></a><button aria-label="Expand sidebar category &#x27;第八章&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-4 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/en/docs/个人知识库/AI/PyTorch/第九章/"><span title="第九章" class="categoryLinkLabel_W154">第九章</span></a><button aria-label="Expand sidebar category &#x27;第九章&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-4 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/en/docs/个人知识库/AI/PyTorch/第十章/"><span title="第十章" class="categoryLinkLabel_W154">第十章</span></a><button aria-label="Expand sidebar category &#x27;第十章&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/en/docs/个人知识库/公众号文章/Perplexity Pro免费获取一年订阅"><span title="公众号文章" class="categoryLinkLabel_W154">公众号文章</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/en/docs/个人知识库/逆向破解/TscanPlus授权逻辑分析与二进制补丁破解"><span title="逆向破解" class="categoryLinkLabel_W154">逆向破解</span></a></div></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/en/docs/更新日志"><span title="更新日志" class="linkLabel_WmDU">更新日志</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/en/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">个人知识库</span></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/en/docs/个人知识库/AI/"><span>AI</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">PyTorch</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>PyTorch</h1></header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:left">作者</th><th style="text-align:left">修订时间</th></tr></thead><tbody><tr><td style="text-align:left"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/wjlin0-%E4%B8%AA%E4%BA%BA%E7%9F%A5%E8%AF%86%E5%BA%93-green" alt="wjlin0" class="img_ev3q"></td><td style="text-align:left">2026-06-07 20:53:42</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:left">作者</th><th style="text-align:left">修订时间</th></tr></thead><tbody><tr><td style="text-align:left"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/wjlin0-%E4%B8%AA%E4%BA%BA%E7%9F%A5%E8%AF%86%E5%BA%93-green" alt="wjlin0" class="img_ev3q"></td><td style="text-align:left">2025-10-31 15:44:29</td></tr></tbody></table>
+<h1>深入浅出PyTorch</h1>
+<p>PyTorch是利用深度学习进行数据科学研究的重要工具，在灵活性、可读性和性能上都具备相当的优势，近年来已成为学术界实现深度学习算法最常用的框架。</p>
+<p>考虑到PyTorch的学习兼具理论储备和动手训练，两手都要抓两手都要硬的特点，我们开发了《深入浅出PyTorch》课程，期望以组队学习的形式，帮助大家从入门到熟练掌握PyTorch工具，进而实现自己的深度学习算法。</p>
+<p>我们的愿景是：通过组队学习，大家能够掌握由浅入深地PyTorch的基本知识和内容，经过自己的动手实践加深操作的熟练度。同时通过项目实战，充分锻炼编程能力，掌握PyTorch进行深度学习的基本流程，提升解决实际问题的能力。</p>
+<p>学习的先修要求是，会使用Python编程，了解包括神经网络在内的机器学习算法，勤于动手实践。</p>
+<p>《深入浅出PyTorch》是一个系列，一共有三个部分。已经上线的是本系列的第一、二部分，后续会不断更新《深入浅出PyTorch》（下），给出更贴合实际应用的实战案例。</p>
+<div class="language-{toctree} codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-{toctree} codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">:maxdepth: 2</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">:caption: 目录</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">第零章/index</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">第一章/index</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">第二章/index</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">第三章/index</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">第四章/index</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">第五章/index</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">第六章/index</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">第七章/index</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">第八章/index</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">第九章/index</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">第十章/index</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="人员安排">人员安排<a href="#人员安排" class="hash-link" aria-label="Direct link to 人员安排" title="Direct link to 人员安排" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>成员 </th><th>个人简介</th><th>个人主页</th></tr></thead><tbody><tr><td>牛志康</td><td>DataWhale成员，西安电子科技大学本科生</td><td>[<a href="https://www.zhihu.com/people/obeah-82" target="_blank" rel="noopener noreferrer">知乎</a>][<a href="https://nofish-528.github.io/" target="_blank" rel="noopener noreferrer">个人主页</a>]</td></tr><tr><td>李嘉骐</td><td>DataWhale成员，清华大学研究生</td><td>[<a href="https://www.zhihu.com/people/li-jia-qi-16-9/posts" target="_blank" rel="noopener noreferrer">知乎</a>]</td></tr><tr><td>刘洋</td><td>Datawhale成员，中国科学院数学与系统科学研究所研究生</td><td>[<a href="https://www.zhihu.com/people/ming-ren-19-34/asks" target="_blank" rel="noopener noreferrer">知乎</a>]</td></tr><tr><td>陈安东</td><td>DataWhale成员，中央民族大学研究生</td><td>[<a href="https://andongblue.github.io/chenandong.github.io/" target="_blank" rel="noopener noreferrer">个人主页</a>]</td></tr></tbody></table>
+<p>教程贡献情况（已上线课程内容）：</p>
+<p>李嘉骐：第三章；第四章；第五章；第六章；第七章；第八章；内容整合</p>
+<p>牛志康：第一章；第三章；第六章；第七章；第八章，第九章，第十章；文档部署</p>
+<p>刘洋：第二章；第三章</p>
+<p>陈安东：第二章；第三章；第七章</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="四-课程编排与使用方法">四、 课程编排与使用方法<a href="#四-课程编排与使用方法" class="hash-link" aria-label="Direct link to 四、 课程编排与使用方法" title="Direct link to 四、 课程编排与使用方法" translate="no">​</a></h2>
+<p>部分章节直播讲解请观看B站回放（持续更新）：<a href="https://www.bilibili.com/video/BV1L44y1472Z" target="_blank" rel="noopener noreferrer">https://www.bilibili.com/video/BV1L44y1472Z</a></p>
+<ul>
+<li>
+<p>课程编排：
+深入浅出PyTorch分为三个阶段：PyTorch深度学习基础知识、PyTorch进阶操作、PyTorch案例分析。</p>
+</li>
+<li>
+<p>使用方法:</p>
+<p>我们的课程内容都以markdown格式或jupyter notebook的形式保存在本仓库内。除了多看加深课程内容的理解外，最重要的还是动手练习、练习、练习</p>
+</li>
+<li>
+<p>组队学习安排:</p>
+<p>第一部分：第一章到第四章，学习周期：10天；</p>
+<p>第二部分：第五章到第八章，学习周期：11天</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="五关于贡献">五、关于贡献<a href="#五关于贡献" class="hash-link" aria-label="Direct link to 五、关于贡献" title="Direct link to 五、关于贡献" translate="no">​</a></h2>
+<p>本项目使用<code>Forking</code>工作流，具体参考<a href="https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow" target="_blank" rel="noopener noreferrer">atlassian文档</a></p>
+<p>大致步骤如下：</p>
+<ol>
+<li>在GitHub上Fork本仓库</li>
+<li>Clone Fork后的个人仓库</li>
+<li>设置<code>upstream</code>仓库地址，并禁用<code>push</code></li>
+<li>使用分支开发，课程分支名为<code>lecture{#NO}</code>，<code>#NO</code>保持两位，如<code>lecture07</code>，对应课程目录</li>
+<li>PR之前保持与原始仓库的同步，之后发起PR请求</li>
+</ol>
+<p>命令示例：</p>
+<div class="language-shell codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-shell codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># fork</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># clone</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git clone git@github.com:USERNAME/thorough-pytorch.git</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># set upstream</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git remote add upstream git@github.com:datawhalechina/thorough-pytorch.git</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># disable upstream push</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git remote set-url --push upstream DISABLE</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># verify</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git remote -v</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># some sample output:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># origin	git@github.com:NoFish-528/thorough-pytorch.git (fetch)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># origin	git@github.com:NoFish-528/thorough-pytorch.git (push)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># upstream	git@github.com:datawhalechina/thorough-pytorch.git (fetch)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># upstream	DISABLE (push)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># do your work</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git checkout -b lecture07</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># edit and commit and push your changes</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git push -u origin lecture07</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># keep your fork up to date</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">## fetch upstream main and merge with forked main branch</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git fetch upstream</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git checkout main</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git merge upstream/main</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">## rebase brach and force push</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git checkout lecture07</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git rebase main</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git push -f</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="commit-message">Commit Message<a href="#commit-message" class="hash-link" aria-label="Direct link to Commit Message" title="Direct link to Commit Message" translate="no">​</a></h3>
+<p>提交信息使用如下格式：<code>&lt;type&gt;: &lt;short summary&gt;</code></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">&lt;type&gt;: &lt;short summary&gt;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  │            │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  │            └─⫸ Summary in present tense. Not capitalized. No period at the end.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  └─⫸ Commit Type: lecture{#NO}|others</span><br></span></code></pre></div></div>
+<p><code>others</code>包括非课程相关的改动，如本<code>README.md</code>中的变动，<code>.gitignore</code>的调整等。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="六更新计划">六、更新计划<a href="#六更新计划" class="hash-link" aria-label="Direct link to 六、更新计划" title="Direct link to 六、更新计划" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:left">内容</th><th style="text-align:left">更新时间</th><th style="text-align:center">内容</th></tr></thead><tbody><tr><td style="text-align:left">visdom可视化</td><td style="text-align:left"></td><td style="text-align:center"><code>Visdom</code>的使用</td></tr><tr><td style="text-align:left">apex</td><td style="text-align:left"></td><td style="text-align:center">apex的简介和使用</td></tr><tr><td style="text-align:left">模型部署</td><td style="text-align:left"></td><td style="text-align:center">Flask部署PyTorch模型</td></tr><tr><td style="text-align:left">TorchScript</td><td style="text-align:left"></td><td style="text-align:center">TorchScript</td></tr><tr><td style="text-align:left">并行训练</td><td style="text-align:left"></td><td style="text-align:center">并行训练</td></tr><tr><td style="text-align:left">模型预训练 - torchhub</td><td style="text-align:left">2022.4.16</td><td style="text-align:center">torchhub的简介和使用方法</td></tr><tr><td style="text-align:left">目标检测 - SSD</td><td style="text-align:left"></td><td style="text-align:center">SSD的简介和实现</td></tr><tr><td style="text-align:left">目标检测 - RCNN系列</td><td style="text-align:left"></td><td style="text-align:center">Fast-RCNN &amp; Mask-RCNN</td></tr><tr><td style="text-align:left">目标检测 - DETR</td><td style="text-align:left"></td><td style="text-align:center">DETR的实现</td></tr><tr><td style="text-align:left">图像分类 - GoogLeNet</td><td style="text-align:left">2022.5.11</td><td style="text-align:center">GoogLeNet的介绍与实现</td></tr><tr><td style="text-align:left">图像分类 - MobileNet系列</td><td style="text-align:left">2022.4月</td><td style="text-align:center">MobileNet系列介绍与实现</td></tr><tr><td style="text-align:left">图像分类 - GhostNet</td><td style="text-align:left">2022.4月</td><td style="text-align:center">GhostNet代码讲解</td></tr><tr><td style="text-align:left">生成式对抗网络 - 生成手写数字实战</td><td style="text-align:left">2022.5.25</td><td style="text-align:center">生成数字并可视化</td></tr><tr><td style="text-align:left">生成式对抗网络 - DCGAN</td><td style="text-align:left"></td><td style="text-align:center"></td></tr><tr><td style="text-align:left">风格迁移 - StyleGAN</td><td style="text-align:left"></td><td style="text-align:center"></td></tr><tr><td style="text-align:left">生成网络 - VAE</td><td style="text-align:left"></td><td style="text-align:center"></td></tr><tr><td style="text-align:left">图像分割 Deeplab系列</td><td style="text-align:left"></td><td style="text-align:center">Deeplab系列代码讲解</td></tr><tr><td style="text-align:left">自然语言处理 LSTM</td><td style="text-align:left"></td><td style="text-align:center">LSTM情感分析实战</td></tr><tr><td style="text-align:left">自然语言处理 Transformer</td><td style="text-align:left"></td><td style="text-align:center"></td></tr><tr><td style="text-align:left">自然语言处理 BERT</td><td style="text-align:left"></td><td style="text-align:center"></td></tr><tr><td style="text-align:left">视频</td><td style="text-align:left"></td><td style="text-align:center">待定</td></tr><tr><td style="text-align:left">音频</td><td style="text-align:left"></td><td style="text-align:center">待定</td></tr><tr><td style="text-align:left">自定义CUDA扩展和算子</td><td style="text-align:left"></td><td style="text-align:center"></td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="七鸣谢与反馈">七、鸣谢与反馈<a href="#七鸣谢与反馈" class="hash-link" aria-label="Direct link to 七、鸣谢与反馈" title="Direct link to 七、鸣谢与反馈" translate="no">​</a></h2>
+<ul>
+<li>非常感谢DataWhale成员 叶前坤 @<a href="https://github.com/PureBuckwheat" target="_blank" rel="noopener noreferrer">PureBuckwheat</a> 和 胡锐锋 @<a href="https://github.com/Relph1119" target="_blank" rel="noopener noreferrer">Relph1119</a> 对文档的细致校对！</li>
+<li>如果有任何想法可以联系我们DataWhale也欢迎大家多多提出issue。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="八关注我们">八、关注我们<a href="#八关注我们" class="hash-link" aria-label="Direct link to 八、关注我们" title="Direct link to 八、关注我们" translate="no">​</a></h2>
+<div align="center"><img decoding="async" loading="lazy" src="https://raw.githubusercontent.com/datawhalechina/easy-rl/master/docs/res/qrcode.jpeg" width="250" height="270" alt="Datawhale是一个专注AI领域的开源组织，以“for the learner，和学习者一起成长”为愿景，构建对学习者最有价值的开源学习社区。关注我们，一起学习成长。" class="img_ev3q"></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="license">LICENSE<a href="#license" class="hash-link" aria-label="Direct link to LICENSE" title="Direct link to LICENSE" translate="no">​</a></h2>
+<p><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license"><img decoding="async" loading="lazy" alt="知识共享许可协议" style="border-width:0" src="https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey" class="img_ev3q"></a><br>本作品采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/个人知识库/10.AI/01.PyTorch/README.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/en/docs/个人知识库/AI/"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">AI</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/en/docs/个人知识库/AI/PyTorch/第零章/"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">第零章</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#人员安排" class="table-of-contents__link toc-highlight">人员安排</a></li><li><a href="#四-课程编排与使用方法" class="table-of-contents__link toc-highlight">四、 课程编排与使用方法</a></li><li><a href="#五关于贡献" class="table-of-contents__link toc-highlight">五、关于贡献</a><ul><li><a href="#commit-message" class="table-of-contents__link toc-highlight">Commit Message</a></li></ul></li><li><a href="#六更新计划" class="table-of-contents__link toc-highlight">六、更新计划</a></li><li><a href="#七鸣谢与反馈" class="table-of-contents__link toc-highlight">七、鸣谢与反馈</a></li><li><a href="#八关注我们" class="table-of-contents__link toc-highlight">八、关注我们</a></li><li><a href="#license" class="table-of-contents__link toc-highlight">LICENSE</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">内容导航</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="margin-right:6px;vertical-align:text-bottom"><rect x="3" y="4" width="14" height="16" rx="2" fill="currentColor"></rect><rect x="5" y="6" width="10" height="1.5" fill="white" opacity="0.9"></rect><rect x="5" y="9" width="10" height="1.5" fill="white" opacity="0.9"></rect></svg>个人知识库</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/更新日志"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="margin-right:6px;vertical-align:text-bottom"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2"></circle><polyline points="12,7 12,12 16,14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></polyline></svg>日志更新</a></li><li class="footer__item"><a class="footer__link-item" href="https://www.wjlin0.com/links"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="margin-right:6px;vertical-align:text-bottom"><polyline points="8,5 16,12 8,19" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></polyline></svg>友链</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">实用工具</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="margin-right:6px;vertical-align:text-bottom"><polyline points="8,5 16,12 8,19" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></polyline></svg>微信公众号写文章助手</a></li><li class="footer__item"><a class="footer__link-item" href="https://gtfobins.github.io/" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="margin-right:6px;vertical-align:text-bottom"><polyline points="8,5 16,12 8,19" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></polyline></svg>GTFOBins</a></li><li class="footer__item"><a class="footer__link-item" href="https://revshells.com" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="margin-right:6px;vertical-align:text-bottom"><polyline points="8,5 16,12 8,19" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></polyline></svg>红队工具</a></li><li class="footer__item"><a class="footer__link-item" href="https://regex-vis.com/" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="margin-right:6px;vertical-align:text-bottom"><polyline points="8,5 16,12 8,19" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></polyline></svg>正则可视化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">关注我</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="https://github.com/wjlin0" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="margin-right:6px;vertical-align:text-bottom"><polyline points="7,8 4,12 7,16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></polyline><polyline points="17,8 20,12 17,16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></polyline><line x1="10" y1="18" x2="14" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>GitHub</a></li><li class="footer__item"><a class="footer__link-item" href="mailto:admin@wjlin0.com" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="margin-right:6px;vertical-align:text-bottom"><rect x="3" y="6" width="18" height="12" rx="2" ry="2" stroke="currentColor" stroke-width="2" fill="none"></rect><polyline points="4,7 12,13 20,7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></polyline></svg>联系我</a></li><li class="footer__item"><a class="footer__link-item" href="https://www.wjlin0.com/links#add"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="margin-right:6px;vertical-align:text-bottom"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2" fill="none"></circle><line x1="12" y1="8" x2="12" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line><line x1="8" y1="12" x2="16" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line></svg>添加友链</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 wjlin0 知识库</div></div></div></footer></div>
+</body>
+</html>
